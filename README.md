@@ -15,7 +15,6 @@ Conteúdo
     - [Metodologia](#metodologia)
     - [Encontros ao Vivo](#encontros-ao-vivo)
     - [Workshop 1: Como estruturar um projeto e um processo de dados do zero](#workshop-1-como-estruturar-um-projeto-e-um-processo-de-dados-do-zero)
-    - [\[Module 4: SQL para analytics engineering](#module-4-sql-para-analytics-engineering)
     - [Prerequisites](#prerequisites)
   - [Plataforma e autonomia](#plataforma-e-autonomia)
   - [Possui dúvidas?](#possui-dúvidas)
@@ -51,11 +50,6 @@ Acredito que a melhor forma de ensino é Todo o material do curso está de forma
 * Garantindo conformidade com CI/CD
 
 [More details](01-docker-terraform/)
-
-
-### [Module 4: SQL para analytics engineering
-
-* Básico de analytics engineering
 
 
 ### Prerequisites
