@@ -16,7 +16,7 @@ def process_excel(uploaded_file, model_name):
             raise ValueError(f"Modelo desconhecido: {model_name}")
 
         # Verificar se há colunas extras no DataFrame
-        extra_cols = set(df.columns) - set(schema.model_fields.keys())
+        extra_cols = set(df.columns) - set(schema.__annotations__.keys())
         if extra_cols:
             return False, f"Colunas extras detectadas no Excel: {', '.join(extra_cols)}"
 
@@ -25,7 +25,7 @@ def process_excel(uploaded_file, model_name):
             try:
                 _ = schema(**row.to_dict())
             except Exception as e:
-                raise ValueError(f"Erro na linha {index + 2}: {e}")  # +2 porque o índice começa em 0 e a primeira linha do Excel é o cabeçalho
+                raise ValueError(f"Erro na linha {index + 2}: {e}")
 
         return True, None
 
