@@ -1,0 +1,3 @@
+mkdocs==1.5.3
+streamlit==1.30.0
+taskipy==1.12.2
