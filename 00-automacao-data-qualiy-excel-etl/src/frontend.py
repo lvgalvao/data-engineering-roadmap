@@ -1,16 +1,21 @@
 import streamlit as st
 
 class ExcelValidatorUI:
-    def __init__(self, title):
-        self.title = title
-        st.set_page_config(page_title=self.title, layout="wide")
+    def __init__(self):
+        self.set_page_config()
+
+    def set_page_config(self):
+        st.set_page_config(page_title="Validador de Schema de Excel", layout="wide")
 
     def display_header(self):
-        st.title(self.title)
+        st.title("Validador de Schema de Excel")
+
+    def select_model(self):
+        model_options = ["Usuario", "Vendas", "Recursos Humanos"]
+        return st.selectbox("Selecione o modelo de dados", model_options)
 
     def upload_file(self):
-        uploaded_file = st.file_uploader("Carregue seu arquivo Excel aqui", type=["xlsx"])
-        return uploaded_file
+        return st.file_uploader("Carregue seu arquivo Excel aqui", type=["xlsx"])
 
     def display_results(self, result, error):
         if error:

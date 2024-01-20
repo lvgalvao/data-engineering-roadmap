@@ -1,19 +1,29 @@
 import pandas as pd
-from contrato import UsuarioSchema
+from contrato import UsuarioSchema, VendasSchema, RecursosHumanosSchema
 
-def process_excel(uploaded_file):
+def process_excel(uploaded_file, model_name):
     try:
         df = pd.read_excel(uploaded_file)
 
-        # Verifique se há colunas extras no DataFrame
-        extra_cols = set(df.columns) - set(UsuarioSchema.model_fields.keys())
+        # Escolher o schema correto com base em model_name
+        if model_name == "Usuario":
+            schema = UsuarioSchema
+        elif model_name == "Vendas":
+            schema = VendasSchema
+        elif model_name == "Recursos Humanos":
+            schema = RecursosHumanosSchema
+        else:
+            raise ValueError(f"Modelo desconhecido: {model_name}")
+
+        # Verificar se há colunas extras no DataFrame
+        extra_cols = set(df.columns) - set(schema.model_fields.keys())
         if extra_cols:
             return False, f"Colunas extras detectadas no Excel: {', '.join(extra_cols)}"
 
-        # Verifique se há as colunas do schema no DataFrame
+        # Validar cada linha com o schema escolhido
         for index, row in df.iterrows():
             try:
-                _ = UsuarioSchema(**row.to_dict())
+                _ = schema(**row.to_dict())
             except Exception as e:
                 raise ValueError(f"Erro na linha {index + 2}: {e}")  # +2 porque o índice começa em 0 e a primeira linha do Excel é o cabeçalho
 
