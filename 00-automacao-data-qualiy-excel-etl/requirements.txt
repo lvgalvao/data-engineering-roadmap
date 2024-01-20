@@ -4,3 +4,4 @@ taskipy==1.12.2
 pytest==7.4.4
 selenium==4.16.0
 openpyxl==3.1.2
+pydantic[email]==2.5.3
