@@ -1,4 +1,4 @@
 [tool.taskipy.tasks]
 docs = "lsof -ti :8000 | xargs kill -9 | mkdocs serve"
 run = "lsof -ti :8501 | xargs kill -9 | streamlit run src/app.py"
-test = "pytest tests"
+test = "lsof -ti :8501 | xargs kill -9 | pytest tests"
