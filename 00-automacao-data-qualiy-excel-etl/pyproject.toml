@@ -1,0 +1,3 @@
+[tool.taskipy.tasks]
+docs = "lsof -ti :8000 | xargs kill -9 | mkdocs serve"
+lint = "pylint tests taskipy"
