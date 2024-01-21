@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../backend/">
+        <link rel="prev" href="../contratos/">
       
-      
-        <link rel="next" href="../frontend/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Contratos - My Library</title>
+        <title>Frontend - My Library</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modulo-contratopy" class="md-skip">
+        <a href="#modulo-frontendpy" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contratos
+              Frontend
             
           </span>
         </div>
@@ -250,6 +248,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../contratos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contratos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -264,7 +282,7 @@
           
   
   <span class="md-ellipsis">
-    Contratos
+    Frontend
   </span>
   
 
@@ -275,7 +293,7 @@
         
   
   <span class="md-ellipsis">
-    Contratos
+    Frontend
   </span>
   
 
@@ -295,36 +313,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modulo-contratopy" class="md-nav__link">
+  <a href="#modulo-frontendpy" class="md-nav__link">
     <span class="md-ellipsis">
-      Módulo contrato.py
+      Módulo frontend.py
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.contrato.UsuarioSchema" class="md-nav__link">
+  <a href="#src.frontend.ExcelValidatorUI" class="md-nav__link">
     <span class="md-ellipsis">
-      UsuarioSchema
+      ExcelValidatorUI
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.contrato.VendasSchema" class="md-nav__link">
+  <a href="#src.frontend.ExcelValidatorUI.set_page_config" class="md-nav__link">
     <span class="md-ellipsis">
-      VendasSchema
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.contrato.RecursosHumanosSchema" class="md-nav__link">
-    <span class="md-ellipsis">
-      RecursosHumanosSchema
+      set_page_config
     </span>
   </a>
   
@@ -334,26 +343,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../frontend/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Frontend
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -383,36 +372,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modulo-contratopy" class="md-nav__link">
+  <a href="#modulo-frontendpy" class="md-nav__link">
     <span class="md-ellipsis">
-      Módulo contrato.py
+      Módulo frontend.py
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.contrato.UsuarioSchema" class="md-nav__link">
+  <a href="#src.frontend.ExcelValidatorUI" class="md-nav__link">
     <span class="md-ellipsis">
-      UsuarioSchema
+      ExcelValidatorUI
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.contrato.VendasSchema" class="md-nav__link">
+  <a href="#src.frontend.ExcelValidatorUI.set_page_config" class="md-nav__link">
     <span class="md-ellipsis">
-      VendasSchema
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.contrato.RecursosHumanosSchema" class="md-nav__link">
-    <span class="md-ellipsis">
-      RecursosHumanosSchema
+      set_page_config
     </span>
   </a>
   
@@ -433,98 +413,21 @@
                   
 
 
-  <h1>Contratos</h1>
+  <h1>Frontend</h1>
 
-<h2 id="modulo-contratopy">Módulo <code>contrato.py</code></h2>
+<h2 id="modulo-frontendpy">Módulo frontend.py</h2>
 
 
 <div class="doc doc-object doc-class">
 
 
 
-<a id="src.contrato.UsuarioSchema"></a>
+<a id="src.frontend.ExcelValidatorUI"></a>
   <div class="doc doc-contents first">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
 
   
-      <p>Define o esquema para os dados do usuário.</p>
+      <p>Classe responsável por gerar a interface de usuário para o validador de arquivos Excel.</p>
 
-
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code><span title="src.contrato.UsuarioSchema.nome">nome</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome do usuário.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.UsuarioSchema.idade">idade</span></code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Idade do usuário.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.UsuarioSchema.email">email</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Email do usuário.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-            <details class="quote">
-              <summary>Source code in <code>src/contrato.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">UsuarioSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Define o esquema para os dados do usuário.</span>
-
-<span class="sd">    Attributes:</span>
-<span class="sd">        nome (str): Nome do usuário.</span>
-<span class="sd">        idade (int): Idade do usuário.</span>
-<span class="sd">        email (str): Email do usuário.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">idade</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
-</code></pre></div></td></tr></table></div>
-            </details>
 
   
 
@@ -539,237 +442,21 @@
 
 
 
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="src.frontend.ExcelValidatorUI.set_page_config" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_page_config</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
 
   </div>
-
-  </div>
-
 
 </div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<a id="src.contrato.VendasSchema"></a>
-  <div class="doc doc-contents first">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
-
-  
-      <p>Define o esquema para os dados de vendas.</p>
-
-
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code><span title="src.contrato.VendasSchema.produto">produto</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome do produto.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.VendasSchema.quantidade">quantidade</span></code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Quantidade vendida.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.VendasSchema.preco">preco</span></code></td>
-          <td>
-                <code>float</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Preço do produto.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.VendasSchema.email">email</span></code></td>
-          <td>
-                <code><span title="pydantic.EmailStr">EmailStr</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Email de contato para a venda.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-            <details class="quote">
-              <summary>Source code in <code>src/contrato.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">VendasSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Define o esquema para os dados de vendas.</span>
-
-<span class="sd">    Attributes:</span>
-<span class="sd">        produto (str): Nome do produto.</span>
-<span class="sd">        quantidade (int): Quantidade vendida.</span>
-<span class="sd">        preco (float): Preço do produto.</span>
-<span class="sd">        email (EmailStr): Email de contato para a venda.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">produto</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">quantidade</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">preco</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">email</span><span class="p">:</span> <span class="n">EmailStr</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  </div>
-
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<a id="src.contrato.RecursosHumanosSchema"></a>
-  <div class="doc doc-contents first">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
-
-  
-      <p>Define o esquema para os dados de recursos humanos.</p>
-
-
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code><span title="src.contrato.RecursosHumanosSchema.funcionario">funcionario</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome do funcionário.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.RecursosHumanosSchema.departamento">departamento</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Departamento do funcionário.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.RecursosHumanosSchema.salario">salario</span></code></td>
-          <td>
-                <code>float</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Salário do funcionário.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-            <details class="quote">
-              <summary>Source code in <code>src/contrato.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">RecursosHumanosSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Define o esquema para os dados de recursos humanos.</span>
-
-<span class="sd">    Attributes:</span>
-<span class="sd">        funcionario (str): Nome do funcionário.</span>
-<span class="sd">        departamento (str): Departamento do funcionário.</span>
-<span class="sd">        salario (float): Salário do funcionário.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">funcionario</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">departamento</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">salario</span><span class="p">:</span> <span class="nb">float</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
 
 
 

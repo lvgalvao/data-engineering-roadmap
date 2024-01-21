@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../backend/">
+        <link rel="prev" href="../app/">
       
       
-        <link rel="next" href="../frontend/">
+        <link rel="next" href="../contratos/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Contratos - My Library</title>
+        <title>Backend - My Library</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modulo-contratopy" class="md-skip">
+        <a href="#modulo-backendpy" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contratos
+              Backend
             
           </span>
         </div>
@@ -230,26 +230,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../backend/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Backend
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -264,7 +244,7 @@
           
   
   <span class="md-ellipsis">
-    Contratos
+    Backend
   </span>
   
 
@@ -275,7 +255,7 @@
         
   
   <span class="md-ellipsis">
-    Contratos
+    Backend
   </span>
   
 
@@ -295,36 +275,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modulo-contratopy" class="md-nav__link">
+  <a href="#modulo-backendpy" class="md-nav__link">
     <span class="md-ellipsis">
-      Módulo contrato.py
+      Módulo backend.py
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.contrato.UsuarioSchema" class="md-nav__link">
+  <a href="#src.backend.process_excel" class="md-nav__link">
     <span class="md-ellipsis">
-      UsuarioSchema
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.contrato.VendasSchema" class="md-nav__link">
-    <span class="md-ellipsis">
-      VendasSchema
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.contrato.RecursosHumanosSchema" class="md-nav__link">
-    <span class="md-ellipsis">
-      RecursosHumanosSchema
+      process_excel
     </span>
   </a>
   
@@ -334,6 +296,26 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contratos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contratos
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -383,36 +365,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#modulo-contratopy" class="md-nav__link">
+  <a href="#modulo-backendpy" class="md-nav__link">
     <span class="md-ellipsis">
-      Módulo contrato.py
+      Módulo backend.py
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#src.contrato.UsuarioSchema" class="md-nav__link">
+  <a href="#src.backend.process_excel" class="md-nav__link">
     <span class="md-ellipsis">
-      UsuarioSchema
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.contrato.VendasSchema" class="md-nav__link">
-    <span class="md-ellipsis">
-      VendasSchema
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.contrato.RecursosHumanosSchema" class="md-nav__link">
-    <span class="md-ellipsis">
-      RecursosHumanosSchema
+      process_excel
     </span>
   </a>
   
@@ -433,75 +397,100 @@
                   
 
 
-  <h1>Contratos</h1>
+  <h1>Backend</h1>
 
-<h2 id="modulo-contratopy">Módulo <code>contrato.py</code></h2>
-
-
-<div class="doc doc-object doc-class">
+<h2 id="modulo-backendpy">Módulo <code>backend.py</code></h2>
+<p><strong>Função <code>process_excel</code></strong></p>
 
 
 
-<a id="src.contrato.UsuarioSchema"></a>
+<div class="doc doc-object doc-function">
+
+
+
+
+<a id="src.backend.process_excel"></a>
   <div class="doc doc-contents first">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
-
   
-      <p>Define o esquema para os dados do usuário.</p>
+      <p>Processa um arquivo Excel, validando-o contra um esquema específico.</p>
 
 
 
-  <p><strong>Attributes:</strong></p>
+  <p><strong>Parameters:</strong></p>
   <table>
     <thead>
       <tr>
         <th>Name</th>
         <th>Type</th>
         <th>Description</th>
+        <th>Default</th>
       </tr>
     </thead>
     <tbody>
         <tr>
-          <td><code><span title="src.contrato.UsuarioSchema.nome">nome</span></code></td>
+          <td><code>uploaded_file</code></td>
           <td>
-                <code>str</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Nome do usuário.</p>
+              <p>Um arquivo Excel carregado pelo usuário.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>model_name</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Nome do modelo de dados a ser usado para validação.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Uma tupla (resultado, erro), onde 'resultado' é um booleano indicando se a validação</p>
             </div>
           </td>
         </tr>
         <tr>
-          <td><code><span title="src.contrato.UsuarioSchema.idade">idade</span></code></td>
           <td>
-                <code>int</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Idade do usuário.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.UsuarioSchema.email">email</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Email do usuário.</p>
+              <p>foi bem-sucedida e 'erro' é uma mensagem de erro se a validação falhar.</p>
             </div>
           </td>
         </tr>
     </tbody>
   </table>
 
-            <details class="quote">
-              <summary>Source code in <code>src/contrato.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 3</span>
-<span class="normal"> 4</span>
+          <details class="quote">
+            <summary>Source code in <code>src/backend.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 4</span>
 <span class="normal"> 5</span>
 <span class="normal"> 6</span>
 <span class="normal"> 7</span>
@@ -511,116 +500,9 @@
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">UsuarioSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Define o esquema para os dados do usuário.</span>
-
-<span class="sd">    Attributes:</span>
-<span class="sd">        nome (str): Nome do usuário.</span>
-<span class="sd">        idade (int): Idade do usuário.</span>
-<span class="sd">        email (str): Email do usuário.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">idade</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  </div>
-
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<a id="src.contrato.VendasSchema"></a>
-  <div class="doc doc-contents first">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
-
-  
-      <p>Define o esquema para os dados de vendas.</p>
-
-
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code><span title="src.contrato.VendasSchema.produto">produto</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome do produto.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.VendasSchema.quantidade">quantidade</span></code></td>
-          <td>
-                <code>int</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Quantidade vendida.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.VendasSchema.preco">preco</span></code></td>
-          <td>
-                <code>float</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Preço do produto.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.VendasSchema.email">email</span></code></td>
-          <td>
-                <code><span title="pydantic.EmailStr">EmailStr</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Email de contato para a venda.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-            <details class="quote">
-              <summary>Source code in <code>src/contrato.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
@@ -633,107 +515,9 @@
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">VendasSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Define o esquema para os dados de vendas.</span>
-
-<span class="sd">    Attributes:</span>
-<span class="sd">        produto (str): Nome do produto.</span>
-<span class="sd">        quantidade (int): Quantidade vendida.</span>
-<span class="sd">        preco (float): Preço do produto.</span>
-<span class="sd">        email (EmailStr): Email de contato para a venda.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">produto</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">quantidade</span><span class="p">:</span> <span class="nb">int</span>
-    <span class="n">preco</span><span class="p">:</span> <span class="nb">float</span>
-    <span class="n">email</span><span class="p">:</span> <span class="n">EmailStr</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  </div>
-
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<a id="src.contrato.RecursosHumanosSchema"></a>
-  <div class="doc doc-contents first">
-          <p class="doc doc-class-bases">
-            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
-
-  
-      <p>Define o esquema para os dados de recursos humanos.</p>
-
-
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code><span title="src.contrato.RecursosHumanosSchema.funcionario">funcionario</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Nome do funcionário.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.RecursosHumanosSchema.departamento">departamento</span></code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Departamento do funcionário.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code><span title="src.contrato.RecursosHumanosSchema.salario">salario</span></code></td>
-          <td>
-                <code>float</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>Salário do funcionário.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-            <details class="quote">
-              <summary>Source code in <code>src/contrato.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">31</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span>
 <span class="normal">34</span>
@@ -744,39 +528,56 @@
 <span class="normal">39</span>
 <span class="normal">40</span>
 <span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">RecursosHumanosSchema</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">process_excel</span><span class="p">(</span><span class="n">uploaded_file</span><span class="p">,</span> <span class="n">model_name</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Define o esquema para os dados de recursos humanos.</span>
+<span class="sd">    Processa um arquivo Excel, validando-o contra um esquema específico.</span>
 
-<span class="sd">    Attributes:</span>
-<span class="sd">        funcionario (str): Nome do funcionário.</span>
-<span class="sd">        departamento (str): Departamento do funcionário.</span>
-<span class="sd">        salario (float): Salário do funcionário.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">funcionario</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">departamento</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">salario</span><span class="p">:</span> <span class="nb">float</span>
+<span class="sd">    Args:</span>
+<span class="sd">        uploaded_file: Um arquivo Excel carregado pelo usuário.</span>
+<span class="sd">        model_name: Nome do modelo de dados a ser usado para validação.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Uma tupla (resultado, erro), onde &#39;resultado&#39; é um booleano indicando se a validação</span>
+<span class="sd">        foi bem-sucedida e &#39;erro&#39; é uma mensagem de erro se a validação falhar.</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">uploaded_file</span><span class="p">)</span>
+
+        <span class="c1"># Escolher o schema correto com base em model_name</span>
+        <span class="k">if</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s2">&quot;Usuario&quot;</span><span class="p">:</span>
+            <span class="n">schema</span> <span class="o">=</span> <span class="n">UsuarioSchema</span>
+        <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s2">&quot;Vendas&quot;</span><span class="p">:</span>
+            <span class="n">schema</span> <span class="o">=</span> <span class="n">VendasSchema</span>
+        <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s2">&quot;Recursos Humanos&quot;</span><span class="p">:</span>
+            <span class="n">schema</span> <span class="o">=</span> <span class="n">RecursosHumanosSchema</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modelo desconhecido: </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Verificar se há colunas extras no DataFrame</span>
+        <span class="n">extra_cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">schema</span><span class="o">.</span><span class="n">model_fields</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">extra_cols</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Colunas extras detectadas no Excel: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">extra_cols</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="c1"># Validar cada linha com o schema escolhido</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">_</span> <span class="o">=</span> <span class="n">schema</span><span class="p">(</span><span class="o">**</span><span class="n">row</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erro na linha </span><span class="si">{</span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">ve</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ve</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Erro inesperado: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
+          </details>
   </div>
-
-  </div>
-
 
 </div>
 
