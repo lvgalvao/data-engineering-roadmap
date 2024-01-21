@@ -1,6 +1,9 @@
 import streamlit as st
 
 class ExcelValidatorUI:
+    """
+    Classe responsável por gerar a interface de usuário para o validador de arquivos Excel.
+    """
     def __init__(self):
         self.set_page_config()
 

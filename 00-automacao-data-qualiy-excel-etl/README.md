@@ -17,12 +17,11 @@ Para saber mais [acesse aqui](../README.md)
   - [Você sabe o que faz um engenheiro de dados?](#você-sabe-o-que-faz-um-engenheiro-de-dados)
   - [Ele ainda trabalha com todas essas tecnologias](#ele-ainda-trabalha-com-todas-essas-tecnologias)
   - [Isso explica melhor](#isso-explica-melhor)
-  - [Isso explica melhor](#isso-explica-melhor-1)
   - [Te convido a criar uma solução](#te-convido-a-criar-uma-solução)
   - [Mais 500 alunos em 2023 aprovaram com 92% de satisfação](#mais-500-alunos-em-2023-aprovaram-com-92-de-satisfação)
   - [Não perca](#não-perca)
   - [Objetivo](#objetivo)
-  - [Pré requisitos](#pré-requisitos)
+  - [Rodando o projeto](#rodando-o-projeto)
   - [Possui dúvidas?](#possui-dúvidas)
   - [Agora para o projeto?](#agora-para-o-projeto)
 
@@ -33,12 +32,6 @@ Para saber mais [acesse aqui](../README.md)
 É o responsável por criar plataformas e pipeline de dados com qualidade
 
 ## Ele ainda trabalha com todas essas tecnologias
-
-![Figura01](./pics/lista_de_tecnologias.png)
-
-Mas acho que…
-
-## Isso explica melhor
 
 ![Figura01](./pics/lista_de_tecnologias.png)
 
@@ -72,13 +65,12 @@ Vamos iniciar o seu portfólio?
 * Documentando com Mkdcos
 * O resto é codando em Python e tomando Coca-Cola
 
-## Pré requisitos
+## Rodando o projeto
 
-Para você aproveitar ao máximo do Workshop, é importante que você se sinta confortável com SQL e uma experiência com Python também será útil, ideal que você tenha entre 1 e 2 anos de trabalhando com dados.
-
-Caso você não tenha de 1 a 2 anos na área terá que estudar muito SQL e Python em paralelo, acredito que ao menos 1h por dia de estudos fora da jornada
-
-Se você tem **zero experiência** recomendo primeiro realizar todos os cursos de SQL e de [Python do Guanabara](https://www.youtube.com/@CursoemVideo) que é 0800
+```bash
+git clone
+cd 
+```
 
 ## Possui dúvidas? 
 

@@ -7,10 +7,3 @@
 * Vamos instalar nossa biblioteca de automação
 * Vamos instalar nossa biblioteca de documentação
 * Vamos instalar nossa biblioteca de testes
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
