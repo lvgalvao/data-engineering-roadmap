@@ -1,43 +1,33 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, PositiveFloat, PositiveInt, validator
+from datetime import datetime
+from enum import Enum
 
-class UsuarioSchema(BaseModel):
-    """
-    Define o esquema para os dados do usuário.
+class CategoriaEnum(str, Enum):
+    categoria1 = "categoria1"
+    categoria2 = "categoria2"
+    categoria3 = "categoria3"
 
-    Attributes:
-        nome (str): Nome do usuário.
-        idade (int): Idade do usuário.
-        email (str): Email do usuário.
-    """
-    nome: str
-    idade: int
-    email: str
 
-class VendasSchema(BaseModel):
-    """
-    Define o esquema para os dados de vendas.
+class Vendas(BaseModel):
 
-    Attributes:
-        produto (str): Nome do produto.
-        quantidade (int): Quantidade vendida.
-        preco (float): Preço do produto.
-        email (EmailStr): Email de contato para a venda.
     """
-    produto: str
-    quantidade: int
-    preco: float
+    Modelo de dados para as vendas.
+
+    Args:
+        email (str): email do comprador
+        data (datetime): data da compra
+        valor (int): valor da compra
+        produto (str): nome do produto
+        quantidade (int): quantidade de produtos
+        categoria (str): categoria do produto
+
+    """
     email: EmailStr
+    data: datetime
+    valor: PositiveFloat
+    quantidade: PositiveInt
+    categoria: CategoriaEnum
 
-class RecursosHumanosSchema(BaseModel):
-    """
-    Define o esquema para os dados de recursos humanos.
-
-    Attributes:
-        funcionario (str): Nome do funcionário.
-        departamento (str): Departamento do funcionário.
-        salario (float): Salário do funcionário.
-    """
-    funcionario: str
-    departamento: str
-    salario: float
-
+    @validator('categoria')
+    def categoria_deve_estar_no_enum(cls, error):
+        return error
