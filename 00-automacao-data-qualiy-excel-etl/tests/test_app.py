@@ -11,6 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 
+#
 
 @pytest.fixture(scope="module")
 def driver():
@@ -32,7 +33,7 @@ def test_app_opens(driver):
     time.sleep(5)
 
     # Verificar se o título da página é o esperado
-    assert "Validador de Schema de Excel" in driver.title
+    .v
 
 # def test_successful_upload(driver):
 #     driver.get("http://localhost:8501")
@@ -40,13 +41,13 @@ def test_app_opens(driver):
 #     # Aguardar um tempo para a aplicação carregar
 #     time.sleep(5)
 
-#     # Realizar o upload do arquivo de sucesso
-#     success_file_path = os.path.abspath("data/success.xlsx")
-#     driver.find_element(By.CSS_SELECTOR, 'input[type="file"]').send_keys(success_file_path)
+    # Realizar o upload do arquivo de sucesso
+    success_file_path = os.path.abspath("data/success.xlsx")
+    driver.find_element(By.CSS_SELECTOR, 'input[type="file"]').send_keys(success_file_path)
 
-#     # Aguardar a mensagem de sucesso
-#     time.sleep(5)
-#     assert "O schema do arquivo Excel está correto!" in driver.page_source
+    # Aguardar a mensagem de sucesso
+    time.sleep(5)
+    assert "O schema do arquivo Excel está correto!" in driver.page_source
 
 # def test_failed_upload(driver):
 #     driver.get("http://localhost:8501")

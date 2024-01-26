@@ -30,6 +30,20 @@ A **Jornada de Dados** é o seu lugar
 |20/07|Machine Learning Ops| 09h Zoom
 |03/08|Databricks e Fabric, nosso DW de milhoes| 09h Zoom
 
+## Calendário Bootcamp - Python e SQL aplicado em engenharia de dados
+
+Um workshop focado em Python e SQL voltado para engenharia de dados
+|Data |Workshop|Carga Horária|
+|-----|--------|--------|
+|19/02| Setup, Variáveis, Estrutura de dados | 5h
+|26/02| Funções, Classes, Args e Kwargs | 5h
+|04/03| Módulos, Bibliotecas externas e decoradores | 5h
+|11/03| Criando nosso próprio pandas e duckdb do zero | 5h
+|18/03| SQL voltado para ETL e dados | 5h
+|25/03| Infra, Deploy, Índice e otimização de bancos | 5h
+|01/04| ORM e Modelagem | 5h
+
+
 ## Jornada de dados 2024
 
 Nossa missão é fornecer o melhor ensino em engenharia de dados
@@ -118,10 +132,9 @@ Os encontros são aos **sábados ás 9 horas, são 4 horas de workshop**
 ### [Workshop 11/05: Arquitetura Streaming com Kafka](./07-spark-kafka-streaming-data-processing/)
 
 * Introdução ao Processamento de Streaming
-* Apache Spark em Ação
 * Apache Kafka: Fundamentos e Práticas
 * Desafios no Streaming de Dados
-* Casos Práticos com Spark e Kafka
+* Casos Práticos Kafka
 
 ### [Workshop 25/05: Arquitetura de eventos com Amazon SNS, SQS, RabbitMQ](./08-amazon-sns-sqs-rabbit-mq/)
 
