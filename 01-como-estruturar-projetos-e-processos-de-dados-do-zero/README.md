@@ -1,4 +1,9 @@
 ### Instalação e Configuração
+
+Nosso projeto:
+
+https://lvgalvao-workshop-aberto-aovivo-srcapp-508jxg.streamlit.app/
+
 1. Clone o repositório:
 ```bash
 git clone https://github.com/lvgalvao/Workshop-aberto-aovivo
@@ -18,4 +23,19 @@ source .venv/bin/activate
 .venv\Scripts\Activate
 # Usuários Windows
 pip install -r requirements.txt  
+```
+
+4. Rode o projeto
+```bash
+task run
+```
+
+5. Rode os testes
+```bash
+task test
+```
+
+6. Rode a documentação
+```bash
+task docs
 ```

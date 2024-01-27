@@ -1,3 +1,4 @@
 {
-    "editor.fontSize": 17,
+    "editor.fontSize": 16,
+    "dbt.queryLimit": 500,
 }
