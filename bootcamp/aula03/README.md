@@ -128,3 +128,4 @@ else:
 ## 7. Conclusão (5 minutos)
 
 Nesta aula, exploramos os conceitos fundamentais das variáveis em Python, incluindo declaração, atribuição, tipos de dados simples, boas práticas de nomenclatura e operadores. Compreender esses conceitos é essencial para construir programas eficazes e compreender código Python existente. Nos próximos passos, continuaremos a praticar e aprofundar nossos conhecimentos em Python.
+
