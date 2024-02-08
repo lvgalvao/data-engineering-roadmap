@@ -72,81 +72,115 @@ Passo a passo para você criar os seus projetos do Zero de forma profissional
 * Explorar os tipos de dados simples suportados por Python.
 * Discutir boas práticas para nomear variáveis.
 
-## Aula 04 | Dia 22 as 12:00am: Estrutura de Dados (Parte 1) - Listas e Tuplas
+## Aula 04 | Dia 22 as 12:00am Estrutura de Dados (Parte 1) - Listas, Tuplas, Dicionários e Conjuntos
 
 * Compreender a diferença entre listas e tuplas em Python.
 * Aprender a criar, acessar e manipular listas e tuplas.
 * Explorar métodos e operações comuns aplicáveis a listas e tuplas.
-
-## Aula 05 | Dia 23 as 12:00am: - Estrutura de Dados (Parte 2) - Dicionários e Conjuntos
-
 * Dicionários: criação, chave-valor, métodos
 * Conjuntos: criação, operações de conjunto, métodos
 
-## Aula 06: Estrutura de Dados (Parte 4) - Árvores e Gráficos
+## Aula 05 | Dia 23 as 12:00am Controle de Fluxo: if, else, for loops e while, Exceções e Manipulação de Erros
 
-* Árvores: conceito, implementação de árvores binárias, percorrimento
-* Gráficos: conceito, implementação de grafos direcionados e não direcionados, algoritmos básicos
+* Estruturas condicionais com if, else, e elif
+* Loops com for para iterar sobre sequências
+* Uso de loops while para execução condicional
+* Exercícios práticos para reforçar o aprendizado
+* Introdução a exceções e como elas são usadas em Python
+* Tratamento de exceções com blocos try e except
+* Utilização de else e finally em manipulação de erros
+* Levantando exceções com raise e práticas recomendadas
 
-## Aula 07: Funções (Parte 1) - Introdução e Conceitos Básicos
+## Aula 06 | Dia 26 as 12:00am Exercicio de revisao
+* Revisao variaveis, tipos e fluxos
+* Projeto 01
+* Projeto 02
 
-* Definição de funções, argumentos e retorno
-* Escopo de variáveis, funções aninhadas, funções lambda
+## Aula 07 | Dia 27 as 12:00am Trabalhando com Strings
+* Métodos básicos de strings: encontrar, substituir, dividir
+* Concatenação, fatiamento, e formatação de strings
+* Exercícios práticos para manipulação de strings
 
-## Aula 08: Funções (Parte 2) - Funções Recursivas e de Ordem Superior
+## Aula 08 | Dia 28 as 12:00am Funções Básicas
+* Definição e chamada de funções
+* Argumentos e retorno de valores
+* Exemplos práticos e exercícios para solidificar o entendimento
 
-* Funções recursivas: definição, exemplos, pilha de chamadas
-* Funções de ordem superior: map(), filter(), reduce(), aplicação em listas
+## Aula 09 | Dia 01 as 12:00am Arquivos: Leitura e Escrita
+* Abrindo e lendo arquivos, incluindo o uso de with para gerenciamento automático de recursos
+* Escrevendo em arquivos, tratando tanto texto quanto binário
+* Dicas para práticas seguras com arquivos
+Exercícios de aplicação para consolidar o aprendizado
 
-## Aula 09: Classes (Parte 1) - Introdução à Orientação a Objetos
+## Aula 10 | Dia 02 as 12:00am Introdução a objetos, mas usando os objetos dos outros
 
-* Conceitos de programação orientada a objetos
-* Definição de classes, atributos, métodos, instância de objetos
+* Instalando e importando a biblioteca Pandas
+* Estruturas de dados do Pandas: Series e DataFrame
+* Carregando dados de um arquivo para um DataFrame
+* Operações básicas com Pandas: filtragem, seleção e manipulação de dados
+* Exercícios práticos com datasets reais para aplicar os conceitos aprendidos
 
-## Aula 10: Classes (Parte 2) - Herança e Polimorfismo
+Esta estrutura oferece uma introdução abrangente e acessível ao Python, começando com operações fundamentais de strings, passando por controle de exceções, introdução a funções, manipulação de arquivos e, finalmente, utilizando uma biblioteca externa popular como o Pandas. Cada aula é projetada para construir a base de conhecimento do aluno gradualmente, permitindo-lhes aplicar o que aprenderam em exemplos e exercícios práticos, preparando-os efetivamente para trabalhos mais avançados com Python no futuro.
 
-* Herança: conceito, superclasse, subclasses, métodos especiais
-* Polimorfismo: sobrescrita de métodos, classes abstratas, interfaces
+## Aula 11 | Dia 04 as 07:00pm Funções em Python - Parte 1
 
-## Aula 11: Args e Kwargs - Argumentos Variáveis
+* Introdução às funções: definição, chamadas e retornos
+* Parâmetros de funções: obrigatórios, opcionais e argumentos de palavra-chave
+* Escopo de variáveis: global vs. local
 
-* Args e kwargs: conceitos, uso em funções, exemplos práticos
-* Desempacotamento de argumentos, uso em conjunto com * e **
+## Aula 12 | Dia 05 as 07:00pm Funções em Python - Parte 2
 
-## Aula 12: Módulos e Pacotes - Organizando e Reutilizando Código
+* Funções anônimas (lambda)
+* Decoradores: modificando o comportamento das funções
+* Funções geradoras e a palavra-chave `yield`
 
-* Definição de módulos e pacotes em Python
-* Importação de módulos, importação relativa, importação condicional
+## Aula 13 | Dia 06 as 07:00pm Introdução às Classes em Python
 
-## Aula 13: Bibliotecas Externas - Instalação e Utilização
+* Conceitos básicos de classes e objetos
+* Definindo classes: atributos, métodos e o `__init__`
+* Criando e interagindo com instâncias de objetos
 
-* Explorando bibliotecas externas populares para ciência de dados: NumPy, Pandas, Matplotlib, etc.
-* Instalação via pip, importação e uso básico
+## Aula 14 | Dia 07 as 07:00pm Herança e Polimorfismo
 
-## Aula 14: Manipulação de Arquivos - Leitura e Escrita de Dados
+* Conceitos de herança: criando subclasses
+* Sobrescrevendo métodos e uso de `super()`
+* Polimorfismo e métodos mágicos (dunder methods)
 
-* Abrindo, lendo e escrevendo em arquivos de texto e CSV
-* Uso dos métodos de arquivo: read(), write(), readline(), etc.
+## Aula 15 | Dia 08 as 07:00pm Classes Avançadas - Composição e Encapsulamento
 
-## Aula 15: Manipulação de Dados em Formato JSON
+* Composição vs. Herança: melhores práticas
+* Encapsulamento: protegendo os dados da classe
+* Métodos estáticos e de classe
 
-* Introdução ao formato JSON
-* Leitura e escrita de arquivos JSON em Python
+## Aula 16 | Dia 11 as 07:00pm Introdução à Orientação a Objetos
 
-## Aula 16: Trabalhando com Datas e Horários
+* Princípios fundamentais da OOP: encapsulamento, herança, e polimorfismo
+* Aplicando conceitos de OOP em Python
+* Exemplos e exercícios práticos
 
-* Utilizando o módulo datetime para manipular datas e horários
-* Conversão entre diferentes formatos de data e horário
+## Aula 17 | Dia 12 as 07:00pm  OOP Aplicado: Padrões de Projeto
 
-## Aula 17: Decoradores - Adicionando Comportamento a Funções
+* Introdução a padrões de projeto: Singleton, Factory, Strategy
+* Implementando padrões de projeto em Python
+* Discussão sobre quando e por que usar cada padrão
 
-* Conceito de decoradores em Python
-* Uso de decoradores para adicionar funcionalidades a funções existentes
+## Aula 18 | Dia 13 as 07:00pm OOP Aplicado: Testando Classes
 
-## Aula 18: Criando Nosso Próprio Pandas e DuckDB do Zero
+* Testes unitários com `unittest`
+* Mocking e testando comportamentos em OOP
+* Melhores práticas para testar código orientado a objetos
 
-* Implementação simplificada das principais funcionalidades do Pandas em Python puro
-* Criação de uma estrutura de dados semelhante a um banco de dados utilizando Python puro
+## Aula 19 | Dia 14 as 07:00pm Projetos Práticos: Criando nosso Duckdb Parte 01
+
+* Desenvolvendo um projeto prático utilizando OOP
+* Planejamento, implementação e revisão de um projeto Python orientado a objetos
+* Dicas para estruturação e organização de projetos maiores
+
+## Aula 20 | Dia 15 as 07:00pm Projetos Práticos: Criando nosso Duckdb Parte 02
+
+* Revisão dos conceitos chave de OOP em Python
+* Início do projeto final: aplicando OOP para resolver um problema prático
+* Orientações para continuação do aprendizado em Python e próximos passos
 
 ## Jornada de dados 2024
 
