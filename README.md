@@ -65,22 +65,23 @@ Passo a passo para você criar os seus projetos do Zero de forma profissional
 * Aprender a criar e gerenciar ambientes virtuais utilizando `pip`, `pipx`, `venv` e `poetry`.
 * Explorar as vantagens e casos de uso de cada ferramenta.
 
-## Aula 03 | Dia 21 as 12:00am Estrutura de Dados (Parte 1) - Listas e Tuplas
+## Aula 03 | Dia 21 as 12:00am Variáveis em Python
 
-* Introdução às estruturas de dados em Python
-* Listas: criação, indexação, fatiamento, métodos
-* Tuplas: criação, imutabilidade, uso e vantagens
+* Compreender o conceito de variáveis e sua importância na programação.
+* Aprender a declarar e atribuir valores às variáveis em Python.
+* Explorar os tipos de dados simples suportados por Python.
+* Discutir boas práticas para nomear variáveis.
 
-## Aula 04 | Dia 22 as 12:00am: Estrutura de Dados (Parte 2) - Dicionários e Conjuntos
+## Aula 04 | Dia 22 as 12:00am: Estrutura de Dados (Parte 1) - Listas e Tuplas
+
+* Compreender a diferença entre listas e tuplas em Python.
+* Aprender a criar, acessar e manipular listas e tuplas.
+* Explorar métodos e operações comuns aplicáveis a listas e tuplas.
+
+## Aula 05 | Dia 23 as 12:00am: - Estrutura de Dados (Parte 2) - Dicionários e Conjuntos
 
 * Dicionários: criação, chave-valor, métodos
 * Conjuntos: criação, operações de conjunto, métodos
-
-## Aula 05 | Dia 23 as 12:00am: - Pilhas, Filas e Deques
-
-* Pilhas: conceito, implementação com listas, aplicações
-* Filas: conceito, implementação com listas, aplicações
-* Deques: conceito, implementação com collections.deque, aplicações
 
 ## Aula 06: Estrutura de Dados (Parte 4) - Árvores e Gráficos
 
