@@ -107,13 +107,13 @@ O `poetry` é uma ferramenta de gerenciamento de dependências Python que visa s
 
 * Criar um novo projeto:
     
-    ```arduino
+    ```bash
     poetry new nome_do_projeto
     ```
     
 * Adicionar uma dependência:
     
-    ```csharp
+    ```bash
     poetry add nome_do_pacote
     ```
     
