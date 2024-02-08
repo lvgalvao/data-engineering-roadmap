@@ -12,6 +12,14 @@ Se você quer:
 
 A **Jornada de Dados** é o seu lugar
 
+Para conhecer mais sobre o projeto clique na figura
+
+[![clique aqui](/pics/jornada.png)](https://www.jornadadedados2024.com.br/workshops)
+
+Para entrar na lista de espera clique no botao
+
+[![imagem](/pics/lista_de_espera.png)](https://forms.gle/hJMtRDP3MPBUGvwS7?orbt_src=orbt-vst-1RWyYmpICDu9gPknLgaD)
+
 ## Calendário
 
 |Data |Workshop|Horário e canal|
