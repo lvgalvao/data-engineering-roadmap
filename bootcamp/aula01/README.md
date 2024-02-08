@@ -80,3 +80,14 @@ Parabéns! Agora que configuramos todas as ferramentas necessárias, vamos concl
 
 Nesta aula, aprendemos como configurar nosso ambiente de desenvolvimento para começar a programar em Python. Agora que você tem o Python, o VSCode e o Git instalados e configurados, estamos prontos para mergulhar mais fundo no mundo da programação! Nos vemos na próxima aula!
 
+## Portfolio 01
+
+Após completar a instalação do Python, do VSCode e do Git, pratique criando um novo repositório no GitHub e fazendo o push de um projeto simples para lá. 
+
+Sugestoes:
+
+- Coloque um arquivo simples README.md
+- Coloque um script SQL
+- Coloque um script Python
+
+Isso ajudará a consolidar seu conhecimento sobre o Git e a familiarizar-se com o processo de versionamento de código.
