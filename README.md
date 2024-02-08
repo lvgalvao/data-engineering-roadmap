@@ -43,6 +43,109 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 |25/03| Infra, Deploy, Índice e otimização de bancos | 5h
 |01/04| ORM e Modelagem | 5h
 
+## Detalhe Bootcamp
+
+## Aula 00: Assistir video de setup
+
+Tutorial de como configurar um ambiente de desenvolvimento Python com foco no mercado de trabalho
+
+Passo a passo para você criar os seus projetos do Zero de forma profissional
+
+[![IMAGE ALT TEXT HERE](./pics/bootcamp_aula_00.png)](https://www.youtube.com/watch?v=-M4pMd2yQOM&t)
+
+## Aula 01 | Dia 19 as 12:00am Revisao de Setup Inicial: Python, Git e VSCode
+
+* Configuracao Python
+* Configuracao Git e Github
+* Configuracao VSCode
+
+## Aula 02 | Dia 20 as 12:00am Ambientes Virtuais e Gerenciamento de Pacotes em Python
+
+* Compreender a importância dos ambientes virtuais para o desenvolvimento em Python.
+* Aprender a criar e gerenciar ambientes virtuais utilizando `pip`, `pipx`, `venv` e `poetry`.
+* Explorar as vantagens e casos de uso de cada ferramenta.
+
+## Aula 03 | Dia 21 as 12:00am Estrutura de Dados (Parte 1) - Listas e Tuplas
+
+* Introdução às estruturas de dados em Python
+* Listas: criação, indexação, fatiamento, métodos
+* Tuplas: criação, imutabilidade, uso e vantagens
+
+## Aula 04 | Dia 22 as 12:00am: Estrutura de Dados (Parte 2) - Dicionários e Conjuntos
+
+* Dicionários: criação, chave-valor, métodos
+* Conjuntos: criação, operações de conjunto, métodos
+
+## Aula 05 | Dia 23 as 12:00am: - Pilhas, Filas e Deques
+
+* Pilhas: conceito, implementação com listas, aplicações
+* Filas: conceito, implementação com listas, aplicações
+* Deques: conceito, implementação com collections.deque, aplicações
+
+## Aula 06: Estrutura de Dados (Parte 4) - Árvores e Gráficos
+
+* Árvores: conceito, implementação de árvores binárias, percorrimento
+* Gráficos: conceito, implementação de grafos direcionados e não direcionados, algoritmos básicos
+
+## Aula 07: Funções (Parte 1) - Introdução e Conceitos Básicos
+
+* Definição de funções, argumentos e retorno
+* Escopo de variáveis, funções aninhadas, funções lambda
+
+## Aula 08: Funções (Parte 2) - Funções Recursivas e de Ordem Superior
+
+* Funções recursivas: definição, exemplos, pilha de chamadas
+* Funções de ordem superior: map(), filter(), reduce(), aplicação em listas
+
+## Aula 09: Classes (Parte 1) - Introdução à Orientação a Objetos
+
+* Conceitos de programação orientada a objetos
+* Definição de classes, atributos, métodos, instância de objetos
+
+## Aula 10: Classes (Parte 2) - Herança e Polimorfismo
+
+* Herança: conceito, superclasse, subclasses, métodos especiais
+* Polimorfismo: sobrescrita de métodos, classes abstratas, interfaces
+
+## Aula 11: Args e Kwargs - Argumentos Variáveis
+
+* Args e kwargs: conceitos, uso em funções, exemplos práticos
+* Desempacotamento de argumentos, uso em conjunto com * e **
+
+## Aula 12: Módulos e Pacotes - Organizando e Reutilizando Código
+
+* Definição de módulos e pacotes em Python
+* Importação de módulos, importação relativa, importação condicional
+
+## Aula 13: Bibliotecas Externas - Instalação e Utilização
+
+* Explorando bibliotecas externas populares para ciência de dados: NumPy, Pandas, Matplotlib, etc.
+* Instalação via pip, importação e uso básico
+
+## Aula 14: Manipulação de Arquivos - Leitura e Escrita de Dados
+
+* Abrindo, lendo e escrevendo em arquivos de texto e CSV
+* Uso dos métodos de arquivo: read(), write(), readline(), etc.
+
+## Aula 15: Manipulação de Dados em Formato JSON
+
+* Introdução ao formato JSON
+* Leitura e escrita de arquivos JSON em Python
+
+## Aula 16: Trabalhando com Datas e Horários
+
+* Utilizando o módulo datetime para manipular datas e horários
+* Conversão entre diferentes formatos de data e horário
+
+## Aula 17: Decoradores - Adicionando Comportamento a Funções
+
+* Conceito de decoradores em Python
+* Uso de decoradores para adicionar funcionalidades a funções existentes
+
+## Aula 18: Criando Nosso Próprio Pandas e DuckDB do Zero
+
+* Implementação simplificada das principais funcionalidades do Pandas em Python puro
+* Criação de uma estrutura de dados semelhante a um banco de dados utilizando Python puro
 
 ## Jornada de dados 2024
 
