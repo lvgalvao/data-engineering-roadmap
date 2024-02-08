@@ -33,6 +33,26 @@ Vamos começar instalando o Python, a linguagem que estaremos utilizando neste c
 * Siga as instruções de instalação de acordo com seu sistema operacional.
 * Após a instalação, abra o terminal e verifique se o Python foi instalado corretamente digitando `python --version`.
 
+```python
+print("Hello World!")
+```
+
+```python
+input("Insira um valor aqui")
+```
+
+Todas as coisas com () sao chamáveis em Python
+- Métodos
+- Funções
+- Classes 
+
+Como rodar esse script?
+
+```bash
+python main.py
+```
+
+
 ## 3. Instalação do VSCode (15 minutos)
 
 Agora, vamos instalar o VSCode, um ambiente de desenvolvimento leve e altamente personalizável.
