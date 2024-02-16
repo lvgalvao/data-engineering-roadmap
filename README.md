@@ -45,46 +45,46 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 |-----|--------|--------|
 | Data | Workshop | Horário |
 | --- | --- | --- |
-| 19/02 | Revisão de Setup Inicial: Python, Git e | 12am |
-| 20/02 | Ambientes Virtuais e Gerenciamento de pacótes | 12am |
-| 21/02 | Variáveis em Python | 12am |
-| 22/02 | Estrutura de Dados - Listas, Tuplas, Dicionários e Conjuntos | 12am |
-| 23/02 | Controle de Fluxo: if, else, for loops e while | 12am |
+| 19/02 | Hello world + Revisão de Setup Inicial: Python, Git e VScode | 12am |
+| 20/02 | Variáveis em Python | 12am |
+| 21/02 | Estrutura de Dados - Listas, Tuplas, Dicionários e Conjuntos | 12am |
+| 22/02 | Controle de Fluxo: if, else, for loops e while | 12am |
+| 23/02 | Projeto 01: Leitura e Escrita de Arquivos, lendo 1 bilhão de linhas | 12am |
 | 26/02 | Exercício de revisão | 12am |
-| 27/02 | Trabalhando com Strings | 12am |
-| 28/02 | Funções Básicas | 12am |
-| 01/03 | Arquivos: Leitura e Escrita | 12am |
-| 02/03 | Introdução a objetos, mas usando os objetos | 12am |
-| 04/03 | Funções em Python - Parte 1 | 19pm |
-| 05/03 | Funções em Python - Parte 2 | 19pm |
-| 06/03 | Introdução às Classes em Python | 19pm |
+| 27/02 | Funções em Python e Estrutura de Dados - Parte 1 | 12am |
+| 28/02 | Funções em Python e Estrutura de Dados - Parte 2 | 12am |
+| 01/03 | Funções em Python e Estrutura de Dados - Parte 3 | 12am |
+| 02/03 | Introdução a POO | 12am |
+| 04/03 | Exercício de revisão | 19pm |
+| 05/03 | Introdução às Classes em Python - Parte 01 | 19pm |
+| 06/03 | Introdução às Classes em Python - Parte 02| 19pm |
 | 07/03 | Herança e Polimorfismo | 19pm |
-| 08/03 | Classes Avançadas - Composição e | 19pm |
+| 08/03 | Classes Avançadas | 19pm |
 | 11/03 | Introdução à Orientação a Objetos | 19pm |
 | 12/03 | OOP Aplicado: Padrões de Projeto | 19pm |
 | 13/03 | OOP Aplicado: Testando Classes | 19pm |
-| 14/03 | Projeto 01: Criando nosso Duckdb | 19pm |
-| 15/03 | Projeto 01: Criando nosso Duckdb | 19pm |
+| 14/03 | Projeto 02: Criando nosso Duckdb | 19pm |
+| 15/03 | Projeto 02: Criando nosso Duckdb | 19pm |
 | 18/03 | Introdução ao SQL: Seleção e Filtragem de Dados com Duckdb | 12am |
 | 19/03 | Junções, Subqueries e Agregações com Duckdb | 12am |
 | 20/03 | Inserção, Atualização e Deleção de Dados com Postgres| 12am |
 | 21/03 | SQL Avançado: Funções de Janela e CTEs com Postgres | 12am |
 | 22/03 | Introdução ao ETL com SQL | 12am |
-| 23/03 | Práticas de ETL: Transformação de Dados parte 01 | 12am |
-| 24/03 | Práticas de ETL: Transformação de Dados parte 02 | 12am |
-| 25/03 | Automatização de ETL e Triggers | 12am |
-| 26/03 | Deploy de Bancos de Dados | 12am |
-| 27/03 | Índices e Performance Tuning | 12am |
-| 28/03 | Otimização de Consultas e Plano de Execução | 19pm |
-| 29/03 | Introdução a ORMs | 19pm |
-| 30/03 | Projeto 02: Aplicando ORMs: SQLAlchemy e fazendo CRUD parte 1 | 19pm |
-| 31/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 2 | 19pm |
-| 01/04 | Projeto 02: SQLAlchemy e fazendo CRUD parte 3 | 19pm |
-| 04/03 | Projeto 03: Mkdocs e documentação | 12 am |
-| 05/03 | Projeto 04: Lendo 1 milhão, 1 bilhão e 1 trilhão de linhas parte 1| 12 am |
-| 06/03 | Projeto 04: Lendo 1 milhão, 1 bilhão e 1 trilhão de linhas parte 2 | 12 am |
-| 07/03 | Projeto 05: Criando nosso dashboard com Streamlit | 19pm |
-| 08/04 | Projeto 05: Criando nosso dashboard com Streamlit | 19pm |
+| 25/03 | Projeto 03: Transformação de Dados parte 01 | 12am |
+| 26/03 | Projeto 03: Transformação de Dados parte 02 | 12am |
+| 27/03 | Projeto 03: Automatização de ETL e Triggers | 12am |
+| 28/03 | Projeto 03: Deploy de Bancos de Dados | 12am |
+| 29/03 | Projeto 03: Índices e Performance Tuning | 12am |
+| 01/04 | Otimização de Consultas e Plano de Execução | 19pm |
+| 02/04 | Introdução a ORMs | 19pm |
+| 03/04 | Projeto 04: Aplicando ORMs: SQLAlchemy e fazendo CRUD parte 1 | 19pm |
+| 04/04 | Projeto 04: SQLAlchemy e fazendo CRUD parte 2 | 19pm |
+| 05/04 | Projeto 04: SQLAlchemy e fazendo CRUD parte 3 | 19pm |
+| 08/04 | Projeto 05: Mkdocs e documentação | 12 am |
+| 09/04 | Projeto 06: Lendo 1 trilhão de linhas parte 1| 12 am |
+| 10/04 | Projeto 06: Lendo 1 trilhão de linhas parte 2 | 12 am |
+| 11/04 | Projeto 07: Criando nosso dashboard com Streamlit | 19pm |
+| 12/04 | Projeto 07: Criando nosso dashboard com Streamlit | 19pm |
 
 ## Detalhe Bootcamp
 
