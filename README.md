@@ -46,7 +46,7 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 | Data | Workshop | Horário |
 | --- | --- | --- |
 | 19/02 | Revisão de Setup Inicial: Python, Git e | 12am |
-| 20/02 | Ambientes Virtuais e Gerenciamento de | 12am |
+| 20/02 | Ambientes Virtuais e Gerenciamento de pacótes | 12am |
 | 21/02 | Variáveis em Python | 12am |
 | 22/02 | Estrutura de Dados - Listas, Tuplas, Dicionários e Conjuntos | 12am |
 | 23/02 | Controle de Fluxo: if, else, for loops e while | 12am |
@@ -63,23 +63,28 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 | 11/03 | Introdução à Orientação a Objetos | 19pm |
 | 12/03 | OOP Aplicado: Padrões de Projeto | 19pm |
 | 13/03 | OOP Aplicado: Testando Classes | 19pm |
-| 14/03 | Projetos Práticos: Criando nosso Duckdb | 19pm |
-| 15/03 | Projetos Práticos: Criando nosso Duckdb | 19pm |
-| 18/03 | Introdução ao SQL: Seleção e Filtragem de Dados | 12am |
-| 19/03 | Junções, Subqueries e Agregações | 12am |
-| 20/03 | Inserção, Atualização e Deleção de Dados | 12am |
-| 21/03 | SQL Avançado: Funções de Janela e CTEs | 12am |
+| 14/03 | Projeto 01: Criando nosso Duckdb | 19pm |
+| 15/03 | Projeto 01: Criando nosso Duckdb | 19pm |
+| 18/03 | Introdução ao SQL: Seleção e Filtragem de Dados com Duckdb | 12am |
+| 19/03 | Junções, Subqueries e Agregações com Duckdb | 12am |
+| 20/03 | Inserção, Atualização e Deleção de Dados com Postgres| 12am |
+| 21/03 | SQL Avançado: Funções de Janela e CTEs com Postgres | 12am |
 | 22/03 | Introdução ao ETL com SQL | 12am |
-| 23/03 | Práticas de ETL: Transformação de Dados | 12am |
-| 24/03 | Automatização de ETL e Triggers | 12am |
-| 25/03 | Infraestrutura de Bancos de Dados | 12am |
+| 23/03 | Práticas de ETL: Transformação de Dados parte 01 | 12am |
+| 24/03 | Práticas de ETL: Transformação de Dados parte 02 | 12am |
+| 25/03 | Automatização de ETL e Triggers | 12am |
 | 26/03 | Deploy de Bancos de Dados | 12am |
 | 27/03 | Índices e Performance Tuning | 12am |
 | 28/03 | Otimização de Consultas e Plano de Execução | 19pm |
 | 29/03 | Introdução a ORMs | 19pm |
-| 30/03 | Aplicando ORMs: SQLAlchemy e Django ORM | 19pm |
-| 31/03 | Modelagem de Dados: Conceitos e Práticas | 19pm |
-| 01/04 | Projeto Final: Modelagem e Aplicação de ORM | 19pm |
+| 30/03 | Projeto 02: Aplicando ORMs: SQLAlchemy e fazendo CRUD parte 1 | 19pm |
+| 31/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 2 | 19pm |
+| 01/04 | Projeto 02: SQLAlchemy e fazendo CRUD parte 3 | 19pm |
+| 04/03 | Projeto 03: Mkdocs e documentação | 12 am |
+| 05/03 | Projeto 04: Lendo 1 milhão, 1 bilhão e 1 trilhão de linhas parte 1| 12 am |
+| 06/03 | Projeto 04: Lendo 1 milhão, 1 bilhão e 1 trilhão de linhas parte 2 | 12 am |
+| 07/03 | Projeto 05: Criando nosso dashboard com Streamlit | 19pm |
+| 08/04 | Projeto 05: Criando nosso dashboard com Streamlit | 19pm |
 
 ## Detalhe Bootcamp
 
