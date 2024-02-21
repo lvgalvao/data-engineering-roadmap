@@ -33,7 +33,6 @@ def test_app_opens(driver):
     time.sleep(5)
 
     # Verificar se o título da página é o esperado
-    .v
 
 # def test_successful_upload(driver):
 #     driver.get("http://localhost:8501")

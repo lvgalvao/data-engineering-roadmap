@@ -494,6 +494,8 @@ Agora vamos parar com nosso frontend e ir para a parte do backend
 
 ## Pydantic
 
+Um exemplo de KPI
+
 Vamos instalar o Pydantic
 
 ```bash
@@ -561,6 +563,73 @@ def test_validacao_categoria():
 ```
 
 Criar nosso arquivo de contrato `contrato.py`
+
+Porque temos contrato de software"
+
+Pydantic é um serializador de ORM + Json também
+
+```python
+primeira_venda = {
+    "email": "lvgalvaofilho",
+    "valor": 50.50,
+}
+
+def validador_email(venda):
+    if not isinstance(venda, str) or '@' not in venda:
+        raise ValueError(f"Email invalido: {venda}")
+    
+def validador_de_valor(venda):
+    if not isinstance(venda, float) and venda > 0:
+        raise ValueError(f"Valor não é valido: {venda}")
+    
+try:
+    validador_email(primeira_venda["email"])
+    validador_de_valor(primeira_venda["valor"])
+    print("Todos os dados são validos.")
+except ValueError as e:
+    print(f"Erro na validação {e}")
+```
+
+```python
+from dataclasses import dataclass, field
+from datetime import datetime
+from enum import Enum
+from typing import Any
+
+class CategoriaEnum(Enum):
+    ELETRONICOS = 'eletronicos'
+    ALIMENTOS = 'alimentos'
+    VESTUARIO = 'vestuario'
+
+def validar_email(valor: Any) -> None:
+    if not isinstance(valor, str) or "@" not in valor:
+        raise ValueError(f"Email inválido: {valor}")
+
+def validar_positive_float(valor: Any) -> None:
+    if not isinstance(valor, float) or valor <= 0:
+        raise ValueError(f"Valor inválido (deve ser um float positivo): {valor}")
+
+def validar_positive_int(valor: Any) -> None:
+    if not isinstance(valor, int) or valor <= 0:
+        raise ValueError(f"Quantidade inválida (deve ser um int positivo): {valor}")
+
+@dataclass
+class Vendas:
+    email: str = field(metadata={"validate": validar_email})
+    data: datetime
+    valor: float = field(metadata={"validate": validar_positive_float})
+    quantidade: int = field(metadata={"validate": validar_positive_int})
+    produto: str
+    categoria: CategoriaEnum
+
+    def __post_init__(self):
+        for field_name, field_def in self.__dataclass_fields__.items():
+            if 'validate' in field_def.metadata:
+                validator = field_def.metadata['validate']
+                valor = getattr(self, field_name)
+                validator(valor)
+                
+```
 
 ```python
 from pydantic import BaseModel, EmailStr, PositiveFloat, PositiveInt, validator
@@ -772,4 +841,501 @@ plugins:
 
 ```
 mkdocs gh-deploy
+```
+
+
+# Aula 01
+
+O que é CI/CD?
+
+Começando com nossa primeira pipeline
+
+```yml
+name: ci
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Primeiro passo
+        run: echo hello world!
+
+      - name: Segundo Passo
+        run: echo $(ls)
+
+      - name: Terceiro passo
+        run: echo $(pwd)
+```
+
+Legal né?
+
+Repara que no ls, não temos nada!
+
+Agora vamos "puxar nosso código"
+
+Mostrar github actions marketplace
+
+```yml
+    steps:
+      - name: Copia os arquivos do repositório
+        uses: actions/checkout@v4
+```
+
+Agora vamos instalar Python
+
+Mostrar github actions marketplace
+
+```yml
+    steps:
+      - name: Copia os arquivos do repositório
+        uses: actions/checkout@v4
+```
+
+Instalando o nosso Python
+
+```yml
+      - name: Instalar o Python  
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11.5' 
+```
+
+E se eu tenho mais de um Python?
+
+Exemplo, O pandas ele roda do 3.9 até o 3.12
+
+Como fazer isso?
+
+```yml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9, 3.10, 3.11.5]
+
+    - name: Configurar Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+```
+
+Tornando nosso build mais rápido
+
+```yml
+      - name: Instalar Dependencias somente de testes
+        run: pip install -r requirements-test.txt
+```
+
+Rodando os nossos testes
+
+```yml
+      - name: Instalar Poetry
+        run: pytest tests/test_unit.py
+```
+
+Posso definir branchs específicas
+
+```yml
+on:
+  push:
+    branches: [ main ]
+  
+  pull_request:
+    branches: [ main ]
+```
+
+## 2) Removendo o push de main
+
+# Temos 1 bug
+
+# Precisamos visualizar mais de 2 erros
+
+Vamos fazer nosso test
+
+```
+def test_check_mais_de_uma_mensagem_de_erro(driver):
+    # Acessar a página do Streamlit
+    driver.get("http://localhost:8501")
+
+    # Aguardar para garantir que a página foi carregada
+    sleep(3)  # Espera 5 segundos
+
+    # Realizar o upload do arquivo de sucesso
+    success_file_path = os.path.abspath("data/multiplos_erros.xlsx")
+    driver.find_element(By.CSS_SELECTOR, 'input[type="file"]').send_keys(success_file_path)
+
+    # Aguardar a mensagem de sucesso
+    sleep(3)
+    # Localizar todas as ocorrências da mensagem de erro
+    error_messages = driver.find_elements(By.XPATH, "//*[contains(text(), 'Erro na validação')]")
+```
+
+mudando no UI
+```
+    def display_results(self, result, errors):
+        if errors:
+            for error in errors:
+                st.error(error)  # Exibe cada erro em uma linha separada
+        else:
+            st.success("O schema do arquivo Excel está correto!")
+```
+
+```
+        # Validar cada linha com o schema escolhido
+        for index, row in df.iterrows():
+            try:
+                _ = Vendas(**row.to_dict())
+            except Exception as e:
+                erros.append(f"Erro na linha {index + 2}: {e}")
+
+        return True, erros
+```
+
+```python
+```
+Para isso precisamos guardar os erros em uma lista
+
+# Salvando no banco
+
+- O que não vamos falar agora.
+- Docker e ORM
+
+-> Usar SQL direto e vou usar PANDAS para salvar no SQL
+
+- Quais testes quero fazer?
+
+Vamos falar de um teste de integração
+
+É um teste que vai validar se algo fora do nosso sistema está funcionando corretamente
+
+alguns pontos
+
+`dotenv`
+
+`.env`
+
+`pandas.read_sql()`
+
+`test_integration.py`
+
+```python
+import pandas as pd
+import os
+from dotenv import load_dotenv
+
+load_dotenv(".env")
+
+# Lê as variáveis de ambiente
+POSTGRES_USER = os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+POSTGRES_HOST = os.getenv('POSTGRES_HOST')
+POSTGRES_PORT = os.getenv('POSTGRES_PORT')
+POSTGRES_DB = os.getenv('POSTGRES_DB')
+
+# Cria a URL de conexão com o banco de dados
+DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
+
+def test_read_data_and_check_schema():
+    df = pd.read_sql('SELECT * FROM vendas', con=DATABASE_URL)
+
+    # Verificar se o DataFrame não está vazio
+    assert not df.empty, "O DataFrame está vazio."
+
+    # Verificar o schema (colunas e tipos de dados)
+    expected_dtype = {
+        'id': 'int64',
+        'email': 'object',  # object em Pandas corresponde a string em SQL
+        'data': 'datetime64[ns]',
+        'valor': 'float64',
+        'produto': 'object',
+        'quantidade': 'int64',
+        'categoria': 'object'
+    }
+
+    assert df.dtypes.to_dict() == expected_dtype, "O schema do DataFrame não corresponde ao esperado."
+
+```
+
+um teste_funcional
+
+`test_app.py`
+
+```python
+def test_check_usuario_insere_um_excel_valido_e_aparece_um_botao(driver):
+    # Acessar a página do Streamlit
+    driver.get("http://localhost:8501")
+
+    # Aguardar para garantir que a página foi carregada
+    sleep(3)  # Espera 3 segundos
+
+    # Realizar o upload do arquivo de sucesso
+    success_file_path = os.path.abspath("data/correto.xlsx")
+    driver.find_element(By.CSS_SELECTOR, 'input[type="file"]').send_keys(success_file_path)
+
+    # Aguardar a mensagem de sucesso
+    sleep(3)
+    assert "O schema do arquivo Excel está correto!" in driver.page_source
+    # Verificar se o botão "Salvar no Banco de Dados" está presente
+    buttons = driver.find_elements(By.XPATH, "//button")
+    save_button = None
+    for button in buttons:
+        if button.text == "Salvar no Banco de Dados":
+            save_button = button
+            break
+
+    assert save_button is not None and save_button.is_displayed()
+```
+
+## Vamos criar um banco de dados
+
+Será um postgres.
+
+Vamos usar o render
+
+Vamos usar o dbeaver
+
+create.sql
+```sql
+CREATE TABLE vendas (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    data TIMESTAMP NOT NULL,
+    valor NUMERIC(10, 2) NOT NULL CHECK (valor >= 0),
+    quantidade INTEGER NOT NULL CHECK (quantidade >= 0),
+    produto VARCHAR(255) NOT NULL,
+    categoria VARCHAR(50) NOT NULL
+);
+```
+
+delete.sql
+```sql
+-- Exemplo com dados valido
+
+INSERT INTO vendas (email, data, valor, produto, quantidade, categoria)
+VALUES (
+    'comprador@example.com', 
+    '2023-09-15 12:00:00',  -- Substitua pela data atual formatada como string
+    100.50, 
+    'Produto X', 
+    3, 
+    'categoria3'
+);
+
+-- Exemplo com dado invalido
+
+INSERT INTO vendas (email, data, valor, produto, quantidade, categoria)
+VALUES (
+    'comprador', 
+    '2023-09-15 12:00:00',  -- Substitua pela data atual formatada como string
+    100.50, 
+    'Produto X', 
+    3, 
+    'categoria3'
+);
+```
+
+`app.py`
+
+Vamos ter que criar um novo fluxo -> Desenhar na tela
+
+```python
+    if uploaded_file:
+        df, result, errors = process_excel(uploaded_file)
+        ui.display_results(result, errors)
+
+        if errors:
+            ui.display_wrong_message()
+        elif ui.display_save_button():
+            # Se não houver erros e o botão for exibido, exibir o botão e fazer o log
+            save_dataframe_to_sql(df)
+            ui.display_success_message()
+```
+
+backend.py
+```python
+import pandas as pd
+from contrato import Vendas
+from dotenv import load_dotenv
+import os
+
+load_dotenv(".env")
+
+# Lê as variáveis de ambiente
+POSTGRES_USER = os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+POSTGRES_HOST = os.getenv('POSTGRES_HOST')
+POSTGRES_PORT = os.getenv('POSTGRES_PORT')
+POSTGRES_DB = os.getenv('POSTGRES_DB')
+
+# Cria a URL de conexão com o banco de dados
+DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
+
+# Carrega as variáveis de ambiente
+load_dotenv()
+
+def process_excel(uploaded_file):
+    try:
+        df = pd.read_excel(uploaded_file)
+        erros = []
+        # Verificar se há colunas extras no DataFrame
+        extra_cols = set(df.columns) - set(Vendas.model_fields.keys())
+        if extra_cols:
+            return False, f"Colunas extras detectadas no Excel: {', '.join(extra_cols)}"
+
+        # Validar cada linha com o schema escolhido
+        for index, row in df.iterrows():
+            try:
+                _ = Vendas(**row.to_dict())
+            except Exception as e:
+                erros.append(f"Erro na linha {index + 2}: {e}")
+
+        # Retorna tanto o resultado da validação, os erros, quanto o DataFrame
+        return df, True, erros
+
+    except Exception as e:
+        # Se houver exceção, retorna o erro e um DataFrame vazio
+        return pd.DataFrame(), f"Erro inesperado: {str(e)}"
+    
+def save_dataframe_to_sql(df):
+    # Salva o DataFrame no banco de dados
+    df.to_sql('vendas', con=DATABASE_URL, if_exists='replace', index=False)
+```
+
+`frontend.py`
+```python
+import streamlit as st
+
+class ExcelValidadorUI:
+
+    def __init__(self):
+        self.set_page_config()
+
+    def set_page_config(self):
+        st.set_page_config(
+            page_title="Validador de schema excel"
+        )
+
+    def display_header(self):
+        st.title("Insira o seu excel para validação")
+
+    def upload_file(self):
+        return st.file_uploader("Carregue seu arquivo Excel aqui", type=["xlsx"])
+
+    def display_results(self, result, errors):
+        if errors:
+            for error in errors:
+                st.error(f"Erro na validação: {error}")
+        else:
+            st.success("O schema do arquivo Excel está correto!")
+
+    def display_save_button(self):
+        return st.button("Salvar no Banco de Dados")
+
+    def display_wrong_message(self):
+        return st.error("Necessário corrigir a planilha!")
+    
+    def display_success_message(self):
+        return st.success("Dados salvos com sucesso no banco de dados!")
+```
+
+Como criar uma PR?
+
+```
+Descrição
+Objetivo da PR: Descreva qual é o objetivo principal desta PR. O que ela pretende alcançar? Isso pode incluir a resolução de um problema específico, a implementação de uma nova funcionalidade ou qualquer outra coisa relevante.
+
+Contexto: Explique o contexto por trás desta PR. Isso pode incluir informações adicionais sobre o problema que está sendo resolvido ou a motivação por trás da nova funcionalidade.
+
+Cliente:
+
+Ticket:
+
+Testes Realizados: Descreva os testes que foram realizados para garantir que as alterações funcionam conforme o esperado. Certifique-se de mencionar se foram adicionados novos testes unitários ou se os testes existentes foram atualizados.
+
+Documentação:
+
+```
+
+from logging import debug, info, error, warning, critical
+
+```Log
+from frontend import ExcelValidadorUI
+from backend import process_excel, save_dataframe_to_sql
+from logging import warning
+from datetime import datetime
+
+def main():
+    ui = ExcelValidadorUI()
+    ui.display_header()
+
+    uploaded_file = ui.upload_file()
+
+    if uploaded_file:
+        df, result, errors = process_excel(uploaded_file)
+        ui.display_results(result, errors)
+
+        if errors:
+            ui.display_wrong_message()
+        elif ui.display_save_button():
+            # Se não houver erros e o botão for exibido, exibir o botão e fazer o log
+            save_dataframe_to_sql(df)
+            ui.display_success_message()
+
+if __name__ == "__main__":
+    main()
+
+```
+
+from logging import basicConfig
+
+basicConfig
+
+```
+from frontend import ExcelValidadorUI
+from backend import process_excel, save_dataframe_to_sql
+from logging import warning, info
+from datetime import datetime
+
+from logging import basicConfig
+
+basicConfig (
+    filename='meus_logs.txt',
+    filemode='a',
+    encoding='utf-8',
+    format='%(levelname)s:%(asctime)s:%message)s'
+)
+
+def main():
+    ui = ExcelValidadorUI()
+    ui.display_header()
+
+    uploaded_file = ui.upload_file()
+
+    if uploaded_file:
+        df, result, errors = process_excel(uploaded_file)
+        ui.display_results(result, errors)
+
+        if errors:
+            ui.display_wrong_message()
+            warning("erro ao subir excel")
+        elif ui.display_save_button():
+            # Se não houver erros e o botão for exibido, exibir o botão e fazer o log
+            save_dataframe_to_sql(df)
+            ui.display_success_message()
+            info("excel subiu para o banco ás 14h")
+
+if __name__ == "__main__":
+    main()
+    
+```
+
+Tem como colocar no terminal e no arquivo?
+
+Para isso vamos usar o Loguru
+
+```
+pip install loguru
 ```

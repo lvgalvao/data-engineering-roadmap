@@ -35,10 +35,10 @@ A **Jornada de Dados** é o seu lugar
 Um workshop focado em Python e SQL voltado para engenharia de dados
 |Data |Workshop|Carga Horária|
 |-----|--------|--------|
-|19/02| Setup, Variáveis, Estrutura de dados | 5h
+|19/02| Setup, Vscode, Git, Variáveis, Estrutura de dados | 5h
 |26/02| Funções, Classes, Args e Kwargs | 5h
 |04/03| Módulos, Bibliotecas externas e decoradores | 5h
-|11/03| Criando nosso próprio pandas e duckdb do zero | 5h
+|11/03| Criando o 'pig' , nem pandas e nem duck, vamos criar o nosso próprio pandas e duckdb do zero | 5h
 |18/03| SQL voltado para ETL e dados | 5h
 |25/03| Infra, Deploy, Índice e otimização de bancos | 5h
 |01/04| ORM e Modelagem | 5h
