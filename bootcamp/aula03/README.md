@@ -4,7 +4,10 @@
 
 Bem-vindo à terceira aula do bootcamp!
 
-Hoje, vamos explorar estruturas de controle de fluxo como if, for, e while, além de mergulhar no mundo das listas e dicionários em Python. Esses conceitos são cruciais para a manipulação de dados e a construção de programas dinâmicos em Python, especialmente em campos como a engenharia de dados.
+Hoje, vamos explorar estruturas de controle de fluxo como if, for, e while. Usamos estrutura de Controle de Fluxo
+Para tomar decisões!
+
+Além de mergulhar no mundo das listas e dicionários em Python. Esses conceitos são cruciais para a manipulação de dados e a construção de programas dinâmicos em Python, especialmente em campos como a engenharia de dados.
 
 ## Índice
 
@@ -29,19 +32,30 @@ Hoje, vamos explorar estruturas de controle de fluxo como if, for, e while, alé
 
 Exploraremos como utilizar `if` para tomar decisões baseadas em condições, `for` para iterar sobre sequências de dados, e `while` para executar blocos de código enquanto uma condição for verdadeira.
 
-### Trabalhando com Listas
-
-Listas são coleções ordenadas e mutáveis que podem conter itens de diferentes tipos. São extremamente úteis para armazenar e manipular coleções de dados em Python.
-
-### Explorando Dicionários
-
-Dicionários armazenam pares de chave-valor e são ideais para representar dados de forma estruturada, permitindo acesso rápido a informações específicas.
+Para saber mais:
+[Doc](https://docs.python.org/pt-br/3/tutorial/controlflow.html)
 
 ![imagem_02](./pics/2.png)
 
 ## Estruturas de Controle de Fluxo
 
 O if é uma estrutura condicional fundamental em Python que avalia se uma condição é verdadeira (True) e, se for, executa um bloco de código. Se a condição inicial não for verdadeira, você pode usar elif (else if) para verificar condições adicionais, e else para executar um bloco de código quando nenhuma das condições anteriores for verdadeira.
+
+Provavelmente o mais conhecido comando de controle de fluxo é o if. Por exemplo:
+
+```python
+x = int(input("Please enter an integer: "))
+
+if x < 0:
+    x = 0
+    print('Negative changed to zero')
+elif x == 0:
+    print('Zero')
+elif x == 1:
+    print('Single')
+else:
+    print('More')
+```
 
 ### Exercício 1: Verificação de Qualidade de Dados
 
@@ -119,6 +133,52 @@ else:
 ### FOR
 
 O loop `for` é utilizado para iterar sobre os itens de qualquer sequência, como listas, strings, ou objetos de dicionário, e executar um bloco de código para cada item. É especialmente útil quando você precisa executar uma operação para cada elemento de uma coleção.
+
+O comando for em Python é um pouco diferente do que costuma ser em C ou Pascal. Ao invés de sempre iterar sobre uma progressão aritmética de números (como no Pascal), ou permitir ao usuário definir o passo de iteração e a condição de parada (como C), o comando for do Python itera sobre os itens de qualquer sequência (seja uma lista ou uma string), na ordem que aparecem na sequência. Por exemplo:
+
+```python
+# Measure some strings:
+words = ['cat', 'window', 'defenestrate']
+for w in words:
+    print(w, len(w))
+```
+
+```python
+# Measure some strings:
+nome = ['Luciano']
+for letra in nome:
+    print(letra)
+```
+
+Se você precisa iterar sobre sequências numéricas, a função embutida `range()` é a resposta. Ela gera progressões aritméticas:
+
+
+```python
+for i in range(5):
+    print(i)
+```
+
+O ponto de parada fornecido nunca é incluído na lista; range(10) gera uma lista com 10 valores, exatamente os índices válidos para uma sequência de comprimento 10. É possível iniciar o intervalo com outro número, ou alterar a razão da progressão (inclusive com passo negativo):
+
+
+```python
+list(range(5, 10))
+[5, 6, 7, 8, 9]
+
+list(range(0, 10, 3))
+[0, 3, 6, 9]
+
+list(range(-10, -100, -30))
+[-10, -40, -70]
+```
+
+Para iterar sobre os índices de uma sequência, combine range() e len() da seguinte forma:
+
+```python
+a = ['Mary', 'had', 'a', 'little', 'lamb']
+for i in range(len(a)):
+    print(i, a[i])
+```
 
 #### 6. Contagem de Palavras em Textos
 
@@ -282,145 +342,57 @@ while i < len(itens):
 ```
 ## Estruturas de Controle de Fluxo
 
-### Exercícios com Listas
-
-#### 16. Eliminação de Duplicatas
-
-**Objetivo:** Dada uma lista de emails, remover todos os duplicados.
-
-```python
-emails = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
-emails_unicos = list(set(emails))
-
-print(emails_unicos)
-```
-
-#### 17. Filtragem de Dados
-
-**Objetivo:** Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
-
-```python
-idades = [22, 15, 30, 17, 18]
-idades_validas = [idade for idade in idades if idade >= 18]
-
-print(idades_validas)
-```
-
-#### 18. Ordenação Personalizada
-
-**Objetivo:** Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
-
-```python
-pessoas = [
-    {"nome": "Alice", "idade": 30},
-    {"nome": "Bob", "idade": 25},
-    {"nome": "Carol", "idade": 20}
-]
-pessoas.sort(key=lambda pessoa: pessoa["nome"])
-
-print(pessoas)
-```
-
-#### 19. Agregação de Dados
-
-**Objetivo:** Dado um conjunto de números, calcular a média.
-
-```python
-numeros = [10, 20, 30, 40, 50]
-media = sum(numeros) / len(numeros)
-
-print("Média:", media)
-```
-
-#### 20. Divisão de Dados em Grupos
-
-**Objetivo:** Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
-
-```python
-valores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-pares = [valor for valor in valores if valor % 2 == 0]
-impares = [valor for valor in valores if valor % 2 != 0]
-
-print("Pares:", pares)
-print("Ímpares:", impares)
-```
-
-### Exercícios com Dicionários
-
-#### 21. Atualização de Dados
-
-**Objetivo:** Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
-
-```python
-produtos = [
-    {"id": 1, "nome": "Teclado", "preço": 100},
-    {"id": 2, "nome": "Mouse", "preço": 80},
-    {"id": 3, "nome": "Monitor", "preço": 300}
-]
-
-# Atualizar o preço do produto com id 2 para 90
-for produto in produtos:
-    if produto["id"] == 2:
-        produto["preço"] = 90
-
-print(produtos)
-```
-
-#### 22. Fusão de Dicionários
-
-**Objetivo:** Dados dois dicionários, fundi-los em um único dicionário.
-
-```python
-dicionario1 = {"a": 1, "b": 2}
-dicionario2 = {"c": 3, "d": 4}
-
-dicionario_fundido = {**dicionario1, **dicionario2}
-
-print(dicionario_fundido)
-```
-
-#### 23. Filtragem de Dados em Dicionário
-
-**Objetivo:** Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
-
-```python
-estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
-
-estoque_positivo = {produto: quantidade for produto, quantidade in estoque.items() if quantidade > 0}
-
-print(estoque_positivo)
-```
-
-#### 24. Extração de Chaves e Valores
-
-**Objetivo:** Dado um dicionário, criar listas separadas para suas chaves e valores.
-
-```python
-dicionario = {"a": 1, "b": 2, "c": 3}
-chaves = list(dicionario.keys())
-valores = list(dicionario.values())
-
-print("Chaves:", chaves)
-print("Valores:", valores)
-```
-
-#### 25. Contagem de Frequência de Itens
-
-**Objetivo:** Dada uma string, contar a frequência de cada caractere usando um dicionário.
-
-```python
-texto = "engenharia de dados"
-frequencia = {}
-
-for caractere in texto:
-    if caractere in frequencia:
-        frequencia[caractere] += 1
-    else:
-        frequencia[caractere] = 1
-
-print(frequencia)
-```
-
 ![imagem_03](./pics/3.png)
+
+Integre na solução anterior um fluxo de While que repita o fluxo até que o usuário insira as informações corretas
+    
+##### Solução
+```python
+# Inicializa as variáveis para o controle do loop
+nome_valido = False
+salario_valido = False
+bonus_valido = False
+
+# Loop para verificar o nome
+while not nome_valido:
+    try:
+        nome = input("Digite seu nome: ")
+        if len(nome) == 0:
+            raise ValueError("O nome não pode estar vazio.")
+        elif any(char.isdigit() for char in nome):
+            raise ValueError("O nome não deve conter números.")
+        else:
+            print("Nome válido:", nome)
+            nome_valido = True
+    except ValueError as e:
+        print(e)
+
+# Loop para verificar o salário
+while not salario_valido:
+    try:
+        salario = float(input("Digite o valor do seu salário: "))
+        if salario < 0:
+            print("Por favor, digite um valor positivo para o salário.")
+        else:
+            salario_valido = True
+    except ValueError:
+        print("Entrada inválida para o salário. Por favor, digite um número.")
+
+# Loop para verificar o bônus
+while not bonus_valido:
+    try:
+        bonus = float(input("Digite o valor do bônus recebido: "))
+        if bonus < 0:
+            print("Por favor, digite um valor positivo para o bônus.")
+        else:
+            bonus_valido = True
+    except ValueError:
+        print("Entrada inválida para o bônus. Por favor, digite um número.")
+
+bonus_recebido = 1000 + salario * bonus  # Exemplo simples de cálculo de bônus
+
+# Imprime as informações para o usuário
+print(f"{nome}, seu salário é R${salario:.2f} e seu bônus final é R${bonus_recebido:.2f}.")
+```
 
 ![imagem_0](./pics/4.png)
