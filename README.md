@@ -43,21 +43,12 @@ Para entrar na lista de espera clique no botao
 Um workshop focado em Python e SQL voltado para engenharia de dados
 |Data |Workshop|Horário|
 |-----|--------|--------|
-<<<<<<< HEAD
-|19/02| Setup, Vscode, Git, Variáveis, Estrutura de dados | 5h
-|26/02| Funções, Classes, Args e Kwargs | 5h
-|04/03| Módulos, Bibliotecas externas e decoradores | 5h
-|11/03| Criando o 'pig' , nem pandas e nem duck, vamos criar o nosso próprio pandas e duckdb do zero | 5h
-|18/03| SQL voltado para ETL e dados | 5h
-|25/03| Infra, Deploy, Índice e otimização de bancos | 5h
-|01/04| ORM e Modelagem | 5h
-=======
 | Data | Workshop | Horário |
 | --- | --- | --- |
-| 19/02 | Hello world + Revisão de Setup Inicial: Python, Git e VScode | 12am |
-| 20/02 | Variáveis em Python | 12am |
-| 21/02 | Estrutura de Dados - Listas, Tuplas, Dicionários e Conjuntos | 12am |
-| 22/02 | Controle de Fluxo: if, else, for loops e while | 12am |
+| 19/02 | Hello world: Python, Git e VScode | 12am |
+| 20/02 | TypeError, Type Check, Type Conversion, try-except e if | 12am |
+| 21/02 | Controle de Fluxo: DEBUG, IF, FOR, While, Listas e Dicionários 
+| 22/02 | Tipos complexos e Type Hint (Dicionários vs DataFrames Vs Tabelas Vs Excel)
 | 23/02 | Projeto 01: Leitura e Escrita de Arquivos, lendo 1 bilhão de linhas | 12am |
 | 26/02 | Exercício de revisão | 12am |
 | 27/02 | Funções em Python e Estrutura de Dados - Parte 1 | 12am |

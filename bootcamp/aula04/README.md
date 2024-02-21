@@ -1,287 +1,140 @@
-# Aula 04 | Estrutura de Dados (Parte 1) - Listas e Tuplas
+# Aula 04 | Tipos complexos e Type Hint (Dicionários vs DataFrames Vs Tabelas Vs Excel)
 
-Bem-vindo à quarta aula do curso! Hoje, continuaremos nossa jornada explorando as estruturas de dados em Python, com foco em listas e tuplas. Essas estruturas são essenciais para organizar e manipular coleções de dados de forma eficiente em Python. Vamos mergulhar fundo e aprender tudo sobre listas e tuplas!
+### Exercícios com Listas
 
-## Objetivos
+#### 16. Eliminação de Duplicatas
 
-* Compreender a diferença entre listas e tuplas em Python.
-* Aprender a criar, acessar e manipular listas e tuplas.
-* Explorar métodos e operações comuns aplicáveis a listas e tuplas.
-
-## Agenda
-
-1. Introdução às Listas (10 minutos)
-2. Operações Básicas com Listas (15 minutos)
-3. Introdução às Tuplas (10 minutos)
-4. Operações com Tuplas (10 minutos)
-5. Exercícios para Casa (15 minutos)
-6. Conclusão (5 minutos)
-
-## 1. Introdução às Listas (10 minutos)
-
-As listas são coleções ordenadas e mutáveis de itens em Python. Elas nos permitem armazenar e manipular uma série de valores de forma conveniente.
-
-**Exemplo: Declarando uma lista em Python**
+**Objetivo:** Dada uma lista de emails, remover todos os duplicados.
 
 ```python
-# Declarando uma lista de números
-numeros = [1, 2, 3, 4, 5]
+emails = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
+emails_unicos = list(set(emails))
 
-# Declarando uma lista de strings
-nomes = ["Alice", "Bob", "Charlie"]
+print(emails_unicos)
 ```
 
-## 2. Operações Básicas com Listas (15 minutos)
+#### 17. Filtragem de Dados
 
-Existem várias operações que podemos realizar com listas em Python, como adição, remoção, fatiamento e indexação.
-
-**Exemplo: Adicionando e Removendo Elementos**
+**Objetivo:** Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
 
 ```python
-# Adicionando um elemento ao final da lista
-numeros.append(6)
+idades = [22, 15, 30, 17, 18]
+idades_validas = [idade for idade in idades if idade >= 18]
 
-# Removendo um elemento específico da lista
-numeros.remove(4)
-
-# Fatiando a lista para obter uma parte específica
-parte_da_lista = numeros[1:3]
+print(idades_validas)
 ```
 
-## 3. Introdução às Tuplas (10 minutos)
+#### 18. Ordenação Personalizada
 
-As tuplas são coleções ordenadas e imutáveis de itens em Python. Elas são semelhantes às listas, mas não podem ser modificadas após a sua criação.
-
-**Exemplo: Declarando uma tupla em Python**
+**Objetivo:** Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
 
 ```python
-# Declarando uma tupla de coordenadas
-ponto = (10, 20)
+pessoas = [
+    {"nome": "Alice", "idade": 30},
+    {"nome": "Bob", "idade": 25},
+    {"nome": "Carol", "idade": 20}
+]
+pessoas.sort(key=lambda pessoa: pessoa["nome"])
 
-# Declarando uma tupla de cores RGB
-cor = (255, 0, 0)
+print(pessoas)
 ```
 
-## 4. Operações com Tuplas (10 minutos)
+#### 19. Agregação de Dados
 
-Apesar de serem imutáveis, as tuplas suportam várias operações úteis, como indexação e fatiamento.
-
-**Exemplo: Acessando Elementos de uma Tupla**
+**Objetivo:** Dado um conjunto de números, calcular a média.
 
 ```python
-# Acessando elementos pelo índice
-x = ponto[0]
-y = ponto[1]
+numeros = [10, 20, 30, 40, 50]
+media = sum(numeros) / len(numeros)
 
-# Fatiando a tupla para obter uma parte específica
-rgb = cor[:2]
+print("Média:", media)
 ```
 
-## 5. Exercícios para Casa (15 minutos)
+#### 20. Divisão de Dados em Grupos
 
-1. Crie uma lista contendo os meses do ano. Atribua essa lista à variável `meses`.
-2. Crie uma tupla contendo os dias da semana. Atribua essa tupla à variável `dias_da_semana`.
-
-## 6. Conclusão (5 minutos)
-
-* Recapitulação dos principais conceitos abordados.
-* Importância das listas e tuplas como estruturas de dados em Python.
-* Próximos passos: explorar mais sobre outras estruturas de dados em Python.
-
-Prepare-se para explorar o poder das listas e tuplas em Python! Vamos lá!
-
-# Aula 05: Estrutura de Dados (Parte 2) - Dicionários e Conjuntos
-
-Bem-vindo à quarta aula do curso! Nesta aula, continuaremos nossa exploração das estruturas de dados em Python, desta vez focando em dicionários e conjuntos. Essas estruturas são fundamentais para lidar com dados de forma eficiente e organizada, e entender como usá-las é essencial para qualquer programador Python.
-
-## Objetivos
-
-* Compreender o conceito de dicionários e conjuntos em Python.
-* Aprender a criar, acessar e manipular dicionários e conjuntos.
-* Explorar os métodos e operações disponíveis para dicionários e conjuntos.
-
-## Agenda
-
-1. Introdução aos Dicionários (10 minutos)
-2. Operações com Dicionários (15 minutos)
-3. Introdução aos Conjuntos (10 minutos)
-4. Operações com Conjuntos (15 minutos)
-5. Exemplos Práticos (20 minutos)
-6. Conclusão (5 minutos)
-
-## 1. Introdução aos Dicionários (10 minutos)
-
-* **O que são dicionários?**
-    * Dicionários são estruturas de dados que armazenam pares chave-valor.
-* **Por que os dicionários são importantes?**
-    * Permitem associar informações entre chaves e valores de forma eficiente.
-* **Como os dicionários são representados?**
-    * Os dicionários são representados por chaves `{}` e contêm pares chave-valor separados por vírgulas.
-
-Exemplo em Python:
+**Objetivo:** Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
 
 ```python
-# Exemplo de criação de um dicionário
-pessoa = {"nome": "João", "idade": 25, "cidade": "São Paulo"}
+valores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+pares = [valor for valor in valores if valor % 2 == 0]
+impares = [valor for valor in valores if valor % 2 != 0]
+
+print("Pares:", pares)
+print("Ímpares:", impares)
 ```
 
-## 2. Operações com Dicionários (15 minutos)
+### Exercícios com Dicionários
 
-* **Acesso a elementos por chave.**
-* **Adição e remoção de elementos.**
-* **Atualização de valores.**
-* **Métodos úteis para dicionários, como `keys()`, `values()` e `items()`.**
+#### 21. Atualização de Dados
 
-Exemplo em Python:
+**Objetivo:** Dada uma lista de dicionários representando produtos, atualizar o preço de um produto específico.
 
 ```python
-# Acesso a elementos por chave
-print(pessoa["nome"])  # Saída: João
+produtos = [
+    {"id": 1, "nome": "Teclado", "preço": 100},
+    {"id": 2, "nome": "Mouse", "preço": 80},
+    {"id": 3, "nome": "Monitor", "preço": 300}
+]
 
-# Adição de um novo elemento
-pessoa["profissão"] = "Engenheiro"
+# Atualizar o preço do produto com id 2 para 90
+for produto in produtos:
+    if produto["id"] == 2:
+        produto["preço"] = 90
 
-# Remoção de um elemento
-del pessoa["idade"]
-
-# Atualização de valores
-pessoa["cidade"] = "Rio de Janeiro"
-
-# Métodos úteis para dicionários
-print(pessoa.keys())  # Saída: dict_keys(['nome', 'cidade', 'profissão'])
+print(produtos)
 ```
 
-## 3. Introdução aos Conjuntos (10 minutos)
+#### 22. Fusão de Dicionários
 
-* **O que são conjuntos em Python?**
-    * Conjuntos são coleções não ordenadas de elementos únicos.
-* **Por que os conjuntos são úteis?**
-    * Permitem verificar a presença de elementos e realizar operações de conjunto de forma eficiente.
-
-Exemplo em Python:
+**Objetivo:** Dados dois dicionários, fundi-los em um único dicionário.
 
 ```python
-# Exemplo de criação de um conjunto
-numeros = {1, 2, 3, 4, 5}
+dicionario1 = {"a": 1, "b": 2}
+dicionario2 = {"c": 3, "d": 4}
+
+dicionario_fundido = {**dicionario1, **dicionario2}
+
+print(dicionario_fundido)
 ```
 
-## 4. Operações com Conjuntos (15 minutos)
+#### 23. Filtragem de Dados em Dicionário
 
-* **Adição e remoção de elementos.**
-* **Verificação de pertencimento.**
-* **Operações de conjunto, como união, interseção e diferença.**
-
-Exemplo em Python:
+**Objetivo:** Dado um dicionário de estoque de produtos, filtrar aqueles com quantidade maior que 0.
 
 ```python
-# Adição de um novo elemento
-numeros.add(6)
+estoque = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
 
-# Remoção de um elemento
-numeros.remove(5)
+estoque_positivo = {produto: quantidade for produto, quantidade in estoque.items() if quantidade > 0}
 
-# Verificação de pertencimento
-print(3 in numeros)  # Saída: True
-
-# Operações de conjunto
-pares = {2, 4, 6, 8, 10}
-print(numeros.union(pares))  # Saída: {1, 2, 3, 4, 6, 8, 10}
+print(estoque_positivo)
 ```
 
-## 5. Exemplos Práticos (20 minutos)
+#### 24. Extração de Chaves e Valores
 
-* **Manipulação de dados utilizando dicionários e conjuntos.**
-* **Aplicações práticas de operações de dicionários e conjuntos.**
-
-Exemplo em Python:
+**Objetivo:** Dado um dicionário, criar listas separadas para suas chaves e valores.
 
 ```python
-# Exemplo prático: contagem de palavras em um texto
-texto = "Python é uma linguagem de programação poderosa e fácil de aprender."
-palavras = texto.split()
-contagem = {}
-for palavra in palavras:
-    contagem[palavra] = contagem.get(palavra, 0) + 1
-print(contagem)
+dicionario = {"a": 1, "b": 2, "c": 3}
+chaves = list(dicionario.keys())
+valores = list(dicionario.values())
+
+print("Chaves:", chaves)
+print("Valores:", valores)
 ```
 
-## 6. Conclusão (5 minutos)
+#### 25. Contagem de Frequência de Itens
 
-* **Recapitulação dos principais conceitos abordados.**
-* **Importância de dicionários e conjuntos na programação Python.**
-* **Próximos passos: prática e aprofundamento nos conceitos de dicionários e conjuntos.**
-
-### Desafio 1: Contagem de Palavras
-
-Escreva um programa em Python que recebe um texto como entrada e conta quantas vezes cada palavra aparece no texto. Utilize um dicionário para armazenar a contagem de palavras e ignore maiúsculas e minúsculas (ou seja, considere "Python" e "python" como a mesma palavra).
-
-#### Exemplo de Entrada:
+**Objetivo:** Dada uma string, contar a frequência de cada caractere usando um dicionário.
 
 ```python
-texto = "Python é uma linguagem de programação poderosa e fácil de aprender. Python é amplamente utilizado em diversas áreas, incluindo desenvolvimento web, ciência de dados e automação."
+texto = "engenharia de dados"
+frequencia = {}
+
+for caractere in texto:
+    if caractere in frequencia:
+        frequencia[caractere] += 1
+    else:
+        frequencia[caractere] = 1
+
+print(frequencia)
 ```
-
-#### Saída Esperada:
-
-```python
-{
-    "python": 2,
-    "é": 1,
-    "uma": 1,
-    "linguagem": 1,
-    "de": 2,
-    "programação": 1,
-    "poderosa": 1,
-    "e": 2,
-    "fácil": 1,
-    "aprender": 1,
-    "amplamente": 1,
-    "utilizado": 1,
-    "em": 1,
-    "diversas": 1,
-    "áreas": 1,
-    "incluindo": 1,
-    "desenvolvimento": 1,
-    "web": 1,
-    "ciência": 1,
-    "dados": 1,
-    "automação": 1
-}
-```
-
-### Desafio 2: Verificação de Anagramas
-
-Um anagrama é uma palavra ou frase formada pela reorganização das letras de outra palavra ou frase, utilizando todas as letras originais exatamente uma vez. Escreva uma função em Python que recebe duas strings como entrada e verifica se são anagramas uma da outra, ou seja, se uma pode ser formada pela reorganização das letras da outra.
-
-#### Exemplo de Entrada:
-
-```python
-palavra1 = "listen"
-palavra2 = "silent"
-```
-
-#### Saída Esperada:
-
-```python
-True
-```
-
-#### Exemplo de Entrada:
-
-```python
-palavra1 = "hello"
-palavra2 = "world"
-```
-
-#### Saída Esperada:
-
-```python
-False
-```
-
-### Instruções:
-
-1. Implemente as soluções para os desafios propostos em um arquivo Python separado.
-2. Certifique-se de que seu código está devidamente comentado e organizado.
-3. Teste suas soluções com diferentes entradas para garantir que funcionam corretamente.
-4. Entregue seu código até o próximo encontro para discussão e revisão em sala de aula.
