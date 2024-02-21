@@ -4,29 +4,15 @@
 
 Bem-vindo à terceira aula do bootcamp!
 
-Hoje, vamos explorar estruturas de controle de fluxo como if, for, e while. Usamos estrutura de Controle de Fluxo
-Para tomar decisões!
+Hoje, vamos explorar estruturas de controle de fluxo como if, for, e while. 
 
-Além de mergulhar no mundo das listas e dicionários em Python. Esses conceitos são cruciais para a manipulação de dados e a construção de programas dinâmicos em Python, especialmente em campos como a engenharia de dados.
+Usamos estrutura de Controle de Fluxo para tomar decisões!
 
-## Índice
+Databricks tem workflow
+![imagem_06](./pics/6.webp)
 
-1. **Introdução**
-    * Importância das estruturas de controle de fluxo e coleções de dados.
-2. **Estruturas de Controle de Fluxo**
-    * IF: Condições e decisões.
-    * FOR: Iterações em sequências.
-    * WHILE: Loops com condições.
-3. **Trabalhando com Listas**
-    * Criação e manipulação de listas.
-    * Métodos importantes de listas.
-4. **Explorando Dicionários**
-    * Criação e manipulação de dicionários.
-    * Métodos importantes de dicionários.
-5. **Desafio**
-    * Aplicação de `if`, `for`, `while`, listas e dicionários em cenários de engenharia de dados.
-6. **Dúdidas**
-    * Modendo para retirar dúvidas
+Airflow principal ferramenta de workflow
+![imagem_07](./pics/7.png)
 
 ### Estruturas de Controle de Fluxo
 
