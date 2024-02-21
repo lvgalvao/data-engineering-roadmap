@@ -1,4 +1,4 @@
-# Aula 03: IF, FOR, While, Listas e Dicionários em Python
+# Aula 03: DEBUG, IF, FOR, While, Listas e Dicionários em Python
 
 ![imagem_01](./pics/1.png)
 
@@ -423,4 +423,4 @@ print(frequencia)
 
 ![imagem_03](./pics/3.png)
 
-![imagem_04](./pics/4.png)
+![imagem_0](./pics/4.png)
