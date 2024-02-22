@@ -433,3 +433,8 @@ def saudacao(nome: str, idade: int = 30) -> str:
 ![imagem_03](./pic/3.jpg)
 
 Refatorar nosso código usando Dicionário, Type Hint e Funcões.
+
+
+![imagem_04](./pic/4.jpg)
+
+Duvidas
