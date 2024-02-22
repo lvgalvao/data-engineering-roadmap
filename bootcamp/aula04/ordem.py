@@ -1,21 +1,13 @@
-import csv
+lista = [64, 34, 25, 12, 22, 11, 90]
 
-# Caminho para o arquivo CSV
-caminho_arquivo = 'exemplo.csv'
+def ordernar_lista(lista: list) -> list:
+    lista_ordenada = lista.copy()
 
-# Inicializa uma lista vazia para armazenar os dados
-dados = []
+    for i in range(len(lista)):
+        for j in range(i+1, len(lista)):
+            if lista[i] > lista[j]:
+                lista[i], lista[j] = lista[j], lista[i]
 
-# Usa o gerenciador de contexto `with` para abrir o arquivo
-with open(caminho_arquivo, mode='r', encoding='utf-8') as arquivo:
-    # Cria um objeto leitor de CSV
-    leitor_csv = csv.DictReader(arquivo)
-    
-    # Itera sobre as linhas do arquivo CSV
-    for linha in leitor_csv:
-        # Adiciona cada linha (um dicionário) à lista de dados
-        dados.append(linha)
+    return lilista_ordenadasta
 
-# Exibe os dados lidos do arquivo CSV
-for registro in dados:
-    print(registro)
+print(lista)

@@ -345,22 +345,15 @@ Um exemplo clássico dessa abstração é a ordenação de uma lista. Vamos prim
 
 ```python
 # Implementação do algoritmo de ordenação por seleção
-n = len(lista)
-for i in range(n):
-    # Encontra o mínimo elemento restante
-    min_idx = i
-    for j in range(i+1, n):
-        if lista[min_idx] > lista[j]:
-            min_idx = j
-    # Troca o elemento mínimo encontrado com o primeiro elemento
-    lista[i], lista[min_idx] = lista[min_idx], lista[i]
+lista = [64, 34, 25, 12, 22, 11, 90]
 
-# Lista de exemplo
-lista_exemplo = [64, 34, 25, 12, 22, 11, 90]
+for i in range(len(lista)):
+    for j in range(i+1, len(lista)):
+        if lista[i] > lista[j]:
+            lista[i], lista[j] = lista[j], lista[i]
 
 # Ordenando a lista
-lista_ordenada = ordenar_lista_selecao(lista_exemplo)
-print("Lista ordenada com função personalizada:", lista_ordenada)
+print("Lista ordenada com função personalizada:", lista)
 ```
 
 ### Usando o Método Built-in `sort()`
