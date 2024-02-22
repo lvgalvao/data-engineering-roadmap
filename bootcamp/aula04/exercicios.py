@@ -1,7 +1,7 @@
 import csv
 
 # Caminho para o arquivo CSV
-caminho_arquivo = '.\exemplo.csv'
+caminho_arquivo = 'exemplo.csv'
 
 # Inicializa uma lista vazia para armazenar os dados
 dados = []

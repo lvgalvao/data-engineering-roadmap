@@ -416,4 +416,27 @@ O padrão de nomeação de funções em Python segue convenções que são ampla
     
 * **Prefixos com Verbo**: Muitas vezes, funções realizam ações, então é útil iniciar o nome da função com um verbo que descreve essa ação, como `obter_`, `calcular_`, `processar_`, `validar_` ou `limpar_`.
 
+Na Python, a tipagem de funções é facilitada pelo uso de "Type Hints" (Dicas de Tipo), uma característica introduzida no Python 3.5 através do PEP 484. Os Type Hints permitem aos desenvolvedores especificar os tipos de dados esperados para os parâmetros de uma função e o tipo de dado que a função deve retornar. Embora essas dicas de tipo não sejam estritamente aplicadas em tempo de execução, elas são extremamente úteis para ferramentas de análise estática de código, melhorando a legibilidade do código e ajudando na detecção precoce de erros.
+
+### Tipagem dos Parâmetros
+
+Você pode especificar o tipo de cada parâmetro ao definir uma função. Isso indica claramente o tipo de argumento que a função espera.
+
+```python
+def saudacao(nome: str, idade: int) -> str:
+    return f"Olá, {nome}, você tem {idade} anos."
+```
+
+### Parâmetros com Valores Default
+
+Python permite definir valores default para os parâmetros, o que significa que a função pode ser chamada sem fornecer todos os argumentos, desde que os omitidos tenham um valor padrão definido. A tipagem funciona da mesma forma, com o tipo sendo especificado antes do sinal de igual.
+
+```python
+def saudacao(nome: str, idade: int = 30) -> str:
+    return f"Olá, {nome}, você tem {idade} anos."
+```
+
+
 ![imagem_03](./pic/3.jpg)
+
+Refatorar nosso código usando Dicionário, Type Hint e Funcões.
