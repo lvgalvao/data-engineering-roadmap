@@ -3,22 +3,25 @@
 # informações corretas
 
 # Solicita ao usuário que digite seu nome
-try:
-    nome = input("Digite seu nome: ")
+nome_valido = False
+salario_valido = False
+bonus_valido = False
 
-    # Verifica se o nome está vazio
-    if len(nome) == 0:
-        raise ValueError("O nome não pode estar vazio.")
-        exit()
-    # Verifica se há números no nome
-    elif any(char.isdigit() for char in nome):
-        raise ValueError("O nome não deve conter números.")
-        exit()
-    else:
-        print("Nome válido:", nome)
-except ValueError as e:
-    print(e)
-    exit()
+while not nome_valido:
+    try:
+        nome = input("Digite seu nome: ")
+
+        # Verifica se o nome está vazio
+        if len(nome) == 0:
+            raise ValueError("O nome não pode estar vazio.")
+        # Verifica se há números no nome
+        elif any(char.isdigit() for char in nome):
+            raise ValueError("O nome não deve conter números.")
+        else:
+            print("Nome válido:", nome)
+            nome_valido = True
+    except ValueError as e:
+        print(e)
 
 # Solicita ao usuário que digite o valor do seu salário e converte para float
 
