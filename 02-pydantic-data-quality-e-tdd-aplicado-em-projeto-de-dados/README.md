@@ -4,28 +4,29 @@
 
 ```mermaid
 graph TD;
-    A[restAPI: Instância Cliente] --> B{Validação de Esquema Inicial}
-    B -->|Dados Válidos| C{Função transformar_cliente}
-    B -->|Dados Inválidos| X[Erro: Esquema Inicial Inválido]
+    A[restAPI: Instância Cliente] --> B{Validação do Esquema Inicial}
+    B -->|Esquema Válido| C{Função transformar_cliente}
+    B -->|Esquema Inválido| X[Erro: Esquema Inicial Inválido]
     C --> D[Calcula nome_completo]
     C --> E[Extrai ano_de_cadastro]
     C --> F[Determina status_atividade]
-    D --> G[SQL: Instância ClienteCalculado]
+    D --> G{Validação do Esquema Final}
     E --> G
     F --> G
-    G --> H{Validação de Esquema Final}
-    H -->|Dados Válidos| I[Processo Completo]
-    H -->|Dados Inválidos| X[Erro: Esquema Final Inválido]
+    G -->|Esquema Válido| H[SQL: Instância ClienteCalculado]
+    G -->|Esquema Inválido| Y[Erro: Esquema Final Inválido]
 ```
 
-### Explicação do Fluxo
+#### Explicação do Fluxo 
+A: O processo começa com a recepção de uma instância de Cliente por meio da restAPI.
+B: A primeira etapa é a Validação do Esquema Inicial, que verifica se a instância de Cliente recebida atende ao esquema esperado.
+X: Se a validação inicial falhar (Esquema Inválido), o processo é interrompido, e um erro específico para "Esquema Inicial Inválido" é gerado.
+C: Caso a instância passe pela validação inicial, ela é processada pela Função transformar_cliente, onde são realizadas as transformações.
+D, E, F: São calculados o nome_completo, extraído o ano_de_cadastro e determinado o status_atividade, respectivamente.
+G: Após as transformações, os dados transformados passam pela Validação do Esquema Final. Essa validação assegura que os dados modificados ainda estejam conformes ao esquema esperado para ClienteCalculado.
+Y: Se a validação final falhar (Esquema Inválido), o processo é interrompido, e um erro específico para "Esquema Final Inválido" é gerado. Isso impede o armazenamento de dados incorretos ou incompletos no banco de dados.
+H: Se os dados transformados passarem pela validação final, a instância de ClienteCalculado é armazenada no banco de dados SQL, concluindo o processo com sucesso.
 
-* **A**: O processo começa com uma instância da classe `Cliente`, contendo os dados básicos do cliente.
-* **B**: Esta instância é então passada para a função `transformar_cliente`, que é responsável por realizar as transformações necessárias.
-    * **C**: Dentro da função, o `nome_completo` é calculado concatenando o `nome` e `sobrenome`.
-    * **D**: O `ano_de_cadastro` é extraído da `data_de_cadastro`.
-    * **E**: O `status_atividade` é determinado com base no valor de `is_ativo`.
-* **F**: Com base nos valores calculados e nos dados originais do `Cliente`, é criada uma nova instância de `ClienteCalculado`, que agora inclui tanto os dados originais quanto os campos calculados (`nome_completo`, `ano_de_cadastro`, `status_atividade`).
 #### Objetivo
 
 Desenvolver um sistema de gerenciamento de clientes (CRM) utilizando Python e Pydantic, focado na modelagem de dados robusta e na transformação de instâncias de cliente com campos calculados. Este sistema deverá permitir a criação de perfis de clientes, aplicar transformações para gerar novos campos calculados e garantir a integridade dos dados através de testes unitários.
