@@ -4,13 +4,18 @@
 
 ```mermaid
 graph TD;
-    A[restAPI: Instância Cliente] --> B{Função transformar_cliente}
-    B --> C[Calcula nome_completo]
-    B --> D[Extrai ano_de_cadastro]
-    B --> E[Determina status_atividade]
-    C --> F[SQL: Instância ClienteCalculado]
-    D --> F
-    E --> F
+    A[restAPI: Instância Cliente] --> B{Validação de Esquema Inicial}
+    B -->|Dados Válidos| C{Função transformar_cliente}
+    B -->|Dados Inválidos| X[Erro: Esquema Inicial Inválido]
+    C --> D[Calcula nome_completo]
+    C --> E[Extrai ano_de_cadastro]
+    C --> F[Determina status_atividade]
+    D --> G[SQL: Instância ClienteCalculado]
+    E --> G
+    F --> G
+    G --> H{Validação de Esquema Final}
+    H -->|Dados Válidos| I[Processo Completo]
+    H -->|Dados Inválidos| X[Erro: Esquema Final Inválido]
 ```
 
 ### Explicação do Fluxo
