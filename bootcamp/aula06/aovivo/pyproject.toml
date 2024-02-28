@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "aula06-bootcamp"
+version = "0.1.0"
+description = ""
+authors = ["lvgalvaofilho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+black = "^24.2.0"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+taskipy = "^1.12.2"
+pre-commit = "^3.6.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.taskipy.tasks]
+format = """
+isort main.py
+black main.py
+flake8 main.py
+"""
