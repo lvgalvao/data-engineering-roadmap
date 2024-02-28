@@ -17,21 +17,15 @@ def transformar_dados(df: pd.DataFrame):
     print(df)
     return df
 
-def carregar_dados(df: pd.DataFrame, caminho_saida: str, formatos: list):
-    caminho_saida_path = Path(caminho_saida)  # Converte a string de caminho em um objeto Path
-
-    # Garante que o diretório de saída existe
-    caminho_saida_path.mkdir(parents=True, exist_ok=True)
+def carregar_dados(df: pd.DataFrame, formatos: list):
 
     for formato in formatos:
         if formato == 'csv':
-            caminho_completo = caminho_saida_path / "dados.csv"
-            df.to_csv(caminho_completo, index=False)
+            df.to_csv("dados.csv", index=False)
         elif formato == 'parquet':
-            caminho_completo = caminho_saida_path / "dados.parquet"
-            df.to_parquet(caminho_completo, index=False)
+            df.to_parquet( "dados.parquet", index=False)
 
-def pipeline(pasta_entrada: str, caminho_saida: str, formato_saida: str):
+def pipeline(pasta_entrada: str, formato_saida: str):
     dados = extrair_dados(pasta_entrada)
     dados_transformados = transformar_dados(dados)
-    carregar_dados(dados_transformados, caminho_saida, formato_saida)
+    carregar_dados(dados_transformados, formato_saida)
