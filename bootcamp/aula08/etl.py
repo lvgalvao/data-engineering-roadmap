@@ -5,6 +5,7 @@ import pandera as pa
 from schema import VendasSchema
 from pathlib import Path
 
+@pa.check_output(VendasSchema)
 def extrair_dados(pasta: str) -> pd.DataFrame:
     arquivos_json = glob.glob(os.path.join(pasta, '*.json'))
     df_list = [pd.read_json(arquivo) for arquivo in arquivos_json]
