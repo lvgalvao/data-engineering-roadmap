@@ -20,20 +20,20 @@ Para conhecer mais sobre o projeto participe do nosso workshop aberto
 
 |Data |Workshop|Horário e canal|
 |-----|--------|--------|
-|24/01|Automacao Data Quality Excel ETL| 20h Youtube
-|27/01|Projeto e processos do Zero| 09h Zoom
-|24/02|Pydantic, Data Quality e TDD em dados| 09h Zoom
-|09/03|Docker para analista e engenheiro de dados: ajudando o seu deploy | 09h Google Meet
-|12/03|ETL com Python do Zero ao Deploy | 20h Youtube
-|23/03|Orquestrando suas ETLs com Airflow | 09h Zoom
-|15/04|Explorando noSQL com Redis e Mongodb, flexibilidade para sua ETL | 09h Zoom
-|27/04|restAPI fastAPI Deploy| 09h Zoom
-|11/05|Kafka Streaming data processing| 09h Zoom
-|25/05|Amazon SNS, SQS e Rabbit MQ| 09h Zoom
-|08/06|Infra as a Code com Terraform| 09h Zoom
-|06/07|Prometheus Datadog Sentry Monitoramento| 09h Zoom
-|20/07|Machine Learning Ops| 09h Zoom
-|03/08|Databricks e Fabric, nosso DW de milhoes| 09h Zoom
+|24/01|Automacao Data Quality Excel ETL| gravação na plataforma de alunos
+|27/01|Projeto e processos do Zero| gravação na plataforma de alunos
+|24/02|Pydantic, Data Quality e TDD em dados| gravação na plataforma de alunos
+|**09/03**|**Docker para analista e engenheiro de dados: ajudando o seu deploy**| **09h Google Meet** 
+|**12/03**|**ETL com Python do Zero ao Deploy** | **20h Youtube**
+|23/03|Orquestrando suas ETLs com Airflow | 09h google meet
+|15/04|Explorando noSQL com Redis e Mongodb, flexibilidade para sua ETL | 09h google meet
+|27/04|restAPI fastAPI Deploy| 09h google meet
+|11/05|Kafka Streaming data processing| 09h google meet
+|25/05|Amazon SNS, SQS e Rabbit MQ| 09h google meet
+|08/06|Infra as a Code com Terraform| 09h google meet
+|06/07|Prometheus Datadog Sentry Monitoramento| 09h google meet
+|20/07|Machine Learning Ops| 09h google meet
+|03/08|Databricks e Fabric, nosso DW de milhoes| 09h google meet
 
 ## Calendário Bootcamp - Python e SQL aplicado em engenharia de dados
 
