@@ -42,14 +42,15 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 |-----|--------|--------|
 | Data | Workshop | Horário |
 | --- | --- | --- |
-| 19/02 | Hello world: Python, Git e VScode | 12am |
+| 19/02 | Python, Git e VScode: Python do Zero | 12am |
 | 20/02 | TypeError, Type Check, Type Conversion, try-except e if | 12am |
 | 21/02 | Controle de Fluxo: DEBUG, IF, FOR, While, Listas e Dicionários 
 | 22/02 | Tipos complexos e Type Hint (Dicionários vs DataFrames Vs Tabelas Vs Excel)
 | 23/02 | Projeto 01: Leitura e Escrita de Arquivos, lendo 1 bilhão de linhas | 12am |
 | 26/02 | Exercício de revisão | 12am |
-| 27/02 | Funções em Python e Estrutura de Dados - Parte 1 | 12am |
+| 27/02   Funções em Python e Estrutura de Dados - Parte 1 | 12am |
 | 28/02 | Funções em Python e Estrutura de Dados - Parte 2 | 12am |
+| 29/02 | Funções em Python e Estrutura de Dados - Parte 3 | 12am |
 | 01/03 | Aula de revisão | 12am |
 | 02/03 | Introdução a POO | 12am |
 | 04/03 | Exercício de revisão | 19pm |
