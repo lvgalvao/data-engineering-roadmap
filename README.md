@@ -52,8 +52,7 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 | 28/02 | Funções em Python e Estrutura de Dados - Parte 2 | 12am |
 | 29/02 | Funções em Python e Estrutura de Dados - Parte 3 | 12am |
 | 01/03 | Aula de revisão | 12am |
-| 02/03 | Introdução a POO | 12am |
-| 04/03 | Exercício de revisão | 19pm |
+| 04/03 | Introdução a POO | 19pm |
 | 05/03 | Introdução às Classes em Python - Parte 01 | 19pm |
 | 06/03 | Introdução às Classes em Python - Parte 02| 19pm |
 | 07/03 | Herança e Polimorfismo | 19pm |
