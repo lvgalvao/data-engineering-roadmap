@@ -24,7 +24,7 @@ Para conhecer mais sobre o projeto participe do nosso workshop aberto
 |27/01|Projeto e processos do Zero| 09h Zoom
 |24/02|Pydantic, Data Quality e TDD em dados| 09h Zoom
 |09/03| Docker para analista e engenheiro de dados: ajudando o seu deploy | 09h Google Meet
-|12/03| ETL com Python do Zero ao Deploy | 09h Zoom
+|12/03| ETL com Python do Zero ao Deploy | 20h Youtube
 |23/03| Orquestrando suas ETLs com Airflow | 09h Zoom
 |15/04| explorando noSQL com Redis e Mongodb, flexibilidade para sua ETL | 09h Zoom
 |27/04|restAPI fastAPI Deploy| 09h Zoom
