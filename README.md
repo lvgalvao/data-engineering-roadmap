@@ -56,12 +56,12 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 | 05/03 | Introdução às Classes em Python - Parte 01 | 19pm |
 | 06/03 | Introdução às Classes em Python - Parte 02| 19pm |
 | 07/03 | Herança e Polimorfismo | 19pm |
-| 08/03 | Classes Avançadas | 19pm |
-| 11/03 | Introdução à Orientação a Objetos | 19pm |
-| 12/03 | OOP Aplicado: Padrões de Projeto | 19pm |
-| 13/03 | OOP Aplicado: Testando Classes | 19pm |
-| 14/03 | Projeto 02: Criando nosso Duckdb | 19pm |
-| 15/03 | Projeto 02: Criando nosso Duckdb | 19pm |
+| 08/03 | Criando nosso Duckdb | 19pm |
+| 11/03 | Aula de revisão | 12am |
+| 12/03 | Introdução a ORMs | 12am |
+| 13/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 1 | 12am |
+| 14/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 2 | 12am |
+| 15/03 | Aula de revisão | 12 am |
 | 18/03 | Introdução ao SQL: Seleção e Filtragem de Dados com Duckdb | 12am |
 | 19/03 | Junções, Subqueries e Agregações com Duckdb | 12am |
 | 20/03 | Inserção, Atualização e Deleção de Dados com Postgres| 12am |
@@ -72,17 +72,16 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 | 27/03 | Projeto 03: Automatização de ETL e Triggers | 12am |
 | 28/03 | Projeto 03: Deploy de Bancos de Dados | 12am |
 | 29/03 | Projeto 03: Índices e Performance Tuning | 12am |
-| 01/04 | Otimização de Consultas e Plano de Execução | 19pm |
-| 02/04 | Introdução a ORMs | 19pm |
-| 03/04 | Projeto 04: Aplicando ORMs: SQLAlchemy e fazendo CRUD parte 1 | 19pm |
-| 04/04 | Projeto 04: SQLAlchemy e fazendo CRUD parte 2 | 19pm |
-| 05/04 | Projeto 04: SQLAlchemy e fazendo CRUD parte 3 | 19pm |
+| 01/04 | Otimização de Consultas e Plano de Execução | 12am |
+| 02/04 | Introdução a ORMs | 12am |
+| 03/04 | Projeto 04: Aplicando ORMs: SQLAlchemy e fazendo CRUD parte 1 | 12am |
+| 04/04 | Projeto 04: SQLAlchemy e fazendo CRUD parte 2 | 12am |
+| 05/04 | Projeto 04: SQLAlchemy e fazendo CRUD parte 3 | 12am |
 | 08/04 | Projeto 05: Mkdocs e documentação | 12 am |
 | 09/04 | Projeto 06: Lendo 1 trilhão de linhas parte 1| 12 am |
 | 10/04 | Projeto 06: Lendo 1 trilhão de linhas parte 2 | 12 am |
-| 11/04 | Projeto 07: Criando nosso dashboard com Streamlit | 19pm |
-| 12/04 | Projeto 07: Criando nosso dashboard com Streamlit | 19pm |
->>>>>>> bf45ef924a245773cbbed2eb8129657969ea9f17
+| 11/04 | Projeto 07: Criando nosso dashboard com Streamlit | 12am |
+| 12/04 | Projeto 07: Criando nosso dashboard com Streamlit | 12am |
 
 ## Detalhe Bootcamp
 
