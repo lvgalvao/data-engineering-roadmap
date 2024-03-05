@@ -50,7 +50,7 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 | 26/02 | Exercício de revisão | 12am |
 | 27/02 | Funções em Python e Estrutura de Dados - Parte 1 | 12am |
 | 28/02 | Funções em Python e Estrutura de Dados - Parte 2 | 12am |
-| 01/03 | Funções em Python e Estrutura de Dados - Parte 3 | 12am |
+| 01/03 | Aula de revisão | 12am |
 | 02/03 | Introdução a POO | 12am |
 | 04/03 | Exercício de revisão | 19pm |
 | 05/03 | Introdução às Classes em Python - Parte 01 | 19pm |
