@@ -22,7 +22,7 @@ Para conhecer mais sobre o projeto participe do nosso workshop aberto
 |-----|--------|--------|
 |01/09/23|Como estruturar o seu projeto de dados do zero| [Link](https://github.com/lvgalvao/DataProjectStarterKit)
 |01/10/23|Do Jupyter Notebook Pro Deploy| [Link](https://github.com/lvgalvao/Do-Jupyter-Notebook-Pro-Deploy)
-|01/11/23|Como construir um DW barato| [Link](https://github.com/lvgalvao/workshop-dw-pagando-pouco)
+|01/11/23|Como construir um DW barato| [Link](https://github.com/lvgalvao/workshop-dw-pagando-pouco) e [Link](https://github.com/lvgalvao/W03_duckdb_dbt)
 |24/01|Automacao Data Quality Excel ETL| gravação na plataforma de alunos
 |27/01|Projeto e processos do Zero| gravação na plataforma de alunos
 |24/02|Pydantic, Data Quality e TDD em dados| gravação na plataforma de alunos
