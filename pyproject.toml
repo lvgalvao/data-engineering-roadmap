@@ -7,8 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-pydantic = "^2.6.2"
+pydantic = {extras = ["email"], version = "^2.6.4"}
 pandera = "^0.18.0"
+sqlalchemy = "^2.0.28"
 
 
 [build-system]

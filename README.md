@@ -57,11 +57,11 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 | 06/03 | Introdução às Classes em Python - Parte 02| 19pm |
 | 07/03 | Herança e Polimorfismo | 19pm |
 | 08/03 | Criando nosso Duckdb | 19pm |
-| 11/03 | Aula de revisão | 12am |
-| 12/03 | Introdução a ORMs | 12am |
-| 13/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 1 | 12am |
-| 14/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 2 | 12am |
-| 15/03 | Aula de revisão | 12 am |
+| 18/03 | Aula de revisão: Classes, DataClasses e Pydantic | 12am |
+| 19/03 | Introdução a ORMs | 12am |
+| 20/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 1 | 12am |
+| 21/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 2 | 12am |
+| 22/03 | Projeto 03: SQLModel | 12 am |
 | 18/03 | Introdução ao SQL: Seleção e Filtragem de Dados com Duckdb | 12am |
 | 19/03 | Junções, Subqueries e Agregações com Duckdb | 12am |
 | 20/03 | Inserção, Atualização e Deleção de Dados com Postgres| 12am |
