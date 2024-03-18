@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "aula-16-ao-vivo"
+version = "0.1.0"
+description = ""
+authors = ["lvgalvaofilho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlmodel = "^0.0.16"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
