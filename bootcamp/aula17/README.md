@@ -1,6 +1,6 @@
 # Aula 17: SQLAlchemy - Conjunto de ferramentas para manipular SQL em 
 
-![imagem_01](./pics/1.png)
+![imagem_01](./pics/1.jpg)
 
 Bem-vindo à décima sétima aula do bootcamp!
 
@@ -22,7 +22,7 @@ Uma biblioteca ORM é uma biblioteca completamente comum escrita na linguagem de
 
 - Ela abstrai o sistema de BD, então você pode mudá-lo sempre que quiser.
 
-![imagem_02](./pics/2.png)
+![imagem_02](./pics/2.jpg)
 
 ### Instalação
 
@@ -157,6 +157,8 @@ No exemplo acima, o SQLAlchemy lida com o commit, rollback e fechamento da sess�
 A principal vantagem de usar o gerenciador de contexto `with` com SQLAlchemy (ou qualquer outro recurso que necessite de gerenciamento de estado e liberação de recursos) é reduzir a verbosidade do código e minimizar a chance de erros, como esquecer de fechar uma sessão ou fazer rollback de uma transação falha. Ele promove um código mais limpo, seguro e legível.
 
 ### Desafio
+
+![imagem_03](./pics/3.jpg)
 
 ### Desafio Intermediário de SQLAlchemy: Tabelas de Produto e Fornecedor
 
