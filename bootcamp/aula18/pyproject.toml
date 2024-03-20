@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "aula-18"
+version = "0.1.0"
+description = ""
+authors = ["luciano"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+sqlalchemy = "^2.0.28"
+pydantic = "^2.6.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

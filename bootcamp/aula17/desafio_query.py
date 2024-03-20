@@ -30,8 +30,6 @@ engine = create_engine('sqlite:///desafio.db', echo=True)
 Base.metadata.create_all(engine)
 
 Session = sessionmaker(bind=engine)
-
-Session = sessionmaker(bind=engine)
 session = Session()
 
 resultado = session.query(
