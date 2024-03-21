@@ -1,6 +1,4 @@
-# Aula 18: API - Conjunto de ferramentas para manipular SQL em 
-
-![imagem_01](./pics/1.jpg)
+# Aula 19: Fazendo nossa API
 
 ## O que é FastAPI?
 
