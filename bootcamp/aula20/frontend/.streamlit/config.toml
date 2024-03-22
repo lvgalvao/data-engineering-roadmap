@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#1E2250"             # Amarelo - similar ao botão do Mercado Livre
+backgroundColor = "#ffffff"          # Amarelo claro para o fundo
+secondaryBackgroundColor = "#f5f5f5" # Azul claro para fundo dos widgets
+textColor = "#2d377a"                # Azul - similar ao texto do Mercado Livre
+font = "sans serif"

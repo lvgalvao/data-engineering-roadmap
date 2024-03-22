@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "crud-fastapi-postgres-streamlit"
+version = "0.1.0"
+description = ""
+authors = ["Luciano Filho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "crud_fastapi_postgres_streamlit" }]
+
+[tool.poetry.dependencies]
+python = "^3.11.5"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+streamlit = "^1.28.1"
+sqlalchemy = "^2.0.23"
+plotly = "^5.18.0"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+taskipy = "^1.12.0"
+isort = "5.12.0"
+ruff = "0.1.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+lint = "ruff . & isort ."
+kill = "kill -9 $(lsof -t -i:8000)"
+run = "uvicorn backend.main:app --reload & streamlit run frontend/app.py"
