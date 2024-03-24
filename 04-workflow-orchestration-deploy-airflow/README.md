@@ -2,6 +2,8 @@
 
 ## Eu realmente preciso do Airflow?
 
+https://link.excalidraw.com/l/8pvW6zbNUnD/4OrmI6gFNlj
+
 Vamos pensar em uma pipeline inicial, onde possui 3 atividades e uma pipeline que encadeia ela.
 
 ![Exemplo_00](./pic/exemplo_00.png)
