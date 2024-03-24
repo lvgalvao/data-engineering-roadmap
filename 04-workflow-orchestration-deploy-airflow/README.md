@@ -338,18 +338,7 @@ Notação cron (e.g., "0 0 * * *" para meia-noite diária, "*/10 * * * *" para a
 
 ### Nossa primeira ETL com Python
 
-### Operator
-
-Quais são as capacidades que eu posso fazer com meus Operadores?
-
-Temos 3 capacidades básicas:
-- Action Operators: Executar uma ação
-- Transfer Operators: Transferir dados
-- Sensors: Esperar por alguma coisa
-
 ### Fazendo o Nosso Deploy
 
 ### Refatorando um Projeto seguindo MVC
-
-- Folder include
 
