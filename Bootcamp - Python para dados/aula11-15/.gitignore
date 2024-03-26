@@ -1,0 +1,35 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# CPython
+*.pyc
+
+# PyInstaller
+/dist/
+/build/
+
+# env
+.env
+
+# vscode
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# pyenv
+.python-version
+
+# environment
+.env
+
+# libs
+.venv
+
+# logs
+*.log
+
+*.parquet
+*.csv

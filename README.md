@@ -14,8 +14,6 @@ A **Jornada de Dados** é o seu lugar
 
 Para conhecer mais sobre o projeto participe do nosso workshop aberto
 
-[![clique aqui](/pics/scheenshot_chamada_workshop_aberto.png)](https://www.jornadadedados2024.com.br/workshop-aberto-python)
-
 ## Calendário
 
 |Data |Workshop|Horário e canal|
@@ -26,10 +24,10 @@ Para conhecer mais sobre o projeto participe do nosso workshop aberto
 |24/01|Automacao Data Quality Excel ETL| gravação na plataforma de alunos
 |27/01|Projeto e processos do Zero| gravação na plataforma de alunos
 |24/02|Pydantic, Data Quality e TDD em dados| gravação na plataforma de alunos
-|**09/03**|**Docker para analista e engenheiro de dados: ajudando o seu deploy**| **09h Google Meet** 
-|**12/03**|**ETL com Python do Zero ao Deploy** | **20h Youtube**
-|23/03|Orquestrando suas ETLs com Airflow | 09h google meet
-|15/04|Explorando noSQL com Redis e Mongodb, flexibilidade para sua ETL | 09h google meet
+|09/03|Docker para analista e engenheiro de dados: ajudando o seu deploy| gravação na plataforma de alunos
+|12/03|ETL com Python do Zero ao Deploy | gravação na plataforma de alunos
+|23/03|Orquestrando suas ETLs com Airflow | gravação na plataforma de alunos
+|13/04|Web scraping: extração de dados da web - Explorando noSQL com Redis e Mongodb | [Faça sua inscrição](https://www.jornadadedados2024.com.br/)
 |27/04|restAPI fastAPI Deploy| 09h google meet
 |11/05|Kafka Streaming data processing| 09h google meet
 |25/05|Amazon SNS, SQS e Rabbit MQ| 09h google meet
@@ -38,13 +36,12 @@ Para conhecer mais sobre o projeto participe do nosso workshop aberto
 |20/07|Machine Learning Ops| 09h google meet
 |03/08|Databricks e Fabric, nosso DW de milhoes| 09h google meet
 
-## Calendário Bootcamp - Python e SQL aplicado em engenharia de dados
+## Calendário Bootcamp - Python do zero
 
-Um workshop focado em Python e SQL voltado para engenharia de dados
+Um intensivo único para você iniciar com Python e ir até tópicos avançados (API por exemplo) para você resolver problemas reais
+
 |Data |Workshop|Horário|
 |-----|--------|--------|
-| Data | Workshop | Horário |
-| --- | --- | --- |
 | 19/02 | Python, Git e VScode: Python do Zero | 12am |
 | 20/02 | TypeError, Type Check, Type Conversion, try-except e if | 12am |
 | 21/02 | Controle de Fluxo: DEBUG, IF, FOR, While, Listas e Dicionários | 12am |
@@ -58,172 +55,57 @@ Um workshop focado em Python e SQL voltado para engenharia de dados
 | 04/03 | Introdução a POO | 19pm |
 | 05/03 | Introdução às Classes em Python - Parte 01 | 19pm |
 | 06/03 | Introdução às Classes em Python - Parte 02| 19pm |
-| 07/03 | Herança e Polimorfismo | 19pm |
-| 08/03 | Criando nosso Duckdb | 19pm |
-| 18/03 | Aula de revisão: Classes, DataClasses e Pydantic | 12am |
-| 19/03 | Introdução a ORMs | 12am |
-| 20/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 1 | 12am |
-| 21/03 | Projeto 02: SQLAlchemy e fazendo CRUD parte 2 | 12am |
-| 22/03 | Projeto 03: SQLModel | 12 am |
-| 18/03 | Introdução ao SQL: Seleção e Filtragem de Dados com Duckdb | 12am |
-| 19/03 | Junções, Subqueries e Agregações com Duckdb | 12am |
-| 20/03 | Inserção, Atualização e Deleção de Dados com Postgres| 12am |
-| 21/03 | SQL Avançado: Funções de Janela e CTEs com Postgres | 12am |
-| 22/03 | Introdução ao ETL com SQL | 12am |
-| 25/03 | Projeto 03: Transformação de Dados parte 01 | 12am |
-| 26/03 | Projeto 03: Transformação de Dados parte 02 | 12am |
-| 27/03 | Projeto 03: Automatização de ETL e Triggers | 12am |
-| 28/03 | Projeto 03: Deploy de Bancos de Dados | 12am |
-| 29/03 | Projeto 03: Índices e Performance Tuning | 12am |
-| 01/04 | Otimização de Consultas e Plano de Execução | 12am |
-| 02/04 | Introdução a ORMs | 12am |
-| 03/04 | Projeto 04: Aplicando ORMs: SQLAlchemy e fazendo CRUD parte 1 | 12am |
-| 04/04 | Projeto 04: SQLAlchemy e fazendo CRUD parte 2 | 12am |
-| 05/04 | Projeto 04: SQLAlchemy e fazendo CRUD parte 3 | 12am |
-| 08/04 | Projeto 05: Mkdocs e documentação | 12 am |
-| 09/04 | Projeto 06: Lendo 1 trilhão de linhas parte 1| 12 am |
-| 10/04 | Projeto 06: Lendo 1 trilhão de linhas parte 2 | 12 am |
-| 11/04 | Projeto 07: Criando nosso dashboard com Streamlit | 12am |
-| 12/04 | Projeto 07: Criando nosso dashboard com Streamlit | 12am |
+| 07/03 | Introdução às Classes em Python - Parte 03 | | 19pm |
+| 08/03 | Introdução às Classes em Python - Parte 04 | 19pm |
+| 18/03 | Aula de revisão de programação orientada a objetos + SQLModel | 12am |
+| 19/03 | SQLAlchemy - Conjunto de ferramentas para manipular SQL em Python | 12am |
+| 20/03 | O que é uma API? Request, Pydantic e fazendo nosso CRUD | 12am |
+| 21/03 | O que é uma API? Criando nossa primeira API | 12am |
+| 22/03 | Nosso Projeto de CRUD Backend + Frontend + Banco de Dados | 12 am |
 
-## Detalhe Bootcamp
+## Calendário Bootcamp - SQL início dia 15/04
 
-## Aula 00: Assistir video de setup
+Um workshop focado em SQL para engenharia de dados
 
-Tutorial de como configurar um ambiente de desenvolvimento Python com foco no mercado de trabalho
+1. Introdução ao SQL Básico:
 
-Passo a passo para você criar os seus projetos do Zero de forma profissional
+• Comandos fundamentais (SELECT, INSERT, UPDATE, DELETE).
+• Funções de agregação e filtragem.
+• Joins e subqueries.
 
-[![IMAGE ALT TEXT HERE](./pics/bootcamp_aula_00.png)](https://www.youtube.com/watch?v=-M4pMd2yQOM&t)
+2. Fundamentos de Infraestrutura de Banco de Dados:
+• Visão geral de índices e seu impacto no desempenho.
+• Particionamento de dados e estratégias.
+• Conceitos de ACID para garantir a integridade dos dados.
 
-## Aula 01 | Dia 19 as 12:00am Revisao de Setup Inicial: Python, Git e VSCode
+3. Configuração do Ambiente Local:
+• Instalação e configuração de um ambiente de desenvolvimento SQL local.
 
-* Configuracao Python
-* Configuracao Git e Github
-* Configuracao VSCode
+4. Uso do Postgres com Docker:
+• Criação de um ambiente Docker para o PostgreSQL.
 
-## Aula 02 | Dia 20 as 12:00am Ambientes Virtuais e Gerenciamento de Pacotes em Python
+5. Configuração do Amazon RDS para Produção:
+• Configuração e otimização do Amazon RDS.
 
-* Compreender a importância dos ambientes virtuais para o desenvolvimento em Python.
-* Aprender a criar e gerenciar ambientes virtuais utilizando `pip`, `pipx`, `venv` e `poetry`.
-* Explorar as vantagens e casos de uso de cada ferramenta.
+6. ETL (Extract, Transform, Load):
+• Conceitos e ferramentas para ETL.
+• Prática de transformação de dados e carga em um data warehouse.
 
-## Aula 03 | Dia 21 as 12:00am Variáveis em Python
+7. Procedures e Automatização:
+• Criação e uso de stored procedures para automatização de tarefas.
+• Princípios de design e manutenção de procedures.
 
-* Compreender o conceito de variáveis e sua importância na programação.
-* Aprender a declarar e atribuir valores às variáveis em Python.
-* Explorar os tipos de dados simples suportados por Python.
-* Discutir boas práticas para nomear variáveis.
+8. Testes Unitários em SQL:
+• Introdução aos testes de software e como aplicá-los ao SQL.
+• Ferramentas e frameworks de teste específicos para SQL.
 
-## Aula 04 | Dia 22 as 12:00am Estrutura de Dados (Parte 1) - Listas, Tuplas, Dicionários e Conjuntos
+9. Integração com DBT (Data Build Tool):
+• Cinco aulas cobrindo desde a introdução ao DBT até casos de uso avançados.
+• Melhores práticas para modelagem de dados e versionamento com DBT.
 
-* Compreender a diferença entre listas e tuplas em Python.
-* Aprender a criar, acessar e manipular listas e tuplas.
-* Explorar métodos e operações comuns aplicáveis a listas e tuplas.
-* Dicionários: criação, chave-valor, métodos
-* Conjuntos: criação, operações de conjunto, métodos
-
-## Aula 05 | Dia 23 as 12:00am Controle de Fluxo: if, else, for loops e while, Exceções e Manipulação de Erros
-
-* Estruturas condicionais com if, else, e elif
-* Loops com for para iterar sobre sequências
-* Uso de loops while para execução condicional
-* Exercícios práticos para reforçar o aprendizado
-* Introdução a exceções e como elas são usadas em Python
-* Tratamento de exceções com blocos try e except
-* Utilização de else e finally em manipulação de erros
-* Levantando exceções com raise e práticas recomendadas
-
-## Aula 06 | Dia 26 as 12:00am Exercicio de revisao
-* Revisao variaveis, tipos e fluxos
-* Projeto 01
-* Projeto 02
-
-## Aula 07 | Dia 27 as 12:00am Trabalhando com Strings
-* Métodos básicos de strings: encontrar, substituir, dividir
-* Concatenação, fatiamento, e formatação de strings
-* Exercícios práticos para manipulação de strings
-
-## Aula 08 | Dia 28 as 12:00am Funções Básicas
-* Definição e chamada de funções
-* Argumentos e retorno de valores
-* Exemplos práticos e exercícios para solidificar o entendimento
-
-## Aula 09 | Dia 01 as 12:00am Arquivos: Leitura e Escrita
-* Abrindo e lendo arquivos, incluindo o uso de with para gerenciamento automático de recursos
-* Escrevendo em arquivos, tratando tanto texto quanto binário
-* Dicas para práticas seguras com arquivos
-Exercícios de aplicação para consolidar o aprendizado
-
-## Aula 10 | Dia 02 as 12:00am Introdução a objetos, mas usando os objetos dos outros
-
-* Instalando e importando a biblioteca Pandas
-* Estruturas de dados do Pandas: Series e DataFrame
-* Carregando dados de um arquivo para um DataFrame
-* Operações básicas com Pandas: filtragem, seleção e manipulação de dados
-* Exercícios práticos com datasets reais para aplicar os conceitos aprendidos
-
-Esta estrutura oferece uma introdução abrangente e acessível ao Python, começando com operações fundamentais de strings, passando por controle de exceções, introdução a funções, manipulação de arquivos e, finalmente, utilizando uma biblioteca externa popular como o Pandas. Cada aula é projetada para construir a base de conhecimento do aluno gradualmente, permitindo-lhes aplicar o que aprenderam em exemplos e exercícios práticos, preparando-os efetivamente para trabalhos mais avançados com Python no futuro.
-
-## Aula 11 | Dia 04 as 07:00pm Funções em Python - Parte 1
-
-* Introdução às funções: definição, chamadas e retornos
-* Parâmetros de funções: obrigatórios, opcionais e argumentos de palavra-chave
-* Escopo de variáveis: global vs. local
-
-## Aula 12 | Dia 05 as 07:00pm Funções em Python - Parte 2
-
-* Funções anônimas (lambda)
-* Decoradores: modificando o comportamento das funções
-* Funções geradoras e a palavra-chave `yield`
-
-## Aula 13 | Dia 06 as 07:00pm Introdução às Classes em Python
-
-* Conceitos básicos de classes e objetos
-* Definindo classes: atributos, métodos e o `__init__`
-* Criando e interagindo com instâncias de objetos
-
-## Aula 14 | Dia 07 as 07:00pm Herança e Polimorfismo
-
-* Conceitos de herança: criando subclasses
-* Sobrescrevendo métodos e uso de `super()`
-* Polimorfismo e métodos mágicos (dunder methods)
-
-## Aula 15 | Dia 08 as 07:00pm Classes Avançadas - Composição e Encapsulamento
-
-* Composição vs. Herança: melhores práticas
-* Encapsulamento: protegendo os dados da classe
-* Métodos estáticos e de classe
-
-## Aula 16 | Dia 11 as 07:00pm Introdução à Orientação a Objetos
-
-* Princípios fundamentais da OOP: encapsulamento, herança, e polimorfismo
-* Aplicando conceitos de OOP em Python
-* Exemplos e exercícios práticos
-
-## Aula 17 | Dia 12 as 07:00pm  OOP Aplicado: Padrões de Projeto
-
-* Introdução a padrões de projeto: Singleton, Factory, Strategy
-* Implementando padrões de projeto em Python
-* Discussão sobre quando e por que usar cada padrão
-
-## Aula 18 | Dia 13 as 07:00pm OOP Aplicado: Testando Classes
-
-* Testes unitários com `unittest`
-* Mocking e testando comportamentos em OOP
-* Melhores práticas para testar código orientado a objetos
-
-## Aula 19 | Dia 14 as 07:00pm Projetos Práticos: Criando nosso Duckdb Parte 01
-
-* Desenvolvendo um projeto prático utilizando OOP
-* Planejamento, implementação e revisão de um projeto Python orientado a objetos
-* Dicas para estruturação e organização de projetos maiores
-
-## Aula 20 | Dia 15 as 07:00pm Projetos Práticos: Criando nosso Duckdb Parte 02
-
-* Revisão dos conceitos chave de OOP em Python
-* Início do projeto final: aplicando OOP para resolver um problema prático
-* Orientações para continuação do aprendizado em Python e próximos passos
+10. Orquestração de Workflows com Airflow:
+• Introdução ao Apache Airflow e sua importância na orquestração de tarefas de engenharia de dados.
+• Como integrar processos de ETL, testes e outras tarefas automatizadas com Airflow.
 
 ## Jornada de dados 2024
 
@@ -292,7 +174,7 @@ Os encontros são aos **sábados ás 9 horas, são 4 horas de workshop**
 * Deploy de Workflows com Airflow
 * Monitoramento e Troubleshooting no Airflow
 
-### [Workshop 15/04: Redis, MongoDB, NoSQL](./05-redis-mongodb-esse-tal-de-nosql/)
+### [Workshop 13/04: Redis, MongoDB, NoSQL](./05-redis-mongodb-esse-tal-de-nosql/)
 
 * Introdução ao NoSQL: Redis e MongoDB
 * Redis para Caching e Gerenciamento de Dados
