@@ -2,13 +2,22 @@
 
 * **Objetivo da Aula:** 
 
-1) Explicar como irá funcionar o Bootcamp
+1) Funcionamento Bootcamp
 
-- Repositório no Github
-- Plataforma
+2) Configuração do ambiente
+
+## Bootcamp de SQL e Analytics
+
+Nosso bootcamp possui uma série de materiais de apoio e de encontros
+
+- [Repositório no Github](https://github.com/lvgalvao/data-engineering-roadmap) 
+- [Plataforma Alpaclass](https://jornadadedados.alpaclass.com/s/conteudos)
 - Aulas ao vivo: Sempre meio dia pelo Google Meet
-- Aulas sempre ao meio dia: iniciando no dia 22/04 e indo até o dia 
-os fundamentos dos bancos de dados e introduzir o Postgres.
+- Grupo do whatsapp para dúvidas
+![Foto grupo](.\pics\grupo_alunos.png)
+
+
+
 
 2) Configurarmos o nosso ambiente de desenvolvimento
 
