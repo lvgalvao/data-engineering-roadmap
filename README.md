@@ -63,7 +63,7 @@ Um intensivo único para você iniciar com Python e ir até tópicos avançados 
 | 21/03 | O que é uma API? Criando nossa primeira API | 12am |
 | 22/03 | Nosso Projeto de CRUD Backend + Frontend + Banco de Dados | 12 am |
 
-## Calendário Bootcamp - SQL início dia 15/04
+## Calendário Bootcamp - SQL início dia 22/04
 
 Um workshop focado em SQL para engenharia de dados
 
