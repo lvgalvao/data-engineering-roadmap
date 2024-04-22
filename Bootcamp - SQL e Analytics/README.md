@@ -26,7 +26,7 @@ Nosso bootcamp é repleto de recursos e atividades interativas para garantir uma
 
 * **Foto do Grupo:** 
 
-![Foto grupo](.\pics\grupo_alunos.png)
+![Foto grupo](https://github.com/lvgalvao/data-engineering-roadmap/blob/main/Bootcamp%20-%20SQL%20e%20Analytics/pics/grupo_alunos.png)
 
 
 #### 5. **Repositório no Excalidraw**
