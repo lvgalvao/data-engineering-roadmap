@@ -1,4 +1,4 @@
-# Aula 01 - SQL para Analytics: Nossas primeiras consultas
+# Aula 02 - SQL para Analytics: Nossas primeiras consultas
 
 ## Objetivo
 
