@@ -354,6 +354,53 @@ select * from orders
 where order_date between '07/04/1996' and '07/09/1996';
 ```
 
+* **Tangente sobre diferentes bancos**
+
+O comando SQL que você mencionou é específico para PostgreSQL e não necessariamente padrão em todos os SGBDs (Sistemas de Gerenciamento de Banco de Dados). Cada SGBD pode ter funções e formatos de data ligeiramente diferentes. No entanto, a estrutura básica do comando `SELECT` e a cláusula `WHERE` usando `BETWEEN` são bastante universais.
+
+Aqui estão algumas variantes para outros SGBDs populares:
+
+### SQL Server
+
+Para formatar datas em SQL Server, você usaria a função `CONVERT` ou `FORMAT` (a partir do SQL Server 2012):
+
+```sql
+-- Usando CONVERT
+SELECT CONVERT(VARCHAR, order_date, 120) FROM orders
+WHERE order_date BETWEEN '1996-04-07' AND '1996-09-07';
+
+-- Usando FORMAT
+SELECT FORMAT(order_date, 'yyyy-MM-dd') FROM orders
+WHERE order_date BETWEEN '1996-04-07' AND '1996-09-07';
+```
+
+### MySQL
+
+MySQL utiliza a função `DATE_FORMAT` para formatar datas:
+
+```sql
+SELECT DATE_FORMAT(order_date, '%Y-%m-%d') FROM orders
+WHERE order_date BETWEEN '1996-04-07' AND '1996-09-07';
+```
+
+### Oracle
+
+Oracle também usa a função `TO_CHAR` como PostgreSQL para formatação de datas:
+
+```sql
+SELECT TO_CHAR(order_date, 'YYYY-MM-DD') FROM orders
+WHERE order_date BETWEEN TO_DATE('1996-04-07', 'YYYY-MM-DD') AND TO_DATE('1996-09-07', 'YYYY-MM-DD');
+```
+
+### SQLite
+
+SQLite não tem uma função dedicada para formatar datas, mas você pode usar funções de string para manipular formatos de data padrão:
+
+```sql
+SELECT strftime('%Y-%m-%d', order_date) FROM orders
+WHERE order_date BETWEEN '1996-04-07' AND '1996-09-07';
+```
+
 * **Funções Agregadas** (COUNT, MAX, MIN, SUM, AVG): Usadas para realizar cálculos em um conjunto de valores.
 
 As funções agregadas são uma ferramenta fundamental na linguagem SQL, utilizadas para realizar cálculos sobre um conjunto de valores e retornar um único valor resultante. Essas funções são especialmente úteis em operações que envolvem a análise estatística de dados, como a obtenção de médias, somas, valores máximos e mínimos, entre outros. Ao operar em conjuntos de dados, as funções agregadas permitem extrair insights significativos, suportar decisões de negócios, e simplificar dados complexos em informações gerenciáveis.
