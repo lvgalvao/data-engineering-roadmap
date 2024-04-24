@@ -33,6 +33,10 @@ Gustavo trouxe tambem essa implementacao
 
 'WHERE DATE_PART('YEAR', o.order_date) = 1996'
 
+No SQL server pode usar o 
+
+'WHERE YEAR(o.order_date) = 1996'
+
 No contexto da sua consulta, o uso de EXTRACT na cláusula WHERE serve especificamente para aplicar um filtro nos dados retornados pelo SELECT, garantindo que apenas registros do ano de 1996 sejam incluídos no conjunto de resultados. Este é um uso legítimo e comum de EXTRACT para manipulação de condições baseadas em datas dentro de cláusulas WHERE.
 
 ### 2. Criar um relatório que mostra o número de funcionários e clientes de cada cidade que tem funcionários
