@@ -2,7 +2,7 @@
 
 -- 2. Obter todos os Clientes em ordem alfabética por país e nome
 
--- 3. Obter todos os Pedidos por data
+-- 3. Obter os 5 pedidos mais antigos
 
 -- 4. Obter a contagem de todos os Pedidos feitos durante 1997
 
