@@ -1,8 +1,6 @@
--- Classificação dos produtos mais venvidos  usando RANK(), DENSE_RANK() e ROW_NUMBER()
--- FROM order_details o JOIN products p ON p.product_id = o.product_id;
-
--- relatório apresenta o ID de cada pedido juntamente com o total de vendas e a classificação percentual e a distribuição cumulativa do valor de cada venda em relação ao valor total das vendas para o mesmo pedido. Esses cálculos são realizados com base no preço unitário e na quantidade de produtos vendidos em cada pedido. usando PERCENT_RANK() e CUME_DIST()
--- FROM order_details;
+-- Faça a classificação dos produtos mais venvidos usando usando RANK(), DENSE_RANK() e ROW_NUMBER()
+-- Essa questão tem 2 implementações, veja uma que utiliza subquery e uma que não utiliza.
+-- Tabelas utilizadasFROM order_details o JOIN products p ON p.product_id = o.product_id;
 
 -- Listar funcionários dividindo-os em 3 grupos usando NTILE
 -- FROM employees;
@@ -10,3 +8,8 @@
 -- Ordenando os custos de envio pagos pelos clientes de acordo 
 -- com suas datas de pedido, mostrando o custo anterior e o custo posterior usando LAG e LEAD:
 -- FROM orders JOIN shippers ON shippers.shipper_id = orders.ship_via;
+
+-- Desafio extra: questão intrevista Google
+-- https://medium.com/@aggarwalakshima/interview-question-asked-by-google-and-difference-among-row-number-rank-and-dense-rank-4ca08f888486#:~:text=ROW_NUMBER()%20always%20provides%20unique,a%20continuous%20sequence%20of%20ranks.
+-- https://platform.stratascratch.com/coding/10351-activity-rank?code_type=3
+-- https://www.youtube.com/watch?v=db-qdlp8u3o

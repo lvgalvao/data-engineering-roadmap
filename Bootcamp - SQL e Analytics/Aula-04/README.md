@@ -206,7 +206,9 @@ Elas são aplicadas em vários cenários, como criar leaderboards, classificar p
 * **DENSE_RANK()**: Atribui um rank único a cada linha, com ranks contínuos para linhas empatadas.
 * **ROW_NUMBER()**: Atribui um número inteiro sequencial único a cada linha, independentemente de empates, sem lacunas.
 
-### Exemplo: Classificação dos produtos mais venvidos 
+### Exemplo: Classificação dos produtos mais venvidos POR order ID
+
+ex: o mesmo produto pode ficar em primeiro por ter vendido muito por ORDER e depois ficar em segundo por ter vendido muito por ORDER
 
 ```sql
 SELECT  
@@ -235,12 +237,35 @@ JOIN
     
 ## Este relatório apresenta o ID de cada pedido juntamente com o total de vendas e a classificação percentual e a distribuição cumulativa do valor de cada venda em relação ao valor total das vendas para o mesmo pedido. Esses cálculos são realizados com base no preço unitário e na quantidade de produtos vendidos em cada pedido.
 
+### Exemplo: Classificação dos produtos mais venvidos usnado SUB QUERY
+
+```sql
+SELECT  
+  sales.product_name, 
+  total_sale,
+  ROW_NUMBER() OVER (ORDER BY total_sale DESC) AS order_rn, 
+  RANK() OVER (ORDER BY total_sale DESC) AS order_rank, 
+  DENSE_RANK() OVER (ORDER BY total_sale DESC) AS order_dense
+FROM (
+  SELECT 
+    p.product_name, 
+    SUM(o.unit_price * o.quantity) AS total_sale
+  FROM  
+    order_details o
+  JOIN 
+    products p ON p.product_id = o.product_id
+  GROUP BY p.product_name
+) AS sales
+ORDER BY sales.product_name;
+```
 
 ### Utilidade da Consulta
 
 Esta consulta é útil para análises de vendas, onde é necessário identificar os produtos mais vendidos, bem como sua classificação em termos de receita gerada. Ela permite que os analistas vejam rapidamente quais produtos geram mais receita e como eles se classificam em relação uns aos outros, facilitando decisões estratégicas relacionadas a estoque, promoções e planejamento de vendas.
 
 ### Funções PERCENT_RANK() e CUME_DIST()
+
+Ambos retornam um valor entre 0 e 1
 
 * **PERCENT_RANK()**: Calcula o rank relativo de uma linha específica dentro do conjunto de resultados como uma porcentagem. É computado usando a seguinte fórmula:
     * RANK é o rank da linha dentro do conjunto de resultados.
