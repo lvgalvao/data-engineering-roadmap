@@ -1,5 +1,7 @@
 # Aula 04 - Windows Function
 
+Documentação Postgres:  https://www.postgresql.org/docs/current/functions-window.html
+
 ## Com o que vimos até aqui: Group By
 
 Com SQL que vimos até agora conseguimos dois tipos de resultado: todas as linhas (com ou sem filtro/where) ou linhas agrupadas (group by)
