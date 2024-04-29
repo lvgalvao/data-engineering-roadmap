@@ -1,5 +1,7 @@
 ## Aula 06 - CTE vs Subqueries vs Views vs Temporary Tables vs Materialized Views
 
+[Apostila completa](https://www.linkedin.com/feed/update/urn:li:activity:7190722950499577856/)
+
 1. **CTE (Common Table Expressions):**
     
     * **Onde usar:** As CTEs são úteis quando você precisa dividir uma consulta em partes mais gerenciáveis ou quando deseja reutilizar uma subconsulta várias vezes na mesma consulta principal.
