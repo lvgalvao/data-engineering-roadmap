@@ -35,17 +35,53 @@
         * Em algumas situações, podem não ser tão eficientes quanto outras técnicas, especialmente se as subqueries forem executadas várias vezes.
 
     ```sql
-    SELECT 
-        company_name, 
-        (
-            SELECT SUM(unit_price * quantity * (1.0 - discount))
-            FROM order_details
-            WHERE order_id IN (
-                SELECT order_id FROM orders WHERE orders.customer_id = customers.customer_id
-            )
-        ) AS total
-    FROM customers;
+    SELECT product_id FROM (
+	SELECT product_id 
+	FROM (
+		SELECT product_id, rank
+		FROM (SELECT 
+				product_id,
+				SUM( det.quantity * det.unit_price * ( 1 - det.discount )) sold_value,
+				RANK() OVER (ORDER BY SUM( det.quantity * det.unit_price * ( 1 - det.discount )) DESC) rank -- WINDOWS FUNCTION
+			FROM order_details det
+			GROUP BY det.product_id
+			ORDER BY rank)
+		WHERE rank <= 5 )
+	WHERE product_id BETWEEN 35 and 65 )
+ORDER BY product_id DESC
     ```
+
+    Refatorando a subquery acima para CTEs
+
+    ```sql
+    WITH CalculatedValues AS (
+    -- Calcula o valor vendido e o rank para cada produto
+    SELECT 
+        product_id,
+        SUM(det.quantity * det.unit_price * (1 - det.discount)) AS sold_value,
+        RANK() OVER (ORDER BY SUM(det.quantity * det.unit_price * (1 - det.discount)) DESC) AS rank
+    FROM order_details det
+    GROUP BY product_id
+),
+TopRankedProducts AS (
+    -- Seleciona apenas os produtos com rank entre os top 5
+    SELECT 
+        product_id
+    FROM CalculatedValues
+    WHERE rank <= 5
+),
+FilteredProducts AS (
+    -- Filtra os produtos com IDs entre 35 e 65
+    SELECT 
+        product_id
+    FROM TopRankedProducts
+    WHERE product_id BETWEEN 35 AND 65
+)
+-- Seleciona e ordena os produtos finais
+SELECT product_id
+FROM FilteredProducts
+ORDER BY product_id DESC;
+```
 
 3. **Views:**
     
@@ -74,7 +110,7 @@
     GRANT SELECT ON TotalRevenues TO user1;
     ```
 
-4. **Temporary Tables:**
+4. **Temporary Tables / Staging / Testes ETL :**
     
     * **Onde usar:** Tabelas temporárias são úteis quando você precisa armazenar dados temporários para uso em uma sessão de banco de dados ou em uma consulta específica.
     * **Vantagens:**
@@ -97,14 +133,16 @@
     SELECT * FROM TempTotalRevenues;
     ```
 
-5. **Materialized Views:**
+5. **Materialized Views / Snapshot:**
+
+    Definição da Oracle: https://oracle-base.com/articles/misc/materialized-views
     
     * **Onde usar:** Materialized views são úteis quando você precisa pré-calcular e armazenar resultados de consultas complexas para consultas frequentes ou análises de desempenho.
     * **Vantagens:**
         * Permitem armazenar fisicamente os resultados de uma consulta, melhorando significativamente o desempenho em consultas subsequentes.
         * Reduzem a carga no banco de dados, já que os resultados são pré-calculados e armazenados.
     * **Desvantagens:**
-        * Precisam ser atualizadas regularmente para manter os dados atualizados, o que pode consumir recursos do sistema.
+        * **Precisam ser atualizadas** regularmente para manter os dados atualizados, o que pode consumir recursos do sistema.
         * A introdução de dados redundantes pode aumentar os requisitos de armazenamento.
 
     ```sql
@@ -183,3 +221,15 @@ Em resumo, cada técnica tem seu lugar e uso apropriado, dependendo dos requisit
     
     * Tabela Normal: Os dados são atualizados em tempo real e podem ser manipulados diretamente.
     * Materialized View: Os resultados da consulta são estáticos e precisam ser atualizados manualmente. Eles são usados principalmente para armazenar resultados de consultas complexas que não mudam com frequência.
+
+
+
+* **DROP TEMP TABLE**
+
+    https://www.youtube.com/watch?v=vKvnIa6S-nQ&t=3682s
+
+    https://www.reddit.com/r/SQL/comments/tg4hei/sql_server_temporary_tables/
+
+    https://www.theknowledgeacademy.com/blog/how-to-create-temp-table-in-sql/#:~:text=To%20add%20data%20to%20a%20Temp%20Table%2C%20you'll%20use,%2C%20column2%2C%20...)
+
+    https://www.reddit.com/r/SQL/comments/tg4hei/sql_server_temporary_tables/
