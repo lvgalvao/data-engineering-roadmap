@@ -42,6 +42,30 @@ CREATE TABLE IF NOT EXISTS transactions (
 );
 ```
 
+Caso queira usar UUID (para cenários de produção)
+
+```
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS clients (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    limite INTEGER NOT NULL,
+    saldo INTEGER NOT NULL
+);
+```
+
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS clients (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    limite INTEGER NOT NULL,
+    saldo INTEGER NOT NULL,
+    CHECK (saldo >= limite)
+);
+
+
+
 **CREATE TABLE:**
 
 * O comando `CREATE TABLE` é usado para criar uma nova tabela no banco de dados.
@@ -170,6 +194,8 @@ Vamos entender cada parte da stored procedure `realizar_transacao`:
     * A procedure tem quatro parâmetros de entrada: `p_tipo`, `p_descricao`, `p_valor` e `p_cliente_id`, cada um com seu tipo de dado especificado.
 2. **Definição da Linguagem:**
     
+    Sobre a languages na documentação do postgresql tem 4 linguagens padrões  disponíveis: PL/pgSQL (Chapter 43), PL/Tcl (Chapter 44), PL/Perl (Chapter 45), and PL/Python (Chapter 46)
+
     ```sql
     LANGUAGE plpgsql
     ```
