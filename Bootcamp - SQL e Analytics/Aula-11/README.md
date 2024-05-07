@@ -165,3 +165,23 @@ O plano de execução que você visualizou para sua consulta SQL no PostgreSQL d
    - **Descrição**: Apenas as duas primeiras linhas do resultado ordenado são retidas, conforme especificado pela cláusula `LIMIT 2` na consulta.
 
 A ordem das operações mostra claramente como o PostgreSQL lida com a consulta, otimizando o processo ao usar técnicas como varreduras sequenciais, hash para junção e filtragem rigorosa antes de aplicar funções de agregação e ordenação, culminando na aplicação de um limite para o resultado final. Esta abordagem ajuda a minimizar o volume de dados manipulados nas etapas finais do processamento da consulta.
+
+## Tudo foi uma mentira
+
+```sql
+SELECT
+  cars.manufacturer,
+  cars.model,
+  cars.engine_name,
+  engines.horse_power
+FROM cars
+JOIN engines ON cars.engine_name = engines.name
+LIMIT 2;
+```
+
+Otimização do Join: O uso do Nested Loop Inner Join sugere que o otimizador percebeu que é mais eficiente processar o join linha a linha devido ao pequeno tamanho do resultado esperado da tabela engines.
+
+Aplicação precoce do Limit: O fato de apenas 2 linhas serem processadas na varredura da tabela engines e resultarem em 2 linhas após o join indica que o LIMIT pode estar influenciando a execução da consulta mais cedo do que o plano sugere visualmente. Isto é, o PostgreSQL está provavelmente limitando o número de linhas processadas em cada etapa para cumprir eficientemente o LIMIT.
+
+Eficiência do Plano: Este plano mostra um uso eficiente de recursos, processando o mínimo de dados necessário para alcançar o resultado desejado, que é fundamental em grandes bases de dados ou em sistemas com recursos limitados.
+Portanto, mesmo que o LIMIT apareça ao final no plano visual, sua influência é evidente em todas as etapas anteriores, demonstrando a capacidade do otimizador de consulta do PostgreSQL de integrar profundamente considerações de limitação no plano de execução global.
