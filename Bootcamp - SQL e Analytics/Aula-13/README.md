@@ -73,6 +73,18 @@ Total query runtime: 2 secs 552 msec.
      ) PARTITION BY RANGE (id);
 ```
 
+Opção mais simples
+
+```sql
+CREATE TABLE pessoas_part1 PARTITION OF pessoas FOR VALUES FROM (MINVALUE) TO (2000001);
+CREATE TABLE pessoas_part2 PARTITION OF pessoas FOR VALUES FROM (2000001) TO (4000001);
+CREATE TABLE pessoas_part3 PARTITION OF pessoas FOR VALUES FROM (4000001) TO (6000001);
+CREATE TABLE pessoas_part4 PARTITION OF pessoas FOR VALUES FROM (6000001) TO (8000001);
+CREATE TABLE pessoas_part5 PARTITION OF pessoas FOR VALUES FROM (8000001) TO (MAXVALUE);
+```
+
+Opção indireta
+
 ```sql
 -- Criar as tabelas particionadas
 CREATE TABLE pessoas_part1 (
@@ -123,4 +135,24 @@ ALTER TABLE pessoas ATTACH PARTITION pessoas_part5 FOR VALUES FROM (8000001) TO 
 
 ```sql
 select * from pessoas
+```
+
+
+## Criando com base em lista
+
+```sql
+CREATE TABLE pessoas (
+    id SERIAL,
+    first_name VARCHAR(3),
+    last_name VARCHAR(3),
+    estado VARCHAR(3),
+    PRIMARY KEY (id, estado)
+) PARTITION BY LIST (estado);
+
+-- Criar as partições
+CREATE TABLE pessoas_sp PARTITION OF pessoas FOR VALUES IN ('SP');
+CREATE TABLE pessoas_rj PARTITION OF pessoas FOR VALUES IN ('RJ');
+CREATE TABLE pessoas_mg PARTITION OF pessoas FOR VALUES IN ('MG');
+CREATE TABLE pessoas_es PARTITION OF pessoas FOR VALUES IN ('ES');
+CREATE TABLE pessoas_df PARTITION OF pessoas FOR VALUES IN ('DF');
 ```
