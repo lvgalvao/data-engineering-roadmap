@@ -1,4 +1,4 @@
-# Aula 12 : Database Indexing
+# Aula 13 : Database Partition
 
 Vamos detalhar cada parte do código:
 
