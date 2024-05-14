@@ -1,3 +1,0 @@
-```bash
-curl "https://oaidalleapiprodscus.blob.core.windows.net/private/org-IZAyac7K1DAkImDFavXsGhdj/user-ZydpZOHfvGETDmONdXQjgDCG/img-Qo5w2dx6pp8EJe7XYsbFnAYu.png?st=2024-04-25T03%3A45%3A19Z&se=2024-04-25T05%3A45%3A19Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-04-24T19%3A33%3A09Z&ske=2024-04-25T19%3A33%3A09Z&sks=b&skv=2021-08-06&sig=69MjVktvwm2F3J7SwdqsoPHI7NnL3qZRHSLG39BUM3U%3D" -o saved_image.png
-```

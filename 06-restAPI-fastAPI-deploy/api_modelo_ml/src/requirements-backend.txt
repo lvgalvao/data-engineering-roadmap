@@ -1,8 +1,0 @@
-email_validator
-fastapi
-pydantic
-pymongo
-python-dotenv
-uvicorn
-joblib
-scikit-learn
