@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    environment:
+      - UVICORN_RELOAD=True
+    ports:
+      - 5000:8000
+    volumes:
+      - ./src:/app/src

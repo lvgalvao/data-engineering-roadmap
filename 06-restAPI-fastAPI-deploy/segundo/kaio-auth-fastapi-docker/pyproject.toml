@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "fastapi-docker"
+version = "0.1.0"
+description = "Join Docker Captain Sebastián Ramírez as he uses memes to teach you how to create an API ready for production in very little time using FastAPI."
+authors = ["Kaio Silva <kaiohp.silva1@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "src"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["all"], version = "^0.110.1"}
+gunicorn = "^22.0.0"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+bcrypt = "4.0.1"
+sqlalchemy = "^2.0.29"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.1.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.0"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+pre-commit = "^3.7.0"
+commitizen = "^3.22.0"
+mypy = "^1.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79

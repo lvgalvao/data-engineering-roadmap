@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "workshop-api"
+version = "0.1.0"
+description = ""
+authors = ["Fabio Cantarim <fabio.cantarim@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+psycopg2-binary = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
