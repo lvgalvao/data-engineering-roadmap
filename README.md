@@ -12,7 +12,7 @@ Se você quer:
 
 A **Jornada de Dados** é o seu lugar
 
-Para conhecer mais sobre o projeto participe do nosso workshop aberto
+[Visite o nosso site](https://suajornadadedados.com.br/)
 
 ## Calendário
 
@@ -27,14 +27,19 @@ Para conhecer mais sobre o projeto participe do nosso workshop aberto
 |09/03|Docker para analista e engenheiro de dados: ajudando o seu deploy| gravação na plataforma de alunos
 |12/03|ETL com Python do Zero ao Deploy | gravação na plataforma de alunos
 |23/03|Orquestrando suas ETLs com Airflow | gravação na plataforma de alunos
-|13/04|Web scraping: extração de dados da web - Explorando noSQL com Redis e Mongodb | [Faça sua inscrição](https://www.jornadadedados2024.com.br/)
-|27/04|restAPI fastAPI Deploy| 09h google meet
-|11/05|Kafka Streaming data processing| 09h google meet
-|25/05|Amazon SNS, SQS e Rabbit MQ| 09h google meet
-|08/06|Infra as a Code com Terraform| 09h google meet
-|06/07|Prometheus Datadog Sentry Monitoramento| 09h google meet
-|20/07|Machine Learning Ops| 09h google meet
-|03/08|Databricks e Fabric, nosso DW de milhoes| 09h google meet
+|13/04|Web scraping e noSQL | gravação na plataforma de alunos
+|27/04|restAPI fastAPI Deploy| gravação na plataforma de alunos
+|25/05|Amazon SQS e lambda | gravação na plataforma de alunos
+|11/06| Data Warehouse com Python, SQL e dbt-core Part. Kaio Silva| [Youtube](https://www.youtube.com/watch?v=n3R0c2ZB6BQ)
+|13/06| Qualidade de dados em ETL com Pandera e Python: Um Guia para Contrato de Dados Part. Renan Heckert | [Youtube](https://www.youtube.com/watch?v=IQtuWsNmB4o)
+|19/06|Crie pipelines CI/CD com dbt e github actions Part. Bruno Souza | [Youtube](https://www.youtube.com/watch?v=lQeQX71KVAU)
+|Em andamento|Bootcamp de Web Scraping avançado| 19h google meet
+|29/06|Dashboard e frontend| 09h google meet
+|Julho|Kafka Streaming data processing| 09h google meet
+|Julho|Infra as a Code com Terraform| 09h google meet
+|Agosto|Prometheus Datadog Sentry Monitoramento| 09h google meet
+|Agosto|Machine Learning Ops| 09h google meet
+|Agosto|Databricks e Fabric, nosso DW de milhoes| 09h google meet
 
 ## Calendário Bootcamp - Python do zero
 
@@ -123,7 +128,7 @@ A Jornada de Dados é o seu lugar
 
 ## Metodologia
 
-Acredito no ensino ao vivo, **são 13 workshops no total**
+Acredito no ensino ao vivo, **são mais de 20 workshops no total**
 
 Os encontros são aos **sábados ás 9 horas, são 4 horas de workshop**
 
