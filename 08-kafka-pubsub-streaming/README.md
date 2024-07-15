@@ -4,6 +4,8 @@
 
 Bem-vindo ao projeto de monitoramento de transações financeiras em tempo real com Apache Kafka! Este projeto faz parte de um workshop prático exclusivo para os alunos da **Escola Jornada de Dados**.
 
+[Excalidraw](https://link.excalidraw.com/l/8pvW6zbNUnD/1FWXp1AaTy3)
+
 ## Sobre o Workshop
 
 * **Data:** Sábado, 13 de julho
