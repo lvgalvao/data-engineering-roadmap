@@ -1,0 +1,247 @@
+---
+version: "3.9"
+
+services:
+  zookeeper:
+    platform: linux/amd64
+    image: confluentinc/cp-zookeeper:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
+    container_name: zookeeper
+    restart: unless-stopped
+    ports:
+      - '32181:32181'
+      - '2888:2888'
+      - '3888:3888'
+    environment:
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 32181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+      ZOOKEEPER_SERVERS: zookeeper:2888:3888
+    healthcheck:
+      test: echo stat | nc localhost 32181
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    networks:
+      - kafka
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+
+  kafka-ui: # https://github.com/provectus/kafka-ui/blob/master/documentation/compose/kafka-ui.yaml
+    container_name: kafka-ui 
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - 8087:8080
+    depends_on:
+      - broker-1
+      - broker-2
+      - broker-3
+    environment:
+      KAFKA_CLUSTERS_0_NAME: broker-1
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: broker-1:29091
+      KAFKA_CLUSTERS_0_METRICS_PORT: 19101
+      #KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schemaregistry0:8085
+      #KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: first
+      #KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://kafka-connect0:8083
+      KAFKA_CLUSTERS_1_NAME: broker-2
+      KAFKA_CLUSTERS_1_BOOTSTRAPSERVERS: broker-2:29092
+      KAFKA_CLUSTERS_1_METRICS_PORT: 19102
+      #KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schemaregistry0:8085
+      KAFKA_CLUSTERS_2_NAME: broker-3
+      KAFKA_CLUSTERS_2_BOOTSTRAPSERVERS: broker-3:29093
+      KAFKA_CLUSTERS_2_METRICS_PORT: 19103
+      #KAFKA_CLUSTERS_1_SCHEMAREGISTRY: http://schemaregistry1:8085
+      DYNAMIC_CONFIG_ENABLED: 'true'
+    networks:
+      - kafka
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+
+  broker-1:
+    platform: linux/amd64
+    image: confluentinc/cp-kafka:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
+    container_name: broker-1
+    restart: unless-stopped
+    ports:
+      - '9091:9091'
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:32181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://broker-1:29091,EXTERNAL://localhost:9091
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 3
+      KAFKA_NUM_PARTITIONS: 3
+      #KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      #KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      #KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      #KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_JMX_PORT: 19101
+      KAFKA_JMX_HOSTNAME: localhost
+    healthcheck:
+      test: nc -vz localhost 9091
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    networks:
+      - kafka
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+
+  broker-2:
+    platform: linux/amd64
+    image: confluentinc/cp-kafka:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
+    container_name: broker-2
+    restart: unless-stopped
+    ports:
+      - '9092:9092'
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:32181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://broker-2:29092,EXTERNAL://localhost:9092
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 3
+      KAFKA_NUM_PARTITIONS: 3
+      #KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      #KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      #KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      #KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_JMX_PORT: 19102
+      KAFKA_JMX_HOSTNAME: localhost
+    healthcheck:
+      test: nc -vz localhost 9092
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    networks:
+      - kafka
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+
+  broker-3:
+    platform: linux/amd64
+    image: confluentinc/cp-kafka:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
+    container_name: broker-3
+    restart: unless-stopped
+    ports:
+      - '9093:9093'
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:32181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://broker-3:29093,EXTERNAL://localhost:9093
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 3
+      KAFKA_NUM_PARTITIONS: 3
+      #KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      #KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      #KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      #KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_JMX_PORT: 19103
+      KAFKA_JMX_HOSTNAME: localhost
+    healthcheck:
+      test: nc -vz localhost 9093
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    networks:
+      - kafka
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+  
+  # kafka-shell:
+  #   image: confluentinc/cp-kafka:${CONFLUENT_PLATFORM_VERSION:-7.4.0}
+  #   container_name: kafka-shell
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - zookeeper
+  #     - broker-1
+  #     - broker-2
+  #     - broker-3
+  #   entrypoint: ""
+  #   command: "sleep 10000000"
+  #   networks:
+  #     - kafka
+
+  producer:
+    platform: linux/amd64
+    container_name: producer
+    build: ./python-client/
+    restart: always
+    environment:
+      - ACTION=producer
+      - BOOTSTRAP_SERVERS=broker-1:29091,broker-2:29092,broker-3:29093
+      - TOPIC=my-topic
+      - PYTHONUNBUFFERED=1 # https://github.com/docker/compose/issues/4837#issuecomment-302765592
+    networks:
+      - kafka
+    depends_on:
+      - zookeeper
+      - broker-1
+      - broker-2
+      - broker-3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+
+  consumer:
+    platform: linux/amd64
+    container_name: consumer
+    build: ./python-client/
+    restart: always
+    environment:
+      - ACTION=consumer
+      - BOOTSTRAP_SERVERS=broker-1:29091,broker-2:29092,broker-3:29093
+      - TOPIC=my-topic
+      - CONSUMER_GROUP=cg-group-id
+      - PYTHONUNBUFFERED=1 # https://github.com/docker/compose/issues/4837#issuecomment-302765592
+    networks:
+      - kafka
+    depends_on:
+      - zookeeper
+      - broker-1
+      - broker-2
+      - broker-3
+      - producer
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+
+  # shell:
+  #   container_name: shell
+  #   build: ./python-client/
+  #   restart: always
+  #   environment:
+  #     - ACTION=shell
+  #     - BOOTSTRAP_SERVERS=broker-1:29091,broker-2:29092,broker-3:29093
+  #     - TOPIC=my-topic
+  #   networks:
+  #     - kafka
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "1m"
+
+networks:
+  kafka:
+    name: kafka

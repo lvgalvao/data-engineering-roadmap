@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "kafka-workshop"
+version = "0.1.0"
+description = ""
+authors = ["lvgalvaofilho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.1"
+kafka-python = "^2.0.2"
+six = "^1.16.0"
+confluent-kafka = "^2.5.0"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.1"
+taskipy = "^1.13.0"
+
+[tool.taskipy.tasks]
+
+lint = 'ruff check . && ruff check . --diff'
+format = 'ruff check . --fix && ruff format . '
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+ignore = ['E402', 'F811', 'E501']
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

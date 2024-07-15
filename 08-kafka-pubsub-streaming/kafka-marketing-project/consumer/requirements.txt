@@ -1,0 +1,4 @@
+confluent_kafka
+faker
+streamlit
+sqlalchemy
