@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "workshop-streamlit"
+version = "0.1.0"
+description = ""
+authors = ["lvgalvaofilho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.1"
+streamlit = "^1.37.0"
+folium = "^0.17.0"
+streamlit-folium = "^0.22.0"
+matplotlib = "^3.9.1"
+seaborn = "^0.13.2"
+pydeck = "^0.9.1"
+wordcloud = "^1.9.3"
+psycopg2-binary = "^2.9.9"
+python-dotenv = "^1.0.1"
+sqlalchemy = "^2.0.31"
+xlsxwriter = "^3.2.0"
+plotly = "^5.23.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.5.5"
+taskipy = "^1.13.0"
+pre-commit = "^3.7.1"
+pytest = "^8.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 200
+indent-width = 4
+exclude = ["build","exemplo","ruff_erros"]
+
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "C", "N", "B", "I", "PL", "PT"]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+[tool.taskipy.tasks]
+lint = "ruff check ."
+format = "ruff format ."
+ruff = "ruff check . --fix && ruff format ."

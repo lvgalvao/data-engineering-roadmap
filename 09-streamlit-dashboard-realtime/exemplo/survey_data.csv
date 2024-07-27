@@ -1,0 +1,37 @@
+Estado,Nível de Experiência,Bibliotecas,Área de Atuação,Frequência de Uso,Horas de Estudo,Projetos Concluídos,Objetivo ao Aprender,Cursos Completos,Conforto com Dados,Experiência de Python,Experiência de SQL,Experiência em Cloud
+São Paulo,Iniciante,"pandas,numpy,scikit-learn",Analista de Dados,Diariamente,10-20,1-2,Desenvolvimento de Carreira,3-5,Confortável,7,5,3
+Rio de Janeiro,Intermediário,"tensorflow,keras",Cientista de Dados,Semanalmente,5-10,3-5,Projeto Pessoal,1-2,Muito Confortável,8,7,6
+Minas Gerais,Avançado,"airflow,pandas,plotly",Engenheiro de Dados,Mensalmente,5-10,Mais de 5,Desenvolvimento de Carreira,Mais de 5,Confortável,9,9,8
+Bahia,Iniciante,"airflow,dbt",Analista de Dados,Raramente,5-10,0,Curiosidade/Aprendizado Pessoal,Nenhum,Desconfortável,3,2,1
+Paraná,Intermediário,"spark,hadoop,kafka",Cientista de Dados,Semanalmente,10-20,1-2,Desenvolvimento de Carreira,3-5,Neutro,6,8,7
+Rio Grande do Sul,Avançado,"prefect,flink,airflow",Engenheiro de Dados,Diariamente,Menos de 5,3-5,Projeto Pessoal,3-5,Muito Desconfortável,8,9,9
+Santa Catarina,Iniciante,"pandas,numpy,bokeh",Analista de Dados,Mensalmente,5-10,1-2,Desenvolvimento de Carreira,1-2,Confortável,5,4,2
+Ceará,Intermediário,"tensorflow,keras",Cientista de Dados,Semanalmente,10-20,3-5,Curiosidade/Aprendizado Pessoal,3-5,Muito Confortável,7,8,6
+Distrito Federal,Avançado,"matplotlib,pandas,airflow",Engenheiro de Dados,Diariamente,Mais de 20,3-5,Desenvolvimento de Carreira,Mais de 5,Confortável,9,9,9
+Pernambuco,Iniciante,"airflow,dbt",Analista de Dados,Semanalmente,5-10,1-2,Projeto Pessoal,1-2,Desconfortável,4,3,2
+Goiás,Intermediário,"spark,pandas,kafka",Cientista de Dados,Diariamente,10-20,3-5,Desenvolvimento de Carreira,3-5,Neutro,6,7,6
+Pará,Avançado,"prefect,flink,beam",Engenheiro de Dados,Mensalmente,Mais de 20,Mais de 5,Curiosidade/Aprendizado Pessoal,Mais de 5,Confortável,8,9,8
+Mato Grosso,Iniciante,"pandas,numpy,pandas",Analista de Dados,Raramente,5-10,0,Desenvolvimento de Carreira,Nenhum,Neutro,3,4,2
+Amazonas,Intermediário,"tensorflow,keras",Cientista de Dados,Semanalmente,10-20,1-2,Projeto Pessoal,1-2,Muito Confortável,7,8,7
+Espírito Santo,Avançado,"matplotlib,seaborn,airflow",Engenheiro de Dados,Diariamente,5-10,3-5,Desenvolvimento de Carreira,3-5,Confortável,8,9,9
+Paraíba,Iniciante,"airflow,dbt",Analista de Dados,Mensalmente,10-20,1-2,Curiosidade/Aprendizado Pessoal,1-2,Desconfortável,4,5,3
+Acre,Intermediário,"spark,hadoop,kafka",Cientista de Dados,Semanalmente,Mais de 20,3-5,Desenvolvimento de Carreira,3-5,Neutro,6,7,6
+São Paulo,Avançado,"airflow,dbt,kafka",Engenheiro de Dados,Raramente,10-20,Mais de 5,Projeto Pessoal,Mais de 5,Confortável,9,8,9
+Rio de Janeiro,Iniciante,"pandas,numpy,bokeh",Analista de Dados,Diariamente,5-10,0,Desenvolvimento de Carreira,1-2,Neutro,3,4,2
+Minas Gerais,Intermediário,"tensorflow,keras",Cientista de Dados,Mensalmente,10-20,1-2,Curiosidade/Aprendizado Pessoal,3-5,Muito Confortável,8,7,6
+Bahia,Avançado,"matplotlib,seaborn,plotly",Engenheiro de Dados,Semanalmente,5-10,3-5,Desenvolvimento de Carreira,3-5,Confortável,9,9,8
+Paraná,Iniciante,"airflow,dbt",Analista de Dados,Diariamente,5-10,0,Projeto Pessoal,1-2,Desconfortável,4,3,1
+Rio Grande do Sul,Intermediário,"spark,hadoop,kafka",Cientista de Dados,Mensalmente,10-20,3-5,Desenvolvimento de Carreira,3-5,Neutro,6,7,7
+Santa Catarina,Avançado,"prefect,flink,beam",Engenheiro de Dados,Semanalmente,Mais de 20,Mais de 5,Curiosidade/Aprendizado Pessoal,Mais de 5,Confortável,8,9,9
+Ceará,Iniciante,"pandas,numpy,scikit-learn",Analista de Dados,Raramente,5-10,0,Desenvolvimento de Carreira,Nenhum,Neutro,3,2,1
+Distrito Federal,Intermediário,"tensorflow,keras",Cientista de Dados,Semanalmente,10-20,1-2,Projeto Pessoal,1-2,Muito Confortável,7,8,6
+Pernambuco,Avançado,"matplotlib,seaborn,plotly",Engenheiro de Dados,Diariamente,5-10,3-5,Desenvolvimento de Carreira,3-5,Confortável,8,9,9
+Goiás,Iniciante,"airflow,dbt",Analista de Dados,Mensalmente,10-20,1-2,Curiosidade/Aprendizado Pessoal,1-2,Desconfortável,4,3,2
+Pará,Intermediário,"spark,hadoop,kafka",Cientista de Dados,Diariamente,Mais de 20,3-5,Desenvolvimento de Carreira,3-5,Neutro,6,7,7
+Mato Grosso,Avançado,"prefect,flink,beam",Engenheiro de Dados,Mensalmente,10-20,Mais de 5,Projeto Pessoal,Mais de 5,Confortável,9,8,9
+Amazonas,Iniciante,"pandas,numpy,bokeh",Analista de Dados,Semanalmente,5-10,0,Desenvolvimento de Carreira,1-2,Neutro,3,4,2
+Espírito Santo,Intermediário,"tensorflow,keras",Cientista de Dados,Diariamente,10-20,1-2,Curiosidade/Aprendizado Pessoal,3-5,Muito Confortável,7,8,7
+Paraíba,Avançado,"airflow,seaborn,plotly",Engenheiro de Dados,Mensalmente,5-10,3-5,Desenvolvimento de Carreira,3-5,Confortável,9,9,8
+Acre,Iniciante,"airflow,dbt",Analista de Dados,Diariamente,5-10,0,Projeto Pessoal,1-2,Desconfortável,4,3,1
+São Paulo,Intermediário,"keras,hadoop",Cientista de Dados,Semanalmente,10-20,3-5,Desenvolvimento de Carreira,3-5,Neutro,6,7,7
+Rio de Janeiro,Avançado,"airflow,flink,beam",Engenheiro de Dados,Mensalmente,Mais de 20,Mais de 5,Curiosidade/Aprendizado Pessoal,Mais de 5,Confortável,8,9,9
