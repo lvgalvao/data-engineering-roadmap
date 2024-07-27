@@ -33,13 +33,9 @@ A **Jornada de Dados** é o seu lugar
 |11/06| Data Warehouse com Python, SQL e dbt-core Part. Kaio Silva| [Youtube](https://www.youtube.com/watch?v=n3R0c2ZB6BQ)
 |13/06| Qualidade de dados em ETL com Pandera e Python: Um Guia para Contrato de Dados Part. Renan Heckert | [Youtube](https://www.youtube.com/watch?v=IQtuWsNmB4o)
 |19/06|Crie pipelines CI/CD com dbt e github actions Part. Bruno Souza | [Youtube](https://www.youtube.com/watch?v=lQeQX71KVAU)
-|Em andamento|Bootcamp de Web Scraping avançado| 19h google meet
-|29/06|Dashboard e frontend| 09h google meet
-|Julho|Kafka Streaming data processing| 09h google meet
-|Julho|Infra as a Code com Terraform| 09h google meet
-|Agosto|Prometheus Datadog Sentry Monitoramento| 09h google meet
-|Agosto|Machine Learning Ops| 09h google meet
-|Agosto|Databricks e Fabric, nosso DW de milhoes| 09h google meet
+|20/06|Bootcamp de Web Scraping avançado| 19h google meet
+|14/07|Kafka Streaming data processing| 09h google meet
+|27/07|Streamlit dashboard | 09h google meet
 
 ## Calendário Bootcamp - Python do zero
 
