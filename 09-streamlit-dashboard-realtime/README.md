@@ -54,6 +54,9 @@ graph TD
 ![coleta](./pic/coleta.png)
 [APP de Coleta](https://workshop-jornada-coleta.streamlit.app/)
 
+![coleta](./pic/dash.png)
+[APP de Dashboard]https://workshop-jornada-dash.streamlit.app/
+
 ## A Maneira Mais Simples de Criar um Aplicativo Web com Python
 
 Criar aplicativos web geralmente envolve o uso de frameworks web Python como Django e Flask. Embora esses frameworks sejam poderosos e flexíveis, eles possuem uma curva de aprendizado significativa e podem exigir um investimento substancial de tempo para desenvolver algo funcional.

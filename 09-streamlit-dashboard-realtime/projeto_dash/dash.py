@@ -7,11 +7,44 @@ import streamlit as st
 from streamlit_folium import folium_static
 from wordcloud import WordCloud
 
-# Carregar dados do CSV
-data_path = "survey_data.csv"  # caminho ajustado para o seu arquivo CSV
-data = pd.read_csv(data_path)
+# Caminho para o arquivo CSV
+DATA_PATH = "survey_data.csv"
+IMAGE_PATH = "foto.png"
 
+# Configurações iniciais
+data = pd.read_csv(DATA_PATH)
 
+# Listas e constantes
+COMFORT_ORDER = [
+    "Muito Desconfortável",
+    "Desconfortável",
+    "Neutro",
+    "Confortável",
+    "Muito Confortável",
+]
+
+STATES_COORDS = {
+    "São Paulo": [-23.5505, -46.6333],
+    "Rio de Janeiro": [-22.9068, -43.1729],
+    "Minas Gerais": [-19.9167, -43.9345],
+    "Bahia": [-12.9714, -38.5014],
+    "Paraná": [-25.4284, -49.2733],
+    "Rio Grande do Sul": [-30.0346, -51.2177],
+    "Santa Catarina": [-27.5954, -48.5480],
+    "Ceará": [-3.7172, -38.5434],
+    "Distrito Federal": [-15.8267, -47.9218],
+    "Pernambuco": [-8.0476, -34.8770],
+    "Goiás": [-16.6869, -49.2648],
+    "Pará": [-1.4558, -48.4902],
+    "Mato Grosso": [-15.6014, -56.0979],
+    "Amazonas": [-3.1190, -60.0217],
+    "Espírito Santo": [-20.3155, -40.3128],
+    "Paraíba": [-7.1195, -34.8450],
+    "Acre": [-9.97499, -67.8243],
+    # Adicione outras coordenadas dos estados aqui
+}
+
+# Funções de análise e visualização
 def top_bibliotecas_por_area(data):
     st.header("Top 3 Bibliotecas por Área de Atuação")
     areas = data["Área de Atuação"].unique()
@@ -39,17 +72,9 @@ def top_bibliotecas_por_area(data):
                 st.metric(label=biblioteca, value=f"{count} vezes")
 
 
-# Função para plotar gráfico de área
 def plotar_grafico_area(data):
-    comfort_order = [
-        "Muito Desconfortável",
-        "Desconfortável",
-        "Neutro",
-        "Confortável",
-        "Muito Confortável",
-    ]
     data["Conforto com Dados"] = pd.Categorical(
-        data["Conforto com Dados"], categories=comfort_order, ordered=True
+        data["Conforto com Dados"], categories=COMFORT_ORDER, ordered=True
     )
     comfort_vs_study_hours = (
         data.groupby(["Conforto com Dados", "Horas de Estudo"], observed=True)
@@ -64,12 +89,11 @@ def plotar_grafico_area(data):
         "#87CEEB",
         "#FF6347",
         "#FF0000",
-    ]  # Dark Blue, Light Blue, Light Red, Red
+    ]
     st.header("Nível de Conforto com Dados vs. Horas de Estudo por Semana")
     st.area_chart(comfort_vs_study_hours, color=colors)
 
 
-# Função para plotar gráficos de experiência técnica
 def plotar_graficos_experiencia(data):
     st.header("Experiência Técnica dos Participantes")
     col1, col2, col3 = st.columns(3)
@@ -96,29 +120,8 @@ def plotar_graficos_experiencia(data):
         st.area_chart(experiencia_cloud_count)
 
 
-# Função para plotar o mapa do Brasil
 def plotar_mapa(data):
     st.header("Mapa do Brasil com Distribuição dos Participantes")
-    state_coords = {
-        "São Paulo": [-23.5505, -46.6333],
-        "Rio de Janeiro": [-22.9068, -43.1729],
-        "Minas Gerais": [-19.9167, -43.9345],
-        "Bahia": [-12.9714, -38.5014],
-        "Paraná": [-25.4284, -49.2733],
-        "Rio Grande do Sul": [-30.0346, -51.2177],
-        "Santa Catarina": [-27.5954, -48.5480],
-        "Ceará": [-3.7172, -38.5434],
-        "Distrito Federal": [-15.8267, -47.9218],
-        "Pernambuco": [-8.0476, -34.8770],
-        "Goiás": [-16.6869, -49.2648],
-        "Pará": [-1.4558, -48.4902],
-        "Mato Grosso": [-15.6014, -56.0979],
-        "Amazonas": [-3.1190, -60.0217],
-        "Espírito Santo": [-20.3155, -40.3128],
-        "Paraíba": [-7.1195, -34.8450],
-        "Acre": [-9.97499, -67.8243],
-        # Adicione outras coordenadas dos estados aqui
-    }
     state_participants = Counter(data["Estado"])
     map_data = pd.DataFrame(
         [
@@ -128,25 +131,24 @@ def plotar_mapa(data):
                 "lon": coord[1],
                 "Participantes": state_participants[state],
             }
-            for state, coord in state_coords.items()
+            for state, coord in STATES_COORDS.items()
+            if state_participants[state] > 0  # Filtrar apenas estados com participantes
         ]
     )
     m = folium.Map(location=[-15.7801, -47.9292], zoom_start=4)
     for _, row in map_data.iterrows():
         folium.CircleMarker(
             location=[row["lat"], row["lon"]],
-            radius=row["Participantes"]
-            * 3,  # Ajustar o raio proporcionalmente
+            radius=row["Participantes"] * 3,
             popup=f"{row['Estado']}: {row['Participantes']} participantes",
             color="crimson",
             fill=True,
             fill_color="crimson",
-            weight=1,  # Ajustar a espessura do contorno do círculo
+            weight=1,
         ).add_to(m)
     folium_static(m)
 
 
-# Função para plotar nuvem de palavras
 def plotar_nuvem_palavras(data):
     st.header("Nuvem de Palavras das Bibliotecas Utilizadas")
     all_libs = " ".join(data["Bibliotecas"].dropna().str.replace(",", " "))
@@ -154,23 +156,21 @@ def plotar_nuvem_palavras(data):
         width=800, height=400, background_color="white"
     ).generate(all_libs)
     fig, ax = plt.subplots(figsize=(10, 5))
-    print(ax)
     ax.imshow(wordcloud)
-    ax.axis("off")  # remove o quadro em volta
-    st.pyplot(fig)  # gera a imagem no streamlit
+    ax.axis("off")
+    st.pyplot(fig)
 
 
-# Função para exibir uma imagem no final
 def exibir_imagem_final(image_path):
     st.header("Foto da Jornada")
     st.image(image_path, use_column_width=True)
 
 
-# Chamar as funções
+# Execução das funções
 st.title("Dados dos Participantes")
 top_bibliotecas_por_area(data)
 plotar_grafico_area(data)
 plotar_graficos_experiencia(data)
 plotar_mapa(data)
 plotar_nuvem_palavras(data)
-exibir_imagem_final("foto.png")
+exibir_imagem_final(IMAGE_PATH)
