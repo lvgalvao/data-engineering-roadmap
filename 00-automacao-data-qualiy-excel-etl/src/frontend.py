@@ -13,12 +13,8 @@ class ExcelValidatorUI:
     def display_header(self):
         st.title("Validador de Schema de Excel")
 
-    def select_model(self):
-        model_options = ["Usuario", "Vendas", "Recursos Humanos"]
-        return st.selectbox("Selecione o modelo de dados", model_options)
-
     def upload_file(self):
-        return st.file_uploader("Carregue seu arquivo Excel aqui", type=["xlsx"])
+        return st.file_uploader("Carregue seu arquivo Excel aqui", type=["csv"])
 
     def display_results(self, result, error):
         if error:

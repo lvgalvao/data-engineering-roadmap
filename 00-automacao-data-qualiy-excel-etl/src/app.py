@@ -1,12 +1,13 @@
 from frontend import ExcelValidatorUI
 from backend import process_excel
+from contrato import Vendas
 
 def main():
 
     ui = ExcelValidatorUI()
     ui.display_header()
 
-    model_choice = ui.select_model()
+    model_choice = Vendas
     uploaded_file = ui.upload_file()
 
     if uploaded_file is not None:

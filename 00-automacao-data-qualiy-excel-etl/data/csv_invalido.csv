@@ -1,0 +1,3 @@
+email,data,valor,quantidade,categoria
+invalid-email.com,2024-07-25 10:00:00,-150.50,-10,invalid_category
+valid.email@example.com,2024-07-25 10:00:00,150.50,10,categoria1
