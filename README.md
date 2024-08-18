@@ -14,113 +14,69 @@ A **Jornada de Dados** é o seu lugar
 
 [Visite o nosso site](https://suajornadadedados.com.br/)
 
-## Calendário
+## Próximos treinamentos
 
-|Data |Workshop|Horário e canal|
-|-----|--------|--------|
-|01/09/23|Como estruturar o seu projeto de dados do zero| [Link](https://github.com/lvgalvao/DataProjectStarterKit)
-|01/10/23|Do Jupyter Notebook Pro Deploy| [Link](https://github.com/lvgalvao/Do-Jupyter-Notebook-Pro-Deploy)
-|01/11/23|Como construir um DW barato| [Link](https://github.com/lvgalvao/workshop-dw-pagando-pouco) e [Link](https://github.com/lvgalvao/W03_duckdb_dbt)
-|24/01|Automacao Data Quality Excel ETL| gravação na plataforma de alunos
-|27/01|Projeto e processos do Zero| gravação na plataforma de alunos
-|24/02|Pydantic, Data Quality e TDD em dados| gravação na plataforma de alunos
-|09/03|Docker para analista e engenheiro de dados: ajudando o seu deploy| gravação na plataforma de alunos
-|12/03|ETL com Python do Zero ao Deploy | gravação na plataforma de alunos
-|23/03|Orquestrando suas ETLs com Airflow | gravação na plataforma de alunos
-|13/04|Web scraping e noSQL | gravação na plataforma de alunos
-|27/04|restAPI fastAPI Deploy| gravação na plataforma de alunos
-|25/05|Amazon SQS e lambda | gravação na plataforma de alunos
-|11/06| Data Warehouse com Python, SQL e dbt-core Part. Kaio Silva| [Youtube](https://www.youtube.com/watch?v=n3R0c2ZB6BQ)
-|13/06| Qualidade de dados em ETL com Pandera e Python: Um Guia para Contrato de Dados Part. Renan Heckert | [Youtube](https://www.youtube.com/watch?v=IQtuWsNmB4o)
-|19/06|Crie pipelines CI/CD com dbt e github actions Part. Bruno Souza | [Youtube](https://www.youtube.com/watch?v=lQeQX71KVAU)
-|20/06|Bootcamp de Web Scraping avançado| 19h google meet
-|14/07|Kafka Streaming data processing| 09h google meet
-|27/07|Streamlit dashboard | 09h google meet
+![pics](/pics/bootcamp_cloud.png)
 
-## Calendário Bootcamp - Python do zero
+Para entregar valor ao negócio, é fundamental que nossas aplicações, dashboards, bancos de dados e modelos estejam em produção, ou seja, em uso pelo cliente.
 
-Um intensivo único para você iniciar com Python e ir até tópicos avançados (API por exemplo) para você resolver problemas reais
+Se você já tentou implementar um serviço em Cloud na AWS, Azure ou GCP, sabe que há muitos desafios envolvidos: desde padrões a seguir, passando por configurações de IAM (acesso), redes privadas, até a implantação de máquinas virtuais e instalação de Docker.
 
-|Data |Workshop|Horário|
-|-----|--------|--------|
-| 19/02 | Python, Git e VScode: Python do Zero | 12am |
-| 20/02 | TypeError, Type Check, Type Conversion, try-except e if | 12am |
-| 21/02 | Controle de Fluxo: DEBUG, IF, FOR, While, Listas e Dicionários | 12am |
-| 22/02 | Tipos complexos e Type Hint (Dicionários vs DataFrames Vs Tabelas Vs Excel) | 12am |
-| 23/02 | Projeto 01: Leitura e Escrita de Arquivos, lendo 1 bilhão de linhas | 12am |
-| 26/02 | Exercício de revisão | 12am |
-| 27/02 | Funções em Python e Estrutura de Dados - Parte 1 | 12am |
-| 28/02 | Funções em Python e Estrutura de Dados - Parte 2 | 12am |
-| 29/02 | Funções em Python e Estrutura de Dados - Parte 3 | 12am |
-| 01/03 | Aula de revisão | 12am |
-| 04/03 | Introdução a POO | 19pm |
-| 05/03 | Introdução às Classes em Python - Parte 01 | 19pm |
-| 06/03 | Introdução às Classes em Python - Parte 02| 19pm |
-| 07/03 | Introdução às Classes em Python - Parte 03 | | 19pm |
-| 08/03 | Introdução às Classes em Python - Parte 04 | 19pm |
-| 18/03 | Aula de revisão de programação orientada a objetos + SQLModel | 12am |
-| 19/03 | SQLAlchemy - Conjunto de ferramentas para manipular SQL em Python | 12am |
-| 20/03 | O que é uma API? Request, Pydantic e fazendo nosso CRUD | 12am |
-| 21/03 | O que é uma API? Criando nossa primeira API | 12am |
-| 22/03 | Nosso Projeto de CRUD Backend + Frontend + Banco de Dados | 12 am |
+Muitas vezes, profissionais focados em dados e aplicações não possuem esse conhecimento especializado.
 
-## Calendário Bootcamp - SQL início dia 22/04
+O Bootcamp de Cloud para dados foi criado para preencher essa lacuna. É um curso que fornece os elementos essenciais de Cloud para que você possa implantar suas aplicações de forma independente.
 
-Um workshop focado em SQL para engenharia de dados
+Começamos do zero, com foco em quem não possui experiência em Cloud, e seguimos passo a passo até a implantação das suas primeiras aplicações. Durante o curso, construiremos cinco aplicações em diferentes plataformas de Cloud.
 
-1. Introdução ao SQL Básico:
+Se você deseja entender VPC, EC2, e toda a infraestrutura necessária para subir suas aplicações, este Bootcamp é ideal para você.
 
-• Comandos fundamentais (SELECT, INSERT, UPDATE, DELETE).
-• Funções de agregação e filtragem.
-• Joins e subqueries.
+O Bootcamp começará no dia 22 de agosto e terá duração até o dia 04 de outubro.
 
-2. Fundamentos de Infraestrutura de Banco de Dados:
-• Visão geral de índices e seu impacto no desempenho.
-• Particionamento de dados e estratégias.
-• Conceitos de ACID para garantir a integridade dos dados.
+As aulas serão ao vivo, sempre às 12h (meio-dia), com duração de 1 hora e 20 minutos. Além disso, todas as aulas serão disponibilizadas na nossa plataforma no mesmo dia, para que você possa assisti-las quantas vezes desejar.
 
-3. Configuração do Ambiente Local:
-• Instalação e configuração de um ambiente de desenvolvimento SQL local.
+Para fazer parte desse bootcamp, a inscrição será liberada no dia 20/08 ás 20h em nosso canal no Youtube
 
-4. Uso do Postgres com Docker:
-• Criação de um ambiente Docker para o PostgreSQL.
+[![abertura](/pics/capa_youtube_bootcamp_cloud.png)](https://www.youtube.com/watch?v=GqgWGZtC-3w)
 
-5. Configuração do Amazon RDS para Produção:
-• Configuração e otimização do Amazon RDS.
+## Bootcamps Jornada de Dados
 
-6. ETL (Extract, Transform, Load):
-• Conceitos e ferramentas para ETL.
-• Prática de transformação de dados e carga em um data warehouse.
+Aqui estão todos os bootcamps já disponíveis na Jornada de dados
 
-7. Procedures e Automatização:
-• Criação e uso de stored procedures para automatização de tarefas.
-• Princípios de design e manutenção de procedures.
+| Acesso e início   | Bootcamp                              | Carga Horária |
+|-------------------|---------------------------------------|---------------|
+| Acesso Imediato   | Python para dados                     | 30 horas      |
+| Acesso Imediato   | SQL para Analytics Engineer           | 20 horas      |
+| Acesso Imediato   | dbt-core                              | 10 horas      |
+| Acesso Imediato   | WebScraping Avançado                  | 10 horas      |
+| Início 22/08      | Cloud para dados                      | 30 horas      |
+| Outubro           | Multi-engine ETL com Spark e Duckdb   | 20 horas      |
 
-8. Testes Unitários em SQL:
-• Introdução aos testes de software e como aplicá-los ao SQL.
-• Ferramentas e frameworks de teste específicos para SQL.
+## Workshops Jornada de Dados
 
-9. Integração com DBT (Data Build Tool):
-• Cinco aulas cobrindo desde a introdução ao DBT até casos de uso avançados.
-• Melhores práticas para modelagem de dados e versionamento com DBT.
+Aqui estão todos os workshops já disponíveis na Jornada de dados
 
-10. Orquestração de Workflows com Airflow:
-• Introdução ao Apache Airflow e sua importância na orquestração de tarefas de engenharia de dados.
-• Como integrar processos de ETL, testes e outras tarefas automatizadas com Airflow.
-
-## Jornada de dados 2024
-
-Nossa missão é fornecer o melhor ensino em engenharia de dados
-
-Se você quer:
-
-1) Construir uma base sólida em Python e SQL
-2) Aprender as principais habilidades e ferramentas de engenharia de dados
-3) Criar ou melhorar seu portfólio de dados
-4) Criar ou aumentar o seu networking na área
-5) Mudar ou dar o próximo passo em sua carreira
-
-A Jornada de Dados é o seu lugar
+| Data e acesso | Workshop | Carga Horária |
+|-----------------|----------|---------------|
+| Acesso Imediato | Como estruturar o seu projeto de dados do zero | 4h |
+| Acesso Imediato | Do Jupyter Notebook Pro Deploy | 4h |
+| Acesso Imediato | Como construir um DW barato | 8h |
+| Acesso Imediato | Automação Data Quality Excel ETL | 4h |
+| Acesso Imediato | Projeto e processos do Zero | 4h |
+| Acesso Imediato | Pydantic, Data Quality e TDD em dados | 4h |
+| Acesso Imediato | Docker para analista e engenheiro de dados: ajudando o seu deploy | 4h |
+| Acesso Imediato | ETL com Python do Zero ao Deploy | 4h |
+| Acesso Imediato | Orquestrando suas ETLs com Airflow | 4h |
+| Acesso Imediato | Web scraping e noSQL | 4h |
+| Acesso Imediato | restAPI fastAPI Deploy | 8h |
+| Acesso Imediato | Amazon SQS e lambda | 4h |
+| Acesso Imediato | Data Warehouse com Python, SQL e dbt-core Part. Kaio Silva | 4h |
+| Acesso Imediato | Qualidade de dados em ETL com Pandera e Python: Um Guia para Contrato de Dados Part. Renan Heckert | 2h |
+| Acesso Imediato | Crie pipelines CI/CD com dbt e github actions Part. Bruno Souza | 2h |
+| Acesso Imediato | Kafka Streaming data processing | 2h |
+| Acesso Imediato | Streamlit dashboard | 2h |
+| Acesso Imediato | Terraform para dados | 2h |
+| Início 14/09 | Transformando PDF em Dados estruturados | 4h |
+| Início 28/09 | Kubernets para dados | 4h |
 
 ## Metodologia
 
@@ -216,30 +172,6 @@ Os encontros são aos **sábados ás 9 horas, são 4 horas de workshop**
 * Gerenciando Cloud com Terraform
 * Segurança e Compliance com Terraform
 * Terraform: Casos de Uso Práticos
-
-### [Workshop 06/07: Prometheus, Datadog, Sentry](./10-prometheus-datadog-sentry-monitoramento/)
-
-* Monitoramento com Prometheus
-* Datadog para Observabilidade de Dados
-* Sentry para Gestão de Erros
-* Integrando Prometheus, Datadog e Sentry
-* Melhores Práticas de Monitoramento
-
-### [Workshop 20/07: Machine Learning Ops](./12-databricks-fabrick-dw-de-milhoes/)
-
-* Introdução ao MLOps
-* Ciclo de Vida de Modelos ML
-* Automação e Orquestração em ML
-* Monitoramento e Governança de ML
-* Casos Práticos de MLOps
-
-### [Workshop 03/08: Databricks e Fabrics](./12-databricks-fabrick-dw-de-milhoes/)
-
-* Databricks: Plataforma de Big Data
-* Fabric: Gestão de Dados em Escala
-* Arquiteturas de Data Warehouse
-* Databricks e Fabric: Integração
-* DW de Milhões: Desafios e Soluções
 
 ### Pré requisitos
 
