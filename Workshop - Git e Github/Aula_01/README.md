@@ -520,19 +520,204 @@ graph TD;
     F(main) --> D;
 ```
 
-### 11. Usando `git revert` para Desfazer um Commit
+### Caso real
 
-Se você quer desfazer um commit específico, mas manter o histórico de commits, pode usar `git revert`:
+Vamos expandir o exemplo para incluir três branches diferentes, cada uma com uma modificação específica em um arquivo, e um branch `main` que representa o código em produção. Vou descrever a situação e depois mostrar o diagrama em Mermaid.
 
-```bash
-git revert <idCommit>
+### Situação:
+
+1. **Branch `main`**: Contém o código de produção, sem as novas funcionalidades que estamos desenvolvendo.
+2. **Branch `feature-1`**: Modifica o `file1.py` para adicionar uma nova funcionalidade.
+3. **Branch `feature-2`**: Modifica o `file2.py` para adicionar outra funcionalidade.
+4. **Branch `feature-3`**: Modifica o `file3.py` para adicionar uma terceira funcionalidade.
+
+### Passos:
+
+1. **Criar e mudar para a branch `feature-1`**:
+    ```bash
+    git branch feature-1
+    git checkout feature-1
+    # Modificar file1.py e fazer commit
+    git commit -am "Adiciona nova funcionalidade em file1.py"
+    ```
+
+2. **Criar e mudar para a branch `feature-2`**:
+    ```bash
+    git branch feature-2
+    git checkout feature-2
+    # Modificar file2.py e fazer commit
+    git commit -am "Adiciona nova funcionalidade em file2.py"
+    ```
+
+3. **Criar e mudar para a branch `feature-3`**:
+    ```bash
+    git branch feature-3
+    git checkout feature-3
+    # Modificar file3.py e fazer commit
+    git commit -am "Adiciona nova funcionalidade em file3.py"
+    ```
+
+### Diagrama Mermaid:
+
+Aqui está o diagrama que ilustra essas operações:
+
+```mermaid
+graph TD;
+    subgraph main [Branch: main (Production)]
+        A[Initial Commit] --> B[Main Codebase];
+    end
+
+    subgraph feature-1 [Branch: feature-1]
+        B --> C[Commit: Modifica file1.py];
+    end
+
+    subgraph feature-2 [Branch: feature-2]
+        B --> D[Commit: Modifica file2.py];
+    end
+
+    subgraph feature-3 [Branch: feature-3]
+        B --> E[Commit: Modifica file3.py];
+    end
+
+    A --- B;
+    C --> G[feature-1];
+    D --> H[feature-2];
+    E --> I[feature-3];
+
+    style B fill:#f9f,stroke:#333,stroke-width:4px;
+    style C fill:#bbf,stroke:#333,stroke-width:2px;
+    style D fill:#bfb,stroke:#333,stroke-width:2px;
+    style E fill:#fbf,stroke:#333,stroke-width:2px;
 ```
 
-Isso cria um novo commit que desfaz as alterações do commit especificado, mantendo o histórico intacto.
+### Explicação do Diagrama:
 
-### Resumo
+- **Branch `main`**: Representa o código em produção, onde não foram aplicadas as novas funcionalidades.
+- **Branch `feature-1`**: Diverge do `main` após o commit inicial e inclui uma modificação em `file1.py`.
+- **Branch `feature-2`**: Diverge do `main` após o commit inicial e inclui uma modificação em `file2.py`.
+- **Branch `feature-3`**: Diverge do `main` após o commit inicial e inclui uma modificação em `file3.py`.
 
-Com esses comandos, você pode gerenciar de forma eficiente as modificações no seu projeto, garantindo que todas as mudanças sejam rastreadas e que você possa voltar a estados anteriores sempre que necessário. Isso proporciona um controle muito maior sobre o desenvolvimento do projeto e minimiza o risco de perder trabalho importante. As ilustrações com Mermaid ajudam a visualizar como o `HEAD`, branches e resets funcionam no contexto do desenvolvimento em Git.
+Cada branch permite que você trabalhe em funcionalidades diferentes de forma isolada. Os commits em cada branch representam o trabalho feito nessas funcionalidades. Quando as funcionalidades estiverem prontas e testadas, você poderá mesclar (`merge`) essas branches de volta ao `main` para que as novas funcionalidades sejam incorporadas ao código de produção.
+
+Vamos continuar o exemplo, adicionando os comandos para mesclar as branches de funcionalidades (`feature-1`, `feature-2`, `feature-3`) de volta ao `main` quando as funcionalidades estiverem prontas.
+
+### Situação Revisada:
+
+1. **Branch `main`**: Contém o código de produção.
+2. **Branch `feature-1`**: Modifica o `file1.py` para adicionar uma nova funcionalidade.
+3. **Branch `feature-2`**: Modifica o `file2.py` para adicionar outra funcionalidade.
+4. **Branch `feature-3`**: Modifica o `file3.py` para adicionar uma terceira funcionalidade.
+
+### Passos Revisados:
+
+1. **Criar e mudar para a branch `feature-1`**:
+    ```bash
+    git branch feature-1
+    git checkout feature-1
+    # Modificar file1.py e fazer commit
+    git commit -am "Adiciona nova funcionalidade em file1.py"
+    ```
+
+2. **Criar e mudar para a branch `feature-2`**:
+    ```bash
+    git branch feature-2
+    git checkout feature-2
+    # Modificar file2.py e fazer commit
+    git commit -am "Adiciona nova funcionalidade em file2.py"
+    ```
+
+3. **Criar e mudar para a branch `feature-3`**:
+    ```bash
+    git branch feature-3
+    git checkout feature-3
+    # Modificar file3.py e fazer commit
+    git commit -am "Adiciona nova funcionalidade em file3.py"
+    ```
+
+### Mesclando as Branches de Funcionalidade no `main`:
+
+Depois que cada funcionalidade estiver pronta, você pode mesclar essas branches de volta ao `main`. Aqui estão os passos:
+
+1. **Mesclar `feature-1` no `main`**:
+    ```bash
+    git checkout main
+    git merge feature-1
+    ```
+
+2. **Mesclar `feature-2` no `main`**:
+    ```bash
+    git checkout main
+    git merge feature-2
+    ```
+
+3. **Mesclar `feature-3` no `main`**:
+    ```bash
+    git checkout main
+    git merge feature-3
+    ```
+
+### Diagrama Mermaid Atualizado:
+
+Aqui está o diagrama que ilustra essas operações, incluindo as etapas de merge:
+
+```mermaid
+graph TD;
+    subgraph main [Branch: main (Production)]
+        A[Initial Commit] --> B[Main Codebase];
+        F[Merge feature-1] --> G[Merge feature-2];
+        G --> H[Merge feature-3];
+    end
+
+    subgraph feature-1 [Branch: feature-1]
+        B --> C[Commit: Modifica file1.py];
+    end
+
+    subgraph feature-2 [Branch: feature-2]
+        B --> D[Commit: Modifica file2.py];
+    end
+
+    subgraph feature-3 [Branch: feature-3]
+        B --> E[Commit: Modifica file3.py];
+    end
+
+    C --> F;
+    D --> G;
+    E --> H;
+```
+
+### Explicação do Diagrama Atualizado:
+
+- **Branch `main`**: Representa o código de produção. Inicialmente, contém apenas o commit inicial e o código base.
+- **Branches de Funcionalidade**:
+  - **`feature-1`**: Contém a modificação em `file1.py`.
+  - **`feature-2`**: Contém a modificação em `file2.py`.
+  - **`feature-3`**: Contém a modificação em `file3.py`.
+- **Mesclagens (`Merges`)**:
+  - Cada branch de funcionalidade é mesclada de volta ao `main`, integrando as novas funcionalidades no código de produção.
+
+### Comandos de Merge:
+
+- **Mesclar `feature-1` no `main`**:
+  ```bash
+  git checkout main
+  git merge feature-1
+  ```
+
+- **Mesclar `feature-2` no `main`**:
+  ```bash
+  git checkout main
+  git merge feature-2
+  ```
+
+- **Mesclar `feature-3` no `main`**:
+  ```bash
+  git checkout main
+  git merge feature-3
+  ```
+
+### Conclusão:
+
+Esse fluxo permite que cada funcionalidade seja desenvolvida em isolamento, testada individualmente e, quando pronta, integrada ao código de produção sem afetar o `main` até que tudo esteja pronto. Isso torna o processo de desenvolvimento mais seguro e organizado, minimizando conflitos e problemas na integração das funcionalidades.
 
 ### O que vamos ver amanhã:
 
