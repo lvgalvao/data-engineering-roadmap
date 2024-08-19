@@ -14,113 +14,108 @@ A **Jornada de Dados** é o seu lugar
 
 [Visite o nosso site](https://suajornadadedados.com.br/)
 
-## Calendário
+## Próximos treinamentos
 
-|Data |Workshop|Horário e canal|
-|-----|--------|--------|
-|01/09/23|Como estruturar o seu projeto de dados do zero| [Link](https://github.com/lvgalvao/DataProjectStarterKit)
-|01/10/23|Do Jupyter Notebook Pro Deploy| [Link](https://github.com/lvgalvao/Do-Jupyter-Notebook-Pro-Deploy)
-|01/11/23|Como construir um DW barato| [Link](https://github.com/lvgalvao/workshop-dw-pagando-pouco) e [Link](https://github.com/lvgalvao/W03_duckdb_dbt)
-|24/01|Automacao Data Quality Excel ETL| gravação na plataforma de alunos
-|27/01|Projeto e processos do Zero| gravação na plataforma de alunos
-|24/02|Pydantic, Data Quality e TDD em dados| gravação na plataforma de alunos
-|09/03|Docker para analista e engenheiro de dados: ajudando o seu deploy| gravação na plataforma de alunos
-|12/03|ETL com Python do Zero ao Deploy | gravação na plataforma de alunos
-|23/03|Orquestrando suas ETLs com Airflow | gravação na plataforma de alunos
-|13/04|Web scraping e noSQL | gravação na plataforma de alunos
-|27/04|restAPI fastAPI Deploy| gravação na plataforma de alunos
-|25/05|Amazon SQS e lambda | gravação na plataforma de alunos
-|11/06| Data Warehouse com Python, SQL e dbt-core Part. Kaio Silva| [Youtube](https://www.youtube.com/watch?v=n3R0c2ZB6BQ)
-|13/06| Qualidade de dados em ETL com Pandera e Python: Um Guia para Contrato de Dados Part. Renan Heckert | [Youtube](https://www.youtube.com/watch?v=IQtuWsNmB4o)
-|19/06|Crie pipelines CI/CD com dbt e github actions Part. Bruno Souza | [Youtube](https://www.youtube.com/watch?v=lQeQX71KVAU)
-|20/06|Bootcamp de Web Scraping avançado| 19h google meet
-|14/07|Kafka Streaming data processing| 09h google meet
-|27/07|Streamlit dashboard | 09h google meet
+![pics](/pics/bootcamp_cloud.png)
 
-## Calendário Bootcamp - Python do zero
+Para entregar valor ao negócio, é fundamental que nossas aplicações, dashboards, bancos de dados e modelos estejam em produção, ou seja, em uso pelo cliente.
 
-Um intensivo único para você iniciar com Python e ir até tópicos avançados (API por exemplo) para você resolver problemas reais
+Se você já tentou implementar um serviço em Cloud na AWS, Azure ou GCP, sabe que há muitos desafios envolvidos: desde padrões a seguir, passando por configurações de IAM (acesso), redes privadas, até a implantação de máquinas virtuais e instalação de Docker.
 
-|Data |Workshop|Horário|
-|-----|--------|--------|
-| 19/02 | Python, Git e VScode: Python do Zero | 12am |
-| 20/02 | TypeError, Type Check, Type Conversion, try-except e if | 12am |
-| 21/02 | Controle de Fluxo: DEBUG, IF, FOR, While, Listas e Dicionários | 12am |
-| 22/02 | Tipos complexos e Type Hint (Dicionários vs DataFrames Vs Tabelas Vs Excel) | 12am |
-| 23/02 | Projeto 01: Leitura e Escrita de Arquivos, lendo 1 bilhão de linhas | 12am |
-| 26/02 | Exercício de revisão | 12am |
-| 27/02 | Funções em Python e Estrutura de Dados - Parte 1 | 12am |
-| 28/02 | Funções em Python e Estrutura de Dados - Parte 2 | 12am |
-| 29/02 | Funções em Python e Estrutura de Dados - Parte 3 | 12am |
-| 01/03 | Aula de revisão | 12am |
-| 04/03 | Introdução a POO | 19pm |
-| 05/03 | Introdução às Classes em Python - Parte 01 | 19pm |
-| 06/03 | Introdução às Classes em Python - Parte 02| 19pm |
-| 07/03 | Introdução às Classes em Python - Parte 03 | | 19pm |
-| 08/03 | Introdução às Classes em Python - Parte 04 | 19pm |
-| 18/03 | Aula de revisão de programação orientada a objetos + SQLModel | 12am |
-| 19/03 | SQLAlchemy - Conjunto de ferramentas para manipular SQL em Python | 12am |
-| 20/03 | O que é uma API? Request, Pydantic e fazendo nosso CRUD | 12am |
-| 21/03 | O que é uma API? Criando nossa primeira API | 12am |
-| 22/03 | Nosso Projeto de CRUD Backend + Frontend + Banco de Dados | 12 am |
+Muitas vezes, profissionais focados em dados e aplicações não possuem esse conhecimento especializado.
 
-## Calendário Bootcamp - SQL início dia 22/04
+O Bootcamp de Cloud para dados foi criado para preencher essa lacuna. É um curso que fornece os elementos essenciais de Cloud para que você possa implantar suas aplicações de forma independente.
 
-Um workshop focado em SQL para engenharia de dados
+Começamos do zero, com foco em quem não possui experiência em Cloud, e seguimos passo a passo até a implantação das suas primeiras aplicações. Durante o curso, construiremos cinco aplicações em diferentes plataformas de Cloud.
 
-1. Introdução ao SQL Básico:
+Se você deseja entender VPC, EC2, e toda a infraestrutura necessária para subir suas aplicações, este Bootcamp é ideal para você.
 
-• Comandos fundamentais (SELECT, INSERT, UPDATE, DELETE).
-• Funções de agregação e filtragem.
-• Joins e subqueries.
+O Bootcamp começará no dia 22 de agosto e terá duração até o dia 04 de outubro.
 
-2. Fundamentos de Infraestrutura de Banco de Dados:
-• Visão geral de índices e seu impacto no desempenho.
-• Particionamento de dados e estratégias.
-• Conceitos de ACID para garantir a integridade dos dados.
+As aulas serão ao vivo, sempre às 12h (meio-dia), com duração de 1 hora e 20 minutos. Além disso, todas as aulas serão disponibilizadas na nossa plataforma no mesmo dia, para que você possa assisti-las quantas vezes desejar.
 
-3. Configuração do Ambiente Local:
-• Instalação e configuração de um ambiente de desenvolvimento SQL local.
+Para fazer parte desse bootcamp, a inscrição será liberada no dia 20/08 ás 20h em nosso canal no Youtube
 
-4. Uso do Postgres com Docker:
-• Criação de um ambiente Docker para o PostgreSQL.
+[![abertura](/pics/capa_youtube_bootcamp_cloud.png)](https://www.youtube.com/watch?v=GqgWGZtC-3w)
 
-5. Configuração do Amazon RDS para Produção:
-• Configuração e otimização do Amazon RDS.
+## Conteúdo completo Bootcamp de cloud
 
-6. ETL (Extract, Transform, Load):
-• Conceitos e ferramentas para ETL.
-• Prática de transformação de dados e carga em um data warehouse.
+Aqui está o calendário completo de aula (podendo sofrer alterações ao longo do curso)
 
-7. Procedures e Automatização:
-• Criação e uso de stored procedures para automatização de tarefas.
-• Princípios de design e manutenção de procedures.
+Aqui está a tabela atualizada com os nomes dos serviços específicos do Azure e GCP nos respectivos projetos:
 
-8. Testes Unitários em SQL:
-• Introdução aos testes de software e como aplicá-los ao SQL.
-• Ferramentas e frameworks de teste específicos para SQL.
+| Acesso e início   | Tema da Aula                                            | Objetivo da Aula                                                                                      | Principais Tecnologias Abordadas                          | Carga Horária |
+|-------------------|---------------------------------------------------------|-------------------------------------------------------------|----------------------------------------------------------|---------------|
+| 23/08/2024 (Quinta) | Introdução a Cloud, criando nossa conta e publicando um site na AWS | Introduzir os conceitos básicos de computação em nuvem, criar uma conta AWS e publicar um site simples. | Amazon S3, Amazon Route 53                                | 1h20          |
+| 24/08/2024 (Sexta)  | Serviços de Armazenamento na Nuvem                    | Entender e gerenciar serviços de armazenamento na nuvem, garantindo segurança e escalabilidade para os dados empresariais. | Amazon S3                                                 | 1h20          |
+| 26/08/2024 (Segunda)| Computação em Nuvem - VMs                             | Explorar a criação e uso de VMs para aplicações escaláveis na nuvem.                                    | Amazon EC2                                                | 1h20          |
+| 27/08/2024 (Terça)  | Projeto EC2 e S3                                      | Implementar um projeto integrando EC2 e S3 para armazenar e processar dados de forma eficiente.         | Amazon EC2, Amazon S3                                     | 1h20          |
+| 29/08/2024 (Quinta) | Gerenciamento de Segurança IAM                        | Configurar e gerenciar identidades e acessos com segurança usando IAM.                                  | AWS IAM                                                   | 1h20          |
+| 30/08/2024 (Sexta)  | Gerenciamento de Redes VPC                            | Configurar redes virtuais na nuvem para otimizar a comunicação entre serviços.                          | Amazon VPC                                                | 1h20          |
+| 02/09/2024 (Segunda)| Banco de Dados Relacional                             | Aprender a configurar e gerenciar bancos de dados relacionais na nuvem.                                 | Amazon RDS                                                | 1h20          |
+| 03/09/2024 (Terça)  | Projeto Frontend e RDS                                | Desenvolver um frontend que interage com um banco de dados relacional na nuvem.                         | Amazon EC2, Amazon RDS                                    | 1h20          |
+| 05/09/2024 (Quinta) | Arquitetura de Eventos Parte 1                        | Entender e criar arquiteturas baseadas em eventos para comunicação entre serviços na nuvem.             | Amazon SNS, Amazon SQS, AWS EventBridge                   | 1h20          |
+| 06/09/2024 (Sexta)  | Arquitetura de Eventos Parte 2                        | Continuar o desenvolvimento de arquiteturas baseadas em eventos, integrando serviços adicionais.        | Amazon SNS, Amazon SQS, AWS EventBridge                   | 1h20          |
+| 09/09/2024 (Segunda)| AWS Lambda Parte 1                                    | Explorar a execução de funções serverless usando AWS Lambda para automatizar processos na nuvem.        | AWS Lambda                                                | 1h20          |
+| 10/09/2024 (Terça)  | AWS Lambda Parte 2                                    | Implementar um projeto completo utilizando AWS Lambda para criar uma arquitetura serverless.            | AWS Lambda                                                | 1h20          |
+| 12/09/2024 (Quinta) | Automatizando Tudo com Terraform                      | Aprender a automatizar a criação e o gerenciamento de infraestruturas na nuvem usando Terraform.        | Terraform, AWS                                            | 1h20          |
+| 13/09/2024 (Sexta)  | Terraform - Avançado                                  | Explorar funcionalidades avançadas do Terraform para gerenciar infraestruturas complexas.               | Terraform, AWS                                            | 1h20          |
+| 16/09/2024 (Segunda)| Projeto PDF Eventos Parte 1                           | Implementar um projeto que processa PDFs em eventos usando AWS Lambda, S3 e SQS.                        | AWS Lambda, Amazon S3, Amazon SQS                         | 1h20          |
+| 17/09/2024 (Terça)  | Projeto PDF Eventos Parte 2                           | Continuar o desenvolvimento do projeto de processamento de PDFs, integrando mais funcionalidades.       | AWS Lambda, Amazon S3, Amazon SQS                         | 1h20          |
+| 19/09/2024 (Quinta) | Introdução ao Azure                                   | Entender os conceitos básicos do Azure e configurar os serviços equivalentes à AWS (Blob Storage, VMs). | Azure Blob Storage, Azure Virtual Machines (VMs)          | 1h20          |
+| 20/09/2024 (Sexta)  | Projeto Azure: PostgreSQL e VNet                      | Implementar um projeto no Azure usando serviços equivalentes ao RDS, IAM e VPC da AWS.                  | Azure Database for PostgreSQL, Azure IAM, Azure Virtual Network (VNet) | 1h20          |
+| 23/09/2024 (Segunda)| Projeto Azure: Functions e Event Grid                 | Criar uma arquitetura serverless no Azure, utilizando funções e eventos, similar ao AWS Lambda.         | Azure Functions, Azure Event Grid                         | 1h20          |
+| 24/09/2024 (Terça)  | Revisão e De-Para AWS-Azure                           | Revisar o aprendizado e discutir o mapeamento de serviços AWS para Azure.                               | AWS, Azure                                                | 1h20          |
+| 26/09/2024 (Quinta) | Introdução ao GCP                                     | Entender os conceitos básicos do Google Cloud Platform e configurar os serviços equivalentes à AWS.     | Google Cloud Storage, Google Compute Engine (VMs)         | 1h20          |
+| 27/09/2024 (Sexta)  | Projeto GCP: Cloud SQL e VPC                          | Implementar um projeto no GCP usando serviços equivalentes ao RDS, IAM e VPC da AWS.                    | Cloud SQL (PostgreSQL), Google IAM, Google Virtual Private Cloud (VPC) | 1h20          |
+| 30/09/2024 (Segunda)| Projeto GCP: Cloud Functions e Pub/Sub                | Criar uma arquitetura serverless no GCP, utilizando funções e eventos, similar ao AWS Lambda.           | Google Cloud Functions, Google Pub/Sub                    | 1h20          |
+| 01/10/2024 (Terça)  | Revisão e De-Para AWS-GCP                             | Revisar o aprendizado e discutir o mapeamento de serviços AWS para GCP.                                 | AWS, Google Cloud Platform (GCP)                          | 1h20          |
+| 03/10/2024 (Quinta) | Containers na AWS Parte 1                             | Introdução ao uso de containers na AWS, utilizando Amazon ECS e Docker.                                 | Amazon ECS (Elastic Container Service), Docker            | 1h20          |
+| 04/10/2024 (Sexta)  | Containers na AWS Parte 2                             | Implementar um projeto utilizando containers na AWS com Amazon ECS e Docker.                            | Amazon ECS, Docker                                        | 1h20          |
+| 07/10/2024 (Segunda)| Containers na AWS Parte 3                             | Introdução ao Kubernetes na AWS, utilizando Amazon EKS.                                                 | Amazon EKS (Elastic Kubernetes Service), Kubernetes       | 1h20          |
+| 08/10/2024 (Terça)  | Containers na AWS Parte 4                             | Implementar um projeto utilizando Kubernetes na AWS com Amazon EKS.                                     | Amazon EKS, Kubernetes                                    | 1h20          |
+| 10/10/2024 (Quinta) | Airflow em Projeto Completo Parte 1                   | Introdução ao Apache Airflow, configurando e criando um pipeline de dados na AWS.                       | Apache Airflow, AWS                                       | 1h20          |
+| 11/10/2024 (Sexta)  | Airflow em Projeto Completo Parte 2                   | Implementar um projeto completo de pipeline de dados usando Apache Airflow na AWS.                      | Apache Airflow, AWS                                       | 1h20          |
 
-9. Integração com DBT (Data Build Tool):
-• Cinco aulas cobrindo desde a introdução ao DBT até casos de uso avançados.
-• Melhores práticas para modelagem de dados e versionamento com DBT.
+## Bootcamps Jornada de Dados
 
-10. Orquestração de Workflows com Airflow:
-• Introdução ao Apache Airflow e sua importância na orquestração de tarefas de engenharia de dados.
-• Como integrar processos de ETL, testes e outras tarefas automatizadas com Airflow.
+Aqui estão todos os bootcamps já disponíveis na Jornada de dados
 
-## Jornada de dados 2024
+| Acesso e início   | Bootcamp                              | Carga Horária |
+|-------------------|---------------------------------------|---------------|
+| Acesso Imediato   | Python para dados                     | 30 horas      |
+| Acesso Imediato   | SQL para Analytics Engineer           | 20 horas      |
+| Acesso Imediato   | dbt-core                              | 10 horas      |
+| Acesso Imediato   | WebScraping Avançado                  | 10 horas      |
+| Início 22/08      | Cloud para dados                      | 30 horas      |
+| Outubro           | Multi-engine ETL com Spark e Duckdb   | 20 horas      |
 
-Nossa missão é fornecer o melhor ensino em engenharia de dados
+## Workshops Jornada de Dados
 
-Se você quer:
+Aqui estão todos os workshops já disponíveis na Jornada de dados
 
-1) Construir uma base sólida em Python e SQL
-2) Aprender as principais habilidades e ferramentas de engenharia de dados
-3) Criar ou melhorar seu portfólio de dados
-4) Criar ou aumentar o seu networking na área
-5) Mudar ou dar o próximo passo em sua carreira
-
-A Jornada de Dados é o seu lugar
+| Data e acesso | Workshop | Carga Horária |
+|-----------------|----------|---------------|
+| Acesso Imediato | Como estruturar o seu projeto de dados do zero | 4h |
+| Acesso Imediato | Do Jupyter Notebook Pro Deploy | 4h |
+| Acesso Imediato | Como construir um DW barato | 8h |
+| Acesso Imediato | Automação Data Quality Excel ETL | 4h |
+| Acesso Imediato | Projeto e processos do Zero | 4h |
+| Acesso Imediato | Pydantic, Data Quality e TDD em dados | 4h |
+| Acesso Imediato | Docker para analista e engenheiro de dados: ajudando o seu deploy | 4h |
+| Acesso Imediato | ETL com Python do Zero ao Deploy | 4h |
+| Acesso Imediato | Orquestrando suas ETLs com Airflow | 4h |
+| Acesso Imediato | Web scraping e noSQL | 4h |
+| Acesso Imediato | restAPI fastAPI Deploy | 8h |
+| Acesso Imediato | Amazon SQS e lambda | 4h |
+| Acesso Imediato | Data Warehouse com Python, SQL e dbt-core Part. Kaio Silva | 4h |
+| Acesso Imediato | Qualidade de dados em ETL com Pandera e Python: Um Guia para Contrato de Dados Part. Renan Heckert | 2h |
+| Acesso Imediato | Crie pipelines CI/CD com dbt e github actions Part. Bruno Souza | 2h |
+| Acesso Imediato | Kafka Streaming data processing | 2h |
+| Acesso Imediato | Streamlit dashboard | 2h |
+| Acesso Imediato | Terraform para dados | 2h |
+| Início 14/09 | Transformando PDF em Dados estruturados | 4h |
+| Início 28/09 | Kubernets para dados | 4h |
 
 ## Metodologia
 
@@ -216,30 +211,6 @@ Os encontros são aos **sábados ás 9 horas, são 4 horas de workshop**
 * Gerenciando Cloud com Terraform
 * Segurança e Compliance com Terraform
 * Terraform: Casos de Uso Práticos
-
-### [Workshop 06/07: Prometheus, Datadog, Sentry](./10-prometheus-datadog-sentry-monitoramento/)
-
-* Monitoramento com Prometheus
-* Datadog para Observabilidade de Dados
-* Sentry para Gestão de Erros
-* Integrando Prometheus, Datadog e Sentry
-* Melhores Práticas de Monitoramento
-
-### [Workshop 20/07: Machine Learning Ops](./12-databricks-fabrick-dw-de-milhoes/)
-
-* Introdução ao MLOps
-* Ciclo de Vida de Modelos ML
-* Automação e Orquestração em ML
-* Monitoramento e Governança de ML
-* Casos Práticos de MLOps
-
-### [Workshop 03/08: Databricks e Fabrics](./12-databricks-fabrick-dw-de-milhoes/)
-
-* Databricks: Plataforma de Big Data
-* Fabric: Gestão de Dados em Escala
-* Arquiteturas de Data Warehouse
-* Databricks e Fabric: Integração
-* DW de Milhões: Desafios e Soluções
 
 ### Pré requisitos
 
