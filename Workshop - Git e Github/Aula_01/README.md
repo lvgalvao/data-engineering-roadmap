@@ -662,7 +662,7 @@ Aqui está o diagrama que ilustra essas operações, incluindo as etapas de merg
 
 ```mermaid
 graph TD;
-    subgraph main [Branch: main (Production)]
+    subgraph main [Branch: main Production]
         A[Initial Commit] --> B[Main Codebase];
         F[Merge feature-1] --> G[Merge feature-2];
         G --> H[Merge feature-3];
