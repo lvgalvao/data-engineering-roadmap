@@ -171,6 +171,36 @@ git config --global user.name "Seu Nome"
 git config --global user.email "seu.email@exemplo.com"
 ```
 
+Os arquivos de configuração do Git que armazenam as configurações feitas com os comandos `git config` são armazenados em diferentes locais, dependendo do nível de configuração:
+
+1. **Configurações Globais (`--global`)**:
+   - As configurações globais são salvas no arquivo `.gitconfig` localizado no diretório home do usuário.
+   - **Localização**:
+     - **Linux/Mac**: `~/.gitconfig`
+     - **Windows**: `C:\Users\SeuNomeDeUsuario\.gitconfig`
+   - Você pode abrir esse arquivo em um editor de texto para visualizar ou editar as configurações.
+
+2. **Configurações de Sistema (`--system`)**:
+   - As configurações de sistema são aplicadas a todos os usuários da máquina e são armazenadas no arquivo de configuração global do sistema.
+   - **Localização**:
+     - **Linux**: `/etc/gitconfig`
+     - **Windows**: Pode estar em um caminho como `C:\Program Files\Git\etc\gitconfig`
+   - Essas configurações requerem permissões de administrador para serem alteradas.
+
+3. **Configurações Locais (por repositório)**:
+   - As configurações locais são específicas para um único repositório Git e são salvas no arquivo `config` dentro da pasta `.git` do repositório.
+   - **Localização**:
+     - No diretório do repositório Git: `.git/config`
+
+Você pode visualizar as configurações atuais usando os seguintes comandos:
+
+- **Para ver todas as configurações globais**:
+  ```bash
+  git config --global --list
+  ```
+
+Esses comandos vão listar as configurações e seus valores, permitindo que você veja detalhes como o nome de usuário e o e-mail configurados para o Git.
+
 ### Exemplo Completo Usando Git: Passo a Passo
 
 Vamos seguir um exemplo onde fazemos modificações em um arquivo Python e gerenciamos essas alterações usando Git. Este processo incluirá a criação de commits para cada modificação, além de explorar conceitos importantes como o `HEAD`, branches, e o comando `git checkout`.
