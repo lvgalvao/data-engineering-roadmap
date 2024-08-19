@@ -563,7 +563,7 @@ Aqui está o diagrama que ilustra essas operações:
 
 ```mermaid
 graph TD;
-    subgraph main [Branch: main (Production)]
+    subgraph main [Branch: main Production]
         A[Initial Commit] --> B[Main Codebase];
     end
 
