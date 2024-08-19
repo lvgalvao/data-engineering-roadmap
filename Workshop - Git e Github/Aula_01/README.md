@@ -266,11 +266,101 @@ Depois de fazer a modificação, vamos verificar novamente o estado dos arquivos
 git status
 ```
 
+Agora observamos que temos duas opções
+
+```mermaid
+graph TD;
+
+A[Modified main.py in Working Directory] --> B{Choose an Option};
+
+B --> |"git add main.py"| C[Staging Area];
+C --> D["git commit -m 'Update main.py'"];
+D --> E[New Commit Saved in Git Repository];
+
+B --> |"git restore main.py"| F[Working Directory Restored to Last Commit];
+F --> G["Restored from Git Repository"];
+
+subgraph Git Repository
+    E
+    G
+end
+```
+
+### Explicação do Fluxo:
+
+- **Opção 1: `git add`**:
+    - **`git add main.py`**: As mudanças no `main.py` são movidas para a Staging Area.
+    - **`git commit -m 'Update main.py'`**: Um novo commit é criado, e as mudanças são salvas na caixa do Git Repository.
+
+- **Opção 2: `git restore`**:
+    - **`git restore main.py`**: O arquivo `main.py` no Working Directory é restaurado a partir da última versão salva no Git Repository, descartando as mudanças feitas localmente.
+
+Esse diagrama ilustra claramente como as mudanças fluem entre o Working Directory, a Staging Area, e o Git Repository, dependendo da ação escolhida (`git add` ou `git restore`).
+
 O Git mostrará que o arquivo `main.py` foi modificado. Vamos adicionar essa modificação à área de staging e fazer um novo commit:
+
+### 2. Primeira Modificação e Novo Commit
 
 ```bash
 git add main.py
+```
+
+### Git status
+
+Ao realizar o Git status observamos que temos 2 opções novamente
+
+```mermaid
+graph TD;
+
+A[Modified main.py in Staging Area] --> B{Choose an Option};
+
+B --> |"git commit -m 'Update main.py'"| C[New Commit Saved in Git Repository];
+B --> |"git restore --staged main.py"| D[Unstaged, Returned to Working Directory];
+
+subgraph Git Repository
+    C
+end
+
+D --> E[main.py in Working Directory];
+```
+
+### Explicação do Fluxo:
+
+- **Opção 1: `git commit`**:
+    - **`git commit -m 'Update main.py'`**: Cria um novo commit no Git Repository, salvando as mudanças que estavam na Staging Area.
+
+- **Opção 2: `git restore --staged`**:
+    - **`git restore --staged main.py`**: Remove o arquivo `main.py` da Staging Area, retornando-o ao Working Directory sem as mudanças serem cometidas. Ele volta ao estado antes de ser adicionado à Staging Area.
+
+Vamos seguir com o commit
+
+### 2. Primeiro Save no Commit
+
+```bash
 git commit -m "Adiciona a primeira modificação ao arquivo main.py"
+```
+
+### Fluxo
+
+```mermaid
+graph TD;
+
+subgraph Working Directory
+    A[main.py Modified]
+end
+
+subgraph Staging Area
+    B[main.py Staged]
+end
+
+subgraph Git Repository
+    C[main.py Committed]
+end
+
+A --> |"git add"| B;
+B --> |"git commit"| C;
+C --> |"git restore"| A;
+B --> |"git restore --staged"| A;
 ```
 
 ### 3. Segunda Modificação e Novo Commit
