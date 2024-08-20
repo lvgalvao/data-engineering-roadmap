@@ -426,11 +426,11 @@ O fluxo descrito está correto, mas vamos detalhar cada etapa no diagrama Mermai
 ```mermaid
 graph TD;
     A[Work Directory] --> |"git add"| B[Staging Area];
-    B --> |"git commit"| C[.git (Local Repository)];
-    C --> |"git push"| D[GitHub Branch (feature-branch)];
+    B --> |"git commit"| C[.git Local Repository];
+    C --> |"git push"| D[GitHub Branch feature-branch];
     D --> |"Create Pull Request"| E[Pull Request to Main];
-    E --> |"Review and Merge PR"| F[GitHub Branch (main)];
-    F --> |"git pull"| G[.git (Local Repository)];
+    E --> |"Review and Merge PR"| F[GitHub Branch main];
+    F --> |"git pull"| G[.git Local Repository];
     G --> |"Update Work Directory"| A;
 ```
 
