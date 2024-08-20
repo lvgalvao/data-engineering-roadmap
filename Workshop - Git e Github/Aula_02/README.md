@@ -97,31 +97,101 @@ graph TD;
 
 ## 4. Criando Nossa Conta e Configurando o GitHub
 
-### Configurando GitHub via HTTP e SSH
+### Configurando GitHub e SSH
 
 1. **Criando uma Conta no GitHub**:
    - Visite [GitHub.com](https://github.com) e crie uma conta gratuita.
 
-2. **Configurando Autenticação HTTP**:
-   - No terminal, configure suas credenciais:
-     ```bash
-     git config --global user.name "Seu Nome"
-     git config --global user.email "seu.email@exemplo.com"
+### Configurando Autenticação SSH para GitHub
+
+A autenticação SSH é uma forma segura de conectar seu repositório local ao GitHub, sem precisar inserir seu nome de usuário e senha toda vez que fizer um push ou pull. Aqui está o passo a passo para criar uma chave SSH, adicionar essa chave à sua conta do GitHub, e usá-la para autenticação.
+
+### Passo a Passo para Criar uma Chave SSH
+
+1. **Gerar uma Nova Chave SSH**:
+
+   No terminal, execute o seguinte comando:
+   ```bash
+   ssh-keygen -t rsa
+   ```
+
+   - **O que esse comando faz**:
+     - **`ssh-keygen`**: Este comando é usado para gerar um novo par de chaves SSH.
+     - **`-t rsa`**: Especifica o tipo de chave a ser gerado, que neste caso é RSA (um dos tipos mais comuns e seguros).
+
+   - **O que ele cria**:
+     - Este comando gera dois arquivos:
+       - **`id_rsa`**: A chave privada (não compartilhe este arquivo com ninguém).
+       - **`id_rsa.pub`**: A chave pública (essa é a chave que você vai adicionar ao GitHub).
+
+2. **Salvar a Chave SSH**:
+
+   Após executar o comando, você verá um prompt pedindo onde salvar o arquivo:
+
+   ```
+   Enter file in which to save the key (/Users/username/.ssh/id_rsa):
+   ```
+
+   - **O que fazer**: Apenas pressione **Enter** para aceitar o caminho padrão (`~/.ssh/id_rsa`). Isso salva a chave na pasta `.ssh` no diretório home do seu usuário.
+
+3. **Definir uma Senha para a Chave (Opcional)**:
+
+   Em seguida, você será solicitado a definir uma senha para proteger a chave SSH:
+
+   ```
+   Enter passphrase (empty for no passphrase):
+   ```
+
+   - **O que fazer**: Pressione **Enter** novamente para não definir uma senha. Isso significa que você não precisará digitar uma senha cada vez que usar a chave SSH.
+
+   ```
+   Enter same passphrase again:
+   ```
+
+   - **O que fazer**: Pressione **Enter** novamente.
+
+   **Nota**: Definir uma senha adiciona uma camada extra de segurança, mas pode ser inconveniente se você precisar digitar a senha frequentemente.
+
+4. **Verificando a Chave SSH Gerada**:
+
+   Para ver o conteúdo da chave pública (aquela que você vai compartilhar com o GitHub), execute o seguinte comando:
+
+   ```bash
+   cat ~/.ssh/id_rsa.pub
+   ```
+
+   - **O que isso faz**: Mostra o conteúdo do arquivo `id_rsa.pub` no terminal. Este conteúdo é a chave pública que você precisa copiar e adicionar à sua conta do GitHub.
+   - **Resultado esperado**: Algo parecido com isso será exibido:
+     ```
+     ssh-rsa AAAAB3... rest of the key ... your.email@example.com
      ```
 
-3. **Configurando Autenticação SSH**:
-   - Gere uma chave SSH:
-     ```bash
-     ssh-keygen -t rsa -b 4096 -C "seu.email@exemplo.com"
+5. **Adicionar a Chave SSH ao GitHub**:
+
+   Agora, com a chave pública copiada, vá até sua conta do GitHub e siga os passos:
+
+   - Vá para *Settings* (Configurações).
+   - Na seção *SSH and GPG keys*, clique em *New SSH key*.
+   - Cole a chave pública que você copiou do terminal no campo *Key*.
+   - Dê um nome à chave para identificá-la facilmente (por exemplo, "Meu PC").
+   - Clique em *Add SSH key*.
+
+6. **Verificar a Conexão SSH com o GitHub**:
+
+   Para garantir que tudo está configurado corretamente, você pode testar a conexão SSH com o GitHub:
+
+   ```bash
+   ssh -T git@github.com
+   ```
+
+   - **O que esperar**: Se tudo estiver configurado corretamente, você verá uma mensagem como:
      ```
-   - Adicione a chave SSH ao seu GitHub (Acesse `Settings > SSH and GPG keys`).
+     Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+     ```
 
-**Diagrama Ilustrativo**:
+### Conclusão
 
-```mermaid
-graph TD;
-    A[Local Machine] --> |"SSH Key"| B[GitHub Settings];
-```
+Com esses passos, você configurou uma autenticação SSH para o GitHub. Isso significa que, da próxima vez que fizer um `git push` ou `git pull`, o Git utilizará a chave SSH para autenticação, evitando a necessidade de inserir seu nome de usuário e senha manualmente. Esse método é mais seguro e conveniente, especialmente para desenvolvedores que frequentemente interagem com repositórios Git.
 
 ## 5. Migrando Nosso Projeto para o GitHub
 
