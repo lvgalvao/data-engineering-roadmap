@@ -154,6 +154,27 @@ Depois de executar esse comando, o repositório local agora conhece a localizaç
      git push -u origin main
      ```
 
+Ao executar o comando `git push -u origin main`, o Git tentará enviar os commits do seu repositório local para o repositório remoto no GitHub. **Neste momento**, se você estiver usando HTTPS para acessar o GitHub (o que é indicado pelo URL `https://github.com/usuario/repo.git`), o Git solicitará que você insira seu nome de usuário e senha do GitHub para autenticar a operação.
+
+### O que esperar:
+
+- **Nome de Usuário e Senha**: Quando o Git tenta fazer o push para o repositório remoto pela primeira vez, ele precisa autenticar sua identidade com o GitHub. Você verá uma solicitação no terminal pedindo para inserir seu nome de usuário e senha.
+  
+- **Autenticação com Tokens**: Desde agosto de 2021, o GitHub não aceita mais senhas para autenticação ao usar HTTPS. Em vez disso, você precisará usar um "Personal Access Token" (token de acesso pessoal) no lugar da senha. Este token pode ser gerado na sua conta do GitHub, na seção de configurações de desenvolvedor. Quando solicitado pela senha, insira o token.
+
+### Explicando em mais detalhes:
+
+- **Nome de Usuário e Token**: 
+  - **Nome de Usuário**: O seu nome de usuário do GitHub.
+  - **Token**: Um token de acesso pessoal que você deve gerar no GitHub e usar no lugar da senha.
+
+- **Por que isso acontece?**
+  - **Autenticação HTTPS**: Quando você usa HTTPS para acessar o repositório, o Git precisa garantir que você tem as permissões necessárias para enviar (push) alterações. Isso é feito pedindo sua autenticação.
+  
+- **Após a primeira vez**: Se você configurar o cache de credenciais ou usar SSH, o Git pode armazenar essas informações para que você não precise digitá-las novamente para cada push.
+
+Essa autenticação é essencial para garantir que apenas usuários autorizados possam enviar alterações para o repositório remoto.
+
 O parâmetro `-u` no comando `git push -u origin main` é utilizado para definir a branch local (`main` neste caso) como a branch "upstream" padrão para a branch remota associada. Isso significa que, depois de utilizar esse comando uma vez, você pode simplesmente executar `git push` ou `git pull` sem precisar especificar explicitamente o repositório (`origin`) e a branch (`main`) novamente.
 
 ### Explicando em mais detalhes:
@@ -313,6 +334,50 @@ graph TD;
 ### Conclusão:
 
 Esse fluxo de trabalho com Pull Requests (PRs) promove uma colaboração mais organizada e segura, garantindo que todas as modificações sejam revisadas antes de serem integradas ao código de produção. Cada PR permite a discussão, revisão e validação das mudanças, assegurando a qualidade do código e a minimização de bugs em produção.
+
+Aqui está um ciclo de desenvolvimento típico usando Git, desde a criação de mudanças no diretório de trabalho até a integração dessas mudanças na branch principal (main) após um Pull Request (PR).
+
+### Fluxo de Desenvolvimento
+
+1. **Diretório de Trabalho (Work Directory)**: Onde você faz as modificações nos arquivos.
+2. **Staging Area**: Onde você adiciona as mudanças que deseja incluir no próximo commit.
+3. **.git (Repositório Local)**: Onde os commits são armazenados localmente.
+4. **Push**: Envia os commits do repositório local para o repositório remoto (GitHub).
+5. **GitHub Branch**: A branch específica no GitHub onde as mudanças são enviadas.
+6. **Pull Request (PR) para Main**: As mudanças na branch específica são revisadas e, se aprovadas, mescladas na branch principal (`main`).
+7. **Pull Main**: A branch `main` atualizada é puxada (pull) de volta para o repositório local, sincronizando as mudanças aprovadas.
+
+### Verificação e Alterações
+
+O fluxo descrito está correto, mas vamos detalhar cada etapa no diagrama Mermaid para garantir que todas as etapas estão cobertas.
+
+### Diagrama Mermaid
+
+```mermaid
+graph TD;
+    A[Work Directory] --> |"git add"| B[Staging Area];
+    B --> |"git commit"| C[.git (Local Repository)];
+    C --> |"git push"| D[GitHub Branch (feature-branch)];
+    D --> |"Create Pull Request"| E[Pull Request to Main];
+    E --> |"Review and Merge PR"| F[GitHub Branch (main)];
+    F --> |"git pull"| G[.git (Local Repository)];
+    G --> |"Update Work Directory"| A;
+```
+
+### Explicação do Diagrama
+
+1. **Work Directory**: Você começa fazendo alterações no código, que estão no diretório de trabalho do seu projeto.
+2. **Staging Area**: Com o comando `git add`, você move as alterações para a Staging Area, preparando-as para o commit.
+3. **.git (Local Repository)**: Usando `git commit`, as mudanças na Staging Area são registradas no repositório local, criando um snapshot do código naquele momento.
+4. **Push para GitHub Branch**: O comando `git push` envia os commits do repositório local para uma branch específica no GitHub, como `feature-branch`.
+5. **GitHub Branch (feature-branch)**: Essa branch no GitHub é onde o código modificado reside enquanto aguarda revisão.
+6. **Pull Request para Main**: Um PR é criado a partir da `feature-branch` para a `main`. Outros desenvolvedores revisam as mudanças, discutem e sugerem melhorias.
+7. **Review e Merge do PR**: Após a revisão, o PR é mesclado na branch principal (`main`) no GitHub.
+8. **Pull Main**: Finalmente, você sincroniza o repositório local com o repositório remoto atualizado usando `git pull`, trazendo as mudanças aprovadas na branch `main` de volta para o seu ambiente local.
+
+### Conclusão
+
+Esse fluxo reflete um ciclo de desenvolvimento completo e organizado, promovendo boas práticas de controle de versão, colaboração e integração contínua. Cada etapa garante que as mudanças sejam revisadas antes de serem integradas ao código principal, mantendo a integridade do projeto.
 
 ## 8. Fazendo `git clone`
 
