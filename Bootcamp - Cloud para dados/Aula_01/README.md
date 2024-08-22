@@ -207,7 +207,7 @@ Nesta seção, vamos aprender a criar e configurar um bucket S3 na AWS, além de
 - **Definição:**
    - Um site estático é um site cujas páginas são servidas exatamente como são armazenadas, sem processamento dinâmico. Isso significa que não há interação com banco de dados ou scripts do lado do servidor, tornando-o ideal para conteúdos simples, como blogs ou páginas de portfólio.
 
-   Aqui está o passo a passo atualizado, começando com o comando `su -` para obter acesso root, definindo uma senha para o root, e então seguindo com a instalação do Python e Streamlit, além da execução do aplicativo.
+   Aqui está o passo a passo atualizado, começando com o comando `sudo su` para obter acesso root, definindo uma senha para o root, e então seguindo com a instalação do Python e Streamlit, além da execução do aplicativo.
 
 ## 12. Criando e Configurando uma Instância EC2
 
@@ -226,7 +226,7 @@ Nesta seção, vamos aprender a configurar uma instância EC2, obter acesso root
    - Assim que estiver conectado, troque para o usuário root usando o comando:
 
    ```bash
-   su -
+   sudo su
    ```
 
 3. **Definir uma Senha para o Root (se necessário):**
