@@ -1,7 +1,3 @@
-Aqui está a versão final da Aula 02 organizada conforme solicitado:
-
----
-
 # Bootcamp Cloud: Aula 02
 
 ## S3: Armazenamento de Dados na AWS
