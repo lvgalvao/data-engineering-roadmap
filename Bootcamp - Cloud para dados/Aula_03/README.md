@@ -330,4 +330,167 @@ As Instâncias Dedicadas são executadas em hardware físico dedicado exclusivam
 
 ### 1. **Configurar a Instância EC2**
 
-https://github.com/lvgalvao/AIRFLOW-Do-Jupyter-Notebook-Pro-Deploy
+Aqui está o passo a passo atualizado para configurar o Airflow em uma máquina Linux usando `apt` ao invés de `yum`, seguido por instruções sobre como garantir que sua DAG seja carregada corretamente na interface do Airflow.
+
+### 1. **Atualizar os Pacotes do Sistema**
+
+Primeiro, certifique-se de que todos os pacotes do sistema estão atualizados:
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+### 2. **Instalar o `pip3`**
+
+Instale o gerenciador de pacotes `pip3` para Python:
+
+```bash
+sudo apt install -y python3-pip
+```
+
+### 3. **Instalar o SQLite**
+
+Instale o banco de dados SQLite, que é necessário para o Airflow funcionar corretamente:
+
+```bash
+sudo apt install -y sqlite3
+```
+
+### 4. **Instalar o Ambiente Virtual do Python**
+
+Instale o módulo `venv` para criar um ambiente virtual isolado para o Airflow:
+
+```bash
+sudo apt install -y python3.12-venv
+```
+
+### 5. **Instalar as Dependências do PostgreSQL**
+
+Instale a biblioteca `libpq-dev` que é necessária para o suporte ao PostgreSQL no Airflow:
+
+```bash
+sudo apt-get install -y libpq-dev
+```
+
+### 6. **Criar um Ambiente Virtual**
+
+Crie um ambiente virtual Python para isolar as dependências do Airflow:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 7. **Instalar o Apache Airflow**
+
+Instale o Apache Airflow usando `pip` dentro do ambiente virtual:
+
+```bash
+pip install "apache-airflow[celery]==2.10.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.10.0/constraints-3.8.txt"
+```
+
+### 8. **Inicializar o Banco de Dados do Airflow**
+
+Migre o banco de dados do Airflow para garantir que todas as tabelas necessárias sejam criadas:
+
+```bash
+airflow db migrate
+```
+
+### 9. **Criar um Usuário Administrador**
+
+Crie um usuário administrador para acessar a interface web do Airflow:
+
+```bash
+airflow users create \
+    --username admin \
+    --firstname Peter \
+    --lastname Parker \
+    --role Admin \
+    --email spiderman@superhero.org
+```
+
+### 10. **Iniciar o Servidor Web do Airflow**
+
+Inicie o servidor web do Airflow em segundo plano:
+
+```bash
+airflow webserver &
+```
+
+### 11. **Iniciar o Scheduler do Airflow**
+
+Por fim, inicie o scheduler do Airflow para gerenciar a execução dos DAGs:
+
+```bash
+airflow scheduler &
+```
+
+### 12. **Adicionar uma Nova DAG**
+
+Para adicionar uma nova DAG:
+
+1. **Criar o Arquivo da DAG:**
+
+   Navegue até o diretório de DAGs do Airflow e crie um novo arquivo Python para a DAG:
+
+   ```bash
+   cd ~/airflow/dags
+   nano minha_dag.py
+   ```
+
+   **Exemplo de Conteúdo da DAG:**
+
+   ```python
+   from airflow import DAG
+   from airflow.operators.dummy import DummyOperator
+   from datetime import datetime
+
+   default_args = {
+       'owner': 'airflow',
+       'start_date': datetime(2024, 8, 26),
+   }
+
+   with DAG('minha_dag',
+            default_args=default_args,
+            schedule_interval='@daily',
+            catchup=False) as dag:
+
+       start = DummyOperator(task_id='start')
+
+       start
+   ```
+
+2. **Salvar e Sair:**
+
+   Salve o arquivo no `nano` pressionando `CTRL + O`, e saia pressionando `CTRL + X`.
+
+### 13. **Verificar se a DAG Aparece na UI**
+
+Se a nova DAG não aparecer na UI:
+
+1. **Verifique o Scheduler:**
+
+   Certifique-se de que o scheduler está rodando corretamente:
+
+   ```bash
+   airflow scheduler
+   ```
+
+2. **Reinicie o Scheduler:**
+
+   Se necessário, reinicie o scheduler para carregar as novas DAGs:
+
+   ```bash
+   pkill -f "airflow scheduler"
+   airflow scheduler &
+   ```
+
+3. **Verifique as Configurações do Airflow:**
+
+   Verifique se o diretório `dags_folder` no `airflow.cfg` aponta para o diretório onde sua DAG está localizada (`~/airflow/dags`).
+
+### 14. **Acessar o Airflow via Interface Web**
+
+Finalmente, acesse a interface web do Airflow no navegador:
