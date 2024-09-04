@@ -1,0 +1,12 @@
+annotated-types==0.7.0
+certifi==2024.8.30
+charset-normalizer==3.3.2
+idna==3.8
+psycopg2-binary==2.9.9
+pydantic==2.8.2
+pydantic_core==2.20.1
+python-dotenv==1.0.1
+requests==2.32.3
+schedule==1.2.2
+typing_extensions==4.12.2
+urllib3==2.2.2
