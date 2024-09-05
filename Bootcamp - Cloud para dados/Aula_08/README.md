@@ -1,151 +1,143 @@
-### Aula 09: AWS Lambda e Eventos na AWS
+# Bootcamp Cloud: Aula 08 - Integração entre EC2 e RDS para Processamento de Requisições de API e Armazenamento de Dados
 
-**Objetivo**: Nesta aula, exploraremos o AWS Lambda e seu papel dentro de arquiteturas serverless na AWS. Vamos entender as diferenças entre o AWS Lambda e o EC2, discutir suas vantagens e desafios, e aprender como eventos podem ser aproveitados para criar sistemas escaláveis e eficientes.
+**Objetivo**: Nesta aula, vamos aprender a configurar uma instância EC2 para rodar uma aplicação de API utilizando Docker e integrar essa aplicação com um banco de dados Amazon RDS. Vamos explorar as vantagens dessa arquitetura, as melhores práticas de segurança, e como configurar os recursos necessários na AWS.
 
-### **1. Introdução ao AWS Lambda**
+### **1. Introdução à Integração EC2 e RDS**
 
-AWS Lambda é um serviço de computação serverless que executa código sem que você precise gerenciar servidores. Ele é ideal para processos pontuais que respondem automaticamente a eventos, como uploads no S3, alterações em bancos de dados, e requisições HTTP através do API Gateway. Embora o termo "serverless" sugira a ausência de servidores, na prática, isso significa que o código é executado em servidores gerenciados pela AWS, não por você.
+A combinação de instâncias EC2 com o Amazon RDS é amplamente utilizada para construir aplicações robustas que precisam processar requisições de APIs e armazenar dados em um banco de dados relacional gerenciado. EC2 oferece flexibilidade e controle sobre a execução do código da aplicação, enquanto o RDS cuida da gestão do banco de dados, garantindo alta disponibilidade, backups automatizados e segurança.
 
-### **2. Diferença entre AWS Lambda e EC2**
+### **2. Benefícios da Integração entre EC2 e RDS**
 
-#### **2.1. AWS EC2 (Elastic Compute Cloud)**
-- **Definição**: Serviço de computação que permite criar e gerenciar instâncias de servidores virtuais na nuvem, oferecendo controle total sobre o ambiente.
-- **Vantagens**:
-  - **Controle Completo**: Customização do ambiente de software e hardware.
-  - **Ambientes Persistentes**: Ideal para aplicações que exigem disponibilidade contínua.
-  - **Escalabilidade Flexível**: Permite ajustes manuais ou automáticos de recursos.
-- **Desafios**:
-  - **Gerenciamento**: Requer manutenção contínua e configuração detalhada.
-  - **Custo**: Pagamento contínuo pelo tempo de execução, independente do uso.
-  - **Complexidade de Configuração**: Requer atenção aos detalhes de rede, segurança e capacidade.
+- **Escalabilidade e Flexibilidade**: A instância EC2 permite escalabilidade horizontal da aplicação, enquanto o RDS escala automaticamente o banco de dados de acordo com a demanda.
+- **Gerenciamento Simplificado**: O RDS cuida de atualizações, backups, e manutenção do banco de dados, liberando tempo para focar no desenvolvimento da aplicação.
+- **Segurança Avançada**: Com o uso de Security Groups, podemos restringir o acesso ao banco de dados, garantindo que apenas a instância EC2 tenha permissão para se conectar.
+- **Alto Desempenho**: O uso combinado de EC2 e RDS permite que aplicações sejam otimizadas para lidar com grandes volumes de requisições e operações de banco de dados.
 
-#### **2.2. AWS Lambda**
-- **Definição**: Serviço que executa código em resposta a eventos sem necessidade de gerenciar servidores, cobrando apenas pelo tempo de execução.
-- **Vantagens**:
-  - **Serverless**: Reduz a complexidade operacional.
-  - **Escalabilidade Automática**: Ajusta automaticamente com base na carga de eventos.
-  - **Custo-Eficiência**: Ideal para cargas intermitentes com pagamento por uso.
-- **Desafios**:
-  - **Limitações de Execução**: Tempo máximo de 15 minutos, com restrições de memória e armazenamento.
-  - **Cold Starts**: Pequenos atrasos iniciais quando funções são ativadas após inatividade.
-  - **Configuração de Permissões**: Requer configurações cuidadosas para garantir segurança.
+### **3. Passo a Passo para Configuração da Instância EC2**
 
-### **3. Principais Casos de Uso do AWS Lambda**
-- **Processamento de Arquivos**: Automatiza tarefas como redimensionamento de imagens e análise de dados em S3.
-- **ETL em Tempo Real**: Transformação de dados em tempo real a partir de streams de dados.
-- **APIs Serverless**: Gerenciamento de APIs com API Gateway e Lambda.
-- **Eventos de IoT**: Resposta a dados de dispositivos IoT.
-- **Automação de Infraestrutura**: Tarefas automatizadas como limpeza de recursos e monitoramento.
+#### **3.1. Configurando a Instância EC2**
 
-### **4. Eventos na AWS e Integração com Lambda**
-Lambda pode ser acionado por diversos eventos na AWS, permitindo respostas dinâmicas a mudanças nos serviços.
-- **Eventos S3**: Código executado ao upload de arquivos.
-- **Eventos DynamoDB Streams**: Funções disparadas por alterações em tabelas.
-- **Eventos API Gateway**: Requisições HTTP acionam funções Lambda.
-- **Eventos CloudWatch**: Ações baseadas em alertas e agendamentos.
-- **Eventos SQS**: Mensagens processadas de filas SQS.
+1. **Acessar o Console EC2**:
+   - No console da AWS, navegue até **EC2** e clique em **"Launch Instance"**.
 
-### **5. Configurando uma Função AWS Lambda**
-1. **Criar Função no Console AWS Lambda**: Selecione “Author from scratch” e configure nome, runtime e permissões.
-2. **Escrever Código**: Escreva o código da função no editor integrado, definindo a lógica do lambda handler.
-3. **Adicionar Trigger**: Configure o evento que irá acionar a função, como upload no S3 ou requisição HTTP.
-4. **Testar Função**: Utilize o console para testes com eventos simulados e ajuste o código conforme necessário.
+2. **Escolher a AMI (Amazon Machine Image)**:
+   - Selecione uma AMI com Ubuntu Server (última versão LTS).
 
-### **6. Comparação de Cenários de Uso: AWS Lambda vs. EC2**
+3. **Escolher o Tipo de Instância**:
+   - Escolha um tipo de instância que atenda às necessidades do projeto (ex.: t2.micro para desenvolvimento ou t3.medium para produção).
 
-| **Critério**           | **AWS EC2**                                  | **AWS Lambda**                              |
-|------------------------|----------------------------------------------|---------------------------------------------|
-| **Controle**           | Total sobre ambiente e recursos             | Limitado ao código da função                |
-| **Persistência**       | Executa continuamente                       | Executa sob demanda, de forma intermitente  |
-| **Escalabilidade**     | Manual ou automática                         | Automática com base em eventos              |
-| **Gerenciamento**      | Requer configuração e manutenção            | Automação pela AWS                          |
-| **Custo**              | Contínuo enquanto ativo                     | Paga apenas pelo uso                        |
-| **Tempo de Resposta**  | Latência menor em execução contínua         | Cold starts podem aumentar a latência       |
+4. **Configuração de Rede**:
+   - Selecione a VPC e Sub-rede desejadas.
+   - Configure o Security Group permitindo acesso necessário, como SSH na porta 22 para administração e outras portas conforme a aplicação.
 
-### **7. Desafios ao Usar AWS Lambda e EC2**
-- **AWS Lambda**: 
-  - Limitações de tempo e recursos, cold starts e desafios de debug.
-- **AWS EC2**: 
-  - Requer gerenciamento contínuo, configuração de escalabilidade e custos constantes.
+5. **Configuração de Armazenamento**:
+   - Configure o armazenamento de acordo com o necessário para a aplicação (ex.: 30GB SSD).
 
-### **8. Motivação para Escolher AWS Lambda**
-- **Economia**: Pagamento por uso sem custos fixos.
-- **Escalabilidade**: Ajustes automáticos com base na demanda.
-- **Foco no Código**: Sem preocupações com infraestrutura.
+6. **Launch**:
+   - Revise as configurações e clique em **"Launch"**. Escolha um par de chaves para acesso SSH ou crie um novo.
+
+#### **3.2. Configurando a Aplicação na Instância EC2**
+
+1. **Acessar a Instância via SSH**:
+   - Conecte-se à instância EC2 usando o terminal:
+     ```bash
+     ssh -i "caminho/para/sua-chave.pem" ubuntu@seu-endereco-ec2
+     ```
+
+2. **Atualizar Pacotes e Instalar Docker e Git**:
+   - Execute os seguintes comandos:
+     ```bash
+     sudo su
+     sudo apt-get update
+     sudo apt install -y git docker.io docker-compose
+     ```
+
+3. **Clonar o Repositório do Projeto**:
+   - Clone o repositório do projeto:
+     ```bash
+     git clone https://github.com/lvgalvao/api-scheduler-python-rds.git /app
+     ```
+
+4. **Construir e Executar o Contêiner Docker**:
+   - Navegue para o diretório do projeto e construa a imagem Docker:
+     ```bash
+     cd /app
+     sudo docker build -t api-schedule-app .
+     ```
+   - Execute o contêiner com as variáveis de ambiente para integração com o RDS:
+     ```bash
+     sudo docker run -d \
+     --name api-schedule-app-container \
+     -e DB_HOST=<endereco-rds> \
+     -e DB_USER=<usuario> \
+     -e DB_PASS=<senha> \
+     -e DB_NAME=<nome-do-banco> \
+     api-schedule-app
+     ```
+
+### **4. Configuração do Banco de Dados Amazon RDS**
+
+#### **4.1. Criando uma Instância RDS**
+
+1. **Acessar o Console do RDS**:
+   - Navegue até o serviço **RDS** no console da AWS e clique em **"Create Database"**.
+
+2. **Escolher o Mecanismo do Banco de Dados**:
+   - Selecione o banco de dados desejado (ex.: PostgreSQL, MySQL).
+   - Escolha a versão de acordo com os requisitos do projeto.
+
+3. **Configurações da Instância**:
+   - **DB Instance Class**: Escolha uma classe de instância compatível com a carga esperada (ex.: db.t3.micro para teste).
+   - **Multi-AZ Deployment**: Ative se precisar de alta disponibilidade.
+
+4. **Configurações de Conectividade**:
+   - **VPC**: Selecione a mesma VPC da instância EC2.
+   - **Sub-redes**: Escolha sub-redes privadas para o banco de dados.
+   - **Public Access**: Desative para um ambiente de produção, habilite apenas para desenvolvimento com restrições de segurança.
+
+5. **Configurações de Autenticação e Backup**:
+   - Configure backups automáticos e defina as políticas de retenção e manutenção.
+
+6. **Criação da Instância**:
+   - Clique em **"Create Database"** para finalizar.
+
+### **5. Criando e Configurando Security Groups**
+
+#### **5.1. Criando um Security Group para a Instância EC2**
+
+1. **Acessar o Console EC2**:
+   - Navegue até **Security Groups** e clique em **"Create Security Group"**.
+
+2. **Configurar o Security Group**:
+   - **Nome**: Nomeie seu grupo (ex.: SG-EC2-API).
+   - **Descrição**: Descreva a função (ex.: Security Group para instância EC2 da API).
+   - **Regras de Entrada**:
+     - **SSH (Porta 22)**: Permita o acesso somente do seu IP (para acesso seguro).
+     - **HTTP/HTTPS**: Habilite conforme necessário para a aplicação.
+
+#### **5.2. Criando um Security Group para o Banco de Dados RDS**
+
+1. **Acessar o Console RDS**:
+   - No painel do RDS, acesse **Security Groups** e clique em **"Create Security Group"**.
+
+2. **Configurar o Security Group do RDS**:
+   - **Nome**: Nomeie seu grupo (ex.: SG-RDS-Database).
+   - **Regras de Entrada**:
+     - **Banco de Dados (Porta 5432 para PostgreSQL, ou outra conforme o banco)**.
+     - **Origem**: Especifique o Security Group da instância EC2 (ex.: SG-EC2-API) para garantir que apenas a instância EC2 possa se conectar ao banco.
+
+### **6. Vantagens e Oportunidades da Integração EC2 + RDS para Engenharia de Dados**
+
+1. **Desempenho e Escalabilidade**: A combinação EC2 e RDS permite processar grandes volumes de dados e escalar conforme a demanda, ideal para pipelines de dados e processamento intensivo.
+
+2. **Facilidade de Manutenção**: Com o RDS gerenciado, as tarefas complexas de manutenção do banco de dados, como backups e patches, são automatizadas, liberando os engenheiros para focar em otimizações de processamento.
+
+3. **Segurança e Controle de Acesso**: A configuração de Security Groups restritivos garante que o tráfego de dados entre a aplicação e o banco seja seguro, minimizando riscos de acesso não autorizado.
+
+4. **Implementação Ágil de Projetos de Dados**: Essa arquitetura facilita a rápida implementação de APIs que coletam, processam e armazenam dados, otimizando fluxos de trabalho de ETL (Extração, Transformação e Carga) com acesso seguro ao banco de dados.
+
+5. **Monitoramento e Otimização**: Utilizando ferramentas da AWS como CloudWatch, é possível monitorar métricas críticas de desempenho tanto da instância EC2 quanto do RDS, ajustando conforme necessário para garantir alta performance.
 
 ### **Conclusão**
-AWS Lambda oferece uma abordagem serverless que simplifica a execução de código na nuvem, focando em escalabilidade e economia de custos. Comparado ao EC2, o Lambda reduz a complexidade de gerenciamento, mas exige um entendimento claro de suas limitações. A escolha entre Lambda e EC2 deve considerar o caso de uso específico, pesando controle, custos e necessidades operacionais.
 
-Vou criar alguns diagramas usando Mermaid para ilustrar os conceitos apresentados na aula sobre AWS Lambda e EC2. Esses diagramas ajudarão a visualizar como o AWS Lambda funciona, suas integrações com eventos e uma comparação com o EC2.
-
-### 1. **Funcionamento do AWS Lambda**
-
-Este diagrama mostra como o AWS Lambda processa uma função em resposta a eventos. A função é executada em um ambiente serverless, escalando automaticamente conforme a necessidade.
-
-```mermaid
-graph TD
-    A[Evento Disparado] -->|Upload no S3, API Request, etc.| B[AWS Lambda]
-    B --> C[Provisiona Container]
-    C --> D[Executa a Função]
-    D --> E[Retorna Resposta]
-    E -->|Resposta HTTP, Salva no Banco, etc.| F[Serviços Externos]
-```
-
-### 2. **Comparação AWS Lambda vs EC2**
-
-Este diagrama compara os fluxos de uso do AWS Lambda e do EC2, mostrando a diferença no gerenciamento de infraestrutura.
-
-```mermaid
-graph LR
-    subgraph Lambda
-        A[Evento Disparado] --> B[AWS Lambda]
-        B --> C[Executa Código]
-        C --> D[Resposta ao Evento]
-    end
-    subgraph EC2
-        E[Servidor EC2 Rodando] --> F[Gerenciar Sistema Operacional]
-        F --> G[Monitorar Recursos]
-        G --> H[Executar Código]
-        H --> I[Resposta ao Evento]
-    end
-```
-
-### 3. **Arquitetura Serverless com AWS Lambda**
-
-Este diagrama mostra uma arquitetura típica serverless, onde múltiplos serviços da AWS interagem com o Lambda para automatizar processos.
-
-```mermaid
-graph TB
-    S3[S3] --> |Upload de Arquivo| Lambda1[AWS Lambda]
-    APIGateway[API Gateway] --> |Requisição HTTP| Lambda2[AWS Lambda]
-    DynamoDB[DynamoDB Streams] --> |Alteração na Tabela| Lambda3[AWS Lambda]
-    CloudWatch[CloudWatch Events] --> |Alerta| Lambda4[AWS Lambda]
-    SQS[SQS] --> |Mensagem na Fila| Lambda5[AWS Lambda]
-
-    Lambda1 --> Process1[Processa Arquivo]
-    Lambda2 --> Process2[API Backend]
-    Lambda3 --> Process3[Sincroniza Dados]
-    Lambda4 --> Process4[Automatiza Resposta]
-    Lambda5 --> Process5[Processa Mensagem]
-```
-
-### 4. **Cold Start do AWS Lambda**
-
-Este diagrama ilustra o processo de Cold Start, mostrando o tempo adicional necessário para provisionar o ambiente na primeira execução após um período de inatividade.
-
-```mermaid
-sequenceDiagram
-    participant User as Usuário
-    participant Lambda as AWS Lambda
-    participant Container as Container Lambda
-    User ->> Lambda: Dispara Função
-    Lambda ->> Container: Provisiona Container
-    Container ->> Lambda: Pronto para Execução (Cold Start)
-    Lambda ->> User: Resposta Enviada
-    User ->> Lambda: Dispara Função Novamente
-    Lambda ->> Container: Executa Imediatamente (Warm Start)
-    Container ->> Lambda: Pronto
-    Lambda ->> User: Resposta Enviada
-```
-
-Esses diagramas ajudam a visualizar os fluxos de trabalho e as diferenças entre AWS Lambda e EC2, bem como a dinâmica dos eventos que integram o Lambda em uma arquitetura serverless.
+Nesta aula, aprendemos como configurar e integrar uma instância EC2 com o Amazon RDS, criando uma arquitetura robusta para aplicações que processam requisições de APIs e armazenam dados de forma eficiente e segura. Essa integração é um pilar essencial para qualquer projeto de engenharia de dados, permitindo que você construa soluções escaláveis e de alto desempenho na nuvem.
