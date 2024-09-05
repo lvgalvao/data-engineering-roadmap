@@ -2,6 +2,25 @@
 
 **Objetivo**: Nesta aula, exploraremos o AWS Lambda e seu papel dentro de arquiteturas serverless na AWS. Vamos entender as diferenças entre o AWS Lambda e o EC2, discutir suas vantagens e desafios, e aprender como eventos podem ser aproveitados para criar sistemas escaláveis e eficientes.
 
+### 3. **Arquitetura Serverless com AWS Lambda**
+
+Este diagrama mostra uma arquitetura típica serverless, onde múltiplos serviços da AWS interagem com o Lambda para automatizar processos.
+
+```mermaid
+graph TB
+    S3[S3] --> |Upload de Arquivo| Lambda1[AWS Lambda]
+    APIGateway[API Gateway] --> |Requisição HTTP| Lambda2[AWS Lambda]
+    DynamoDB[DynamoDB Streams] --> |Alteração na Tabela| Lambda3[AWS Lambda]
+    CloudWatch[CloudWatch Events] --> |Alerta| Lambda4[AWS Lambda]
+    SQS[SQS] --> |Mensagem na Fila| Lambda5[AWS Lambda]
+
+    Lambda1 --> Process1[Processa Arquivo]
+    Lambda2 --> Process2[API Backend]
+    Lambda3 --> Process3[Sincroniza Dados]
+    Lambda4 --> Process4[Automatiza Resposta]
+    Lambda5 --> Process5[Processa Mensagem]
+```
+
 ### **1. Introdução ao AWS Lambda**
 
 AWS Lambda é um serviço de computação serverless que executa código sem que você precise gerenciar servidores. Ele é ideal para processos pontuais que respondem automaticamente a eventos, como uploads no S3, alterações em bancos de dados, e requisições HTTP através do API Gateway. Embora o termo "serverless" sugira a ausência de servidores, na prática, isso significa que o código é executado em servidores gerenciados pela AWS, não por você.
@@ -78,74 +97,74 @@ AWS Lambda oferece uma abordagem serverless que simplifica a execução de códi
 
 Vou criar alguns diagramas usando Mermaid para ilustrar os conceitos apresentados na aula sobre AWS Lambda e EC2. Esses diagramas ajudarão a visualizar como o AWS Lambda funciona, suas integrações com eventos e uma comparação com o EC2.
 
-### 1. **Funcionamento do AWS Lambda**
+### **Exemplo: Teste Meu Primeiro Lambda**
 
-Este diagrama mostra como o AWS Lambda processa uma função em resposta a eventos. A função é executada em um ambiente serverless, escalando automaticamente conforme a necessidade.
+Este exemplo de função Lambda vai simplesmente retornar uma mensagem de teste quando invocada. Isso ajudará você a entender o básico de como criar, configurar e testar uma função Lambda.
 
-```mermaid
-graph TD
-    A[Evento Disparado] -->|Upload no S3, API Request, etc.| B[AWS Lambda]
-    B --> C[Provisiona Container]
-    C --> D[Executa a Função]
-    D --> E[Retorna Resposta]
-    E -->|Resposta HTTP, Salva no Banco, etc.| F[Serviços Externos]
-```
+#### **Passo a Passo para Criar a Função Lambda**
 
-### 2. **Comparação AWS Lambda vs EC2**
+1. **Acesse o Console do AWS Lambda:**
+   - Vá para o [AWS Management Console](https://aws.amazon.com/console/) e selecione **Lambda** no menu de serviços.
 
-Este diagrama compara os fluxos de uso do AWS Lambda e do EC2, mostrando a diferença no gerenciamento de infraestrutura.
+2. **Criar a Função Lambda:**
+   - Clique em **Create Function**.
+   - Escolha **Author from scratch**.
+   - Configure os seguintes detalhes:
+     - **Function name**: `TesteMeuPrimeiroLambda`.
+     - **Runtime**: Selecione `Python 3.9` ou outra versão que você prefira.
+     - **Permissions**: Selecione **Create a new role with basic Lambda permissions** para permitir que a função grave logs no CloudWatch.
 
-```mermaid
-graph LR
-    subgraph Lambda
-        A[Evento Disparado] --> B[AWS Lambda]
-        B --> C[Executa Código]
-        C --> D[Resposta ao Evento]
-    end
-    subgraph EC2
-        E[Servidor EC2 Rodando] --> F[Gerenciar Sistema Operacional]
-        F --> G[Monitorar Recursos]
-        G --> H[Executar Código]
-        H --> I[Resposta ao Evento]
-    end
-```
+3. **Adicionar o Código da Função:**
 
-### 3. **Arquitetura Serverless com AWS Lambda**
+   Após criar a função, adicione o seguinte código no editor do console do Lambda:
 
-Este diagrama mostra uma arquitetura típica serverless, onde múltiplos serviços da AWS interagem com o Lambda para automatizar processos.
+   ```python
+   def lambda_handler(event, context):
+       # Função básica que retorna uma mensagem de teste
+       return {
+           'statusCode': 200,
+           'body': 'Olá! Este é o meu primeiro teste com AWS Lambda.'
+       }
+   ```
 
-```mermaid
-graph TB
-    S3[S3] --> |Upload de Arquivo| Lambda1[AWS Lambda]
-    APIGateway[API Gateway] --> |Requisição HTTP| Lambda2[AWS Lambda]
-    DynamoDB[DynamoDB Streams] --> |Alteração na Tabela| Lambda3[AWS Lambda]
-    CloudWatch[CloudWatch Events] --> |Alerta| Lambda4[AWS Lambda]
-    SQS[SQS] --> |Mensagem na Fila| Lambda5[AWS Lambda]
+4. **Testar a Função Lambda:**
 
-    Lambda1 --> Process1[Processa Arquivo]
-    Lambda2 --> Process2[API Backend]
-    Lambda3 --> Process3[Sincroniza Dados]
-    Lambda4 --> Process4[Automatiza Resposta]
-    Lambda5 --> Process5[Processa Mensagem]
-```
+   - Clique em **Deploy** para salvar o código.
+   - Clique em **Test** para criar um evento de teste:
+     - Dê um nome ao evento de teste, como `EventoTeste`.
+     - Use o payload padrão ou um JSON simples, como:
+       ```json
+       {
+         "mensagem": "Teste de invocação"
+       }
+       ```
+   - Clique em **Test** novamente para executar a função.
 
-### 4. **Cold Start do AWS Lambda**
+   Você verá o resultado da execução na parte inferior da página, mostrando algo semelhante a:
 
-Este diagrama ilustra o processo de Cold Start, mostrando o tempo adicional necessário para provisionar o ambiente na primeira execução após um período de inatividade.
+   ```json
+   {
+     "statusCode": 200,
+     "body": "Olá! Este é o meu primeiro teste com AWS Lambda."
+   }
+   ```
 
-```mermaid
-sequenceDiagram
-    participant User as Usuário
-    participant Lambda as AWS Lambda
-    participant Container as Container Lambda
-    User ->> Lambda: Dispara Função
-    Lambda ->> Container: Provisiona Container
-    Container ->> Lambda: Pronto para Execução (Cold Start)
-    Lambda ->> User: Resposta Enviada
-    User ->> Lambda: Dispara Função Novamente
-    Lambda ->> Container: Executa Imediatamente (Warm Start)
-    Container ->> Lambda: Pronto
-    Lambda ->> User: Resposta Enviada
-```
+### **Explicação do Código**
 
-Esses diagramas ajudam a visualizar os fluxos de trabalho e as diferenças entre AWS Lambda e EC2, bem como a dinâmica dos eventos que integram o Lambda em uma arquitetura serverless.
+- **`lambda_handler(event, context)`**: É a função principal que o AWS Lambda executa. Ela recebe dois parâmetros:
+  - **`event`**: Contém os dados que você envia quando aciona a função, como um JSON com informações específicas.
+  - **`context`**: Inclui informações de contexto sobre a execução da função, como o tempo de execução restante.
+
+- **Retorno da Função**:
+  - **`statusCode`**: Código HTTP 200 indicando sucesso.
+  - **`body`**: Uma mensagem de resposta simples que é retornada para quem acionou a função.
+
+### **Vantagens deste Exemplo Simples:**
+
+- **Sem Dependências Externas**: Nenhuma instalação de bibliotecas é necessária, o que simplifica o deploy.
+- **Facilidade de Configuração**: Com apenas alguns cliques e um pequeno trecho de código, você pode experimentar o AWS Lambda.
+- **Ideal para Primeiros Testes**: Um bom ponto de partida para entender o funcionamento básico do AWS Lambda e como ele responde a eventos.
+
+Este exemplo proporciona uma introdução ao uso do AWS Lambda de forma simples, sem complicações adicionais, sendo ideal para iniciantes que desejam entender como começar com funções serverless na AWS.
+
+Vamos ajustar o exemplo para que a função Lambda receba uma mensagem através de um API Gateway, salve essa mensagem em um arquivo JSON e armazene o arquivo em um bucket S3. Esse exemplo será mais prático e útil para demonstrar o fluxo completo de integração entre o Lambda, o API Gateway e o Amazon S3.
