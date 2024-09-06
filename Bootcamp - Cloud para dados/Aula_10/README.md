@@ -1,4 +1,4 @@
-Aqui está a versão atualizada da aula com gráficos Mermaid para cada projeto e ajustes conforme solicitado:
+Aqui está a versão ajustada da aula, modificando o exemplo 4 para realizar um GET request usando a biblioteca `requests`:
 
 ### Aula 10: Projetos Práticos com AWS Lambda
 
@@ -17,8 +17,17 @@ Aqui está a versão atualizada da aula com gráficos Mermaid para cada projeto 
    4. Vincule essa regra à função `TimerFunction`.
    5. Teste para confirmar que a função está sendo acionada conforme esperado.
 
+   ```python
+   def lambda_handler(event, context):
+       print("Função executada a cada 10 minutos.")
+       return {
+           'statusCode': 200,
+           'body': 'Execução bem-sucedida.'
+       }
+   ```
+
    ```mermaid
-   graph TD
+   graph LR
        CW[CloudWatch Events] -->|Trigger a cada 10 minutos| Lambda1[AWS Lambda TimerFunction]
        Lambda1 --> Process1[Executa a Função]
    ```
@@ -33,8 +42,17 @@ Aqui está a versão atualizada da aula com gráficos Mermaid para cada projeto 
    3. Vincule essa regra à função Lambda `SpecificTimeFunction`.
    4. Teste a configuração simulando o disparo da função nos horários especificados.
 
+   ```python
+   def lambda_handler(event, context):
+       print("Função executada nos horários específicos: 9h, 12h e 18h.")
+       return {
+           'statusCode': 200,
+           'body': 'Execução bem-sucedida nos horários específicos.'
+       }
+   ```
+
    ```mermaid
-   graph TD
+   graph LR
        CW[CloudWatch Events] -->|Trigger às 9h, 12h, 18h| Lambda2[AWS Lambda SpecificTimeFunction]
        Lambda2 --> Process2[Executa a Função]
    ```
@@ -62,38 +80,37 @@ Aqui está a versão atualizada da aula com gráficos Mermaid para cada projeto 
    ```
 
    ```mermaid
-   graph TD
+   graph LR
        Lambda3[AWS Lambda HTTPRequestFunction] -->|Faz Request HTTP| API[API Externa]
        API --> Process3[Processa Resposta]
    ```
 
-4. **Criação de Funções Lambda para Enviar Requests HTTP**
+4. **Criação de Funções Lambda para Realizar Requests HTTP com `requests`**
 
-   **Objetivo**: Mostrar como enviar dados para um endpoint via POST request utilizando o módulo `requests`.
+   **Objetivo**: Mostrar como instalar o módulo `requests` e utilizá-lo para fazer um GET request para uma API.
 
    **Passo a Passo**:
-   1. No AWS Lambda, crie uma função chamada `PostRequestFunction`.
-   2. Utilize a biblioteca `requests` para enviar um POST request para um endpoint específico.
-   3. Configure a função para receber dados do evento e incluí-los no corpo do request.
+   1. No AWS Lambda, crie uma função chamada `GetRequestFunction`.
+   2. Adicione a biblioteca `requests` ao ambiente Lambda (você pode empacotar o `requests` com o código ou usar um Lambda Layer).
+   3. Utilize `requests` para realizar um GET request a uma API pública.
 
    ```python
    import requests
 
    def lambda_handler(event, context):
-       url = "https://yourapiendpoint.com/data"
-       payload = {'key1': 'value1', 'key2': 'value2'}
-       headers = {'Content-Type': 'application/json'}
-       response = requests.post(url, json=payload, headers=headers)
+       url = "https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY"
+       response = requests.get(url)
+       data = response.json()
        return {
            'statusCode': response.status_code,
-           'body': response.json()
+           'body': data
        }
    ```
 
    ```mermaid
-   graph TD
-       Lambda4[AWS Lambda PostRequestFunction] -->|Envia Request POST| Endpoint[API Endpoint]
-       Endpoint --> Process4[Recebe e Processa Dados]
+   graph LR
+       Lambda4[AWS Lambda GetRequestFunction] -->|Faz Request GET| API[API Externa]
+       API --> Process4[Processa Resposta]
    ```
 
 5. **Integração do AWS Lambda com Amazon RDS**
@@ -138,7 +155,7 @@ Aqui está a versão atualizada da aula com gráficos Mermaid para cada projeto 
    ```
 
    ```mermaid
-   graph TD
+   graph LR
        Lambda5[AWS Lambda RDSIntegrationFunction] -->|Faz Request GET| API[API Externa]
        API --> Process5[Processa Resposta]
        Process5 -->|Insere Dados| RDS[RDS Database]
