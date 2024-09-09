@@ -1,5 +1,9 @@
 ### **Desafio de Negócio**
 
+**Dever de casa **
+
+https://blog.intigriti.com/hacking-tools/hacking-misconfigured-aws-s3-buckets-a-complete-guide
+
 **Desafio**: **Proteção e Processamento Seguro de Dados Sensíveis em Ambientes Regulatórios**
 
 ![image](1_C2EJ15gGamMmbWGAt7I0Rg.png)
