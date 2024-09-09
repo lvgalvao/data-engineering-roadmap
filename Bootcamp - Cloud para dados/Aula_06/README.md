@@ -227,3 +227,95 @@ O escopo do projeto inclui a configuração de uma VPC com subredes públicas e 
 - VPC configurada com subredes públicas e privadas, e um Gateway Endpoint para S3 configurado corretamente.
 
 Com base nesse documento, o usuário deve ser capaz de criar e configurar toda a infraestrutura necessária para o projeto de transferência segura de dados entre buckets S3 na AWS utilizando uma instância EC2 privada e um bastion host.
+
+Aqui está o tutorial revisado, incluindo todos os passos mencionados, para configurar um VPC Endpoint na AWS e acessar o S3 de forma segura:
+
+### Tutorial Completo: Configuração de VPC Endpoint na AWS
+
+#### **0) Criar um Usuário IAM com Permissão PowerUser**
+Antes de iniciar, crie um usuário IAM com a permissão PowerUser para gerenciar todos os recursos na AWS de forma segura.
+
+#### **1) Criar uma VPC**
+1. No console da AWS, vá para "VPC".
+2. Clique em "Create VPC".
+3. Escolha a opção "VPC Only".
+4. Nomeie a VPC como `demo-vpc` e defina o range CIDR como `11.0.0.0/16`.
+5. Clique em "Create VPC".
+
+#### **2) Criar Subnets**
+1. No painel da VPC, vá para "Subnets".
+2. Clique em "Create Subnet" e selecione a VPC criada (`demo-vpc`).
+3. Crie duas sub-redes:
+   - **Subrede Pública:** Nome: `public-subnet-1a`, AZ: `eu-west-1a`, CIDR: `11.0.1.0/24`.
+   - **Subrede Privada:** Nome: `private-subnet-1a`, AZ: `eu-west-1a`, CIDR: `11.0.3.0/24`.
+
+#### **3) Criar um Internet Gateway**
+1. No painel da VPC, vá para "Internet Gateways".
+2. Clique em "Create Internet Gateway" e nomeie como `demo-igw`.
+3. Selecione o Internet Gateway criado e clique em "Attach to VPC". Selecione a VPC (`demo-vpc`).
+
+#### **4) Criar Route Tables**
+1. Vá para "Route Tables" e clique em "Create Route Table".
+2. Crie duas tabelas de rotas:
+   - **Tabela de Rota Pública:** Nome: `public-rt`, associada à VPC `demo-vpc`.
+   - **Tabela de Rota Privada:** Nome: `private-rt`, associada à VPC `demo-vpc`.
+
+#### **5) Associar a Tabela de Rota Pública à Subrede Pública**
+1. Selecione a tabela de rota pública (`public-rt`).
+2. Vá para "Subnet Associations" e associe-a à `public-subnet-1a`.
+
+#### **6) Editar Rotas da Tabela Pública para o Internet Gateway**
+1. Na tabela de rota pública, vá para "Routes" e clique em "Edit Routes".
+2. Adicione uma rota com destino `0.0.0.0/0` e selecione o Internet Gateway `demo-igw`.
+
+#### **7) Associar a Tabela de Rota Privada à Subrede Privada**
+1. Selecione a tabela de rota privada (`private-rt`).
+2. Vá para "Subnet Associations" e associe-a à `private-subnet-1a`.
+
+#### **8) Configurar Instância EC2 Pública**
+1. Vá para "EC2" e clique em "Launch Instance".
+2. Nomeie como `public-ec2`, selecione Amazon Linux e o tipo `t2.micro`.
+3. Escolha a sub-rede pública (`public-subnet-1a`) e habilite o IP público.
+4. Crie um par de chaves (pem) para SSH e salve.
+5. Edite as configurações de segurança para liberar o acesso SSH.
+6. Acesse a instância pública via terminal com o comando SSH usando o arquivo .pem.
+
+#### **9) Configurar Instância EC2 Privada**
+1. Clique em "Launch Instance" novamente.
+2. Nomeie como `private-ec2`, selecione Amazon Linux e o tipo `t2.micro`.
+3. Escolha a sub-rede privada (`private-subnet-1a`) e desabilite o IP público.
+4. Use a mesma chave privada gerada anteriormente.
+5. Edite as configurações de segurança para permitir o acesso SSH da instância pública.
+6. Na instância pública, use o comando `vi vpc-endpoint.pem` para copiar a chave privada e acessar a instância privada via SSH.
+
+#### **10) Criar um Bucket S3**
+1. No console AWS, vá para "S3" e crie um bucket.
+2. Configure as credenciais AWS na instância privada com:
+   ```bash
+   aws configure
+   ```
+3. Execute o comando `aws s3 ls` para listar os buckets.
+
+#### **11) Criar um VPC Endpoint**
+1. No painel da VPC, vá para "Endpoints".
+2. Clique em "Create Endpoint" e escolha o tipo `Gateway`.
+3. Selecione o serviço `com.amazonaws.eu-west-1.s3` e escolha a VPC (`demo-vpc`).
+4. Associe o endpoint à tabela de rota privada (`private-rt`).
+
+#### **12) Associar o VPC Endpoint à Subrede Privada**
+1. Garanta que o VPC Endpoint está associado corretamente com a sub-rede privada (`private-subnet-1a`).
+
+#### **13) Testar Operações no S3**
+1. Na instância privada, teste a conectividade com o S3:
+   - Para inserir um arquivo:
+     ```bash
+     aws s3 cp arquivo.txt s3://nome-do-bucket/
+     ```
+   - Para deletar um arquivo:
+     ```bash
+     aws s3 rm s3://nome-do-bucket/arquivo.txt
+     ```
+
+### **Conclusão**
+Seguindo estes passos, você configurou um ambiente seguro na AWS onde as instâncias em sub-rede privada acessam o S3 sem sair do ambiente da AWS, utilizando o VPC Endpoint.
+
