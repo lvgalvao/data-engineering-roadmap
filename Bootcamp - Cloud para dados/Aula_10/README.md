@@ -306,3 +306,69 @@ Ao estabelecer e aderir a uma política de tags robusta, capacitamos nossas equi
 - **Automatização**: Explore ferramentas e scripts para automatizar a aplicação de tags e a conformidade com a política estabelecida.
 
 Com essas ações, garantiremos uma gestão de custos eficaz e uma governança sólida, permitindo que nos concentremos no que realmente importa: impulsionar nossos projetos para o sucesso.
+
+### **Checklist para Evitar Surpresas no Final do Mês**
+
+Para garantir que os custos na AWS permaneçam sob controle e evitar despesas inesperadas, siga este checklist regularmente:
+
+1. **Revisar Orçamentos no AWS Budgets**:
+   - Verifique os orçamentos configurados para cada centro de custo, projeto e responsável.
+   - Certifique-se de que os alertas estão configurados corretamente e os contatos estão atualizados.
+
+2. **Monitorar Gastos Diariamente**:
+   - Utilize o **AWS Cost Explorer** para acompanhar os gastos diários ou semanais.
+   - Configure relatórios personalizados para serem enviados por e-mail regularmente.
+
+3. **Analisar Anomalias com o AWS Cost Anomaly Detection**:
+   - Revise notificações de anomalias de custo.
+   - Investigue imediatamente quaisquer gastos inesperados ou incomuns.
+
+4. **Garantir a Conformidade das Tags**:
+   - Use o **AWS Config** para verificar se todos os recursos possuem as **5 tags obrigatórias**.
+   - Corrija recursos que não estejam em conformidade com a política de tags.
+
+5. **Desligar Recursos Não Utilizados**:
+   - Identifique recursos ociosos ou subutilizados, como instâncias EC2 não utilizadas, volumes EBS não anexados, etc.
+   - Desligue ou exclua esses recursos para reduzir custos desnecessários.
+
+6. **Revisar Reservas e Savings Plans**:
+   - Avalie se **Reserved Instances** ou **Savings Plans** podem ser utilizados para recursos de uso contínuo.
+   - Ajuste ou renove conforme necessário para maximizar economias.
+
+7. **Comunicar-se com as Equipes Responsáveis**:
+   - Mantenha as equipes informadas sobre o status dos gastos e orçamentos.
+   - Promova uma cultura de responsabilidade financeira e uso consciente dos recursos.
+
+8. **Atualizar a Política de Tags e Governança**:
+   - Revise a política de tags periodicamente para garantir que ela atenda às necessidades atuais da organização.
+   - Treine novas equipes ou membros sobre a importância e a aplicação correta das tags.
+
+9. **Automatizar Alertas e Ações**:
+   - Considere a configuração de alertas adicionais via **Amazon CloudWatch** para monitorar métricas específicas.
+   - Use scripts ou **AWS Lambda** para automatizar ações corretivas quando certos limites forem atingidos.
+
+10. **Auditar Configurações de Segurança e Compliance**:
+    - Verifique se não há recursos expostos que possam gerar custos devido a uso indevido.
+    - Utilize o **AWS Trusted Advisor** e o **AWS Security Hub** para identificar vulnerabilidades.
+
+11. **Documentar e Revisar Processos**:
+    - Mantenha a documentação atualizada sobre procedimentos de gestão de custos e governança.
+    - Realize revisões regulares dos processos para identificar melhorias potenciais.
+
+12. **Planejar para Eventos Futuros**:
+    - Considere lançamentos de novos projetos, campanhas ou eventos sazonais que possam aumentar o uso de recursos.
+    - Ajuste orçamentos e recursos antecipadamente para acomodar aumentos previstos.
+
+13. **Utilizar Relatórios Detalhados**:
+    - Configure o **AWS Cost and Usage Report** para obter dados detalhados de uso e custo.
+    - Analise esses relatórios para insights aprofundados e para identificar áreas de otimização.
+
+14. **Verificar Limites de Serviço**:
+    - Monitore os limites de serviço (quotas) para evitar interrupções inesperadas ou custos adicionais.
+    - Solicite aumentos de limite antecipadamente, se necessário.
+
+15. **Implementar Políticas de Encerramento Automático**:
+    - Configure políticas para encerrar automaticamente recursos não utilizados após um período definido.
+    - Utilize tags como `ExpirationDate` ou `AutoDelete` para auxiliar nesse processo.
+
+Seguindo este checklist regularmente, você estará melhor preparado para evitar surpresas no final do mês e manter os custos da AWS sob controle. A gestão proativa e contínua é essencial para uma operação financeira saudável e para o sucesso dos seus projetos na nuvem.
