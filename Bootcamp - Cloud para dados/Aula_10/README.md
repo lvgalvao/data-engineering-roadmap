@@ -372,3 +372,8 @@ Para garantir que os custos na AWS permaneçam sob controle e evitar despesas in
     - Utilize tags como `ExpirationDate` ou `AutoDelete` para auxiliar nesse processo.
 
 Seguindo este checklist regularmente, você estará melhor preparado para evitar surpresas no final do mês e manter os custos da AWS sob controle. A gestão proativa e contínua é essencial para uma operação financeira saudável e para o sucesso dos seus projetos na nuvem.
+
+1) Verificar Frankfurt para ver quanto vai reduzir os custos! (removemos RDS e EC2)
+
+2) Paris deletamos TUDO, lambda, ec2, rds e vpc
+
