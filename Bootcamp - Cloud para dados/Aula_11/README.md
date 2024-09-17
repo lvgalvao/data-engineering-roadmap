@@ -2,9 +2,9 @@
 
 **Objetivo**: Nesta aula, realizaremos uma série de projetos práticos utilizando AWS Lambda. Vamos explorar como configurar funções Lambda para serem acionadas por eventos temporais e específicos, realizar requests HTTP e integrar com o Amazon RDS e com o AmazonS3 para criar soluções serverless eficientes.
 
-### **Projetos da Aula 11**
+## **Projetos da Aula 11**
 
-1. **Configuração de Timer de 10 em 10 Minutos com AWS Lambda**
+### 1. **Configuração de Timer de 10 em 10 Minutos com AWS Lambda**
 
    **Objetivo**: Demonstrar como agendar uma função Lambda para ser executada a cada 10 minutos usando o Amazon CloudWatch Events (ou EventBridge).
 
@@ -98,7 +98,7 @@ Amazon EventBridge é uma ferramenta poderosa para agendamento e gerenciamento d
 
 Se precisar de mais detalhes sobre EventBridge ou outros aspectos dos exemplos, me avise!
 
-3. **Criação de Funções Lambda para Realizar Requests HTTP**
+### 3. **Criação de Funções Lambda para Realizar Requests HTTP**
 
    **Objetivo**: Demonstrar como usar AWS Lambda para fazer requests HTTP utilizando o módulo `urllib3`, nativo do Python.
 
@@ -212,7 +212,7 @@ Para criar um cron job que execute uma AWS Lambda a cada minuto, você pode usar
 
 Se precisar de mais alguma coisa, me avise!
 
-4. **Criação de Funções Lambda para Realizar Requests HTTP com `requests`**
+### 4. **Criação de Funções Lambda para Realizar Requests HTTP com `requests`**
 
    **Objetivo**: Mostrar como instalar o módulo `requests` e utilizá-lo para fazer um GET request para uma API.
 
@@ -228,7 +228,7 @@ Se precisar de mais alguma coisa, me avise!
    9. cd ..
    10. zip -r python.zip python
 
-   ```python
+```python
 import requests
 import json
 import os
@@ -276,13 +276,13 @@ def lambda_handler(event, context):
     except requests.exceptions.RequestException as e:
         print(f"Erro na requisição: {e}")
 
-   ```
+```
 
-   ```mermaid
-   graph LR
-       Lambda4[AWS Lambda GetRequestFunction] -->|Faz Request GET| API[API Externa]
-       API --> Process4[Processa Resposta]
-   ```
+```mermaid
+graph LR
+    Lambda4[AWS Lambda GetRequestFunction] -->|Faz Request GET| API[API Externa]
+    API --> Process4[Processa Resposta]
+```
 
 ### **Conclusão da Aula 11**
 
