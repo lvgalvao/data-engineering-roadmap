@@ -2,7 +2,7 @@
 
 **Objetivo**: Nesta aula, vamos aprender sobre o AWS Command Line Interface (CLI), explorando como instalar a ferramenta, configurá-la e utilizá-la para gerenciar serviços da AWS diretamente do terminal. Vamos também discutir o AWS CloudShell, uma alternativa prática que permite usar o AWS CLI sem precisar instalar nada. O objetivo é que você saia desta aula sabendo como interagir com a AWS de forma eficiente e automatizada.
 
-```
+```mermaid
 graph TD
     A(AWS) -->|Autenticação| B(IAM)
     B --> C[AWS Management Console]
