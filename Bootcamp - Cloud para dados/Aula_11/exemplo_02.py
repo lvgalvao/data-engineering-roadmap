@@ -3,8 +3,8 @@ import json
 import os
 
 # Carregar variáveis de ambiente
-url = os.getenv('API_URL')  # URL da API obtida das variáveis de ambiente
-api_key = os.getenv('CMC_API_KEY')  # Chave da API obtida das variáveis de ambiente
+url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
+api_key = ''  # Chave da API obtida das variáveis de ambiente
 
 # Parâmetros da requisição para obter a cotação do Bitcoin
 parameters = {
