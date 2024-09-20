@@ -455,48 +455,137 @@ Aqui está uma lista completa dos comandos do AWS CLI para interagir com o **Ama
 
 Esses são os comandos principais e avançados do AWS CLI para o serviço Amazon S3, abrangendo desde a criação e remoção de buckets até a configuração de permissões e políticas de acesso.
 
-### 5. **Criação de um Banco de Dados RDS com AWS CLI**
+Aqui está um fluxo completo que inclui os comandos para **criar**, **verificar** e **deletar** uma instância RDS no AWS, com detalhes e formatação amigável.
 
-   **Objetivo**: Demonstrar como criar uma instância de banco de dados RDS usando o AWS CLI.
+### 1. **Criar a Instância RDS**
 
-   **Passo a Passo**:
-   1. **Criar uma instância RDS**:
-      - Use o comando `create-db-instance` para criar uma instância RDS MySQL:
-      ```bash
-      aws rds create-db-instance \
-      --db-instance-identifier mydbinstance \
-      --db-instance-class db.t2.micro \
-      --engine mysql \
-      --master-username admin \
-      --master-user-password password123 \
-      --allocated-storage 20 \
-      --profile producao
-      ```
+Use o seguinte comando para criar uma instância MySQL com a classe `db.t4g.micro` e a versão `8.0.35`:
 
-   2. **Verificar a criação da instância**:
-      - Use o comando `describe-db-instances` para verificar se o banco foi criado corretamente:
-      ```bash
-      aws rds describe-db-instances --db-instance-identifier mydbinstance --profile producao
-      ```
+```bash
+aws rds create-db-instance \
+--db-instance-identifier mydbinstance \
+--db-instance-class db.t4g.micro \
+--engine mysql \
+--engine-version 8.0.35 \
+--master-username admin \
+--master-user-password password123 \
+--allocated-storage 20
+```
+
+### 2. **Verificar o Status da Instância RDS**
+
+Após iniciar o processo de criação, você pode verificar o status da instância com o comando abaixo:
+
+```bash
+aws rds describe-db-instances --db-instance-identifier mydbinstance
+```
+
+Para uma saída mais organizada e fácil de entender, você pode formatar a resposta em forma de tabela, exibindo o **identificador**, o **status** e o **endpoint** da instância:
+
+```bash
+aws rds describe-db-instances \
+--db-instance-identifier mydbinstance \
+--query 'DBInstances[*].[DBInstanceIdentifier,DBInstanceStatus,Endpoint.Address]' \
+--output table
+```
+
+A saída será semelhante a esta quando a instância estiver disponível:
+
+```plaintext
+-------------------------------
+| DBInstanceIdentifier | DBInstanceStatus | Endpoint.Address      |
+-------------------------------
+| mydbinstance          | available        | mydbinstance.xxxxxx.us-east-1.rds.amazonaws.com |
+-------------------------------
+```
+
+### 3. **Script para Monitorar o Status da Instância RDS**
+
+Você pode monitorar continuamente o status da instância com este script, que verifica o status a cada 30 segundos e exibe uma mensagem quando a instância estiver disponível:
+
+```bash
+while true; do
+    STATUS=$(aws rds describe-db-instances --db-instance-identifier mydbinstance --query 'DBInstances[0].DBInstanceStatus' --output text)
+    echo "Status: $STATUS"
+    if [ "$STATUS" == "available" ]; then
+        echo "A instância está disponível!"
+        break
+    fi
+    sleep 30
+done
+```
+
+### 4. **Deletar a Instância RDS**
+
+Depois que você terminar de usar a instância, é importante deletá-la para evitar custos adicionais. O comando abaixo exclui a instância RDS:
+
+```bash
+aws rds delete-db-instance \
+--db-instance-identifier mydbinstance \
+--skip-final-snapshot
+```
+
+- **`--skip-final-snapshot`**: O parâmetro `--skip-final-snapshot` instrui o AWS a **não criar** um snapshot final antes de excluir a instância. Se você quiser criar um snapshot para backup antes de deletar, remova essa opção e adicione `--final-db-snapshot-identifier` seguido do nome do snapshot.
+
+### 5. **Verificar o Status de Deleção**
+
+Você pode verificar se a instância foi marcada para deleção ou já foi excluída usando o seguinte comando:
+
+```bash
+aws rds describe-db-instances --db-instance-identifier mydbinstance
+```
+
+Se a instância estiver em processo de deleção, o status será algo como `deleting`. Uma vez excluída, o comando retornará um erro informando que a instância não existe mais.
+
+### Resumo Completo dos Comandos:
+
+1. **Criar a Instância**:
+   ```bash
+   aws rds create-db-instance \
+   --db-instance-identifier mydbinstance \
+   --db-instance-class db.t4g.micro \
+   --engine mysql \
+   --engine-version 8.0.35 \
+   --master-username admin \
+   --master-user-password password123 \
+   --allocated-storage 20
+   ```
+
+2. **Verificar o Status**:
+   ```bash
+   aws rds describe-db-instances \
+   --db-instance-identifier mydbinstance \
+   --query 'DBInstances[*].[DBInstanceIdentifier,DBInstanceStatus,Endpoint.Address]' \
+   --output table
+   ```
+
+3. **Deletar a Instância**:
+   ```bash
+   aws rds delete-db-instance \
+   --db-instance-identifier mydbinstance \
+   --skip-final-snapshot
+   ```
+
+Esse fluxo completo permite que você crie, verifique o status e depois delete a instância RDS conforme necessário.
 
 ### 6. **Automatizando Tarefas com AWS CLI**
 
    **Objetivo**: Demonstrar como usar scripts para automatizar processos na AWS com o AWS CLI.
 
-   **Exemplo**: Script para automatizar a criação de um backup de uma instância RDS:
+   **Exemplo**: Crie um arquivo Bash (.sh) contendo o script que você quer executar. Suponha que o arquivo se chame backup_rds.sh.
+
    ```bash
    #!/bin/bash
+DB_INSTANCE_IDENTIFIER=mydbinstance
+BACKUP_NAME=db-backup-$(date +%F)
 
-   DB_INSTANCE_IDENTIFIER=mydbinstance
-   BACKUP_NAME=db-backup-$(date +%F)
-
-   aws rds create-db-snapshot \
-   --db-instance-identifier $DB_INSTANCE_IDENTIFIER \
-   --db-snapshot-identifier $BACKUP_NAME \
-   --profile producao
-
-   echo "Backup criado com sucesso: $BACKUP_NAME"
+if aws rds create-db-snapshot --db-instance-identifier $DB_INSTANCE_IDENTIFIER --db-snapshot-identifier $BACKUP_NAME --profile producao; then
+    echo "Backup criado com sucesso: $BACKUP_NAME"
+else
+    echo "Erro ao criar o backup"
+fi
    ```
+
 
 ### 7. **Conclusão da Aula 12**
 
