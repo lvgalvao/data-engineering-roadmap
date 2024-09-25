@@ -1,235 +1,335 @@
-## Aula 06 - CTE vs Subqueries vs Views vs Temporary Tables vs Materialized Views
+## Aula 07 - Stored Procedures
 
-[Apostila completa](https://www.linkedin.com/feed/update/urn:li:activity:7190722950499577856/)
+* **Stored Procedures vs Views**
 
-1. **CTE (Common Table Expressions):**
+As Views e Stored Procedures são ambos recursos poderosos em bancos de dados relacionais, mas têm propósitos e funcionalidades distintas.
+
+**Views:**
+
+* As Views são abstrações de consulta que permitem aos usuários definir consultas complexas e frequentemente usadas como uma única entidade.
+* Elas são essencialmente consultas SQL pré-definidas que são armazenadas no banco de dados e tratadas como tabelas virtuais.
+* As Views simplificam o acesso aos dados, ocultando a complexidade das consultas subjacentes e fornecendo uma interface consistente para os usuários.
+* Elas são úteis para simplificar consultas frequentes, segmentar permissões de acesso aos dados e abstrair a complexidade do modelo de dados subjacente.
+
+**Stored Procedures:**
+
+* As Stored Procedures são abstrações de transações que consistem em um conjunto de instruções SQL pré-compiladas e armazenadas no banco de dados.
+* Elas são usadas para encapsular operações de banco de dados mais complexas, como atualizações, inserções, exclusões e outras transações.
+* As Stored Procedures podem aceitar parâmetros de entrada e retornar valores de saída, o que as torna altamente flexíveis e reutilizáveis em diferentes partes de um aplicativo.
+* Elas oferecem maior controle sobre as operações de banco de dados e permitem a execução de lógica de negócios no lado do servidor.
+
+## Criando um novo Banco de dados
+
+
+Para ilustrar o processo, vamos estabelecer um novo banco de dados que simula um ambiente bancário convencional.
+
+Começaremos criando um novo banco de dados. Em seguida, empregaremos os comandos `CREATE TABLE` e `INSERT INTO`.
+
+```sql
+CREATE TABLE IF NOT EXISTS clients (
+    id SERIAL PRIMARY KEY NOT NULL,
+    limite INTEGER NOT NULL,
+    saldo INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS transactions (
+    id SERIAL PRIMARY KEY NOT NULL,
+    tipo CHAR(1) NOT NULL,
+    descricao VARCHAR(10) NOT NULL,
+    valor INTEGER NOT NULL,
+    cliente_id INTEGER NOT NULL,
+    realizada_em TIMESTAMP NOT NULL DEFAULT NOW()
+);
+```
+
+Caso queira usar UUID (para cenários de produção)
+
+```
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS clients (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    limite INTEGER NOT NULL,
+    saldo INTEGER NOT NULL
+);
+```
+
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS clients (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    limite INTEGER NOT NULL,
+    saldo INTEGER NOT NULL,
+    CHECK (saldo >= limite)
+);
+
+
+
+**CREATE TABLE:**
+
+* O comando `CREATE TABLE` é usado para criar uma nova tabela no banco de dados.
+* O `IF NOT EXISTS` é uma cláusula opcional que garante que a tabela só será criada se ainda não existir no banco de dados, evitando erros caso a tabela já exista.
+* Em seguida, é especificada o nome da tabela (`clients` e `transactions` neste caso), seguido por uma lista de colunas e suas definições.
+* Cada coluna é definida com um nome, um tipo de dado e opcionalmente outras restrições, como a definição de uma chave primária (`PRIMARY KEY`) e a obrigatoriedade de não ser nula (`NOT NULL`).
+
+```sql
+INSERT INTO clients (limite, saldo)
+VALUES
+    (10000, 0),
+    (80000, 0),
+    (1000000, 0),
+    (10000000, 0),
+    (500000, 0);
+```
+
+**INSERT INTO:**
+
+* O comando `INSERT INTO` é usado para adicionar novos registros a uma tabela existente.
+* Na cláusula `INSERT INTO`, é especificado o nome da tabela (`clients` neste caso) seguido da lista de colunas entre parênteses, se necessário.
+* Em seguida, a cláusula `VALUES` é usada para especificar os valores a serem inseridos nas colunas correspondentes.
+* Cada linha de valores corresponde a um novo registro a ser inserido na tabela, com os valores na mesma ordem que as colunas foram listadas.
+
+Em resumo, esses comandos são fundamentais para definir a estrutura e inserir dados em tabelas no banco de dados, criando assim a base para armazenar e manipular informações de forma organizada e eficiente.
+
+## Vamos agora simular uma transação bancaria
+
+Para realizar a compra de um Carro, de 80 mil reais, no cliente 1.
+
+Vamos realizar esse processo em 2 etapas.
+
+A primeira será um comando de `INSERT INTO` e depois um comando de `UPDATE`
+
+```sql
+INSERT INTO transactions (tipo, descricao, valor, cliente_id)
+VALUES ('d', 'Compra de carro', 80000, 1)
+```
+
+```sql
+UPDATE clients
+SET saldo = saldo + CASE WHEN 'd' = 'd' THEN -80000 ELSE 80000 END
+WHERE id = 1; -- Substitua pelo ID do cliente desejado
+```
+
+* **Vamos olhar a situação do cliente 1 agora**
+
+```sql
+SELECT saldo, limite 
+FROM clients
+WHERE id = 1
+```
+
+## Vamos precisar corrigir isso
+
+O comando `DELETE` é uma instrução do SQL usada para remover registros de uma tabela com base em uma condição específica. Ele permite que você exclua dados de uma tabela de banco de dados de forma controlada e precisa. Aqui estão alguns pontos-chave sobre o comando `DELETE`:
+
+1. **Sintaxe Básica**: A sintaxe básica do comando `DELETE` é a seguinte:
     
-    * **Onde usar:** As CTEs são úteis quando você precisa dividir uma consulta em partes mais gerenciáveis ou quando deseja reutilizar uma subconsulta várias vezes na mesma consulta principal.
-    * **Vantagens:**
-        * Permitem escrever consultas mais legíveis e organizadas, dividindo a lógica em partes distintas.
-        * Podem ser referenciadas várias vezes na mesma consulta.
-    * **Desvantagens:**
-        * Podem não ser tão eficientes quanto outras técnicas, especialmente se a CTE for referenciada várias vezes ou se a consulta for muito complexa.
-
     ```sql
-    WITH TotalRevenues AS (
-        SELECT 
-            customers.company_name, 
-            SUM(order_details.unit_price * order_details.quantity * (1.0 - order_details.discount)) AS total
-        FROM customers
-        INNER JOIN orders ON customers.customer_id = orders.customer_id
-        INNER JOIN order_details ON order_details.order_id = orders.order_id
-        GROUP BY customers.company_name
+    DELETE FROM nome_da_tabela
+    WHERE condição;
+    ```
+    
+2. **Cláusula WHERE**: A cláusula `WHERE` é opcional, mas geralmente é usada para especificar quais registros devem ser excluídos. Se não for especificada, todos os registros da tabela serão excluídos.
+    
+3. **Remoção Condicional**: Você pode usar a cláusula `WHERE` para definir uma condição para determinar quais registros serão excluídos. Apenas os registros que atendem a essa condição serão removidos.
+    
+4. **Impacto da Exclusão**: O comando `DELETE` remove permanentemente os registros da tabela, o que significa que os dados excluídos não podem ser recuperados.
+    
+5. **Uso Cauteloso**: É importante usar o comando `DELETE` com cuidado, especialmente sem uma cláusula `WHERE` específica, pois ele pode resultar na exclusão de todos os registros da tabela.
+    
+6. **Transações**: Assim como outros comandos SQL de modificação de dados, como `INSERT` e `UPDATE`, o comando `DELETE` pode ser usado dentro de transações para garantir a consistência e a integridade dos dados.
+    
+
+No exemplo que você forneceu:
+
+```sql
+DELETE FROM transactions
+WHERE id = 1;
+```
+
+Este comando remove o registro da tabela `transactions` onde o `id` é igual a `1`. Isso resultará na exclusão permanente desse registro específico da tabela. Certifique-se sempre de usar o comando `DELETE` com cuidado e de verificar duas vezes a condição antes de executá-lo para evitar a exclusão acidental de dados importantes.
+
+```sql
+DELETE FROM transactions
+WHERE id = 1;
+```
+
+Vamos precisar voltar também com o saldo atual do cliente, que era de 0.
+
+```sql
+UPDATE clients
+SET saldo = 0
+WHERE id = 1;
+```
+
+## Como evitar isso? Stored Procedures
+
+Stored Procedures são rotinas armazenadas no banco de dados que contêm uma série de instruções SQL e podem ser executadas por aplicativos ou usuários conectados ao banco de dados. Elas oferecem várias vantagens, como:
+
+1. **Reutilização de código:** As stored procedures permitem que blocos de código SQL sejam escritos uma vez e reutilizados em várias partes do aplicativo.
+    
+2. **Desempenho:** Por serem compiladas e armazenadas no banco de dados, as stored procedures podem ser executadas de forma mais eficiente do que várias consultas SQL enviadas separadamente pelo aplicativo.
+    
+3. **Segurança:** As stored procedures podem ajudar a proteger o banco de dados, pois os aplicativos só precisam de permissão para executar a stored procedure, não para acessar diretamente as tabelas.
+    
+4. **Abstração de dados:** Elas podem ser usadas para ocultar a complexidade do modelo de dados subjacente, fornecendo uma interface simplificada para os usuários ou aplicativos.
+    
+5. **Controle de transações:** As stored procedures podem incluir instruções de controle de transações para garantir a integridade dos dados durante operações complexas.
+
+Vamos entender cada parte da stored procedure `realizar_transacao`:
+
+1. **Criação da Procedure:**
+    
+    ```sql
+    CREATE OR REPLACE PROCEDURE realizar_transacao(
+        IN p_tipo CHAR(1),
+        IN p_descricao VARCHAR(10),
+        IN p_valor INTEGER,
+        IN p_cliente_id INTEGER
     )
-    SELECT * FROM TotalRevenues;
     ```
-
-2. **Subqueries:**
     
-    * **Onde usar:** Subqueries são úteis quando você precisa de resultados intermediários para filtrar ou agregar dados em uma consulta principal.
-    * **Vantagens:**
-        * São simples de escrever e entender, especialmente para consultas simples.
-        * Podem ser aninhadas dentro de outras subqueries ou consultas principais.
-    * **Desvantagens:**
-        * Pode tornar consultas complexas difíceis de entender e manter.
-        * Em algumas situações, podem não ser tão eficientes quanto outras técnicas, especialmente se as subqueries forem executadas várias vezes.
-
-    ```sql
-    SELECT product_id FROM (
-	SELECT product_id 
-	FROM (
-		SELECT product_id, rank
-		FROM (SELECT 
-				product_id,
-				SUM( det.quantity * det.unit_price * ( 1 - det.discount )) sold_value,
-				RANK() OVER (ORDER BY SUM( det.quantity * det.unit_price * ( 1 - det.discount )) DESC) rank -- WINDOWS FUNCTION
-			FROM order_details det
-			GROUP BY det.product_id
-			ORDER BY rank)
-		WHERE rank <= 5 )
-	WHERE product_id BETWEEN 35 and 65 )
-ORDER BY product_id DESC
-    ```
-
-    Refatorando a subquery acima para CTEs
-
-    ```sql
-    WITH CalculatedValues AS (
-    -- Calcula o valor vendido e o rank para cada produto
-    SELECT 
-        product_id,
-        SUM(det.quantity * det.unit_price * (1 - det.discount)) AS sold_value,
-        RANK() OVER (ORDER BY SUM(det.quantity * det.unit_price * (1 - det.discount)) DESC) AS rank
-    FROM order_details det
-    GROUP BY product_id
-),
-TopRankedProducts AS (
-    -- Seleciona apenas os produtos com rank entre os top 5
-    SELECT 
-        product_id
-    FROM CalculatedValues
-    WHERE rank <= 5
-),
-FilteredProducts AS (
-    -- Filtra os produtos com IDs entre 35 e 65
-    SELECT 
-        product_id
-    FROM TopRankedProducts
-    WHERE product_id BETWEEN 35 AND 65
-)
--- Seleciona e ordena os produtos finais
-SELECT product_id
-FROM FilteredProducts
-ORDER BY product_id DESC;
-```
-
-3. **Views:**
+    * Esta declaração cria ou substitui uma stored procedure chamada `realizar_transacao`.
+    * A procedure tem quatro parâmetros de entrada: `p_tipo`, `p_descricao`, `p_valor` e `p_cliente_id`, cada um com seu tipo de dado especificado.
+2. **Definição da Linguagem:**
     
-    * **Onde usar:** As views são úteis quando você precisa reutilizar uma consulta em várias consultas ou quando deseja simplificar consultas complexas dividindo-as em partes menores.
-    * **Vantagens:**
-        * Permitem abstrair a lógica de consulta complexa em um objeto de banco de dados reutilizável.
-        * Facilitam a segurança, pois você pode conceder permissões de acesso à view em vez das tabelas subjacentes.
-    * **Desvantagens:**
-        * As views não armazenam dados fisicamente, então elas precisam ser reavaliadas sempre que são consultadas, o que pode impactar o desempenho.
-        * Se uma view depende de outras views ou tabelas, a complexidade pode aumentar.
+    Sobre a languages na documentação do postgresql tem 4 linguagens padrões  disponíveis: PL/pgSQL (Chapter 43), PL/Tcl (Chapter 44), PL/Perl (Chapter 45), and PL/Python (Chapter 46)
 
     ```sql
-    CREATE VIEW TotalRevenues AS
-    SELECT 
-        customers.company_name, 
-        SUM(order_details.unit_price * order_details.quantity * (1.0 - order_details.discount)) AS total
-    FROM customers
-    INNER JOIN orders ON customers.customer_id = orders.customer_id
-    INNER JOIN order_details ON order_details.order_id = orders.order_id
-    GROUP BY customers.company_name;
+    LANGUAGE plpgsql
+    ```
     
-    SELECT * FROM TotalRevenues;
-    ```
-
-    ```sql
-    GRANT SELECT ON TotalRevenues TO user1;
-    ```
-
-4. **Temporary Tables / Staging / Testes ETL :**
+    * Define a linguagem da stored procedure como PL/pgSQL, que é uma linguagem procedural para o PostgreSQL.
+3. **Corpo da Procedure:**
     
-    * **Onde usar:** Tabelas temporárias são úteis quando você precisa armazenar dados temporários para uso em uma sessão de banco de dados ou em uma consulta específica.
-    * **Vantagens:**
-        * Permitem armazenar resultados intermediários de uma consulta complexa para reutilização posterior.
-        * Podem ser indexadas para melhorar o desempenho em consultas subsequentes.
-    * **Desvantagens:**
-        * Podem consumir recursos do banco de dados, especialmente se forem grandes.
-        * Exigem gerenciamento explícito para limpar os dados após o uso.
-
     ```sql
-    CREATE TEMP TABLE TempTotalRevenues AS
-    SELECT 
-        customers.company_name, 
-        SUM(order_details.unit_price * order_details.quantity * (1.0 - order_details.discount)) AS total
-    FROM customers
-    INNER JOIN orders ON customers.customer_id = orders.customer_id
-    INNER JOIN order_details ON order_details.order_id = orders.order_id
-    GROUP BY customers.company_name;
+    AS $$
+    DECLARE
+        saldo_atual INTEGER;
+        limite_cliente INTEGER;
+    BEGIN
+        -- Corpo da procedure...
+    END;
+    $$;
+    ```
     
-    SELECT * FROM TempTotalRevenues;
-    ```
-
-5. **Materialized Views / Snapshot:**
-
-    Definição da Oracle: https://oracle-base.com/articles/misc/materialized-views
+    * O corpo da stored procedure é definido entre `AS $$` e `$$;`.
+    * Dentro do corpo, declaramos variáveis locais usando `DECLARE`.
+    * A execução da procedure ocorre entre `BEGIN` e `END;`.
+4. **Obtenção de Dados:**
     
-    * **Onde usar:** Materialized views são úteis quando você precisa pré-calcular e armazenar resultados de consultas complexas para consultas frequentes ou análises de desempenho.
-    * **Vantagens:**
-        * Permitem armazenar fisicamente os resultados de uma consulta, melhorando significativamente o desempenho em consultas subsequentes.
-        * Reduzem a carga no banco de dados, já que os resultados são pré-calculados e armazenados.
-    * **Desvantagens:**
-        * **Precisam ser atualizadas** regularmente para manter os dados atualizados, o que pode consumir recursos do sistema.
-        * A introdução de dados redundantes pode aumentar os requisitos de armazenamento.
-
     ```sql
-    CREATE MATERIALIZED VIEW MaterializedTotalRevenues AS
-    SELECT 
-        customers.company_name, 
-        SUM(order_details.unit_price * order_details.quantity * (1.0 - order_details.discount)) AS total
-    FROM customers
-    INNER JOIN orders ON customers.customer_id = orders.customer_id
-    INNER JOIN order_details ON order_details.order_id = orders.order_id
-    GROUP BY customers.company_name;
+    -- Obtém o saldo atual e o limite do cliente
+    SELECT saldo, limite INTO saldo_atual, limite_cliente
+    FROM clients
+    WHERE id = p_cliente_id;
+    ```
     
-    SELECT * FROM MaterializedTotalRevenues;
-    ```
-
+    * Esta parte do código executa uma consulta para obter o saldo atual e o limite do cliente com o ID fornecido.
+5. **Verificação da Transação:**
+    
     ```sql
-    REFRESH MATERIALIZED VIEW MaterializedTotalRevenues;
+    -- Verifica se a transação é válida com base no saldo e no limite
+    IF p_tipo = 'd' AND saldo_atual - p_valor < -limite_cliente THEN
+        RAISE EXCEPTION 'Saldo insuficiente para realizar a transação';
+    END IF;
     ```
-
+    
+    * Aqui, é feita uma verificação para garantir que a transação seja válida com base no tipo de transação ('d' para débito) e se o saldo atual menos o valor da transação é menor que o limite de crédito do cliente. Se a condição for verdadeira, uma exceção é lançada.
+6. **Atualização do Saldo:**
+    
     ```sql
-    REFRESH MATERIALIZED VIEW CONCURRENTLY MaterializedTotalRevenues
+    -- Atualiza o saldo do cliente
+    UPDATE clients
+    SET saldo = saldo + CASE WHEN p_tipo = 'd' THEN -p_valor ELSE p_valor END
+    WHERE id = p_cliente_id;
     ```
+    
+    * Nesta parte, o saldo do cliente é atualizado com base no tipo de transação. Se for um débito ('d'), o valor é subtraído do saldo atual; caso contrário, é adicionado.
+7. **Inserção da Transação:**
+    
+    ```sql
+    -- Insere uma nova transação
+    INSERT INTO transactions (tipo, descricao, valor, cliente_id)
+    VALUES (p_tipo, p_descricao, p_valor, p_cliente_id);
+    ```
+    
+    * Por fim, uma nova transação é inserida na tabela `transactions` com os detalhes fornecidos.
 
-* **Performance**
+Essa stored procedure encapsula todo o processo de realização de uma transação bancária, desde a validação do saldo e limite do cliente até a atualização do saldo e a inserção da transação. Ela oferece uma maneira conveniente e segura de executar essas operações de forma consistente e controlada.
+
+Para chamar a stored procedure `realizar_transacao` com os parâmetros fornecidos, você pode executar o seguinte comando SQL no PostgreSQL:
 
 ```sql
-WITH TotalRevenues AS (
-    SELECT 
-        customers.company_name, 
-        SUM(order_details.unit_price * order_details.quantity * (1.0 - order_details.discount)) AS total
-    FROM customers
-    INNER JOIN orders ON customers.customer_id = orders.customer_id
-    INNER JOIN order_details ON order_details.order_id = orders.order_id
-    CROSS JOIN products -- Junção cruzada com a tabela de produtos para aumentar a carga da consulta
-    GROUP BY customers.company_name
-)
-SELECT * FROM TotalRevenues;
+CALL realizar_transacao('d', 'carro', 80000, 1);
 ```
+
+Isso invocará a procedure `realizar_transacao` com os parâmetros fornecidos:
+
+* `p_tipo`: 'd'
+* `p_descricao`: 'carro'
+* `p_valor`: 80000
+* `p_cliente_id`: 1
+
+Certifique-se de executar esse comando em um ambiente onde a stored procedure `realizar_transacao` esteja definida e acessível.
+
+## Desafio
+
+Criar uma stored procedure "ver_extrato" para fornecer uma visão detalhada do extrato bancário de um cliente, incluindo seu saldo atual e as informações das últimas 10 transações realizadas. Esta operação recebe como entrada o ID do cliente e retorna uma mensagem com o saldo atual do cliente e uma lista das últimas 10 transações, contendo o ID da transação, o tipo de transação (depósito ou retirada), uma breve descrição, o valor da transação e a data em que foi realizada.
+
+**Explicação Detalhada:**
+
+1. **Entrada de Parâmetros:**
+    
+    * A stored procedure recebe o ID do cliente como parâmetro de entrada.
+2. **Obtenção do Saldo Atual:**
+    
+    * É realizada uma consulta na tabela "clients" para obter o saldo atual do cliente com base no ID fornecido.
+3. **Exibição do Saldo Atual:**
+    
+    * O saldo atual do cliente é exibido por meio de uma mensagem de aviso.
+4. **Obtenção das Últimas 10 Transações:**
+    
+    * É realizada uma consulta na tabela "transactions" para obter as últimas 10 transações do cliente, ordenadas pela data de realização em ordem decrescente.
+5. **Exibição das Transações:**
+    
+    * Utilizando um loop `FOR`, cada transação é iterada e suas informações são exibidas por meio de mensagens de aviso.
+    * Para cada transação, são exibidos o ID da transação, o tipo de transação (depósito ou retirada), uma breve descrição da transação, o valor da transação e a data em que foi realizada.
+    * O loop é interrompido após exibir as informações das últimas 10 transações.
 
 ```sql
--- Criação da tabela temporária
-CREATE TEMP TABLE TotalRevenues AS
-SELECT 
-    *
-FROM customers
-INNER JOIN orders ON customers.customer_id = orders.customer_id
-INNER JOIN order_details ON order_details.order_id = orders.order_id
-CROSS JOIN products; -- Junção cruzada com a tabela de produtos para aumentar a carga da consulta
+CREATE OR REPLACE PROCEDURE ver_extrato(
+    IN p_cliente_id INTEGER
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    saldo_atual INTEGER;
+    transacao RECORD;
+    contador INTEGER := 0;
+BEGIN
+    -- Obtém o saldo atual do cliente
+    SELECT saldo INTO saldo_atual
+    FROM clients
+    WHERE id = p_cliente_id;
 
--- Consulta na tabela temporária
-SELECT * FROM TotalRevenues;
+    -- Retorna o saldo atual do cliente
+    RAISE NOTICE 'Saldo atual do cliente: %', saldo_atual;
+
+    -- Retorna as 10 últimas transações do cliente
+    RAISE NOTICE 'Últimas 10 transações do cliente:';
+    FOR transacao IN
+        SELECT *
+        FROM transactions
+        WHERE cliente_id = p_cliente_id
+        ORDER BY realizada_em DESC
+        LIMIT 10
+    LOOP
+        contador := contador + 1;
+        RAISE NOTICE 'ID: %, Tipo: %, Descrição: %, Valor: %, Data: %', transacao.id, transacao.tipo, transacao.descricao, transacao.valor, transacao.realizada_em;
+        EXIT WHEN contador >= 10;
+    END LOOP;
+END;
+$$;
 ```
-
-
-Em resumo, cada técnica tem seu lugar e uso apropriado, dependendo dos requisitos específicos de cada situação. As CTEs e subqueries são úteis para consultas simples ou interações temporárias com os dados, enquanto as views e as tabelas temporárias são mais adequadas para consultas e manipulações de dados mais complexas. As materialized views são ideais para consultas frequentes ou análises de desempenho, onde o desempenho é crucial e os dados podem ser pré-calculados e armazenados fisicamente.
-
-* **Materialized view vs Table**
-
-1. Armazenamento de Dados:
-    
-    * Tabela Normal: Armazena dados fisicamente no banco de dados.
-    * Materialized View: Armazena os resultados de uma consulta como uma tabela física.
-2. Atualização Automática:
-    
-    * Tabela Normal: Os dados são atualizados manual ou automaticamente através de operações de inserção, atualização e exclusão.
-    * Materialized View: Os dados não são atualizados automaticamente. Eles precisam ser atualizados manualmente usando o comando `REFRESH MATERIALIZED VIEW`.
-3. Desempenho:
-    
-    * Tabela Normal: As consultas são executadas diretamente nos dados armazenados na tabela.
-    * Materialized View: As consultas são executadas nos dados armazenados na materialized view, o que pode melhorar o desempenho de consultas complexas ou frequentemente usadas.
-4. Uso de Espaço em Disco:
-    
-    * Tabela Normal: Pode ocupar mais espaço em disco devido ao armazenamento físico de dados.
-    * Materialized View: Pode ocupar menos espaço em disco, pois armazena apenas os resultados da consulta, não os dados brutos.
-5. Flexibilidade:
-    
-    * Tabela Normal: Os dados são atualizados em tempo real e podem ser manipulados diretamente.
-    * Materialized View: Os resultados da consulta são estáticos e precisam ser atualizados manualmente. Eles são usados principalmente para armazenar resultados de consultas complexas que não mudam com frequência.
-
-
-
-* **DROP TEMP TABLE**
-
-    https://www.youtube.com/watch?v=vKvnIa6S-nQ&t=3682s
-
-    https://www.reddit.com/r/SQL/comments/tg4hei/sql_server_temporary_tables/
-
-    https://www.theknowledgeacademy.com/blog/how-to-create-temp-table-in-sql/#:~:text=To%20add%20data%20to%20a%20Temp%20Table%2C%20you'll%20use,%2C%20column2%2C%20...)
-
-    https://www.reddit.com/r/SQL/comments/tg4hei/sql_server_temporary_tables/
