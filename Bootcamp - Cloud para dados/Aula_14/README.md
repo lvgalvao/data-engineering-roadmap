@@ -267,3 +267,83 @@ Para cada mensagem enviada ao tópico SNS, ambas as funções Lambda (Python e J
 ### **Conclusão**
 
 Este exemplo demonstra como integrar o **SNS** com **Lambda** para processar mensagens em tempo real. Essa arquitetura é poderosa para pipelines de dados, alertas e orquestração de serviços, fornecendo escalabilidade e desacoplamento dos componentes.
+
+Aqui está um exemplo de uma ETL simples que transforma um dicionário em um arquivo CSV e, no final, envia uma mensagem para o Amazon SNS indicando que a ETL foi bem-sucedida:
+
+### **Código Python para ETL com notificação SNS**
+
+```python
+import csv
+import boto3
+import json
+
+# Função para converter o dicionário em CSV
+def dicionario_para_csv(dicionario, nome_arquivo):
+    # Abrir arquivo CSV para escrita
+    with open(nome_arquivo, mode='w', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=dicionario[0].keys())
+        writer.writeheader()
+        writer.writerows(dicionario)
+    print(f"Arquivo CSV '{nome_arquivo}' gerado com sucesso!")
+
+# Função para enviar notificação SNS
+def enviar_notificacao_sns(topico_arn, mensagem):
+    sns_client = boto3.client('sns', region_name='us-east-2')
+    response = sns_client.publish(
+        TopicArn=topico_arn,
+        Message=json.dumps(mensagem)
+    )
+    print("Notificação enviada:", response)
+
+# ETL principal
+def executar_etl():
+    # Dicionário de exemplo
+    dados = [
+        {"nome": "Luciano", "idade": 34, "profissao": "Engenheiro de Dados"},
+        {"nome": "Maria", "idade": 29, "profissao": "Cientista de Dados"},
+        {"nome": "José", "idade": 45, "profissao": "Analista de Dados"}
+    ]
+    
+    # Nome do arquivo CSV a ser gerado
+    nome_arquivo_csv = 'dados.csv'
+    
+    # Executar transformação (dicionário para CSV)
+    dicionario_para_csv(dados, nome_arquivo_csv)
+    
+    # Enviar notificação para o SNS
+    mensagem_sns = {
+        "status": "Sucesso",
+        "descricao": "A ETL foi executada com sucesso e o arquivo CSV foi gerado."
+    }
+    
+    # ARN do tópico SNS (substitua pelo seu ARN de SNS)
+    topico_arn = 'arn:aws:sns:us-east-2:148761673709:MeuTopico'
+    
+    # Enviar a notificação
+    enviar_notificacao_sns(topico_arn, mensagem_sns)
+
+# Executar a ETL
+executar_etl()
+```
+
+### **Explicação**:
+1. **Dicionário para CSV**: A função `dicionario_para_csv` pega o dicionário de dados e o transforma em um arquivo CSV. 
+   - Neste exemplo, os dados consistem em uma lista de dicionários, onde cada dicionário representa uma linha no arquivo CSV.
+2. **Notificação SNS**: A função `enviar_notificacao_sns` usa o cliente boto3 para enviar uma mensagem JSON para um tópico SNS, notificando que a ETL foi bem-sucedida.
+3. **ETL Principal**: A função `executar_etl` executa a lógica de transformação dos dados em CSV e, em seguida, envia uma notificação ao SNS.
+
+### **Mensagem de Notificação SNS**:
+A mensagem SNS enviada ao final indica que a ETL foi concluída com sucesso:
+
+```json
+{
+    "status": "Sucesso",
+    "descricao": "A ETL foi executada com sucesso e o arquivo CSV foi gerado."
+}
+```
+
+### **Output esperado**:
+- Um arquivo CSV chamado `dados.csv` será gerado.
+- A notificação será enviada ao SNS informando que a ETL foi concluída com sucesso.
+
+Este exemplo pode ser usado para automações de ETL em pipelines de dados e pode ser integrado com outros serviços na AWS para notificações e monitoramento.
