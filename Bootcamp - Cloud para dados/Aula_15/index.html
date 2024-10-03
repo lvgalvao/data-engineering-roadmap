@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sorteio Automático</title>
+    <!-- Estilização da página -->
+    <style>
+    h1 {
+        color: #FFFFFF;
+        font-family: system-ui;
+        margin-left: 20px;
+    }
+    body {
+        background-color: #003366;
+    }
+    label {
+        color: #66CCFF;
+        font-family: system-ui;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    button {
+        background-color: #66CCFF;
+        border-color: #66CCFF;
+        color: #FFFFFF;
+        font-family: system-ui;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 30px;
+        margin-top: 20px;
+        width: 140px;
+    }
+    input {
+        color: #003366;
+        font-family: system-ui;
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 20px;
+        width: 100px;
+    }
+    </style>
+    <script>
+        // Função para chamar a API
+        var realizarSorteio = (nomeSorteio, numMin, numMax) => {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "nomeSorteio": nomeSorteio,
+                "numMin": numMin,
+                "numMax": numMax
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("YOUR_API_GATEWAY_ENDPOINT", requestOptions)
+            .then(response => response.text())
+            .then(result => alert("Número sorteado: " + JSON.parse(result).numeroSorteado))
+            .catch(error => console.log('error', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Bem-vindo ao Sorteio Automático!</h1>
+    <form>
+        <label>Nome do sorteio:</label>
+        <input type="text" id="nomeSorteio"><br>
+        <label>Número Mínimo:</label>
+        <input type="number" id="numMin"><br>
+        <label>Número Máximo:</label>
+        <input type="number" id="numMax"><br>
+        <!-- Botão que chama a função realizarSorteio -->
+        <button type="button" onclick="realizarSorteio(
+            document.getElementById('nomeSorteio').value,
+            document.getElementById('numMin').value,
+            document.getElementById('numMax').value
+        )">Realizar Sorteio</button>
+    </form>
+</body>
+</html>
