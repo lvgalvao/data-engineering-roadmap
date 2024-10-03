@@ -1,0 +1,14 @@
+cramjam==2.8.4
+fastparquet==2024.5.0
+fsspec==2024.9.0
+greenlet==3.1.1
+numpy==2.1.1
+packaging==24.1
+pandas==2.2.3
+psycopg2==2.9.9
+python-dateutil==2.9.0.post0
+pytz==2024.2
+six==1.16.0
+SQLAlchemy==2.0.35
+typing_extensions==4.12.2
+tzdata==2024.2
