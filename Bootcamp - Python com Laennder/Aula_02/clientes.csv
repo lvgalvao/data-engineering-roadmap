@@ -1,0 +1,11 @@
+cliente_id,nome,sobrenome,cidade,idade,email
+1,Ana,Silva,São Paulo,23,ana@gmail.com
+2,Bruno,Oliveira,Rio de Janeiro,34,bruno@gmail.com
+3,Carla,Santos,Curitiba,45,carla@gmail.com
+4,David,Costa,Porto Alegre,25,david@gmail.com
+5,Eduardo,Ferreira,Salvador,32,eduardo@gmail.com
+6,Fernanda,Pereira,Fortaleza,37,fernanda@gmail.com
+7,Gustavo,Barros,Brasília,29,gustavo@gmail.com
+8,Helena,Souza,Recife,28,helena@gmail.com
+9,Isabela,Ribeiro,Manaus,50,isabela@gmail.com
+10,João,Almeida,Belém,41,joao@gmail.com

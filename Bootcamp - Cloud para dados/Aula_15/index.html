@@ -59,7 +59,7 @@
                 redirect: 'follow'
             };
 
-            fetch("https://5bciix4nk2.execute-api.us-east-2.amazonaws.com/dev", requestOptions)
+            fetch("https://5bciix4nk2.execute-api.us-east-2.amazonaws.com/devc", requestOptions)
             .then(response => response.text())
             .then(result => alert("Número sorteado: " + JSON.parse(result).numeroSorteado))
             .catch(error => console.log('error', error));
