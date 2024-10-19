@@ -36,26 +36,25 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 Bem-vindo à Jornada de Dados! Antes de mergulharmos nos conteúdos avançados, é essencial que você tenha seu ambiente de desenvolvimento devidamente configurado. O objetivo é que, em aproximadamente 1 hora, você esteja pronto para assistir às aulas no YouTube e participar das atividades práticas da Jornada de Dados.
 
 Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que você se concentre nos conceitos e práticas da engenharia de dados, sem se preocupar com problemas técnicos. Vamos começar?
-| Dia | Skills                       | Objetivo                                                                                                                  | YouTube                                                    |
+
+| Imagem | Skills                       | Objetivo                                                                                                                  | YouTube                                                    |
 |-----|------------------------------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-| 01  | Python, Git, GitHub e VSCode | Tutorial de como configurar um ambiente de desenvolvimento para engenharia de dados com foco no mercado de trabalho. | [Link para o vídeo](https://www.youtube.com/watch?v=video_id) |
+| ![Python](pics/youtube/como_instalar_python_em_2024_parte_01.jpg)  | Python, Git, GitHub e VSCode | Tutorial de como configurar um ambiente de desenvolvimento para engenharia de dados com foco no mercado de trabalho. | [Link para o vídeo](https://www.youtube.com/watch?v=video_id) |
 
 ![Introdução](pics/youtube/como_instalar_python_em_2024_parte_01.jpg)
 
-| Dia | Skills                       | Objetivo                                                                                                                  | YouTube                                                    |
+| Skills                       | Objetivo                                                                                                                  | YouTube                                                    |
 |-----|------------------------------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-| 02  | Python, Pyenv, PIP, VENV, PIPX e Poetry | Segunda parte do tutorial de como configurar um ambiente de desenvolvimento para engenharia de dados com foco no mercado de trabalho. | [Link para o vídeo](https://www.youtube.com/watch?v=-M4pMd2yQOM&t=1s) |
+| Python, Pyenv, PIP, VENV, PIPX e Poetry | Segunda parte do tutorial de como configurar um ambiente de desenvolvimento para engenharia de dados com foco no mercado de trabalho. | [Link para o vídeo](https://www.youtube.com/watch?v=-M4pMd2yQOM&t=1s) |
 
 ![Introdução](pics/youtube/como_instalar_python_em_2024_parte_02.jpg)
 
+| Imagem | Skills                       | Objetivo                                                                                                                  | YouTube                                                    |
+|-----|------------------------------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| ![Github](pics/workshops/workshop-git-e-github.png)  | Git | Aprenda Git focado em dados | [Link para o repositório](./Workshop%20-%20Git%20e%20Github/Aula_01) |
+|   | Github | Aprenda Github focado em dados | [Link para o vídeo](./Workshop%20-%20Git%20e%20Github/Aula_02/) |
 
-## Projetos Jornada de Dados
-
-[Lista de projetos da Jornada de Dados]
-
-## YouTube
-
-[Links para conteúdo no YouTube]
+![Github](pics/workshops/workshop-git-e-github.png)
 
 ## Bootcamps Jornada de Dados
 
