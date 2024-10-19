@@ -1,94 +1,89 @@
-# Roadmap para engenharia de dados - Jornada de dados 2024
+# Roadmap de Engenharia de Dados 
 
-Nossa missão é **fornecer o melhor ensino em engenharia de dados**
+<p align="center">
+  <a href="https://suajornadadedados.com.br/"><img src="pics/logo.png" alt="Jornada de Dados"></a>
+</p>
+<p align="center">
+    <em>Nossa missão é fornecer o melhor ensino em engenharia de dados</em>
+</p>
 
-Se você quer:
+Bem-vindo ao **Roadmap de Engenharia de Dados** da **Jornada de Dados**! Este repositório foi construído colaborativamente e tem como objetivo capacitá-lo para a carreira de engenharia de dados, ajudando profissionais como você a atingir novos patamares em sua trajetória profissional.
 
-1) Construir uma **base sólida** em Python e SQL
-2) Aprender as **principais habilidades e ferramentas** de engenharia de dados
-3) Criar ou melhorar seu **portfólio** de dados
-4) Criar ou aumentar o seu **networking** na área
-5) Mudar ou dar o **próximo passo em sua carreira**
+Aqui você encontrará:
 
-A **Jornada de Dados** é o seu lugar
+- **Roadmap de Estudo:** Links, referências e materiais complementares para auxiliar no seu aprendizado. Se você quer ter um plano de estudo, você encontra uma série de projetos e recursos que o guiarão passo a passo no desenvolvimento das habilidades essenciais em engenharia de dados.
+- **Códigos das Aulas:** Todos os códigos e materiais utilizados durante as aulas estão disponíveis neste repositório para que você possa praticar e aprofundar seu conhecimento.
+- **Calendário dos Próximos Encontros:** Fique por dentro das datas e temas dos próximos workshops e bootcamps da Jornada de Dados.
 
-[Visite o nosso site](https://suajornadadedados.com.br/)
+Se você gostou do conteúdo e quer se inscrever em nosso programa profissional, pode fazer isso aqui:
 
-## Próximos treinamentos
+## Índice
 
-![pics](/pics/bootcamp_cloud.png)
+1. [Comece por aqui](#comece-por-aqui)
+2. [Os primeiros 7 dias](#próximos-treinamentos)
+3. [Bootcamps Disponíveis](#bootcamps-jornada-de-dados)
+4. [Projetos no Youtube](#conteúdo-completo-bootcamp-de-cloud)
+5. [Bootcamps Disponíveis](#bootcamps-jornada-de-dados)
+6. [Workshops](#workshops-jornada-de-dados)
+7. [Metodologia](#metodologia)
+8. [Detalhes das Aulas](#detalhe-das-aulas)
+9. [Pré-requisitos](#pré-requisitos)
+10. [Plataforma e Autonomia](#plataforma-e-autonomia)
+11. [Dúvidas](#possui-dúvidas)
 
-Para entregar valor ao negócio, é fundamental que nossas aplicações, dashboards, bancos de dados e modelos estejam em produção, ou seja, em uso pelo cliente.
+## Comece por aqui
 
-Se você já tentou implementar um serviço em Cloud na AWS, Azure ou GCP, sabe que há muitos desafios envolvidos: desde padrões a seguir, passando por configurações de IAM (acesso), redes privadas, até a implantação de máquinas virtuais e instalação de Docker.
+Bem-vindo à Jornada de Dados! Antes de mergulharmos nos conteúdos avançados, é essencial que você tenha seu ambiente de desenvolvimento devidamente configurado. O objetivo é que, em aproximadamente 1 hora, você esteja pronto para assistir às aulas no YouTube e participar das atividades práticas da Jornada de Dados.
 
-Muitas vezes, profissionais focados em dados e aplicações não possuem esse conhecimento especializado.
+Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que você se concentre nos conceitos e práticas da engenharia de dados, sem se preocupar com problemas técnicos. Vamos começar?
+| Dia | Skills                       | Objetivo                                                                                                                  | YouTube                                                    |
+|-----|------------------------------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| 01  | Python, Git, GitHub e VSCode | Tutorial de como configurar um ambiente de desenvolvimento para engenharia de dados com foco no mercado de trabalho. | [Link para o vídeo](https://www.youtube.com/watch?v=video_id) |
 
-O Bootcamp de Cloud para dados foi criado para preencher essa lacuna. É um curso que fornece os elementos essenciais de Cloud para que você possa implantar suas aplicações de forma independente.
+![Introdução](pics/youtube/como_instalar_python_em_2024_parte_01.jpg)
 
-Começamos do zero, com foco em quem não possui experiência em Cloud, e seguimos passo a passo até a implantação das suas primeiras aplicações. Durante o curso, construiremos cinco aplicações em diferentes plataformas de Cloud.
+| Dia | Skills                       | Objetivo                                                                                                                  | YouTube                                                    |
+|-----|------------------------------|---------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| 02  | Python, Pyenv, PIP, VENV, PIPX e Poetry | Segunda parte do tutorial de como configurar um ambiente de desenvolvimento para engenharia de dados com foco no mercado de trabalho. | [Link para o vídeo](https://www.youtube.com/watch?v=-M4pMd2yQOM&t=1s) |
 
-Se você deseja entender VPC, EC2, e toda a infraestrutura necessária para subir suas aplicações, este Bootcamp é ideal para você.
+![Introdução](pics/youtube/como_instalar_python_em_2024_parte_02.jpg)
 
-O Bootcamp começará no dia 22 de agosto e terá duração até o dia 04 de outubro.
 
-As aulas serão ao vivo, sempre às 12h (meio-dia), com duração de 1 hora e 20 minutos. Além disso, todas as aulas serão disponibilizadas na nossa plataforma no mesmo dia, para que você possa assisti-las quantas vezes desejar.
+## Projetos Jornada de Dados
 
-Para fazer parte desse bootcamp, a inscrição será liberada no dia 20/08 ás 20h em nosso canal no Youtube
+[Lista de projetos da Jornada de Dados]
 
-[![abertura](/pics/capa_youtube_bootcamp_cloud.png)](https://www.youtube.com/watch?v=GqgWGZtC-3w)
+## YouTube
 
-## Conteúdo completo Bootcamp de cloud
-
-Aqui está o calendário completo de aula (podendo sofrer alterações ao longo do curso)
-
-Aqui está a tabela atualizada com os nomes dos serviços específicos do Azure e GCP nos respectivos projetos:
-
-| Acesso e início   | Tema da Aula                                            | Objetivo da Aula                                                                                      | Principais Tecnologias Abordadas                          | Carga Horária |
-|-------------------|---------------------------------------------------------|-------------------------------------------------------------|----------------------------------------------------------|---------------|
-| 23/08/2024 (Quinta) | Introdução a Cloud, criando nossa conta e publicando um site na AWS | Introduzir os conceitos básicos de computação em nuvem, criar uma conta AWS e publicar um site simples. | Amazon S3, Amazon Route 53                                | 1h20          |
-| 24/08/2024 (Sexta)  | Serviços de Armazenamento na Nuvem                    | Entender e gerenciar serviços de armazenamento na nuvem, garantindo segurança e escalabilidade para os dados empresariais. | Amazon S3                                                 | 1h20          |
-| 26/08/2024 (Segunda)| Computação em Nuvem - VMs                             | Explorar a criação e uso de VMs para aplicações escaláveis na nuvem.                                    | Amazon EC2                                                | 1h20          |
-| 27/08/2024 (Terça)  | Projeto EC2 e S3                                      | Implementar um projeto integrando EC2 e S3 para armazenar e processar dados de forma eficiente.         | Amazon EC2, Amazon S3                                     | 1h20          |
-| 29/08/2024 (Quinta) | Gerenciamento de Segurança IAM                        | Configurar e gerenciar identidades e acessos com segurança usando IAM.                                  | AWS IAM                                                   | 1h20          |
-| 30/08/2024 (Sexta)  | Gerenciamento de Redes VPC                            | Configurar redes virtuais na nuvem para otimizar a comunicação entre serviços.                          | Amazon VPC                                                | 1h20          |
-| 02/09/2024 (Segunda)| Banco de Dados Relacional                             | Aprender a configurar e gerenciar bancos de dados relacionais na nuvem.                                 | Amazon RDS                                                | 1h20          |
-| 03/09/2024 (Terça)  | Projeto Frontend e RDS                                | Desenvolver um frontend que interage com um banco de dados relacional na nuvem.                         | Amazon EC2, Amazon RDS                                    | 1h20          |
-| 05/09/2024 (Quinta) | Arquitetura de Eventos Parte 1                        | Entender e criar arquiteturas baseadas em eventos para comunicação entre serviços na nuvem.             | Amazon SNS, Amazon SQS, AWS EventBridge                   | 1h20          |
-| 06/09/2024 (Sexta)  | Arquitetura de Eventos Parte 2                        | Continuar o desenvolvimento de arquiteturas baseadas em eventos, integrando serviços adicionais.        | Amazon SNS, Amazon SQS, AWS EventBridge                   | 1h20          |
-| 09/09/2024 (Segunda)| AWS Lambda Parte 1                                    | Explorar a execução de funções serverless usando AWS Lambda para automatizar processos na nuvem.        | AWS Lambda                                                | 1h20          |
-| 10/09/2024 (Terça)  | AWS Lambda Parte 2                                    | Implementar um projeto completo utilizando AWS Lambda para criar uma arquitetura serverless.            | AWS Lambda                                                | 1h20          |
-| 12/09/2024 (Quinta) | Automatizando Tudo com Terraform                      | Aprender a automatizar a criação e o gerenciamento de infraestruturas na nuvem usando Terraform.        | Terraform, AWS                                            | 1h20          |
-| 13/09/2024 (Sexta)  | Terraform - Avançado                                  | Explorar funcionalidades avançadas do Terraform para gerenciar infraestruturas complexas.               | Terraform, AWS                                            | 1h20          |
-| 16/09/2024 (Segunda)| Projeto PDF Eventos Parte 1                           | Implementar um projeto que processa PDFs em eventos usando AWS Lambda, S3 e SQS.                        | AWS Lambda, Amazon S3, Amazon SQS                         | 1h20          |
-| 17/09/2024 (Terça)  | Projeto PDF Eventos Parte 2                           | Continuar o desenvolvimento do projeto de processamento de PDFs, integrando mais funcionalidades.       | AWS Lambda, Amazon S3, Amazon SQS                         | 1h20          |
-| 19/09/2024 (Quinta) | Introdução ao Azure                                   | Entender os conceitos básicos do Azure e configurar os serviços equivalentes à AWS (Blob Storage, VMs). | Azure Blob Storage, Azure Virtual Machines (VMs)          | 1h20          |
-| 20/09/2024 (Sexta)  | Projeto Azure: PostgreSQL e VNet                      | Implementar um projeto no Azure usando serviços equivalentes ao RDS, IAM e VPC da AWS.                  | Azure Database for PostgreSQL, Azure IAM, Azure Virtual Network (VNet) | 1h20          |
-| 23/09/2024 (Segunda)| Projeto Azure: Functions e Event Grid                 | Criar uma arquitetura serverless no Azure, utilizando funções e eventos, similar ao AWS Lambda.         | Azure Functions, Azure Event Grid                         | 1h20          |
-| 24/09/2024 (Terça)  | Revisão e De-Para AWS-Azure                           | Revisar o aprendizado e discutir o mapeamento de serviços AWS para Azure.                               | AWS, Azure                                                | 1h20          |
-| 26/09/2024 (Quinta) | Introdução ao GCP                                     | Entender os conceitos básicos do Google Cloud Platform e configurar os serviços equivalentes à AWS.     | Google Cloud Storage, Google Compute Engine (VMs)         | 1h20          |
-| 27/09/2024 (Sexta)  | Projeto GCP: Cloud SQL e VPC                          | Implementar um projeto no GCP usando serviços equivalentes ao RDS, IAM e VPC da AWS.                    | Cloud SQL (PostgreSQL), Google IAM, Google Virtual Private Cloud (VPC) | 1h20          |
-| 30/09/2024 (Segunda)| Projeto GCP: Cloud Functions e Pub/Sub                | Criar uma arquitetura serverless no GCP, utilizando funções e eventos, similar ao AWS Lambda.           | Google Cloud Functions, Google Pub/Sub                    | 1h20          |
-| 01/10/2024 (Terça)  | Revisão e De-Para AWS-GCP                             | Revisar o aprendizado e discutir o mapeamento de serviços AWS para GCP.                                 | AWS, Google Cloud Platform (GCP)                          | 1h20          |
-| 03/10/2024 (Quinta) | Containers na AWS Parte 1                             | Introdução ao uso de containers na AWS, utilizando Amazon ECS e Docker.                                 | Amazon ECS (Elastic Container Service), Docker            | 1h20          |
-| 04/10/2024 (Sexta)  | Containers na AWS Parte 2                             | Implementar um projeto utilizando containers na AWS com Amazon ECS e Docker.                            | Amazon ECS, Docker                                        | 1h20          |
-| 07/10/2024 (Segunda)| Containers na AWS Parte 3                             | Introdução ao Kubernetes na AWS, utilizando Amazon EKS.                                                 | Amazon EKS (Elastic Kubernetes Service), Kubernetes       | 1h20          |
-| 08/10/2024 (Terça)  | Containers na AWS Parte 4                             | Implementar um projeto utilizando Kubernetes na AWS com Amazon EKS.                                     | Amazon EKS, Kubernetes                                    | 1h20          |
-| 10/10/2024 (Quinta) | Airflow em Projeto Completo Parte 1                   | Introdução ao Apache Airflow, configurando e criando um pipeline de dados na AWS.                       | Apache Airflow, AWS                                       | 1h20          |
-| 11/10/2024 (Sexta)  | Airflow em Projeto Completo Parte 2                   | Implementar um projeto completo de pipeline de dados usando Apache Airflow na AWS.                      | Apache Airflow, AWS                                       | 1h20          |
+[Links para conteúdo no YouTube]
 
 ## Bootcamps Jornada de Dados
 
-Aqui estão todos os bootcamps já disponíveis na Jornada de dados
+Aqui estão todos os bootcamps já disponíveis na Jornada de Dados:
 
-| Acesso e início   | Bootcamp                              | Carga Horária |
-|-------------------|---------------------------------------|---------------|
-| Acesso Imediato   | Python para dados                     | 30 horas      |
-| Acesso Imediato   | SQL para Analytics Engineer           | 20 horas      |
-| Acesso Imediato   | dbt-core                              | 10 horas      |
-| Acesso Imediato   | WebScraping Avançado                  | 10 horas      |
-| Início 22/08      | Cloud para dados                      | 30 horas      |
-| Outubro           | Multi-engine ETL com Spark e Duckdb   | 20 horas      |
+| Acesso e início    | Bootcamp                                | Carga Horária | Link GitHub | Status                      |
+|--------------------|-----------------------------------------|---------------|-------------|-----------------------------|
+| Acesso Imediato    | **Python para Dados**                   | 30 horas      | [Link](#)   | **Concluído**               |
+|                    | *Descrição:* Aprenda os fundamentos de Python aplicados à engenharia de dados, incluindo bibliotecas como Pandas e NumPy, manipulação e limpeza de dados. |
+| Acesso Imediato    | **SQL para Analytics Engineer**         | 20 horas      | [Link](#)   | **Concluído**               |
+|                    | *Descrição:* Domine conceitos avançados de SQL necessários para um Analytics Engineer, incluindo consultas complexas e otimização de desempenho. |
+| Acesso Imediato    | **dbt-core**                            | 10 horas      | [Link](#)   | **Concluído**               |
+|                    | *Descrição:* Utilize o dbt-core para transformar dados em seu data warehouse, implementando práticas modernas de engenharia de dados. |
+| Acesso Imediato    | **Web Scraping Avançado**               | 10 horas      | [Link](#)   | **Concluído**               |
+|                    | *Descrição:* Aprenda técnicas avançadas de web scraping, extração de dados de sites complexos e manipulação de APIs. |
+| Acesso Imediato    | **Power BI**                            | -- horas      | [Link](#)   | **Em andamento**            |
+|                    | *Descrição:* Explore o Power BI para criar dashboards interativos e análises visuais de dados. |
+| Início 22/08       | **Cloud para Dados**                    | 30 horas      | [Link](#)   | **Em andamento**            |
+|                    | *Descrição:* Conheça os serviços de nuvem aplicados à engenharia de dados nas plataformas AWS, Azure e GCP, e implemente soluções escaláveis. |
+| Janeiro            | **Multi-engine ETL com Spark e DuckDB** | 20 horas      | [Link](#)   | **Previsto para Janeiro**   |
+|                    | *Descrição:* Agendado para janeiro, este bootcamp ensinará como construir pipelines ETL utilizando múltiplos engines como Spark e DuckDB. |
+
+
+---
+
+Cada bootcamp oferece uma imersão profunda nos tópicos essenciais para a engenharia de dados. Aproveite para expandir seus conhecimentos e habilidades em áreas específicas, seguindo o cronograma que melhor se adapta às suas necessidades.
+
+**Observação:** Os links para os repositórios GitHub serão disponibilizados em breve.
 
 ## Workshops Jornada de Dados
 
