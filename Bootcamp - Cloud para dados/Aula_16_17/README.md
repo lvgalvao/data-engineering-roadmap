@@ -773,3 +773,116 @@ Sim, a **VNet (Virtual Network)** no Azure é equivalente à **VPC (Virtual Priv
 - Essa VM pode acessar dados armazenados em uma **Storage Account** (como Blob Storage) pela VNet, garantindo que o tráfego não passe pela internet pública.
 
 Essa arquitetura é ideal para pipelines de dados seguros e de alta performance, como processamento de arquivos CSV para Parquet, conforme o projeto que você está desenvolvendo.
+
+### **Projeto 5. Criação de Banco de Dados SQL e Inserção de Dados com Streamlit**
+
+#### **1. Criando o Banco de Dados SQL no Azure**
+
+1. Acesse o portal Azure ([portal.azure.com](https://portal.azure.com)).
+2. Navegue para **SQL Databases** e clique em **Create**.
+3. **Configurações Básicas**:
+   - Nome do Banco: `meubancodedados`.
+   - Servidor: Crie um novo servidor ou selecione um existente.
+   - Grupo de Recursos: Selecione ou crie um novo grupo, por exemplo, `myResourceGroup`.
+   - Região: Selecione **Brazil South** ou outra região próxima.
+   - Elastic Pool: Escolha **Não** (se não for usar um pool).
+4. **Compute + Storage**:
+   - Escolha **General Purpose** com 2 vCores.
+   - Defina 32 GB de armazenamento e redundância local ou geo-redundante.
+5. Clique em **Review + Create** e depois em **Create**.
+
+#### **2. Configurando o Acesso (IAM)**
+
+1. Vá até o banco de dados criado e clique em **Access Control (IAM)**.
+2. Adicione uma função **Contributor** ou **Data Reader** ao serviço usado no **App Registration** que foi criado anteriormente.
+3. Copie a **string de conexão** do banco para utilizá-la no código.
+
+#### **3. Configurando o Projeto em Python com Streamlit**
+
+1. Instale as dependências no terminal:
+   ```bash
+   pip install streamlit pyodbc python-dotenv
+   ```
+2. Crie um arquivo **`.env`** com as variáveis:
+   ```
+   AZURE_DB_SERVER=<seu-servidor>.database.windows.net
+   AZURE_DB_NAME=meubancodedados
+   AZURE_DB_USER=<seu-usuario>
+   AZURE_DB_PASSWORD=<sua-senha>
+   ```
+3. Crie o seguinte **código Python** no arquivo `app.py`:
+
+   ```python
+   import streamlit as st
+   import pyodbc
+   from dotenv import load_dotenv
+   import os
+
+   # Carregar variáveis de ambiente
+   load_dotenv()
+
+   # Conectar ao banco de dados
+   server = os.getenv("AZURE_DB_SERVER")
+   database = os.getenv("AZURE_DB_NAME")
+   username = os.getenv("AZURE_DB_USER")
+   password = os.getenv("AZURE_DB_PASSWORD")
+   
+   connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}'
+   conn = pyodbc.connect(connection_string)
+   cursor = conn.cursor()
+
+   # Interface Streamlit
+   st.title("Inserção de Dados no Banco SQL")
+
+   nome = st.text_input("Nome")
+   idade = st.number_input("Idade", min_value=0, max_value=120)
+
+   if st.button("Inserir Dados"):
+       cursor.execute(f"INSERT INTO pessoas (nome, idade) VALUES (?, ?)", (nome, idade))
+       conn.commit()
+       st.success("Dados inseridos com sucesso!")
+
+   cursor.close()
+   conn.close()
+   ```
+
+4. Execute o **Streamlit**:
+   ```bash
+   streamlit run app.py
+   ```
+
+---
+
+### **Mermaid: Inserção de Dados com Streamlit e Azure SQL Database**
+
+```mermaid
+sequenceDiagram
+    participant User as Usuário (Interface Streamlit)
+    participant Streamlit as Streamlit App
+    participant Env as .env (Variáveis de Ambiente)
+    participant SQLDB as Banco de Dados SQL (Azure)
+    participant IAM as IAM (Controle de Acesso)
+
+    User->>Streamlit: 1. Preenche nome e idade na UI
+    User->>Streamlit: 2. Clica no botão "Inserir Dados"
+    
+    Streamlit->>Env: 3. Carrega variáveis de ambiente (.env)
+    Env-->>Streamlit: 4. Retorna credenciais do banco de dados
+    
+    Streamlit->>IAM: 5. Solicita acesso ao banco SQL
+    IAM-->>Streamlit: 6. Concede acesso (verificação do IAM)
+    
+    Streamlit->>SQLDB: 7. Conecta ao banco de dados
+    SQLDB-->>Streamlit: 8. Conexão estabelecida
+    
+    Streamlit->>SQLDB: 9. Insere dados na tabela 'pessoas'
+    SQLDB-->>Streamlit: 10. Confirmação de inserção
+
+    Streamlit->>User: 11. Exibe mensagem de sucesso
+```
+
+---
+
+### **Conclusão**
+
+Com este projeto, você agora possui uma aplicação em **Streamlit** conectada a um banco de dados **SQL no Azure**. A interface permite a inserção de dados e a configuração utiliza boas práticas, como o uso de **variáveis de ambiente** e **controle de acesso IAM**.
