@@ -54,16 +54,27 @@ Na AWS, o conceito mais próximo de uma assinatura do Azure é uma **Conta AWS**
 ## Projeto 1. Acessando variáveis de ambiente no Azure
 
 ```mermaid
-graph TD
+sequenceDiagram
+    participant User as Usuário (Local)
+    participant AzureAD as Azure AD
+    participant AppReg as App Registration
+    participant KeyVault as Azure Key Vault
+    participant IAMUser as IAM do Usuário
+    participant IAMService as IAM do Serviço
 
-A[Usuário no Computador Local] -->|1. Autentica no Azure AD| B(Azure AD)
-B --> |2. Obtém Token de Acesso| C[Client Secret]
-C --> |3. Usa Token e Client Secret| D[App Registration]
-D --> |4. Permissão de Acesso ao Key Vault| E[Azure Key Vault]
-E --> |5. IAM Configurado para o Serviço e Usuário IAM1[IAM do Usuário]
-E --> IAM2[IAM do Serviço]
-A -->|6. Executa Código Python| F[Script Python]
-F --> |7. Busca Dados no Key Vault| E
+    User->>AzureAD: 1. Solicita Token de Acesso
+    AzureAD-->>User: 2. Retorna Token
+
+    User->>AppReg: 3. Envia Credenciais e Token
+    AppReg-->>User: 4. Validação e Permissão
+
+    User->>KeyVault: 5. Solicita Segredo (com Token)
+    KeyVault-->>IAMUser: 6. Verifica Permissões do Usuário
+    KeyVault-->>IAMService: 7. Verifica Permissões do Serviço
+
+    KeyVault-->>User: 8. Retorna Valor do Segredo
+
+    User->>User: 9. Exibe Segredo no Terminal
 ```
 
 ---
@@ -211,9 +222,316 @@ O **Azure Active Directory (Azure AD)** é o serviço de gerenciamento de identi
 
 O **Azure AD** é essencial para a autenticação e controle de identidades em ambientes Microsoft e aplicativos SaaS. Ele complementa o **IAM da AWS**, que é mais voltado para gerenciar permissões de recursos. Integrar o Azure AD com a AWS pode proporcionar uma experiência de autenticação unificada e simplificar a gestão de identidades e acessos.
 
+## Projeto 2. Consumindo arquivos no Blob Storage
+
+```mermaid
+sequenceDiagram
+    participant User as Usuário (Local)
+    participant AzureAD as Azure AD
+    participant AppReg as App Registration
+    participant BlobStorage as Azure Blob Storage
+    participant IAMUser as IAM do Usuário
+    participant IAMService as IAM do Serviço
+
+    User->>AzureAD: 1. Solicita Token de Acesso
+    AzureAD-->>User: 2. Retorna Token
+
+    User->>AppReg: 3. Envia Credenciais e Token
+    AppReg-->>User: 4. Validação e Permissão
+
+    User->>BlobStorage: 5. Solicita Listagem de Arquivos (com Token)
+    BlobStorage-->>IAMUser: 6. Verifica Permissões do Usuário
+    BlobStorage-->>IAMService: 7. Verifica Permissões do Serviço
+
+    BlobStorage-->>User: 8. Retorna Lista de Arquivos
+
+    User->>BlobStorage: 9. Baixa Arquivo Específico
+    BlobStorage-->>User: 10. Envia Arquivo
+
+    User->>User: 11. Exibe ou Processa Arquivo Localmente
+```
+
+### **Projeto: Acessar e Fazer Upload de Arquivos no Azure Blob Storage com Python SDK**
+
+Este passo a passo mostrará como criar uma **Storage Account no Azure**, configurar permissões usando **IAM**, e listar arquivos dentro de um **container Blob** utilizando o **Python SDK**.
 
 ---
-## Máquinas Virtuais (VMs) no Azure  
+
+## **Passo 1: Criar uma Storage Account no Azure**
+
+1. Acesse o [Azure Portal](https://portal.azure.com/).
+2. No menu de navegação, clique em **Storage accounts** e depois em **Create**.
+3. **Configuração básica**:
+   - **Subscription**: Escolha a assinatura correta.
+   - **Resource group**: Selecione o grupo criado anteriormente.
+   - **Storage account name**: Escolha um nome único (por exemplo, `armazenamentoexemplo`).
+   - **Region**: Escolha a mesma região onde seus recursos estão hospedados (ex.: East US).
+   - **Performance**: Standard.
+   - **Replication**: LRS (Locally Redundant Storage) para este exemplo.
+4. Clique em **Review + Create** e, em seguida, **Create**.
+
+---
+
+## **Passo 2: Criar um Container no Blob Storage**
+
+1. Dentro da **Storage Account** recém-criada, vá para **Containers** no menu lateral.
+2. Clique em **+ Container**.
+3. **Nome do Container**: Por exemplo, `meus-arquivos`.
+4. **Tipo de acesso público**: Deixe como **Private** (somente acesso autenticado).
+5. Clique em **Create**.
+
+---
+
+## **Passo 3: Obter a URL de Conexão do Storage**
+
+1. Na **Storage Account**, vá para **Access keys** no menu lateral.
+2. Copie o **Connection string**. Ele será usado no código para conectar-se ao Blob Storage.
+
+---
+
+## **Passo 4: Dar Acesso no IAM ao Aplicativo Criado Anteriormente**
+
+1. Acesse o **Azure Portal** e vá para **Storage accounts** > **sua Storage Account**.
+2. No menu lateral, clique em **Access control (IAM)**.
+3. Clique em **Add role assignment**.
+4. **Função**: Selecione **Blob Data Contributor**.
+5. **Membro**: Selecione o **App Registration** criado anteriormente no Azure Active Directory.
+6. Clique em **Review + Assign**.
+
+---
+
+## **Passo 5: Código Python para Listar Arquivos no Blob Storage**
+
+Crie um arquivo Python chamado `list_blob_files.py` e adicione o seguinte código:
+
+### **Código Python**
+
+```python
+from azure.identity import ClientSecretCredential
+from azure.storage.blob import BlobServiceClient
+from dotenv import load_dotenv
+import os
+
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
+
+# Variáveis de ambiente necessárias
+client_id = os.environ['AZURE_CLIENT_ID']
+tenant_id = os.environ['AZURE_TENANT_ID']
+client_secret = os.environ['AZURE_CLIENT_SECRET']
+storage_account_url = os.environ["AZURE_STORAGE_URL"]  # Ex: https://<nome_da_storage>.blob.core.windows.net/
+container_name = "meus-arquivos"  # Nome do container criado
+
+# Configura as credenciais usando Client Secret
+credentials = ClientSecretCredential(
+    client_id=client_id,
+    client_secret=client_secret,
+    tenant_id=tenant_id
+)
+
+# Conectar ao Blob Storage
+blob_service_client = BlobServiceClient(
+    account_url=storage_account_url,
+    credential=credentials
+)
+
+# Acessa o container
+container_client = blob_service_client.get_container_client(container_name)
+
+# Lista todos os arquivos dentro do container
+print(f"Listando arquivos no container '{container_name}':")
+for blob in container_client.list_blobs():
+    print(f" - {blob.name}")
+```
+
+---
+
+## **Passo 6: Configurar o Arquivo `.env`**
+
+Crie um arquivo chamado `.env` na mesma pasta do código e adicione as variáveis necessárias:
+
+```env
+AZURE_CLIENT_ID=seu_client_id
+AZURE_TENANT_ID=seu_tenant_id
+AZURE_CLIENT_SECRET=seu_client_secret
+AZURE_STORAGE_URL=https://<nome_da_storage>.blob.core.windows.net/
+```
+
+---
+
+## **Passo 7: Instalar as Dependências**
+
+No terminal, execute o seguinte comando para instalar as bibliotecas necessárias:
+
+```bash
+pip install azure-identity azure-storage-blob python-dotenv
+```
+
+---
+
+## **Passo 8: Executar o Código**
+
+No terminal, execute o script:
+
+```bash
+python list_blob_files.py
+```
+
+---
+
+## **Resultado Esperado**
+
+Ao executar o código, você verá a lista de todos os arquivos presentes no container:
+
+```
+Listando arquivos no container 'meus-arquivos':
+ - exemplo1.txt
+ - relatorio2024.csv
+ - imagem.png
+```
+
+---
+
+## **Conclusão**
+
+Com este projeto, você aprendeu a:
+
+- **Criar uma Storage Account** e **container Blob** no Azure.
+- **Configurar permissões IAM** para o aplicativo.
+- **Listar arquivos** armazenados no container Blob usando **Python SDK**.
+
+Este processo é fundamental para manipular dados na nuvem com segurança e eficiência, garantindo o acesso controlado por meio de credenciais e políticas de IAM.
+
+## Projeto 3. Streamlit para inserir dados no Blob Storage
+
+### **Código com Streamlit: Inserir Arquivos no Blob Storage**
+
+Este exemplo utiliza o **Streamlit** para criar uma interface gráfica que permite ao usuário fazer upload de arquivos para o **Azure Blob Storage**.
+
+---
+
+#### **Instalar as Dependências**
+
+Antes de começar, certifique-se de instalar as bibliotecas necessárias:
+
+```bash
+pip install streamlit azure-identity azure-storage-blob python-dotenv
+```
+
+---
+
+#### **Código Python (app.py)**
+
+```python
+import streamlit as st
+from azure.identity import ClientSecretCredential
+from azure.storage.blob import BlobServiceClient
+from dotenv import load_dotenv
+import os
+
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv()
+
+# Variáveis de ambiente necessárias
+client_id = os.environ['AZURE_CLIENT_ID']
+tenant_id = os.environ['AZURE_TENANT_ID']
+client_secret = os.environ['AZURE_CLIENT_SECRET']
+storage_account_url = os.environ["AZURE_STORAGE_URL"]
+container_name = "meucontainer"
+
+# Configura credenciais usando Client Secret
+credentials = ClientSecretCredential(
+    client_id=client_id,
+    client_secret=client_secret,
+    tenant_id=tenant_id
+)
+
+# Conectar ao Blob Storage
+blob_service_client = BlobServiceClient(
+    account_url=storage_account_url,
+    credential=credentials
+)
+
+# Acessa o container
+container_client = blob_service_client.get_container_client(container_name)
+
+# Função para upload de arquivo
+def upload_file(file):
+    try:
+        blob_client = container_client.get_blob_client(file.name)
+        blob_client.upload_blob(file, overwrite=True)
+        st.success(f"Arquivo '{file.name}' enviado com sucesso!")
+    except Exception as e:
+        st.error(f"Erro ao enviar arquivo: {str(e)}")
+
+# Função para listar arquivos no container
+def listar_arquivos():
+    try:
+        blobs = container_client.list_blobs()
+        return [blob.name for blob in blobs]
+    except Exception as e:
+        st.error(f"Erro ao listar arquivos: {str(e)}")
+        return []
+
+# Interface do Streamlit
+st.title("Upload para Azure Blob Storage")
+
+uploaded_file = st.file_uploader("Escolha um arquivo para enviar", type=["csv", "txt", "png", "jpg", "pdf"])
+
+if uploaded_file is not None:
+    if st.button("Enviar"):
+        upload_file(uploaded_file)
+
+st.subheader("Arquivos no Container")
+arquivos = listar_arquivos()
+if arquivos:
+    for arquivo in arquivos:
+        st.write(f"- {arquivo}")
+else:
+    st.write("Nenhum arquivo encontrado.")
+```
+
+---
+
+#### **Configuração do Arquivo `.env`**
+
+Crie um arquivo chamado `.env` e adicione as variáveis de ambiente:
+
+```env
+AZURE_CLIENT_ID=seu_client_id
+AZURE_TENANT_ID=seu_tenant_id
+AZURE_CLIENT_SECRET=seu_client_secret
+AZURE_STORAGE_URL=https://<nome_da_storage>.blob.core.windows.net/
+```
+
+---
+
+#### **Como Executar o Projeto**
+
+1. **Inicie o Streamlit** com o seguinte comando:
+
+   ```bash
+   streamlit run app.py
+   ```
+
+2. **Acesse a interface** no navegador através do link fornecido no terminal (por exemplo, `http://localhost:8501`).
+
+---
+
+#### **O que este Código Faz?**
+
+- **Upload de Arquivos**: O usuário pode selecionar um arquivo e enviá-lo para o **Blob Storage** clicando em "Enviar".
+- **Listagem de Arquivos**: Todos os arquivos presentes no container são listados abaixo da interface.
+- **Tratamento de Erros**: Mensagens de erro e sucesso são exibidas para garantir uma melhor experiência do usuário.
+
+---
+
+#### **Conclusão**
+
+Com este projeto, você pode enviar e gerenciar arquivos diretamente no **Azure Blob Storage** através de uma interface simples e intuitiva criada com **Streamlit**.
+
+---
+## Projeto 4. Máquinas Virtuais (VMs) no Azure  
 VMs no Azure permitem criar máquinas para processamento de dados e desenvolvimento de aplicações.  
 
 ### Configuração de uma VM  
