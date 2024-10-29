@@ -776,6 +776,10 @@ Essa arquitetura é ideal para pipelines de dados seguros e de alta performance,
 
 ### **Projeto 5. Criação de Banco de Dados SQL e Inserção de Dados com Streamlit**
 
+Necessário baixar o driver de sqlserver
+
+https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?redirectedfrom=MSDN&view=sql-server-ver16
+
 #### **1. Criando o Banco de Dados SQL no Azure**
 
 1. Acesse o portal Azure ([portal.azure.com](https://portal.azure.com)).
@@ -798,6 +802,14 @@ Essa arquitetura é ideal para pipelines de dados seguros e de alta performance,
 3. Copie a **string de conexão** do banco para utilizá-la no código.
 
 #### **3. Configurando o Projeto em Python com Streamlit**
+
+```sql
+CREATE TABLE pessoas (
+    id INT IDENTITY(1,1) PRIMARY KEY,  -- Coluna com auto incremento
+    nome VARCHAR(100) NOT NULL,         -- Nome com limite de 100 caracteres
+    idade INT NOT NULL                  -- Idade como número inteiro
+);
+```
 
 1. Instale as dependências no terminal:
    ```bash
