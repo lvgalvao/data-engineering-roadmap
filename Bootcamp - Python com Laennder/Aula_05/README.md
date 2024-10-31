@@ -1,144 +1,36 @@
-**Aula de 3 Horas: Construindo um Projeto ETL com Python e Scrapy**
-
----
-
-**Objetivo da Aula:**
-
-- Desenvolver um pipeline ETL completo que coleta dados do Mercado Livre utilizando Scrapy.
-- Ensinar passo a passo desde a instalação das ferramentas até a implementação completa do projeto.
-- Proporcionar experiência prática em web scraping, processamento e armazenamento de dados usando Python.
-
----
-
-**Estrutura da Aula:**
-
-### **1ª Hora: Introdução e Preparação do Ambiente**
-
-**1.1 Introdução ao Projeto**
-
-- Conceito de ETL (Extract, Transform, Load).
-- Visão geral sobre o Scrapy e suas vantagens.
-- Objetivos específicos do projeto:
-  - Coletar dados de produtos do Mercado Livre.
-  - Processar e armazenar os dados coletados.
-
-**1.2 Preparação do Ambiente**
-
-- **Instalação do Python**
-  - Verificação da versão instalada.
-  - Links para download caso não esteja instalado.
-- **Criação de Ambiente Virtual**
-  - Uso do `venv` para isolamento de dependências.
-  - Ativação do ambiente virtual.
-- **Instalação do Scrapy**
-  - Comandos para instalação via `pip`.
-  - Verificação da instalação.
-
-**1.3 Configuração do Projeto**
-
-- **Inicialização do Projeto Scrapy**
-  - Comando `startproject` e sua estrutura.
-- **Exploração da Estrutura de Pastas**
-  - Explicação dos principais arquivos e pastas:
-    - `scrapy.cfg`
-    - Diretório do projeto
-    - Diretório `spiders`
-
----
-
-### **2ª Hora: Desenvolvimento do Spider para o Mercado Livre**
-
-**2.1 Análise do Site do Mercado Livre**
-
-- **Entendendo a Estrutura do Site**
-  - Identificação das URLs iniciais.
-  - Uso do Inspetor de Elementos do navegador para encontrar seletores CSS ou XPath.
-
-**2.2 Criação do Spider**
-
-- **Gerando um Novo Spider**
-  - Comando `genspider` e suas opções.
-- **Definição das Configurações Básicas**
-  - Nome do spider.
-  - Domínios permitidos.
-  - URLs de início (`start_urls`).
-
-**2.3 Implementação dos Métodos de Extração**
-
-- **Método `parse`**
-  - Extração de dados desejados (título, preço, link, etc.).
-- **Tratamento de Paginação**
-  - Identificação do link para a próxima página.
-  - Implementação da navegação entre páginas.
-
----
-
-### **3ª Hora: Processamento e Armazenamento dos Dados**
-
-**3.1 Processamento dos Dados**
-
-- **Uso de Pipelines do Scrapy**
-  - Criação de um pipeline para limpeza de dados.
-  - Ativação do pipeline no arquivo `settings.py`.
-
-**3.2 Armazenamento em Banco de Dados**
-
-- **Configuração do Banco de Dados**
-  - Escolha entre SQLite ou PostgreSQL (para fins educacionais, SQLite é mais simples).
-  - Instalação das bibliotecas necessárias (`sqlite3` ou `psycopg2`).
-
-- **Integração com o Scrapy**
-  - Modificação do pipeline para inserir dados no banco de dados.
-  - Criação de tabelas e gerenciamento de conexões.
-
-**3.3 Execução e Testes Finais**
-
-- **Rodando o Spider**
-  - Comando para executar o spider.
-  - Verificação dos dados no banco de dados.
-- **Depuração e Solução de Problemas**
-  - Análise de erros comuns.
-  - Boas práticas para evitar bloqueios e captchas.
-
-**3.4 Encerramento da Aula**
-
-- **Recapitulando o Aprendido**
-  - Revisão dos principais pontos.
-- **Dicas e Melhores Práticas**
-  - Ética no web scraping.
-  - Respeito ao arquivo `robots.txt`.
-- **Próximos Passos**
-  - Como expandir o projeto.
-  - Integração com outras ferramentas (visualização de dados, por exemplo).
-
----
-
-## **README.md**
-
-```markdown
 # Projeto ETL com Python e Scrapy - Coleta de Dados do Mercado Livre
 
 Este projeto demonstra como construir um pipeline ETL utilizando Python e Scrapy para coletar dados do Mercado Livre, processá-los e armazená-los em um banco de dados SQL.
 
 ## **Índice**
 
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Inicialização do Projeto Scrapy](#inicialização-do-projeto-scrapy)
-- [Criação do Spider para o Mercado Livre](#criação-do-spider-para-o-mercado-livre)
-- [Execução do Spider](#execução-do-spider)
-- [Processamento e Armazenamento dos Dados](#processamento-e-armazenamento-dos-dados)
-- [Recursos Adicionais](#recursos-adicionais)
+- [Projeto ETL com Python e Scrapy - Coleta de Dados do Mercado Livre](#projeto-etl-com-python-e-scrapy---coleta-de-dados-do-mercado-livre)
+  - [**Índice**](#índice)
+  - [**Pré-requisitos**](#pré-requisitos)
+  - [**Instalação**](#instalação)
+    - [**1. Instale o Python**](#1-instale-o-python)
+    - [**2. Crie um Ambiente Virtual**](#2-crie-um-ambiente-virtual)
+    - [**3. Instale o Scrapy**](#3-instale-o-scrapy)
+  - [**Inicialização do Projeto Scrapy**](#inicialização-do-projeto-scrapy)
+  - [**Criação do Spider para o Mercado Livre**](#criação-do-spider-para-o-mercado-livre)
+    - [**Editar o Spider**](#editar-o-spider)
+  - [**Execução do Spider**](#execução-do-spider)
+  - [**Processamento e Armazenamento dos Dados**](#processamento-e-armazenamento-dos-dados)
+    - [**1. Configurar o Pipeline**](#1-configurar-o-pipeline)
+    - [**2. Ativar o Pipeline**](#2-ativar-o-pipeline)
+  - [**Recursos Adicionais**](#recursos-adicionais)
+  - [**Observações Finais**](#observações-finais)
 
 ---
 
 ## **Pré-requisitos**
 
-- **Python 3.6+**
+- **Python 3.12+**
 - **Pip** (gerenciador de pacotes do Python)
-- **Virtualenv** (opcional, mas recomendado)
 - **Bibliotecas Python:**
   - Scrapy
+  - Pandas
+  - Streaming
 
 ## **Instalação**
 
