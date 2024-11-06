@@ -28,59 +28,17 @@ Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que voc
 | ![parte_01](pics/youtube/como_instalar_python_em_2024_parte_01.jpg) | Python, Git, GitHub e VSCode | Tutorial de como configurar um ambiente de desenvolvimento para engenharia de dados com foco no mercado de trabalho. | [Link para o vídeo](https://www.youtube.com/watch?v=video_id) |
 | ![parte_02](pics/youtube/como_instalar_python_em_2024_parte_02.jpg) | Python, Pyenv, PIP, VENV, PIPX e Poetry | Segunda parte do tutorial de como configurar um ambiente de desenvolvimento para engenharia de dados com foco no mercado de trabalho. | [Link para o vídeo](https://www.youtube.com/watch?v=-M4pMd2yQOM&t=1s) |
 
-Aqui está o README padronizado e ajustado para manter uma estrutura clara e consistente no GitHub principal da Jornada de Dados:
-
 ---
 
-# Próximos Workshops e Eventos
+# Eventos de Novembro
 
-## **Workshops: Jornada Cloud**  
+[![Se inscreva no Workshop](.;pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g)
 
-### **26 de outubro – ETL com Python, AI, N8N e API WhatsApp**  
-🔗 **[Garanta sua vaga aqui](https://suajornadadedados.com.br/workshop-python-ai-whatsapp/?utm_source=linkedin&utm_medium=social-organico&utm_campaign=live2-outubro-24)**  
-**Github:** [Repositório](https://github.com/lvgalvao/etl-nifi-n8n-chatgpt-whatsapp)
-**Tema:** Automação de Pipelines com Ferramentas de Low-Code  
-**Descrição:** Capacitação completa e ao vivo de 9 horas, onde você aprenderá a desenvolver uma **pipeline avançada** para integração de dados utilizando **Python**, **AI**, **N8N** e a **API do WhatsApp**.  
 
-**Case Prático:**  
-- Monitorar **preços de Bitcoin** em tempo real.  
-- **Armazenar dados** para análise histórica.  
-- Verificar se o preço atingiu valores **máximos ou mínimos** registrados.  
-- Enviar **alertas automáticos** via **WhatsApp** e **Telegram**.
-
----
-
-### **29 de outubro – Observabilidade Focada em Streaming de Dados**  
-**Tema:** Monitoramento em Tempo Real para Pipelines de Streaming  
-**Descrição:** Aprenda a aplicar práticas de **observabilidade** para garantir **estabilidade e eficiência** em pipelines de dados em tempo real, capturando métricas e logs críticos e detectando anomalias rapidamente.  
-
-#### **O que você vai aprender:**  
-- Configuração de métricas para monitoramento em tempo real.  
-- Captura de logs relevantes para resolução de incidentes.  
-- Criação de alertas inteligentes para eventos críticos.  
-- Integração com plataformas de observabilidade e serviços de streaming.
-
----
-
-## **Eventos no YouTube**  
-
-- **05 de novembro** – **Lucas Fernandes da Costa**  
-  - **Tema:** Construindo Data Apps com Briefer  
-  - **Skill:** Briefer e Análise de Dados  
-  - [Perfil no LinkedIn](https://www.linkedin.com/in/lucasfdacosta/)  
-
-- **11 de novembro** – **ETL Python do Zero - Web Scraping**  
-  - **Tema:** Construindo nossa Primeira ETL com Python  
-  - **Skill:** Python, SQL e Power BI  
-
-- **12 de novembro** – **Tatiana Al-Chueyr Martins**  
-  - **Tema:** DAG Factory: Deploy de Workflows no Airflow com YAML  
-  - **Skill:** Engenharia de Dados, Airflow e Deploy  
-  - [Perfil no LinkedIn](https://www.linkedin.com/in/tatialchueyr/)  
-
-- **13 de novembro** – **Quem Sabe Faz ao Vivo**  
-  - **Tema:** Sessão de Live Coding e Desafios ao Vivo  
-  - **Skill:** Desenvolvimento Prático e Resolução de Problemas  
+| Data              | Evento                                      | Tema                                                  | Skill                           | Capa                      |
+|-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
+| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | Python, SQL e Power BI          | ![Capa do Evento](./pics/convidados/webscraping.jpg) |
+| 13 de novembro    | **Tatiana Al-Chueyr Martins**               | DAG Factory: Deploy de Workflows no Airflow com YAML  | Engenharia de Dados, Airflow e Deploy | ![Capa do Evento](./pics/convidados/airflow.png) |
 
 - **26 de novembro** – **Marcelo Trylesinski**  
   - **Tema:** Observabilidade Descomplicada  
@@ -90,16 +48,16 @@ Aqui está o README padronizado e ajustado para manter uma estrutura clara e con
 
 ---
 
+### Youtube antigo
+
+![capa](./pics/convidados/briefer.jpg)
+  - **Tema:** Construindo Data Apps com Briefer  
+  - **Skill:** Briefer e Análise de Dados  
+  - [Perfil no LinkedIn](https://www.linkedin.com/in/lucasfdacosta/)  
+
+---
+
 ## **Repositório – Projetos Cloud**  
-
-### **Azure**  
-- **05 de novembro – Projeto ETL com Azure (12h às 14h)**  
-  **Tema:** Processando dados entre instâncias de **Blob Storage** e **VMs**.  
-  **Skill:** Cloud Computing com Azure, ETL, IAM  
-
-- **12 de novembro – Lambda no Azure: Automação com Azure Functions (12h às 14h)**  
-  **Tema:** Criação de automações serverless usando **Azure Functions** e **Blob Storage**.  
-  **Skill:** Azure Functions, Serverless, Cloud  
 
 ### **GCP**  
 - **19 de novembro – Primeiros Passos no GCP (12h às 14h)**  
@@ -140,6 +98,34 @@ Workshops é uma imersão ao vivo sobre determinada ferramenta, onde você pode 
 | ![Workshop 16](pics/workshops/Workshop-16-png.png) | **Streamlit Dashboard** | Crie dashboards interativos para visualização de dados utilizando Streamlit. | [Link](./Workshop-17/) |
 | ![Workshop 12](pics/workshops/Workshop-12-png.png) | **Terraform** | Automatize a sua infraestrutura com Terraform. | [Link](./Workshop-17/) |
 | ![Workshop 17](pics/workshops/Workshop-17-png.png) | **Extração de dados em PDF e Regex** | Aprenda técnicas de extração de dados de PDFs e uso de expressões regulares. | [Link](./Workshop-17/) |
+
+# Próximos Workshops e Eventos
+
+## **Workshops: Jornada Cloud**  
+
+### ETL com Python, AI, N8N e API WhatsApp**  
+🔗 **[Garanta sua vaga aqui](https://suajornadadedados.com.br/workshop-python-ai-whatsapp/?utm_source=linkedin&utm_medium=social-organico&utm_campaign=live2-outubro-24)**  
+**Github:** [Repositório](https://github.com/lvgalvao/etl-nifi-n8n-chatgpt-whatsapp)
+**Tema:** Automação de Pipelines com Ferramentas de Low-Code  
+**Descrição:** Capacitação completa e ao vivo de 9 horas, onde você aprenderá a desenvolver uma **pipeline avançada** para integração de dados utilizando **Python**, **AI**, **N8N** e a **API do WhatsApp**.  
+
+**Case Prático:**  
+- Monitorar **preços de Bitcoin** em tempo real.  
+- **Armazenar dados** para análise histórica.  
+- Verificar se o preço atingiu valores **máximos ou mínimos** registrados.  
+- Enviar **alertas automáticos** via **WhatsApp** e **Telegram**.
+
+---
+
+### **29 de outubro – Observabilidade Focada em Streaming de Dados**  
+**Tema:** Monitoramento em Tempo Real para Pipelines de Streaming  
+**Descrição:** Aprenda a aplicar práticas de **observabilidade** para garantir **estabilidade e eficiência** em pipelines de dados em tempo real, capturando métricas e logs críticos e detectando anomalias rapidamente.  
+
+#### **O que você vai aprender:**  
+- Configuração de métricas para monitoramento em tempo real.  
+- Captura de logs relevantes para resolução de incidentes.  
+- Criação de alertas inteligentes para eventos críticos.  
+- Integração com plataformas de observabilidade e serviços de streaming.
 
 ## Bootcamps Jornada de Dados
 
