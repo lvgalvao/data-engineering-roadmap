@@ -43,12 +43,11 @@ Se inscreva nos Workshops
 
 ---
 
-### Youtube antigo
+# Eventos de Novembro
 
-![capa](./pics/convidados/briefer.jpg)
-  - **Tema:** Construindo Data Apps com Briefer  
-  - **Skill:** Briefer e Análise de Dados  
-  - [Perfil no LinkedIn](https://www.linkedin.com/in/lucasfdacosta/)  
+| Data              | Evento                                      | Tema                                                  | Skill                           | Capa                      |
+|-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
+| 05 de novembro    | **Data Apps e dashboards**       | Construa Data Apps Completos           | Briefer, SQL e Python          | [![Se inscreva no Workshop](./pics/convidados/briefer.jpg)](https://youtube.com/live/z1EOlFV8g7g) | 
 
 ---
 
