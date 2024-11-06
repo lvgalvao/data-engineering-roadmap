@@ -32,19 +32,14 @@ Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que voc
 
 # Eventos de Novembro
 
-[![Se inscreva no Workshop](.;pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g)
+Se inscreva nos Workshops
 
 
 | Data              | Evento                                      | Tema                                                  | Skill                           | Capa                      |
 |-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
-| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | Python, SQL e Power BI          | ![Capa do Evento](./pics/convidados/webscraping.jpg) |
+| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | Python, SQL e Power BI          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
 | 13 de novembro    | **Tatiana Al-Chueyr Martins**               | DAG Factory: Deploy de Workflows no Airflow com YAML  | Engenharia de Dados, Airflow e Deploy | ![Capa do Evento](./pics/convidados/airflow.png) |
 
-- **26 de novembro** – **Marcelo Trylesinski**  
-  - **Tema:** Observabilidade Descomplicada  
-  - **Descrição:** Workshop apresentando a Logfire, plataforma de observabilidade criada pelos mantenedores do Pydantic.  
-  - **Skill:** Observabilidade, Pydantic e Desempenho em Aplicações  
-  - [Perfil no LinkedIn](https://www.linkedin.com/in/marcelotryle/)  
 
 ---
 
