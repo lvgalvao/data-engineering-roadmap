@@ -43,7 +43,7 @@ Se inscreva nos Workshops
 
 ---
 
-# Eventos de Novembro
+# Workshops no Youtube
 
 | Data              | Evento                                      | Tema                                                  | Skill                           | Capa                      |
 |-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
@@ -63,9 +63,6 @@ Se inscreva nos Workshops
   **Skill:** Cloud Functions, Serverless, GCP  
 
 ---
-
-## **Conclusão**  
-Aproveite cada workshop e projeto para expandir seu conhecimento e transformar sua carreira. Todos os eventos são voltados para proporcionar **aprendizado prático**, com foco em habilidades essenciais para o mercado de dados. 
 
 🚀 **Não perca nenhuma oportunidade!** Mantenha-se atualizado e participe dos nossos eventos para evoluir como profissional e dominar as tecnologias mais modernas.  
 
