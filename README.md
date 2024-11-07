@@ -37,7 +37,7 @@ Se inscreva nos Workshops
 
 | Data              | Evento                                      | Tema                                                  | Skill                           | Capa                      |
 |-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
-| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | Python, SQL e Power BI          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
+| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | Python, SQL e Web Scraping          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
 | 13 de novembro    | **Tatiana Al-Chueyr Martins**               | DAG Factory: Deploy de Workflows no Airflow com YAML  | Engenharia de Dados, Airflow e Deploy | ![Capa do Evento](./pics/convidados/airflow.png) |
 
 
