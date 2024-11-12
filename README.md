@@ -37,7 +37,7 @@ Se inscreva nos Workshops
 
 | Data              | Evento                                      | Tema                                                  | Github                           | Capa                      |
 |-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
-| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | https://github.com/lvgalvao/IphoneProjectWebScraping          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
+| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | [Github](https://github.com/lvgalvao/IphoneProjectWebScraping)          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
 | 13 de novembro    | **Tatiana Al-Chueyr Martins**               | DAG Factory: Deploy de Workflows no Airflow com YAML  |  | ![Capa do Evento](./pics/convidados/airflow.png) |
 
 Github: 
