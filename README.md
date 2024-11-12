@@ -35,11 +35,12 @@ Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que voc
 Se inscreva nos Workshops
 
 
-| Data              | Evento                                      | Tema                                                  | Skill                           | Capa                      |
+| Data              | Evento                                      | Tema                                                  | Github                           | Capa                      |
 |-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
-| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | Python, SQL e Power BI          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
-| 13 de novembro    | **Tatiana Al-Chueyr Martins**               | DAG Factory: Deploy de Workflows no Airflow com YAML  | Engenharia de Dados, Airflow e Deploy | ![Capa do Evento](./pics/convidados/airflow.png) |
+| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | https://github.com/lvgalvao/IphoneProjectWebScraping          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
+| 13 de novembro    | **Tatiana Al-Chueyr Martins**               | DAG Factory: Deploy de Workflows no Airflow com YAML  |  | ![Capa do Evento](./pics/convidados/airflow.png) |
 
+Github: 
 
 ---
 
@@ -90,22 +91,6 @@ Workshops é uma imersão ao vivo sobre determinada ferramenta, onde você pode 
 | ![Workshop 12](pics/workshops/Workshop-12-png.png) | **Terraform** | Automatize a sua infraestrutura com Terraform. | [Link](./Workshop-17/) |
 | ![Workshop 17](pics/workshops/Workshop-17-png.png) | **Extração de dados em PDF e Regex** | Aprenda técnicas de extração de dados de PDFs e uso de expressões regulares. | [Link](./Workshop-17/) |
 
-# Próximos Workshops e Eventos
-
-## **Workshops: Jornada Cloud**  
-
-### ETL com Python, AI, N8N e API WhatsApp**  
-🔗 **[Garanta sua vaga aqui](https://suajornadadedados.com.br/workshop-python-ai-whatsapp/?utm_source=linkedin&utm_medium=social-organico&utm_campaign=live2-outubro-24)**  
-**Github:** [Repositório](https://github.com/lvgalvao/etl-nifi-n8n-chatgpt-whatsapp)
-**Tema:** Automação de Pipelines com Ferramentas de Low-Code  
-**Descrição:** Capacitação completa e ao vivo de 9 horas, onde você aprenderá a desenvolver uma **pipeline avançada** para integração de dados utilizando **Python**, **AI**, **N8N** e a **API do WhatsApp**.  
-
-**Case Prático:**  
-- Monitorar **preços de Bitcoin** em tempo real.  
-- **Armazenar dados** para análise histórica.  
-- Verificar se o preço atingiu valores **máximos ou mínimos** registrados.  
-- Enviar **alertas automáticos** via **WhatsApp** e **Telegram**.
-
 ---
 
 ### **29 de outubro – Observabilidade Focada em Streaming de Dados**  
@@ -122,24 +107,32 @@ Workshops é uma imersão ao vivo sobre determinada ferramenta, onde você pode 
 
 Aqui estão todos os bootcamps disponíveis na Jornada de Dados:
 
-| Acesso e início | Bootcamp | Carga Horária | Link GitHub | Status |
-|-----------------|----------|---------------|-------------|--------|
-| Acesso Imediato | **Python para Dados** | 30 horas | [Link](#) | **Concluído** |
-| | *Descrição:* Aprenda os fundamentos de Python aplicados à engenharia de dados, incluindo bibliotecas como Pandas e NumPy, manipulação e limpeza de dados. |
-| Acesso Imediato | **SQL para Analytics Engineer** | 20 horas | [Link](#) | **Concluído** |
-| | *Descrição:* Domine conceitos avançados de SQL necessários para um Analytics Engineer, incluindo consultas complexas e otimização de desempenho. |
-| Acesso Imediato | **dbt-core** | 10 horas | [Link](#) | **Concluído** |
-| | *Descrição:* Utilize o dbt-core para transformar dados em seu data warehouse, implementando práticas modernas de engenharia de dados. |
-| Acesso Imediato | **Web Scraping Avançado** | 10 horas | [Link](#) | **Concluído** |
-| | *Descrição:* Aprenda técnicas avançadas de web scraping, extração de dados de sites complexos e manipulação de APIs. |
-| Acesso Imediato | **Power BI** | -- horas | [Link](#) | **Em andamento** |
-| | *Descrição:* Explore o Power BI para criar dashboards interativos e análises visuais de dados. |
-| Início 22/08 | **Cloud para Dados** | 30 horas | [Link](#) | **Em andamento** |
-| | *Descrição:* Conheça os serviços de nuvem aplicados à engenharia de dados nas plataformas AWS, Azure e GCP, e implemente soluções escaláveis. |
-| Janeiro | **Multi-engine ETL com Spark e DuckDB** | 20 horas | [Link](#) | **Previsto para Janeiro** |
-| | *Descrição:* Agendado para janeiro, este bootcamp ensinará como construir pipelines ETL utilizando múltiplos engines como Spark e DuckDB. |
-
-## Metodologia
+| Acesso e início       | Bootcamp                        | Carga Horária       | Link GitHub | Status        |
+|-----------------------|---------------------------------|----------------------|-------------|---------------|
+| Acesso Imediato       | **Python para Dados**           | 30 horas            | [Link](#)   | **Concluído** |
+|                       | *Descrição:* Aprenda os fundamentos de Python aplicados à engenharia de dados, incluindo bibliotecas como Pandas e NumPy, manipulação e limpeza de dados. |
+| Acesso Imediato       | **SQL para Analytics Engineer** | 20 horas            | [Link](#)   | **Concluído** |
+|                       | *Descrição:* Domine conceitos avançados de SQL necessários para um Analytics Engineer, incluindo consultas complexas e otimização de desempenho. |
+| Acesso Imediato       | **dbt-core**                   | 10 horas            | [Link](#)   | **Concluído** |
+|                       | *Descrição:* Utilize o dbt-core para transformar dados em seu data warehouse, implementando práticas modernas de engenharia de dados. |
+| Acesso Imediato       | **Web Scraping Avançado**       | 10 horas            | [Link](#)   | **Concluído** |
+|                       | *Descrição:* Aprenda técnicas avançadas de web scraping, extração de dados de sites complexos e manipulação de APIs. |
+| Acesso Imediato       | **Power BI**                    | -- horas            | [Link](#)   | **Concluído** |
+|                       | *Descrição:* Explore o Power BI para criar dashboards interativos e análises visuais de dados. |
+| Início 22/08          | **Cloud para Dados**            | 30 horas            | [Link](#)   | **Em andamento** |
+|                       | *Descrição:* Conheça os serviços de nuvem aplicados à engenharia de dados nas plataformas AWS, Azure e GCP, e implemente soluções escaláveis. |
+| **25 de Janeiro**     | **Engenharia de Dados com Spark e DuckDB** | Utilizando as principais engines | [Link](#) | **Previsto** |
+| **22 de Fevereiro**   | **Multi-engine ETL com Databricks e DuckDB** | 20 horas           | [Link](#) | **Previsto** |
+| **29 de Março**       | **Databricks**                  | Implementação de pipelines e análise de dados em Databricks. | [Link](#) | **Previsto** |
+| **26 de Abril**       | **BigQuery**                    | Utilização do BigQuery para grandes volumes de dados e análise eficiente. | [Link](#) | **Previsto** |
+| **31 de Maio**        | **Fabric**                      | Introdução ao Microsoft Fabric para a criação de soluções integradas de dados. | [Link](#) | **Previsto** |
+| **28 de Junho**       | Tema a definir                  | -                    | [Link](#) | **Previsto** |
+| **26 de Julho**       | Tema a definir                  | -                    | [Link](#) | **Previsto** |
+| **30 de Agosto**      | Tema a definir                  | -                    | [Link](#) | **Previsto** |
+| **27 de Setembro**    | Tema a definir                  | -                    | [Link](#) | **Previsto** |
+| **25 de Outubro**     | Tema a definir                  | -                    | [Link](#) | **Previsto** |
+| **29 de Novembro**    | Tema a definir                  | -                    | [Link](#) | **Previsto** |
+| **27 de Dezembro**    | Tema a definir                  | -                    | [Link](#) | **Previsto** |
 
 Acredito no ensino ao vivo, temos aulas todas as terças, YouTube e Bootcamps, e no último sábado do mês.
 
