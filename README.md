@@ -30,15 +30,22 @@ Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que voc
 
 ---
 
+# Próximos eventos
+
 # Eventos de Novembro
 
 Se inscreva nos Workshops
-
 
 | Data              | Evento                                      | Tema                                                  | Github                           | Capa                      |
 |-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
 | 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | [Github](https://github.com/lvgalvao/IphoneProjectWebScraping)          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
 | 13 de novembro    | **Tatiana Al-Chueyr Martins**               | DAG Factory: Deploy de Workflows no Airflow com YAML  |  | ![Capa do Evento](./pics/convidados/airflow.png) |
+| 21 de novembro    | **Observabilidade em 30 Minutos**           | Explorando o conceito de observabilidade              | -                                 | ![Capa do Evento](./pics/convidados/observabilidade.png) |
+| 26 de novembro    | **Explorando Logfire, o Produto da Pydantic**| Demonstração prática de Logfire com Pydantic          | -                                 | ![Capa do Evento](./pics/convidados/logfire.png) |
+| 27 de novembro    | **Quem Sabe Faz ao Vivo**                   | Resolução de problemas ao vivo                        | -                                 | ![Capa do Evento](./pics/convidados/live.png) |
+| 28 de novembro    | **Engenharia de dados em 2025** | Lançamento e visão geral                              | -                                 | ![Capa do Evento](./pics/convidados/bootcamp.png) |
+| 30 de novembro    | **Observabilidade**                         | Workshop prático de observabilidade aplicada          | [Data observability workshop](https://github.com/lvgalvao/data-observability-workshop)                                 | ![Capa do Evento](./pics/convidados/workshop-observabilidade.png) |
+
 
 Github: 
 
@@ -49,19 +56,6 @@ Github:
 | Data              | Evento                                      | Tema                                                  | Skill                           | Capa                      |
 |-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
 | 05 de novembro    | **Data Apps e dashboards**       | Construa Data Apps Completos           | Briefer, SQL e Python          | [![Se inscreva no Workshop](./pics/convidados/briefer.jpg)](https://youtube.com/live/z1EOlFV8g7g) | 
-
----
-
-## **Repositório – Projetos Cloud**  
-
-### **GCP**  
-- **19 de novembro – Primeiros Passos no GCP (12h às 14h)**  
-  **Tema:** Desenvolvendo uma ETL com **Cloud Storage** e **Compute Engine**.  
-  **Skill:** Cloud Computing com GCP, ETL, Networking  
-
-- **26 de novembro – Automação com Cloud Functions (12h às 14h)**  
-  **Tema:** Implementação de automações utilizando **Cloud Functions** e integração com **Cloud Storage**.  
-  **Skill:** Cloud Functions, Serverless, GCP  
 
 ---
 
@@ -121,18 +115,6 @@ Aqui estão todos os bootcamps disponíveis na Jornada de Dados:
 |                       | *Descrição:* Explore o Power BI para criar dashboards interativos e análises visuais de dados. |
 | Início 22/08          | **Cloud para Dados**            | 30 horas            | [Link](#)   | **Em andamento** |
 |                       | *Descrição:* Conheça os serviços de nuvem aplicados à engenharia de dados nas plataformas AWS, Azure e GCP, e implemente soluções escaláveis. |
-| **25 de Janeiro**     | **Engenharia de Dados com Spark e DuckDB** | Utilizando as principais engines | [Link](#) | **Previsto** |
-| **22 de Fevereiro**   | **Multi-engine ETL com Databricks e DuckDB** | 20 horas           | [Link](#) | **Previsto** |
-| **29 de Março**       | **Databricks**                  | Implementação de pipelines e análise de dados em Databricks. | [Link](#) | **Previsto** |
-| **26 de Abril**       | **BigQuery**                    | Utilização do BigQuery para grandes volumes de dados e análise eficiente. | [Link](#) | **Previsto** |
-| **31 de Maio**        | **Fabric**                      | Introdução ao Microsoft Fabric para a criação de soluções integradas de dados. | [Link](#) | **Previsto** |
-| **28 de Junho**       | Tema a definir                  | -                    | [Link](#) | **Previsto** |
-| **26 de Julho**       | Tema a definir                  | -                    | [Link](#) | **Previsto** |
-| **30 de Agosto**      | Tema a definir                  | -                    | [Link](#) | **Previsto** |
-| **27 de Setembro**    | Tema a definir                  | -                    | [Link](#) | **Previsto** |
-| **25 de Outubro**     | Tema a definir                  | -                    | [Link](#) | **Previsto** |
-| **29 de Novembro**    | Tema a definir                  | -                    | [Link](#) | **Previsto** |
-| **27 de Dezembro**    | Tema a definir                  | -                    | [Link](#) | **Previsto** |
 
 Acredito no ensino ao vivo, temos aulas todas as terças, YouTube e Bootcamps, e no último sábado do mês.
 
