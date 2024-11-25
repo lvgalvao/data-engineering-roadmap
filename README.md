@@ -137,3 +137,7 @@ Você pode acessar nossa plataforma, que disponibiliza um ambiente amigável par
 ## Possui dúvidas?
 
 - Fale comigo [no LinkedIn](https://www.linkedin.com/in/lucianovasconcelosf/)
+
+## Como sugerir temas para próximos workshops?
+
+- [Abra uma issue](https://github.com/lvgalvao/data-engineering-roadmap/issues)
