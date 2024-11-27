@@ -30,21 +30,18 @@ Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que voc
 
 ---
 
-# Próximos eventos
+# Lives no Youtube
 
-# Eventos de Novembro
+# Sumário:
+# Sumário:
 
-Se inscreva nos Workshops
-
-| Data              | Evento                                      | Tema                                                  | Github                           | Capa                      |
-|-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
-| 12 de novembro    | **ETL Python do Zero - Web Scraping**       | Construindo nossa Primeira ETL com Python             | [Github](https://github.com/lvgalvao/IphoneProjectWebScraping)          | [![Se inscreva no Workshop](./pics/convidados/webscraping.jpg)](https://youtube.com/live/z1EOlFV8g7g) |
-| 13 de novembro    | **Tatiana Al-Chueyr Martins**               | DAG Factory: Deploy de Workflows no Airflow com YAML  |  | ![Capa do Evento](./pics/convidados/airflow.png) |
-| 21 de novembro    | **Observabilidade em 30 Minutos**           | Explorando o conceito de observabilidade              | -                                 | ![Capa do Evento](./pics/convidados/observabilidade.png) |
-| 26 de novembro    | **Explorando Logfire, o Produto da Pydantic**| Demonstração prática de Logfire com Pydantic          | -                                 | ![Capa do Evento](./pics/convidados/logfire.png) |
-| 27 de novembro    | **Quem Sabe Faz ao Vivo**                   | Resolução de problemas ao vivo                        | -                                 | ![Capa do Evento](./pics/convidados/live.png) |
-| 28 de novembro    | **Engenharia de dados em 2025** | Lançamento e visão geral                              | -                                 | ![Capa do Evento](./pics/convidados/bootcamp.png) |
-| 30 de novembro    | **Observabilidade**                         | Workshop prático de observabilidade aplicada          | [Data observability workshop](https://github.com/lvgalvao/data-observability-workshop)                                 | ![Capa do Evento](./pics/convidados/workshop-observabilidade.png) |
+| N   | Link                                                   | Código                                                    | Slides                                                                                     | Título                                                   | Convidado              | Duração   |
+| --- | ------------------------------------------------------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------- | ---------------------- | ---------- |
+| 275 | [link](https://youtu.be/QYc7MeBUiHg)                  |                                                           | [slides](https://github.com/dunossauro/live-de-python/blob/main/slides/Live%20de%20Python%20%23275.pdf) | Novidades da versão 3.13 do Python                      | -                      | 1h20min   |
+| 274 | [link](https://youtu.be/L3hS-Zc7elA)                  |                                                           |                                                                                            | Arquitetura limpa com ‪@ProgramadorLhama‬               | @ProgramadorLhama      | 1h15min   |
+| 273 | [link](https://youtu.be/muNoGfEGVSE)                  | [codigo](https://github.com/dunossauro/live-de-python/blob/main/codigo/Live273) | [slides](https://github.com/dunossauro/live-de-python/blob/main/slides/Live%20de%20Python%20%23273.pdf) | Singleton / Borg - Padrões de Projeto #8               | -                      | 1h10min   |
+| 272 | [link](https://youtu.be/c8ZxdwTv8N8)                  |                                                           | [slides](https://github.com/dunossauro/live-de-python/blob/main/slides/Live%20de%20Python%20%23272.pdf) | Interpretador adaptativo especializado - Como o desempenho do Python melhorou? | -                      | 1h30min   |
+| 271 | [link](https://youtu.be/AP5p8QHoVzg)                  |                                                           |                                                                                            | Pergunte o que quiser sobre Python                     | -                      | 1h        |
 
 
 Github: 
