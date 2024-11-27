@@ -50,9 +50,15 @@ Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que voc
 
 Esse formato padronizado facilita a navegação, proporciona clareza e mantém a consistência em todos os workshops e eventos da Jornada de Dados.
 
-## Workshops disponíveis na Jornada de dados
+## Próximos Workshops
 
-Workshops é uma imersão ao vivo sobre determinada ferramenta, onde você pode tirar dúvidas e aprender em grupo.
+Workshops é uma imersão ao vivo sobre determinada ferramenta, onde você pode tirar dúvidas e aprender em grupo. **Ele é exclusivo dos profissionais que fazem parte da comunidade Jornada de dados.**
+
+| Imagem | Skills | Objetivo | Repositório |
+|--------|--------|----------|-------------|
+| ![Github](pics/workshops/observabilidade.jpeg) | **Observabilidade em Pipeline de Dados** | Aprenda a com observabilidade, métricas, logs e traces | [Link]([./Workshop%20-%20Git%20e%20Github](https://github.com/lvgalvao/dataeng-observability-workshop)) |
+
+## Workshops disponíveis na Jornada de dados
 
 | Imagem | Skills | Objetivo | Repositório |
 |--------|--------|----------|-------------|
