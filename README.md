@@ -56,7 +56,7 @@ Workshops é uma imersão ao vivo sobre determinada ferramenta, onde você pode 
 
 | Imagem | Skills | Objetivo | Repositório |
 |--------|--------|----------|-------------|
-| ![Github](pics/workshops/observabilidade.jpeg) | **Observabilidade em Pipeline de Dados** | Aprenda a com observabilidade, métricas, logs e traces | [Link]([./Workshop%20-%20Git%20e%20Github](https://github.com/lvgalvao/dataeng-observability-workshop)) |
+| ![Github](pics/workshops/observabilidade.jpeg) | **Observabilidade em Pipeline de Dados** | Aprenda a com observabilidade, métricas, logs e traces | [Link](https://github.com/lvgalvao/dataeng-observability-workshop) |
 
 ## Workshops disponíveis na Jornada de dados
 
