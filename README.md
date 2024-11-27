@@ -30,29 +30,17 @@ Ter um ambiente bem configurado facilitará seu aprendizado e permitirá que voc
 
 ---
 
-# Lives no Youtube
+# Lives no Youtube:
 
 # Sumário:
-# Sumário:
 
-| N   | Link                                                   | Código                                                    | Slides                                                                                     | Título                                                   | Convidado              | Duração   |
-| --- | ------------------------------------------------------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------- | ---------------------- | ---------- |
-| 275 | [link](https://youtu.be/QYc7MeBUiHg)                  |                                                           | [slides](https://github.com/dunossauro/live-de-python/blob/main/slides/Live%20de%20Python%20%23275.pdf) | Novidades da versão 3.13 do Python                      | -                      | 1h20min   |
-| 274 | [link](https://youtu.be/L3hS-Zc7elA)                  |                                                           |                                                                                            | Arquitetura limpa com ‪@ProgramadorLhama‬               | @ProgramadorLhama      | 1h15min   |
-| 273 | [link](https://youtu.be/muNoGfEGVSE)                  | [codigo](https://github.com/dunossauro/live-de-python/blob/main/codigo/Live273) | [slides](https://github.com/dunossauro/live-de-python/blob/main/slides/Live%20de%20Python%20%23273.pdf) | Singleton / Borg - Padrões de Projeto #8               | -                      | 1h10min   |
-| 272 | [link](https://youtu.be/c8ZxdwTv8N8)                  |                                                           | [slides](https://github.com/dunossauro/live-de-python/blob/main/slides/Live%20de%20Python%20%23272.pdf) | Interpretador adaptativo especializado - Como o desempenho do Python melhorou? | -                      | 1h30min   |
-| 271 | [link](https://youtu.be/AP5p8QHoVzg)                  |                                                           |                                                                                            | Pergunte o que quiser sobre Python                     | -                      | 1h        |
-
-
-Github: 
-
----
-
-# Workshops no Youtube
-
-| Data              | Evento                                      | Tema                                                  | Skill                           | Capa                      |
-|-------------------|---------------------------------------------|-------------------------------------------------------|---------------------------------|---------------------------|
-| 05 de novembro    | **Data Apps e dashboards**       | Construa Data Apps Completos           | Briefer, SQL e Python          | [![Se inscreva no Workshop](./pics/convidados/briefer.jpg)](https://youtube.com/live/z1EOlFV8g7g) | 
+| N   | Link                                                   | Código                                                    | Slides                                                                                     | Título                                                                                      | Convidado              | Duração   |
+| --- | ------------------------------------------------------ | --------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
+| 5   | [link](https://youtube.com/live/IQtuWsNmB4o)          |                                                           |                                                                                            | Qualidade de dados em ETL com Pandera e Python: Um Guia para Contrato de Dados             | Renan Heckert          | 1h30min   |
+| 4   | [link](https://youtube.com/live/n3R0c2ZB6BQ)          |                                                           |                                                                                            | Pipeline ETL Python - Monitoramento de Preços de Commodities com SQL e dbt-core (Data Warehouse) | Kaio Silva             | 2h50min   |
+| 3   | [link](https://youtube.com/live/qNu1VCtUedg)          |                                                           |                                                                                            | Pipeline ETL Python - Web Scraping com Scrapy                                              | Fabio Melo             | 2h30min   |
+| 2   | [link](https://youtube.com/live/4w6UQNn_6X0)          |                                                           |                                                                                            | Projeto completo de Modern Data Stack com SQL                                              | @MarcLamberti          | 7h        |
+| 1   | [link](https://youtube.com/live/4w6UQNn_6X0)          |                                                           |                                                                                            | Criando ETL com Python e DUCKDB: Do Zero ao Deploy                                         | @mehdio                | 2h30min   |
 
 ---
 
