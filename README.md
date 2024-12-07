@@ -25,8 +25,6 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 
 ## Próximos Eventos
 
-### **Workshops**
-
 | Nome                                      | Onde     | Data   | Mês       |
 |-------------------------------------------|----------|--------|-----------|
 | ETL no SQL vs noSQL                       | Jornada  | 10/12  | Dezembro  |
@@ -38,7 +36,7 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 | Workshop de Deploy no Kubernetes para Dados| Jornada | 24/02  | Fevereiro |
 | Bootcamp de AI Agents                     | Jornada  | 27/03  | Março     |
 
-### **Lives no YouTube**
+## Histórico youtube
 
 | Nome                                      | Link                                                    | Duração  |
 |-------------------------------------------|---------------------------------------------------------|----------|
@@ -50,11 +48,7 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 
 ---
 
-🚀 **Não perca nenhuma oportunidade!** Mantenha-se atualizado e participe dos nossos eventos para evoluir como profissional e dominar as tecnologias mais modernas.  
-
----
-
-## Histórico de Treinamentos
+## Especialização Jornada de dados
 
 | Nome do Treinamento                     | Link GitHub | Status       | Descrição                                                                              |
 |-----------------------------------------|-------------|--------------|---------------------------------------------------------------------------------------|
