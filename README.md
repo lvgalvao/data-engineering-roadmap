@@ -54,9 +54,16 @@ Esse formato padronizado facilita a navegação, proporciona clareza e mantém a
 
 Workshops é uma imersão ao vivo sobre determinada ferramenta, onde você pode tirar dúvidas e aprender em grupo. **Ele é exclusivo dos profissionais que fazem parte da comunidade Jornada de dados.**
 
-| Imagem | Skills | Objetivo | Repositório |
-|--------|--------|----------|-------------|
-| ![Github](pics/workshops/observabilidade.jpeg) | **Observabilidade em Pipeline de Dados** | Aprenda a com observabilidade, métricas, logs e traces | [Link](https://github.com/lvgalvao/dataeng-observability-workshop) |
+| Nome                                      | Onde     | Data   | Mês       |
+|-------------------------------------------|----------|--------|-----------|
+| ETL no SQL vs noSQL                       | Jornada  | 10/12  | Dezembro  |
+| Live convidado                            | Jornada  | 12/12  | Dezembro  |
+| ETL Extração de API do zero               | Jornada  | 17/12  | Dezembro  |
+| Pipeline de dados no Azure                | Jornada  | 21/12  | Dezembro  |
+| Bootcamp de Databricks e DuckDB           | Jornada  | 25/01  | Janeiro   |
+| Workshop semanal (todas as terças)        | YouTube  | -      | Janeiro   |
+| Workshop de Deploy no Kubernetes para Dados| Jornada | 24/02  | Fevereiro |
+| Bootcamp de AI Agents                     | Jornada  | 27/03  | Março     |
 
 ## Workshops disponíveis na Jornada de dados
 
