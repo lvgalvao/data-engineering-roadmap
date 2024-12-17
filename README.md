@@ -36,15 +36,34 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 | Workshop de Deploy no Kubernetes para Dados| Jornada | 24/02  | Fevereiro |
 | Bootcamp de AI Agents                     | Jornada  | 27/03  | Março     |
 
-## Histórico youtube
+# Workshops
 
-| Nome                                      | Link                                                    | Duração  |
-|-------------------------------------------|---------------------------------------------------------|----------|
-| Qualidade de dados em ETL com Pandera e Python: Um Guia para Contrato de Dados | [Assistir no YouTube](https://youtube.com/live/IQtuWsNmB4o) | 1h30min  |
-| Pipeline ETL Python - Monitoramento de Preços de Commodities com SQL e dbt-core | [Assistir no YouTube](https://youtube.com/live/n3R0c2ZB6BQ) | 2h50min  |
-| Pipeline ETL Python - Web Scraping com Scrapy | [Assistir no YouTube](https://youtube.com/live/qNu1VCtUedg) | 2h30min  |
-| Projeto completo de Modern Data Stack com SQL | [Assistir no YouTube](https://youtube.com/live/4w6UQNn_6X0) | 7h       |
-| Criando ETL com Python e DUCKDB: Do Zero ao Deploy | [Assistir no YouTube](https://youtube.com/live/4w6UQNn_6X0) | 2h30min  |
+## Youtube - Vídeos tutoriais
+| Nome                                      | Link                                                    | Duração  | Stack |
+|-------------------------------------------|---------------------------------------------------------|----------|------ |
+| Top 5 Projetos de Engenharia de Dados Aprenda ETL, Python e SQL Gratuitamente! | [Assistir no YouTube](https://www.youtube.com/watch?v=ldjbV_0mqXI) | 14min | Python, DuckDB, Spark, GitHub, Docker |
+| O que é CLOUD? Explicação COMPLETA para DADOS (Deploy Python e SQL na AWS, Azure, GCP com Terraform) | [Assistir no YouTube](https://www.youtube.com/watch?v=Iff6Nr3sK4U) | 15min | Python, GitHub, AWS, Azur, GCP, SQL, Docker, Terraform |
+| Como fazer o Deploy de Airflow na EC2 AWS | [Assistir no YouTube](https://www.youtube.com/watch?v=aYLmKbxXcls) | 14min | AWS, EC2, Airflow | 
+| Amazon SQS e Rabbit MQ eu preciso mesmo disso? | [Assistir no YouTube](https://www.youtube.com/watch?v=sSBFCffBSac) | 5min | SQS, Rabbit MQ | 
+| Segredos para economizar com a AWS | [Assistir no YouTube](https://www.youtube.com/watch?v=aKvCjSQHb_w) | 5min | AWS | 
+| CRUD, qual a vantagem de usar um ORM? | [Assistir no YouTube](https://www.youtube.com/watch?v=hl5YjfvqkB0) | 6min | SQL Alchemy, Python, ORM, SQL | 
+| Como instalar Python em 2024 + Pyenv, PIP, VENV, PIPX e Poetry | [Assistir no YouTube](https://www.youtube.com/watch?v=9LYqtLuD7z4) | 33min | Pyenv, PIP, VENV, PIPX, Poetry, Python | 
+| Como instalar Python em 2024 + VSCode, Git e GitHub do Zero | [Assistir no YouTube](https://www.youtube.com/watch?v=-M4pMd2yQOM) | 33min | Python, VSCode, Git, GitHub | 
+| O que é o arquivo __init__.py em Python? Explicado com 4 exemplos | [Assistir no YouTube](https://www.youtube.com/watch?v=H7rINLV6e0I) | 14min | Python | 
+
+
+## Youtube - Workshops ao vivo - Lives abertas
+
+| Nome                                      | Link                                                    | Duração  | Stack |
+|-------------------------------------------|---------------------------------------------------------|----------|------ |
+| WORKSHOP ABERTO #1 - DO ZERO AO DEPLOY COM LUCIANO | [Assistir no YouTube](https://www.youtube.com/watch?v=HxY2UhHkFWA) | 2h  | GitHub, VirtualEnv, TDD, taskipy, pytest, Streamlit, Selenium, Pydantic, MkDocs |
+| Criando ETL Com Python e DUCKDB DO ZERO AO DEPLOY ft. [@mehd-io](https://github.com/mehd-io) | [Assistir no YouTube](https://www.youtube.com/watch?v=4w6UQNn_6X0) | 1h47min  | DuckDB, SQL, S3, CSV, JSON, MotherDuck, Streamlit, Docker, Render |
+| CRIANDO ETL COM PYTHON E DUCKDB DO ZERO AO DEPLOY | [Assistir no YouTube](https://www.youtube.com/watch?v=eXXImkz-vMs) | 2h32min  | DuckDB, SQLAlchemy, Google Drive, SQL, Postgres, Python, CSV, Parquet, JSON, Streamlit, Docker, Render |
+| Modern Data Stack com SQL - Parte 1 de 3 ft. [@MarcLamberti](https://github.com/marclamberti) | [Assistir no YouTube](https://www.youtube.com/watch?v=lhMIMrEj_4Q) | 2h  | AirFlow, Astro-cli, Docker, Airbyte Cloud , Render, Postgres|
+| Modern Data Stack com SQL - Parte 2 de 3 | [Assistir no YouTube](https://www.youtube.com/watch?v=WG96Z7uGTHg) | 1h53min  | SQL, dbt, Render |
+| Modern Data Stack com SQL - Parte 3 de 3 | [Assistir no YouTube](https://www.youtube.com/watch?v=brfl7hdC060) | 1h53min  | Python, AirFlow, SQL, dbt, Render, Docker |
+
+
 
 ---
 
@@ -60,4 +79,4 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 
 ---
 
-Caso queira sugerir temas para próximos workshops, [abra uma issue](https://github.com/lvgalvao/data-engineering-roadmap/issues).
+Caso queira sugerir temas para próximos workshops, [abra uma issue](https://GitHub.com/lvgalvao/data-engineering-roadmap/issues).
