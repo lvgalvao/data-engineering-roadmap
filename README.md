@@ -53,9 +53,9 @@ ___
 
 ## Youtube - Workshops ao vivo - Lives abertas
 
-| Nome                                      | Link                                                    | Duração  | Stack |
+| Nome                                      | Link                                                    | Duração  | Stack/Github |
 |-------------------------------------------|---------------------------------------------------------|----------|------ |
-| Extração de API do zero | [Assistir no YouTube](https://youtube.com/live/xvCwZ73muV8) | 2h  | GitHub, Python, API, SQL, Azure, Streamlit |
+| Extração de API do zero | [Assistir no YouTube](https://youtube.com/live/xvCwZ73muV8) | 2h  | [GitHub, Python, API, SQL, Azure, Streamlit](https://github.com/lvgalvao/ETLProjectAPIExtract) |
 | Pipeline ETL - Web Scraping com Requests e Beautiful Soup 4 | [Assistir no YouTube](https://youtube.com/live/z1EOlFV8g7g) | 2h  | GitHub, Python, Requests e Beautiful Soup 4 |
 | Pipeline de Dados com GA4 e Typeform | [Assistir no YouTube](https://youtube.com/live/kt72obCvo0k) | 6h  | Python, SQL e Cursor AI |
 | Pipeline Gen AI - ETL com API e CRM de vendas | [Assistir no YouTube](https://youtube.com/live/I-4noY9hGTQ) | 6h  | Python, SQL, OpenAI, Langchain e Git  |
