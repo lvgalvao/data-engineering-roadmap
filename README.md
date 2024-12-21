@@ -1,7 +1,3 @@
-O README atualizado ficou assim:
-
----
-
 # Roadmap de Engenharia de Dados 
 
 <p align="center">
