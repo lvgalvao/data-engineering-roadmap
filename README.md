@@ -25,10 +25,9 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 
 ## Próximos Eventos
 
-| Nome                                      | Onde     | Data   | Mês       |
+| Nome/Github                                      | Onde     | Data   | Mês       |
 |-------------------------------------------|----------|--------|-----------|
-| ETL Extração de API do zero               | Jornada  | 17/12  | Dezembro  |
-| Pipeline de dados no Azure                | Jornada  | 21/12  | Dezembro  |
+| [Pipeline de dados no Azure](https://github.com/lvgalvao/workshop-azure-jornadadedados)                | Jornada  | 21/12  | Hoje  |
 | Bootcamp de Databricks e DuckDB           | Jornada  | 25/01  | Janeiro   |
 | Workshop semanal (todas as terças)        | YouTube  | -      | Janeiro   |
 | Workshop de Deploy no Kubernetes para Dados| Jornada | 24/02  | Fevereiro |
