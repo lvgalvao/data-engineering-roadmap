@@ -35,19 +35,19 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 | Kubernetes e Airflow no Google Cloud                     | Jornada  | 22/02  | Fevereiro     |
 | Bootcamp de AI Agents                     | Jornada  | 27/03  | Março     |
 
-[!roadmap](./pics/roadmap_2025.png)
+![roadmap](./pics/roadmap_2025.png)
 
 Tem sugestões de Tópicos?
 
-[!imagem](./pics/issue.png)
+![imagem](./pics/issue.png)
 
 Abra uma Issue aqui
 
-[!imagem](./pics/issue.png)
+![imagem](./pics/issue.png)
 
 Participe e interaja
 
-[!imagem](./pics/issue.png)
+![imagem](./pics/issue.png)
 
 ___
 
