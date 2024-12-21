@@ -28,10 +28,26 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 | Nome/Github                                      | Onde     | Data   | Mês       |
 |-------------------------------------------|----------|--------|-----------|
 | [Pipeline de dados no Azure](https://github.com/lvgalvao/workshop-azure-jornadadedados)                | Jornada  | 21/12  | Hoje  |
-| Bootcamp de Databricks e DuckDB           | Jornada  | 25/01  | Janeiro   |
-| Workshop semanal (todas as terças)        | YouTube  | -      | Janeiro   |
-| Workshop de Deploy no Kubernetes para Dados| Jornada | 24/02  | Fevereiro |
+| ETL 10 bilhões de linhas           | Youtube  | Terça dia 14/01 ás 19h30  | Janeiro   |
+| Databricks e delta table (OLAP + OLTP)           | Jornada  | 22/01  | Janeiro   |
+| Bootcamp Multiengine Databricks, Spark e DuckDB           | Jornada  | 27/01 até 31/01  | Janeiro   |
+| Convidado surpresa           | Jornada  | 04/02  | Janeiro   |
+| Kubernetes e Airflow no Google Cloud                     | Jornada  | 22/02  | Fevereiro     |
 | Bootcamp de AI Agents                     | Jornada  | 27/03  | Março     |
+
+[!roadmap](./pics/roadmap_2025.png)
+
+Tem sugestões de Tópicos?
+
+[!imagem](./pics/issue.png)
+
+Abra uma Issue aqui
+
+[!imagem](./pics/issue.png)
+
+Participe e interaja
+
+[!imagem](./pics/issue.png)
 
 ___
 
