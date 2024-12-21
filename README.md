@@ -37,7 +37,7 @@ Se você gostou do conteúdo e quer se inscrever em nosso programa profissional,
 
 ![roadmap](./pics/roadmap_2025.png)
 
-Tem sugestões de Tópicos?
+Tem sugestões de Tópicos? [clique aqui](https://github.com/lvgalvao/data-engineering-roadmap/issues)
 
 ![imagem](./pics/issue.png)
 
