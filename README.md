@@ -52,35 +52,35 @@ ___
 | Nome                                      | Link                                                    | Duração  | Stack/Github |
 |-------------------------------------------|---------------------------------------------------------|----------|------ |
 | Extração de API do zero | [Assistir no YouTube](https://youtube.com/live/xvCwZ73muV8) | 2h  | [GitHub, Python, API, SQL, Azure, Streamlit](https://github.com/lvgalvao/ETLProjectAPIExtract) |
-| Pipeline ETL - Web Scraping com Requests e Beautiful Soup 4 | [Assistir no YouTube](https://youtube.com/live/z1EOlFV8g7g) | 2h  | GitHub, Python, Requests e Beautiful Soup 4 |
+| Pipeline ETL - Web Scraping com Requests e Beautiful Soup 4 | [Assistir no YouTube](https://youtube.com/live/z1EOlFV8g7g) | 2h  | [GitHub, Python, Requests e Beautiful Soup 4](https://github.com/lvgalvao/IphoneProjectWebScraping) |
 | Pipeline de Dados com GA4 e Typeform | [Assistir no YouTube](https://youtube.com/live/kt72obCvo0k) | 6h  | Python, SQL e Cursor AI |
-| Pipeline Gen AI - ETL com API e CRM de vendas | [Assistir no YouTube](https://youtube.com/live/I-4noY9hGTQ) | 6h  | Python, SQL, OpenAI, Langchain e Git  |
-| WORKSHOP ABERTO #1 - DO ZERO AO DEPLOY COM LUCIANO | [Assistir no YouTube](https://www.youtube.com/watch?v=HxY2UhHkFWA) | 2h  | GitHub, VirtualEnv, TDD, taskipy, pytest, Streamlit, Selenium, Pydantic, MkDocs |
-| Criando ETL Com Python e DUCKDB DO ZERO AO DEPLOY ft. [@mehd-io](https://github.com/mehd-io) | [Assistir no YouTube](https://www.youtube.com/watch?v=4w6UQNn_6X0) | 1h47min  | DuckDB, SQL, S3, CSV, JSON, MotherDuck, Streamlit, Docker, Render |
-| CRIANDO ETL COM PYTHON E DUCKDB DO ZERO AO DEPLOY | [Assistir no YouTube](https://www.youtube.com/watch?v=eXXImkz-vMs) | 2h32min  | DuckDB, SQLAlchemy, Google Drive, SQL, Postgres, Python, CSV, Parquet, JSON, Streamlit, Docker, Render |
+| Pipeline Gen AI - ETL com API e CRM de vendas | [Assistir no YouTube](https://youtube.com/live/I-4noY9hGTQ) | 6h  | [Python, SQL, OpenAI, Langchain e Git](https://github.com/lvgalvao/pipelineaovivo)  |
+| WORKSHOP ABERTO #1 - DO ZERO AO DEPLOY COM LUCIANO | [Assistir no YouTube](https://www.youtube.com/watch?v=HxY2UhHkFWA) | 2h  | [GitHub, VirtualEnv, TDD, taskipy, pytest, Streamlit, Selenium, Pydantic, MkDocs](https://github.com/lvgalvao/Workshop-aberto-aovivo) |
+| Criando ETL Com Python e DUCKDB DO ZERO AO DEPLOY ft. [@mehd-io](https://github.com/mehd-io) | [Assistir no YouTube](https://www.youtube.com/watch?v=4w6UQNn_6X0) | 1h47min  | [DuckDB, SQL, S3, CSV, JSON, MotherDuck, Streamlit, Docker, Render](https://github.com/lvgalvao/aula-aovivo-mehdi) |
+| CRIANDO ETL COM PYTHON E DUCKDB DO ZERO AO DEPLOY | [Assistir no YouTube](https://www.youtube.com/watch?v=eXXImkz-vMs) | 2h32min  | [DuckDB, SQLAlchemy, Google Drive, SQL, Postgres, Python, CSV, Parquet, JSON, Streamlit, Docker, Render](https://github.com/lvgalvao/workshop-aberto-02) |
 | Modern Data Stack com SQL - Parte 1 de 3 ft. [@MarcLamberti](https://github.com/marclamberti) | [Assistir no YouTube](https://www.youtube.com/watch?v=lhMIMrEj_4Q) | 2h  | AirFlow, Astro-cli, Docker, Airbyte Cloud , Render, Postgres|
 | Modern Data Stack com SQL - Parte 2 de 3 | [Assistir no YouTube](https://www.youtube.com/watch?v=WG96Z7uGTHg) | 1h53min  | SQL, dbt, Render |
-| Modern Data Stack com SQL - Parte 3 de 3 | [Assistir no YouTube](https://www.youtube.com/watch?v=brfl7hdC060) | 1h53min  | Python, AirFlow, SQL, dbt, Render, Docker |
+| Modern Data Stack com SQL - Parte 3 de 3 | [Assistir no YouTube](https://www.youtube.com/watch?v=brfl7hdC060) | 1h53min  | [Python, AirFlow, SQL, dbt, Render, Docker](https://github.com/lvgalvao/bootcamp-aberto-aovivo) |
 ___
 
 # Workshops - Quem sabe faz ao vivo
 
 | Nome                                      | Link                                                    | Profissional  | Stack |
 |-------------------------------------------|---------------------------------------------------------|----------|------ |
-| Construindo um Pipeline ETL em Tempo Real | [Assistir no YouTube](https://youtube.com/live/daUC8kMzeLw) | Caio Machado  | Kafka, PostgreSQL e Streamlit |
-| Como sair do ZERO com SQL na AWS | [Assistir no YouTube](https://youtube.com/live/ko3D76GP5d4) | Ghabriel Fiorotti  | ETL Parquet S3 Athena e Glue |
-| Plataforma com Big Query do Zero| [Assistir no YouTube](https://youtube.com/live/NP08fHker5U) | Alan Lanceloty | Python, Airflow, dbt, soda e docker |
-| Qualidade de dados e Contrato de Dados  | [Assistir no YouTube](https://youtube.com/live/IQtuWsNmB4o) | Renan Heckert  | Pandera e Pydantic |
+| Construindo um Pipeline ETL em Tempo Real | [Assistir no YouTube](https://youtube.com/live/daUC8kMzeLw) | [Caio Machado](https://github.com/caio-moliveira)  | [Kafka, PostgreSQL e Streamlit](https://github.com/caio-moliveira/sales-pipeline-project) |
+| Como sair do ZERO com SQL na AWS | [Assistir no YouTube](https://youtube.com/live/ko3D76GP5d4) | [Ghabriel Fiorotti](https://github.com/ghabriel-fiorotti)  | ETL Parquet S3 Athena e Glue |
+| Plataforma com Big Query do Zero| [Assistir no YouTube](https://youtube.com/live/NP08fHker5U) | [Alan Lanceloth](https://github.com/alanceloth) | [Python, Airflow, dbt, soda, docker, GCP, Metabase](https://github.com/alanceloth/Retail_Data_Pipeline) |
+| Qualidade de dados e Contrato de Dados  | [Assistir no YouTube](https://youtube.com/live/IQtuWsNmB4o) | [Renan Heckert](https://github.com/lealre)  | [Pandera e Pydantic](https://github.com/lealre/pandera-aovivo) |
 
 # Workshops - Especialistas
 
 | Nome                                      | Link                                                    | Profissional  | Stack |
 |-------------------------------------------|---------------------------------------------------------|----------|------ |
-| Como sair do ZERO em Observabilidade com Logfire| [Assistir no YouTube](https://youtube.com/live/bxtsTP0a0mU) | Marcelo Trylesinski  | Logfire |
-| dbt no Airflow - Como melhorar o desempenho do seu deploy de forma correta | [Assistir no YouTube](https://youtube.com/live/xvCwZ73muV8) | Tatiana Martins | Airflow e dbt-core |
-| Construa Data Apps Completos com Briefer | [Assistir no YouTube](https://youtube.com/live/6KyxRpX6oY4) | Lucas Costa  | Briefer, SQL e Python |
-| Como sair do ZERO no AIRBYTE| [Assistir no YouTube](https://youtube.com/live/4hQroajva0s) | Alan Lanceloty  | Airbyte |
-| Como criar do ZERO um Lakehouse | [Assistir no YouTube](https://youtube.com/live/O9q5owTOpMw) | Nilton Ueda  | Conceitual |
+| Como sair do ZERO em Observabilidade com Logfire| [Assistir no YouTube](https://youtube.com/live/bxtsTP0a0mU) | [Marcelo Trylesinski](https://github.com/Kludex)  | Logfire |
+| dbt no Airflow - Como melhorar o desempenho do seu deploy de forma correta | [Assistir no YouTube](https://youtube.com/live/xvCwZ73muV8) | [Tatiana Martins](https://github.com/tatiana) | Airflow e dbt-core |
+| Construa Data Apps Completos com Briefer | [Assistir no YouTube](https://youtube.com/live/6KyxRpX6oY4) | [Lucas Costa](https://github.com/lucasfcosta)  | Briefer, SQL e Python |
+| Como sair do ZERO no AIRBYTE| [Assistir no YouTube](https://youtube.com/live/4hQroajva0s) | [Alan Lanceloth](https://github.com/alanceloth)  | Airbyte |
+| Como criar do ZERO um Lakehouse | [Assistir no YouTube](https://youtube.com/live/O9q5owTOpMw) | [Nilton Ueda](https://github.com/niltonkazuyukiueda)  | Conceitual |
 
 ___
 
