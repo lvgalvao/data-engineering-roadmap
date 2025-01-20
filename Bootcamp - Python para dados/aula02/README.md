@@ -396,7 +396,7 @@ Escreva um programa que converta a temperatura de Celsius para Fahrenheit. O pro
 
 ### Exercício 22: Verificador de Palíndromo
 
-Crie um programa que verifica se uma palavra ou frase é um palíndromo (lê-se igualmente de trás para frente, desconsiderando espaços e pontuações). Utilize `try-except` para garantir que a entrada seja uma string. Dica: Utilize a função `isinstance()` para verificar o tipo da entrada.
+Crie um programa que verifica se uma palavra ou frase é um palíndromo (lê-se igualmente de trás para frente, desconsiderando espaços e pontuações). Utilize `try-except` para garantir que a entrada seja uma string. Dica: Utilize a função `isdigit()` para verificar o tipo da entrada.
 
 ### Exercício 23: Calculadora Simples
 
@@ -426,15 +426,16 @@ except ValueError:
 ### Exercício 22: Verificador de Palíndromo
 
 ```python
-entrada = input("Digite uma palavra ou frase: ")
-if isinstance(entrada, str):
-    formatado = entrada.replace(" ", "").lower()
-    if formatado == formatado[::-1]:
-        print("É um palíndromo.")
-    else:
-        print("Não é um palíndromo.")
+palavra = input('Forneça uma palavra ou frase: ')
+if palavra.isdigit():
+    print("Digite uma palavra ou frase, por favor")
 else:
-    print("Entrada inválida. Por favor, digite uma palavra ou frase.")
+    palavra_tratada = palavra.replace(" ", "").lower()
+    palavra_invertida = palavra_tratada[::-1]
+    if palavra_tratada == palavra_invertida:
+        print(f'{palavra}, é palidromo')
+    else:
+        print(f'{palavra}, não é palidromo')
 ```
 
 ### Exercício 23: Calculadora Simples
