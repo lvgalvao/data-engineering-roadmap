@@ -2,6 +2,9 @@
 
 Excalidraw: https://link.excalidraw.com/l/8pvW6zbNUnD/lNQJlLfsWw
 
+Excalidraw(Finalizado): https://link.excalidraw.com/l/8pvW6zbNUnD/j0C9fxKHVW
+
+
 Você já participou de um projeto de dados que parecia não sair do lugar? Horas de reuniões, discussões intermináveis e, no final, pouca ou nenhuma entrega palpável? Esse é um desafio comum no universo da engenharia de dados, onde a complexidade das soluções muitas vezes dificulta o alinhamento da equipe e a tomada de decisões rápidas. É justamente para resolver esse tipo de problema que o **Design Sprint** se tornou uma metodologia essencial – e é isso que vamos explorar juntos no nosso workshop da Jornada de Dados!
 
 ## 🌱 **O Desafio dos Projetos de Dados**
