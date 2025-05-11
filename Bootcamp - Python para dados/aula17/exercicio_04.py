@@ -33,8 +33,8 @@ try:
     with Session() as session:
         novo_usuario = Usuario(cadeira=40)
         session.add(novo_usuario)
-        # O commit é feito automaticamente aqui, se não houver exceções
+        session.commit()
         # O rollback é automaticamente chamado se uma exceção ocorrer
-        # A sessão é fechada automaticamente ao sair do bloco with
+        # A sessão é fechada automaticamente ao sair do bloco with, porém ainda é preciso adicionar o commit ao final da transação
 except TypeError as e:
     print(e)
