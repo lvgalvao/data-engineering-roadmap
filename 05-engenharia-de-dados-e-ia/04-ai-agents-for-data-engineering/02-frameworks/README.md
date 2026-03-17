@@ -36,6 +36,32 @@ Demonstração do framework **AutoGen** com colaboração multi-agente.
 3. Crítico revisa e sugere melhorias
 4. Processo iterativo até resultado satisfatório
 
+### `ag2_starter.py`
+Demonstração do framework **AG2** (formerly AutoGen) com colaboração multi-agente.
+
+**Características:**
+- Sistema com múltiplos agentes especializados:
+  - **Pesquisador**: Coleta informações e fatos
+  - **Escritor**: Transforma pesquisa em conteúdo envolvente
+  - **Crítico**: Revisa e sugere melhorias
+- API moderna AG2 0.11+ (`LLMConfig`, `ConversableAgent`, `initiate_group_chat`)
+- Orquestração via `AutoPattern` com seleção inteligente de agentes
+- Uso do Ollama localmente (sem necessidade de APIs pagas)
+
+**Execução:**
+```bash
+pip install "ag2[openai]>=0.11.0"
+ollama pull mistral
+python ag2_starter.py
+```
+
+**Quando usar AG2:**
+- Projetos que precisam de colaboração multi-agente com orquestração
+  flexível
+- Casos que requerem handoffs inteligentes entre agentes
+  especializados
+- Integração com ferramentas via MCP (Model Context Protocol)
+
 ### `crewai_starter.py`
 Exemplo do framework **CrewAI** para geração de conteúdo LinkedIn.
 
@@ -93,6 +119,9 @@ python agno_starter.py
 # AutoGen - Colaboração multi-agente
 python autoge_starter.py
 
+# AG2 - Colaboração multi-agente (API moderna)
+python ag2_starter.py
+
 # CrewAI - Conteúdo LinkedIn
 python crewai_starter.py
 
@@ -121,6 +150,7 @@ Todos os exemplos estão configurados para usar **Ollama localmente**, não requ
 
 - **Agno**: Análise de dados e integração com APIs específicas
 - **AutoGen**: Colaboração complexa entre múltiplos agentes
+- **AG2**: Fork comunitário do AutoGen com orquestração inteligente e API moderna
 - **CrewAI**: Workflows estruturados com papéis bem definidos
 - **LangChain/LangGraph**: Pipelines complexos com visualização e controle de fluxo
 
