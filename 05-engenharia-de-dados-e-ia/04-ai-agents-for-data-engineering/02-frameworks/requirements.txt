@@ -1,7 +1,12 @@
 # Framework dependencies
+# Nota: ag2 e pyautogen usam o mesmo namespace "autogen".
+# Instale apenas um por vez:
+#   pip install ag2        (para ag2_starter.py)
+#   pip install pyautogen  (para autoge_starter.py)
+ag2
 agno
 crewai
-pyautogen
+# pyautogen  # conflita com ag2 — instale separadamente se necessário
 langgraph
 langchain
 langchain-community

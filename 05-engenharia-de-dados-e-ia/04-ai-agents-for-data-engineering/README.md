@@ -38,7 +38,8 @@ Este repositório contém o material prático do **Workshop Agentes de IA com Py
 Explore diferentes frameworks para construção de sistemas multi-agente:
 
 - **Agno**: Análise inteligente de HackerNews com agentes especializados
-- **AutoGen**: Colaboração entre agentes (Pesquisador + Escritor + Crítico)  
+- **AutoGen**: Colaboração entre agentes (Pesquisador + Escritor + Crítico)
+- **AG2**: Fork comunitário do AutoGen com API moderna e orquestração via AutoPattern
 - **CrewAI**: Geração de conteúdo profissional para LinkedIn
 - **LangChain/LangGraph**: Pipeline visual de análise de texto com grafo de estados
 
@@ -201,6 +202,7 @@ streamlit run app.py        # Terminal 2
 - **LangChain/LangGraph/LangSmith**: Orquestração, Observabilidade e workflows visuais
 - **CrewAI**: Sistemas multi-agente estruturados  
 - **AutoGen**: Colaboração conversacional entre agentes
+- **AG2** (formerly AutoGen) — framework multi-agente com orquestração inteligente
 - **Agno**: Especialização em análise de dados
 
 ### LLMs e Embeddings
