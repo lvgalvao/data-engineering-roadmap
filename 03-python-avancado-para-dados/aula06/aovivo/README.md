@@ -19,8 +19,8 @@ Esta aula reúne dois temas que parecem separados mas resolvem o mesmo problema 
 
 ## 1. O pipeline: PC → Git local → Git remoto
 
-# Espaço para anexar a imagem do Excalidraw
-![Pipeline de qualidade: Seu PC (pre-commit, local e opcional) → Git local → Git remoto (CI no GitHub Actions, obrigatório)](./assets/pipeline-qualidade.svg)
+# ESPAÇO PARA ANEXAR A IMAGEM DO EXCALIDRAW
+![Pipeline: Seu PC (pre-commit, local e opcional) → Git local → Git remoto](./assets/pipeline.svg)
 
 | Etapa | Onde vive o código | O que avalia o código | Quem definiu a régua |
 |---|---|---|---|
@@ -56,8 +56,6 @@ poetry run pre-commit install --hook-type commit-msg
 ```
 
 Sem esse segundo `install`, o hook de `commitizen` fica configurado no YAML mas nunca é acionado — o `pre-commit install` "normal" só cobre o hook de `commit`.
-
-> **Outro efeito colateral do monorepo, achado ao testar o `bandit`:** como o pre-commit sempre executa a partir da raiz do repositório Git (não da pasta onde o `.pre-commit-config.yaml` está), um hook sem restrição de arquivos roda sobre **todo o monorepo**, não só sobre `aula-06`. Foi assim que o `bandit` acusou alertas em `aula-03/` e `aula-05/` na primeira tentativa. A correção foi adicionar `files: ^03-python-avancado-para-dados/aula-06/` no hook — o mesmo problema que o `flake8` já resolve aqui, mas por exclusão (`--exclude=...aula-02,...aula-03,...`) em vez de inclusão. Todo hook novo adicionado a este arquivo precisa de uma dessas duas estratégias, ou vai silenciosamente cobrir o repositório inteiro.
 
 Ponto importante: o arquivo `.pre-commit-config.yaml` está **versionado no Git**, então todo mundo que clona o repositório vê as mesmas regras. Mas isso não significa que elas rodam sozinhas — é preciso ativar o hook uma vez por máquina:
 
@@ -103,18 +101,6 @@ O CI desta aula roda `black --check`, `isort --check-only`, `flake8` e
 `bandit` no runner do GitHub — as mesmas ferramentas do pre-commit, mas em
 modo "verificar e falhar" em vez de "corrigir automaticamente". É a mesma
 régua, aplicada num ambiente que você não controla.
-
-> **Detalhe de monorepo, achado ao montar este CI:** um workflow do GitHub
-> Actions só é executado se estiver em `.github/workflows/` na **raiz** do
-> repositório Git — não importa em qual subpasta o projeto vive. Por isso o
-> workflow desta aula foi criado em
-> `formacao-jornada-de-dados/.github/workflows/aula-06-ci.yml` (não dentro de
-> `aula-06/`), usando um filtro `paths:` para só disparar quando algo dentro
-> de `03-python-avancado-para-dados/aula-06/` mudar. Vale conferir: o CI do
-> projeto `02-workshop-estrutura` está em
-> `01-projetos/02-workshop-estrutura/.github/workflows/ci.yml` — como esse
-> caminho não é a raiz do repositório, é bem provável que ele **nunca tenha
-> rodado de verdade** no GitHub.
 
 Resumindo sua observação original: pre-commit ajusta o seu código *antes* de
 ele entrar em uma discussão que envolve outras pessoas — mas quem de fato
