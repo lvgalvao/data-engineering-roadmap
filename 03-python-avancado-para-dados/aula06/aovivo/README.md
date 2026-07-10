@@ -19,8 +19,7 @@ Esta aula reúne dois temas que parecem separados mas resolvem o mesmo problema 
 
 ## 1. O pipeline: PC → Git local → Git remoto
 
-ESPAÇO PARA ANEXAR A IMAGEM DO EXCALIDRAW
-![Pipeline: Seu PC (pre-commit, local e opcional) → Git local → Git remoto](./assets/pipeline.svg)
+Espaço para anexar a imagem do Excalidraw ![Pipeline: Seu PC (pre-commit, local e opcional) → Git local → Git remoto](./assets/pipeline.svg)
 
 | Etapa | Onde vive o código | O que avalia o código | Quem definiu a régua |
 |---|---|---|---|
